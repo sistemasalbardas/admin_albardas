@@ -5,7 +5,7 @@
 	{
 		
 		private $datos = array(
-			'host' => 'localhost',
+			'host' => '127.0.0.1:3306',
 			'user' => 'root',
 			'pass' => '',
 			'db' => 'albardas'
