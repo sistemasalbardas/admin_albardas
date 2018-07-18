@@ -4,6 +4,8 @@ namespace MODELS;
 	class referrals
 	{
 		public $id;
+		public $tab;
+		public $ncharge;
 		public $nTab;
 		public $folio;
 		public $name;
@@ -20,6 +22,14 @@ namespace MODELS;
 		public $id_employe;
 		public $id_costumer;
 		public $data;
+		public $employe;
+		public $id_client;
+		public $id_trasport;
+		public $id_driver;
+		public $id_truck;
+		public $id_box;
+		public $id_add;
+
 	
 		public function __construct(){
 			$this->con = new conexion();
@@ -220,15 +230,43 @@ namespace MODELS;
 	
 		public function saveProducts(){
 			session_start();
-			$data = $_SESSION['products'];
+			$data = $_SESSION['products'][0];
 			$nRows = count($data);	
-			error_log("no mames".$nRows);
+
+
+
+		
 			for ($i=0; $i < $nRows; $i++) {
 				$sql = "INSERT INTO productos_refarrls (id, f_embarque, count, concept) VALUES
 				(null, '{$this->f_embark}', '".$_SESSION['products'][$i][2]."','".$_SESSION['products'][$i][1]."')";
 				$this->con->consultaSimple($sql);	
 			}
 		}
+		public function save_freight()
+		{
+			session_start();
+			$data = $_SESSION['infoFreight'][0];
+
+			$value = $_SESSION['infoFreight'][0][$this->tab];
+
+			if ($this->tab == $this->ncharge) {
+				if ($data['agricola'] > 0) {
+					$sql = "INSERT INTO freights (id, f_flete, f_embark, price, id_trasport, id_truck, id_driver, id_box, id_client, id_add, currency, total) VALUES (null, '{$this->f_freight}', '{$this->f_embark}','".$data['agricola']."', '{$this->id_trasport}', '{$this->id_truck}', '{$this->id_driver}', '{$this->id_box}', '1', '{$this->id_add}', '".$data['currency']."', '".$data['total']."')";
+					$this->con->consultaSimple($sql);
+					unset($_SESSION['infoFreight']);
+
+				}
+			}
+
+			
+
+			$sql = "INSERT INTO freights (id, f_flete, f_embark, price, id_trasport, id_truck, id_driver, id_box, id_client, id_add, currency, total) VALUES
+			(null, '{$this->f_freight}', '{$this->f_embark}','$value', '{$this->id_trasport}', '{$this->id_truck}', '{$this->id_driver}', '{$this->id_box}', '{$this->id_costumer}', '{$this->id_add}', '".$data['currency']."', '".$data['total']."')";
+			$this->con->consultaSimple($sql);
+			
+		}
+
+
 
 		public function view(){	
 			$sql = "SELECT * FROM referrals";

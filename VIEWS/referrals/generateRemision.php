@@ -799,6 +799,7 @@ $html2 .= '<table class="table" style="font-size: 13px ; font-family: Calibri; b
     </footer>
   </table>';
   unset($_SESSION['products']);
+
       
   $mpdf = new Mpdf();
   $mpdf->WriteHTML($html);
