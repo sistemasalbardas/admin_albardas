@@ -5,50 +5,53 @@
 	$template = new template();
 	class template{
 
-	public function __construct(){
-	ob_start();
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">	
+		public function __construct(){
+		ob_start();
+	?>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">	
 
-	<title>ADMINISTRACION</title>
-	<link rel="icon" 
-      type="image/png" 
-      href="<?= URL_IMG?>/favicon.ico" />
-  	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/helpers.css">
-  	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/bootstrap-select.min.css">
-	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/main.css">
-	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/jquery-ui.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+		<title>ADMINISTRACION</title>
+		<link rel="icon" 
+	      type="image/png" 
+	      href="<?= URL_IMG?>/favicon.ico" />
+	  	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/helpers.css">
+	  	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/bootstrap-select.min.css">
+		<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/main.css">
+		<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/jquery-ui.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	      rel="stylesheet">
+	    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 
 
-</head>
-<body>
-<div class="spinner">
-	  <div class="bounce1"></div>
-	  <div class="bounce2"></div>
-	  <div class="bounce3"></div>
-	  <span class="block s12">
-	  	Cargando..
-	  </span>
-</div>
+	</head>
+	<body>
+	<div class="spinner">
+		  <div class="bounce1"></div>
+		  <div class="bounce2"></div>
+		  <div class="bounce3"></div>
+		  <span class="block s12">
+		  	Cargando..
+		  </span>
+	</div>
 
-<div class="bgLightBlack"></div>
+	<div class="bgLightBlack"></div>
 
-<?php 
+	<?php 
 		
 		if (isset($_SESSION['user'])){require "menu.php"; } 
 	?>
 
 	<?php
 	}
+
+
+
 
 	public function __destruct(){
 	

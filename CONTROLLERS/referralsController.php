@@ -229,7 +229,7 @@
 			}
 		}
 
-		public function saveFreight()
+		public function savefreight()
 		{
 			$infoFreight = array();
 			$infoFreight[]  = $_POST;

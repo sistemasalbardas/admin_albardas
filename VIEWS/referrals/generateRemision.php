@@ -10,14 +10,15 @@
   $f_freight = $_POST['f_freight'];
   $folios = $referrals->folios();
   $listP = $referrals->listarP();
-  $today = date('Y-m-j');
+  //$today = date('Y-m-j');
+  $today = $_POST['date'];
   $tomorrow = strtotime ( '+1 day' , strtotime ( $today ) ) ;
   $tomorrow = date ( 'j-m-Y' , $tomorrow );
 
 
-  $html = '<table class="table" style="font-size: 13px ; font-family: Calibri; border:2px solid #000;  background: url('.URL_IMG.'/logo2.png); background-position: center; padding: 10px; width: 100%; height:3308px; ">
+  $html = '<table class="table" style="font-size: 13px ; font-family: Calibri; border:2px solid #000;  background: url('.URL_IMG.'/logo2.png); background-position: center; padding: 10px; width: 100%; height:3308px; text-transform: uppercase;">
             <thead> 
-    
+  
               <tr>
                 <th width="100%">
                   <br>  
@@ -408,24 +409,30 @@
             </th>
           </tr>
           <tr>
-            <th  width="100%">
+            <th  width="100%"  style="border: 1px solid #000; text-align: left;">
               <table width="100%">
                 <tr>
-                  <th width="100%" style="text-align: left; padding: 0px 15px; font-size: 14px; font-weight: normal;">
-                    Costos de envio:
+                  <th width="100%" style="text-align: left; padding: 0px 15px; font-size: 14px; font-weight: bold;">
+                   COSTOS DE ENVIÓ:
                   </th>
                 </tr><tr>';
-                //TEMA DE FLETES  
-        if (isset( $_SESSION['info_employes']['priceSend'])) {
-          $html .='<th width="100%" style="text-align: left;  padding: 0px 15px; color: #000;  text-transform: uppercase;">
-                Favor de pagar por gastos de envio <span style=" color: #000; text-decoration: underline;">'.$_SESSION['info_employes']['priceSend'].$_SESSION['info_employes']['type_currency'].' </span> en destino.
-              </th>';
-        }else{
-          $html .='<th width="100%" style="text-align: left; padding: 0px 15px; color: #000; text-decoration: underline; text-transform: uppercase;">
-          ESTE EMBARQUE NO GENERA GASTOS DE ENVIÓ AL CLIENTE
-          </th>';
-        }
-          $html .='</tr>  
+               
+                $priceTab = $_SESSION['infoFreight'][0][$_POST['tab']];
+                $currency = $_SESSION['infoFreight'][0]['currency'];
+               
+                error_log($priceTab);
+                if ($priceTab > 0) {
+                  
+                  $html .='<th width="100%" style="text-align: left;  padding: 0px 15px; color: #000;  text-transform: uppercase; font-weight: normal;">
+                  ESTE FLETE SERA PAGADO POR : <br>'.$_POST['name_costumer'].' </span> POR LA CANTIDAD DE:  <span style="text-decoration:underline;">   "$ '.number_format($priceTab).' '.$currency.'".</span>
+                  </th>';
+                } else {
+                  error_log("no es m ayor");
+                    $html .='<th width="100%" style="text-align: left; padding: 0px 15px; color: #000; text-decoration: underline; text-transform: uppercase; font-weight: normal;">
+                    ESTE FLETE NO GENERA GASTOS POR CONEPTO DE ENVIÓ AL CLIENTE.
+                    </th>';
+                }
+              $html .='</tr>  
               </table>
             </th>
           </tr>
@@ -451,7 +458,7 @@
               
               <table width="100%">
                 <tr>
-                  <th width="33.33%" style="padding: 15px; text-align: left;  border: 1px solid #000;">
+                  <th width="33.33%" style="padding: 15px; text-align: left;  border: 1px solid #000; text-transform: uppercase;">
                     <span>Informacion del tractor</span>
                     <table width="100%">
                       
@@ -498,7 +505,7 @@
                     </table>
 
                   </th>
-                  <th width="33.33%" style="padding: 15px; text-align: left;  border: 1px solid #000;">
+                  <th width="33.33%" style="padding: 15px; text-align: left;  border: 1px solid #000; text-transform: uppercase;">
                     <span>Informacion de la caja</span>
                     <table width="100%">
                       
@@ -545,7 +552,7 @@
                       
                     </table>
                   </th>
-                  <th width="33.33%" style="padding: 15px; text-align: left; vertical-align: top;  border: 1px solid #000;">
+                  <th width="33.33%" style="padding: 15px; text-align: left; vertical-align: top;  border: 1px solid #000; text-transform: uppercase; ">
                     <span>Otros</span>
                     <table width="100%">
                     
@@ -642,7 +649,7 @@ $html2 .= '<table class="table" style="font-size: 13px ; font-family: Calibri; b
         <th style="width:100%; text-align: justify !important; border-bottom:1px solid #000; padding-botom:10px;">
         <p style="padding:3px; font-weight: normal; text-align: left !important; padding-botom:10px;">
 
-          El suscrito <span style="text-decoration: underline ; ">' . $_SESSION['remision']['name_driver'] . '</span>   conductor del tracto camión marca <span style="text-decoration: underline  ;">  KW 1997 </span>  Placas: <span style="text-decoration: underline ;"> 955-DW-1 </span> que arrastra la caja refrigerada con placas <span style="text-decoration: underline  ;">804-WB-2</span>  propiedades de <span style="text-decoration: underline  ;"> Línea propia</span> hago constar que he recibido e inspeccionado la carga contenida en la caja <span style="text-decoration: underline  ;"> refrigerada </span> antes mencionada, la cual contiene exclusivamente:
+          El suscrito <span style="text-decoration: underline ; ">' . $_SESSION['remision']['name_driver'] . '</span>   conductor del tracto camión marca: <span style="text-decoration: underline  ;"> ' . $_SESSION['remision']['brand'] .' '. $_SESSION['remision']['model'] . '</span>  Placas: <span style="text-decoration: underline ;">' . $_SESSION['remision']['plates_t'] . '</span> que arrastra la caja '. $_SESSION['remision']['box'].' con placas <span style="text-decoration: underline  ;">' . $_SESSION['remision']['plates'] . '</span>  propiedades de <span style="text-decoration: underline  ;">' . $_SESSION['remision']['name_trasport'] . '</span> hago constar que he recibido e inspeccionado la carga contenida en la caja <span style="text-decoration: underline  ;"> '. $_SESSION['remision']['box'].' </span> antes mencionada, la cual contiene exclusivamente:
         
         </p>
         </th>
@@ -734,11 +741,11 @@ $html2 .= '<table class="table" style="font-size: 13px ; font-family: Calibri; b
           Que ira a una temperatura consta de   
           <span style="text-decoration: underline ; "> '.$_SESSION['remision']['temperature'].' - '.$_SESSION['remision']['degrees'].'</span> 
           con salida el día 
-          <span style="text-decoration: underline ; ">'.date ( 'j-m-Y').'</span> a las 
-          <span style="text-decoration: underline ; ">'.date('g:ia').'</span>, para llegar a la <br> ciudad de: <span style="text-decoration: underline;"> ' . $_SESSION['remision']['city'] . ' </span> mas tardar el día de: <span style="text-decoration: underline ; ">'.$tomorrow.'</span>. <br>
+          <span style="text-decoration: underline ; ">'.$_POST['date'].'</span> a las 
+          <span style="text-decoration: underline ; ">'.$_POST['time'].'</span>, para llegar a la <br> ciudad de: <span style="text-decoration: underline;"> ' . $_SESSION['remision']['city'] . ' </span> mas tardar el día de: <span style="text-decoration: underline ; ">'.$tomorrow.'</span>. <br>
           En caso de no llegar al almacen de la fecha indicada, se descontara un 20% del flete.
           La que será conforma a la guía y remisión de embarque <span style="text-decoration: underline ; "> '.$folios['folio_embark'].'</span>. Por este conducto manifiesto haber estado presente y por lo tanto tener pleno conocimiento de <span style="text-decoration: underline ; "> '.$totalunit.'</span> cajas de producto antes mencionado, durante y hasta el momento de cerrar las puertas del camión a mi cargo correspondiente a este embarque. <br>
-          Consciente de que me es prohibido trasportar ningún otro tipo de carga diferente a la qui señalada por lo que libero de toda responsabilidad tanto a la agrícola declarada anteriormente y de cualquier alteración que pueda surgir durante el trayecto a su destino final, de objetos o valores ajenos a este producto tanto en el tracto camión como en la caja refrigerada arrastrada por este. <br>
+          Consciente de que me es prohibido trasportar ningún otro tipo de carga diferente a la aqui señalada por lo que libero de toda responsabilidad tanto a la agrícola declarada anteriormente y de cualquier alteración que pueda surgir durante el trayecto a su destino final, de objetos o valores ajenos a este producto tanto en el tracto camión como en la caja refrigerada arrastrada por este. <br>
           Sin otro particular me es grato reiterarle a las seguridades de mi más alta y distinguida consideración suscribiéndome a sus órdenes para cualquier aclaración al respecto. 
         </p>
         </th>
@@ -799,6 +806,7 @@ $html2 .= '<table class="table" style="font-size: 13px ; font-family: Calibri; b
     </footer>
   </table>';
   unset($_SESSION['products']);
+  
 
       
   $mpdf = new Mpdf();

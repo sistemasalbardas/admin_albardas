@@ -5,6 +5,7 @@ namespace MODELS;
 	{
 		public $id;
 		public $tab;
+		public $date;
 		public $ncharge;
 		public $nTab;
 		public $folio;
@@ -219,12 +220,12 @@ namespace MODELS;
 		}
 
 		
-		public function save(){
-			$sql = "INSERT INTO referrals (id, date, f_flete, f_embarque, f_carga, user, name_file, id_prod, cant, trasporter, id_employe, id_costumer, file_report) VALUES
-			('','{$this->date}','{$this->f_freight}','{$this->f_embark}',
-				'{$this->f_charge}','{$this->user}','{$this->file}','',
+		public function save_remision(){
+			$sql = "INSERT INTO referrals (id, date, f_flete, f_embarque, f_carga, user, name_file, id_prod, cant, moneda, id_employe, id_costumer, file_report) VALUES ('','{$this->date}','{$this->f_freight}','{$this->f_embark}', '{$this->f_charge}','{$this->user}','{$this->file}','',
 				'','','{$this->id_employe}','{$this->id_costumer}','')";
 			$this->con->consultaSimple($sql);
+
+
 		
 		}
 	
@@ -232,9 +233,6 @@ namespace MODELS;
 			session_start();
 			$data = $_SESSION['products'][0];
 			$nRows = count($data);	
-
-
-
 		
 			for ($i=0; $i < $nRows; $i++) {
 				$sql = "INSERT INTO productos_refarrls (id, f_embarque, count, concept) VALUES
@@ -242,6 +240,7 @@ namespace MODELS;
 				$this->con->consultaSimple($sql);	
 			}
 		}
+
 		public function save_freight()
 		{
 			session_start();
@@ -249,20 +248,16 @@ namespace MODELS;
 
 			$value = $_SESSION['infoFreight'][0][$this->tab];
 
+			$sql = "INSERT INTO freights (id, f_flete, f_embark, price, id_trasport, id_truck, id_driver, id_box, id_client, id_add, currency, total, date) VALUES
+			(null, '{$this->f_freight}', '{$this->f_embark}','$value', '{$this->id_trasport}', '{$this->id_truck}', '{$this->id_driver}', '{$this->id_box}', '{$this->id_costumer}', '{$this->id_add}', '".$data['currency']."', '".$data['total']."', '{$this->date}')";
+			$this->con->consultaSimple($sql);
+				
 			if ($this->tab == $this->ncharge) {
-				if ($data['agricola'] > 0) {
-					$sql = "INSERT INTO freights (id, f_flete, f_embark, price, id_trasport, id_truck, id_driver, id_box, id_client, id_add, currency, total) VALUES (null, '{$this->f_freight}', '{$this->f_embark}','".$data['agricola']."', '{$this->id_trasport}', '{$this->id_truck}', '{$this->id_driver}', '{$this->id_box}', '1', '{$this->id_add}', '".$data['currency']."', '".$data['total']."')";
+				if ($data['agricola'] >= 0) {
+					$sql = "INSERT INTO freights (id, f_flete, f_embark, price, id_trasport, id_truck, id_driver, id_box, id_client, id_add, currency, total, date) VALUES (null, '{$this->f_freight}', '{$this->f_embark}','".$data['agricola']."', '{$this->id_trasport}', '{$this->id_truck}', '{$this->id_driver}', '{$this->id_box}', '1', '{$this->id_add}', '".$data['currency']."', '".$data['total']."', '{$this->date}' )";
 					$this->con->consultaSimple($sql);
-					unset($_SESSION['infoFreight']);
-
 				}
 			}
-
-			
-
-			$sql = "INSERT INTO freights (id, f_flete, f_embark, price, id_trasport, id_truck, id_driver, id_box, id_client, id_add, currency, total) VALUES
-			(null, '{$this->f_freight}', '{$this->f_embark}','$value', '{$this->id_trasport}', '{$this->id_truck}', '{$this->id_driver}', '{$this->id_box}', '{$this->id_costumer}', '{$this->id_add}', '".$data['currency']."', '".$data['total']."')";
-			$this->con->consultaSimple($sql);
 			
 		}
 

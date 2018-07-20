@@ -4,6 +4,8 @@ $(document).ready(function(){
 
 
   $("#id_product").change(function () {
+    var name = $("#id_product option:selected").text();
+  
     $("input#name_product").val($("#id_product option:selected").text());
   });
 
@@ -264,7 +266,7 @@ function saveFreight(obj) {
             
             var formData = new FormData($(obj)[0]);
             $.ajax({
-                url: URL+"referrals/saveFreight/",
+                url: URL+"referrals/savefreight/",
                 type: 'POST',
                 data: formData,
                 contentType: false,
@@ -508,8 +510,6 @@ function addP(obj){
             location.reload();
         });
 
-
-  
     }
      
 }

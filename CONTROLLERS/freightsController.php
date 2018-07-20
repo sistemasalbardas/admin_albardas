@@ -20,6 +20,13 @@
 			
 		}
 
+		public function listCostumers()
+		{
+			$costumers = $this->freights->costumers();
+			return $costumers;
+
+		}
+
 		public function delete()
 		{
 			$this->freights->set('id', $_GET['id']);

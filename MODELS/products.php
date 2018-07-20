@@ -7,7 +7,12 @@
 		public $name; 
 		public $type_pack; 
 		public $array = array(); 
-		public $con; 
+		public $quality; 
+		public $size; 
+		public $pack; 
+		public $brand; 
+		public $weight; 
+		public $unit_measure; 
 
 		public function __construct(){
 			$this->con = new conexion();
@@ -35,7 +40,7 @@
 
 		public function save()
 		{
-			$sql = "INSERT INTO products (id, id_prod, name, type_pack, photo) VALUES (null, '', '{$this->name}', '{$this->type_pack}','')";
+			$sql = "INSERT INTO products (id, name, quality, size, pack, brand, weight, unit_measure) VALUES (null, '{$this->name}', '{$this->quality}','{$this->size}','{$this->pack}','{$this->brand}','{$this->weight}', '$this->unit_measure')";
 			$this->con->consultaSimple($sql);
 		}
 

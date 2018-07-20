@@ -37,7 +37,7 @@
 						<label for="id_product">Producto:</label>
 						<select name="id_product" id="id_product" class="inputStyle" required="">
 							<?php while ($row = mysqli_fetch_assoc($products)) {?>
-								<option value="<?= $row['id']?>"><?= $row['name']." ". $row['last_name'];?></option>
+								<option value="<?= $row['id']?>"><?= $row['name']." ". $row['quality']." ". $row['size']." ". $row['pack']." ". $row['brand']." ". $row['weight']." ". $row['unit_measure'];?></option>
 							<?php } ?>
 						</select>
 						<input type="hidden" name="name_product" id="name_product" value="">
