@@ -54,30 +54,30 @@
 						      	<th><?= $utility; ?></th>
 						      
 						      	<th>
-						      		<a href="delete/?id=<?= $row['id'];?>" onclick="deleteCostumer(this);" class="">
-						      			<span title="Eliminar">
-						      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
-						      			 </span>
+						      		<a href="delete/?id=<?= $row['id'];?>" onclick="deleteCostumer(this);" class="tool">
+					      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+						      			<span class="tooltext">Eliminar </span>
+						      			
 						      		</a>
-						      		<a href="edit/?id=<?= $row['id'];?>" onclick=""  class="">
-						      			<span title="Editar">
-							      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
-						        		</span>
+						      		<a href="edit/?id=<?= $row['id'];?>" onclick=""  class="tool">
+						      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+						      			<span class="tooltext">Editar</span>
+						        		
 						      		</a>
-						      		<a href="newEntry/?id=<?= $row['id'];?>&inventorie=<?= $row['name'] ?>" onclick=""  class="">
-						      			<span title="Nueva Entrada">
-							      			<i class="btn btn-primary btn-xs fas fa-arrow-right  btn_padd"></i>
-										</span>
+						      		<a href="newEntry/?id=<?= $row['id'];?>&inventorie=<?= $row['name'] ?>" onclick=""  class="tool">
+						      			<i class="btn btn-primary btn-xs fas fa-arrow-right  btn_padd"></i>
+						      			<span class="tooltext">Nueva Entrada</span>
+										
 						      		</a>
-						      		<a href="transfer/?id=<?= $row['id'];?>&inventorie=<?= $row['name'] ?>" onclick=""  class="">
-						      			<span title="Transferencia">
-							      			<i class="btn btn-info btn-xs fas fa-exchange-alt cBlue btn_padd"></i>	
-										</span>
+						      		<a href="transfer/?id=<?= $row['id'];?>&inventorie=<?= $row['name'] ?>" onclick=""  class="tool">
+						      			<i class="btn btn-info btn-xs fas fa-exchange-alt cBlue btn_padd"></i>	
+						      			<span class="tooltext">Transferencia</span>
+										
 						      		</a>
-						      		<a href="inventory/?id=<?= $row['id'];?>&inventorie=<?= $row['name'] ?>" onclick=""  class="">
-						      			<span title="Ver Inventario">
-							      			<i class="btn btn-xs btn-success fas fa-eye cGreen btn_padd"></i>
-										</span>
+						      		<a href="inventory/?id=<?= $row['id'];?>&inventorie=<?= $row['name'] ?>" onclick=""  class="tool">
+						      			<i class="btn btn-xs btn-success fas fa-eye cGreen btn_padd"></i>
+						      			<span class="tooltext">Ver Inventario</span>
+										
 						      		</a>
 						      	</th>
 						    </tr>

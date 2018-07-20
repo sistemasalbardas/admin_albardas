@@ -105,15 +105,15 @@
 								      	<th><?= $row['origin_place']; ?></th>
 								      	<th><?= $row['curp']; ?></th>
 								      	<th>
-								      		<a href="deleteWork/<?= $row['id'];?>" onclick="deleteWork(this);" class="">
-								      			<span title="Eliminar">
-								      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
-								      			 </span>
+								      		<a href="deleteWork/<?= $row['id'];?>" onclick="deleteWork(this);" class="tool">
+							      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+								      			<span class="tooltext">Eliminar</span>
+								      			 
 								      		</a>
-								      		<a href="editWork/<?= $row['id'];?>" onclick="editWork();"  class="">
-								      			<span title="Editar">
-									      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
-								      			</span>
+								      		<a href="editWork/<?= $row['id'];?>" onclick="editWork();"  class="tool">
+								      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+								      			<span class="tooltext">Editar</span>
+								      			
 								      		</a>
 								      				
 

@@ -36,33 +36,31 @@
 						      	<th><?= $row['f_carga']; ?></th>
 						      	<th><?= $row['user']; ?></th>
 						      	<th>
-						      		<a href="<?=URL?>VIEWS/pdf_files/referrals/rem_<?= $row['name_file']; ?>" target="_blank" class="">
-						      			<span title="Remisión">
-									      	<i class="btn btn-primary btn-xs far fa-file-pdf btn_padd"></i>
-										</span>
+						      		<a href="<?=URL?>VIEWS/pdf_files/referrals/rem_<?= $row['name_file']; ?>" target="_blank" class="tool">
+								      	<i class="btn btn-primary btn-xs far fa-file-pdf btn_padd"></i>
+						      			<span class="tooltext">Remisión</span>
+										
 									</a>
-									<a href="<?=URL?>VIEWS/pdf_files/responsives/res_<?= $row['name_file']; ?>" target="_blank" class="">
-						      			<span title="Responsiva">
-									      	<i class="btn btn-primary btn-xs far fa-file-pdf btn_padd"></i>
-										</span>
+									<a href="<?=URL?>VIEWS/pdf_files/responsives/res_<?= $row['name_file']; ?>" target="_blank" class="tool">
+								      	<i class="btn btn-primary btn-xs far fa-file-pdf btn_padd"></i>
+						      			<span class="tooltext">Responsiva
+										
 									</a>
 						      	</th>
 						      	
 						      	<th>
-						      		<a href="deleteWork/<?= $row['id'];?>" onclick="deleteWork(this);" class="">
-						      			<span title="Eliminar">
-						      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
-						      			 </span>
+						      		<a href="deleteWork/<?= $row['id'];?>" onclick="deleteWork(this);" class="tool">
+						      			<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+								      	<span class="tooltext">Eliminar</span>
 						      		</a>
-						      		<a href="<?= URL?>referrals/editRemision/?id_ref=<?= $row['id'];?>"  class="">
-						      			 <span title="Editar">
-							      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
-						      			 </span>
+						      		<a href="<?= URL?>referrals/editRemision/?id_ref=<?= $row['id'];?>"  class="tool">
+						      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+						      			<span class="tooltext">Editar</span>
+						      			 
 						      		</a>
-						      		<a href="<?= URL?>referrals/refarralsReport/?id=<?= $row['id'];?>" class="">
-										<span title="Reporte Remisión">
-							      			<i class="btn btn-success btn-xs fas fa-dollar-sign btn_padd"></i>
-						      			 </span>
+						      		<a href="<?= URL?>referrals/refarralsReport/?id=<?= $row['id'];?>" class="tool">
+						      			<i class="btn btn-success btn-xs fas fa-dollar-sign btn_padd"></i>
+										<span class="tooltext">Rep. Remisión</span>			 
 									</a>
 				 					      	</th>
 						      	

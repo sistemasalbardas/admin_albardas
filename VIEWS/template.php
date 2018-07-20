@@ -61,7 +61,12 @@
 	<section class="content">
 		<div class="box box-info">
 	        <div class="box-header with-border">
-	          <h3 class="box-title">Personal</h3>
+	          <div class="page-header col-md-6">
+	          	<h3 class="box-title text-muted">
+	          		<strong>Las Albardas</strong>
+	          		<small>-Agricola</small>
+	          	</h3>
+	          </div>
 
 	          <div class="box-tools pull-right">
 	            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>

@@ -36,15 +36,15 @@
 								      	<th><?= $row['num_lic']; ?></th>
 								      	<th><?= $row['phone']; ?></th>
 								      	<th>
-								      		<a href="<?=URL?>transporters/deleteDriver/?id=<?= $row['id'];?>" onclick="erase(this);" class="">
-								      			<span title="Eliminar">
-								      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
-								      		    </span>
+								      		<a href="<?=URL?>transporters/deleteDriver/?id=<?= $row['id'];?>" onclick="erase(this);" class="tool">
+							      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+								      			<span class="tooltext">Eliminar</span>
+								      		    
 								      		</a>
-								      		<a href="<?=URL?>transporters/editDriver/?id_driver=<?= $row['id'];?>&id=<?= $_GET['id'] ?>&nameTransport=<?= $_GET['name'] ?>" class="">
-								      			<span title="Editar">
-									      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
-								        		</span>
+								      		<a href="<?=URL?>transporters/editDriver/?id_driver=<?= $row['id'];?>&id=<?= $_GET['id'] ?>&nameTransport=<?= $_GET['name'] ?>" class="tool">
+								      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+								      			<span class="tooltext">Editar</span>
+								        		
 								      		</a>
 								    </th>
 								    </tr>

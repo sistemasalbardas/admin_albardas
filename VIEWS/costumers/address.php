@@ -44,15 +44,15 @@
 								      	<th><?= $row['address']; ?></th>
 								      	<th><?= $row['phone']; ?></th>
 								      	<th>
-								      		<a href="<?=URL?>costumers/deleteAddres/?id=<?= $row['id'];?>" onclick="deleteAddress(this);" class="">
-								      			<span title="Eliminar">
-								      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
-								      			 </span>
+								      		<a href="<?=URL?>costumers/deleteAddres/?id=<?= $row['id'];?>" onclick="deleteAddress(this);" class="tool">
+							      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+								      			<span class="tooltext">Eliminar</span>
+								      			 
 								      		</a>
-								      		<a href="<?=URL?>costumers/editAddress/?id=<?= $row['id'];?>" onclick=""  class="">
-								      			<span title="Editar">
-									      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
-								      			 </span>
+								      		<a href="<?=URL?>costumers/editAddress/?id=<?= $row['id'];?>" onclick=""  class="tool">
+								      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+								      			<span class="tooltext">Editar</span>
+								      			 
 								      		</a>
 								      		
 

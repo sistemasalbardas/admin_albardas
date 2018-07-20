@@ -33,20 +33,20 @@
 								      	<th><?= $row['phone']; ?></th>
 								      	<th><?= $row['embark']; ?></th>
 								      	<th>
-								      		<a href="delete/?id=<?= $row['id'];?>" onclick="deleteCostumer(this);" class="">
-								      			 <span title="Eliminar">
-								      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
-								      			 </span>
+								      		<a href="delete/?id=<?= $row['id'];?>" onclick="deleteCostumer(this);" class="tool">
+							      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+								      			 <span class="tooltext">Eliminar</span>
+								      			 
 								      		</a>
-								      		<a href="edit/?id=<?= $row['id'];?>" onclick=""  class="">
-								      			<span title="Editar">
-									      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
-								      			 </span>
+								      		<a href="edit/?id=<?= $row['id'];?>" onclick=""  class="tool">
+								      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+								      			<span class="tooltext">Editar</span>
+								      			
 								      		</a>
-								      		<a href="address/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="">
-								      			<span title="Ver">
-									      			<i class="btn btn-info btn-xs fas fa-list btn_padd"></i>
-								      			 </span>
+								      		<a href="address/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="tool">
+								      			<i class="btn btn-info btn-xs fas fa-list btn_padd"></i>
+								      			<span class="tooltext">Ver</span>
+								      			 
 								      		</a>
 								      	</th>
 								    </tr>

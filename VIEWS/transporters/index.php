@@ -37,31 +37,26 @@
 								      	<th><?= $row['rfc']; ?></th>
 								      	<th><?= $row['phone']; ?></th>
 								      	<th>
-								      		<a href="delete/?id=<?= $row['id'];?>" onclick="erase(this);" class="">
-								      			 <span title="Eliminar">
-								      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
-								      			 </span>
+								      		<a href="delete/?id=<?= $row['id'];?>" onclick="erase(this);" class="tool">
+								      			 <i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+								      			 <span class="tooltext">Eliminar</span>
 								      		</a>
-								      		<a href="edit/?id=<?= $row['id'];?>" class="">
-								      			 <span title="Editar">
+								      		<a href="edit/?id=<?= $row['id'];?>" class="tool">
 									      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
-								      			 </span>
+								      			    <span  class="tooltext">Editar</span>
 								      		</a>
-								      		<a href="drivers/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="">
-												<span title="Choferes">
+								      		<a href="drivers/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="tool">
 									      			<i class="btn btn-primary btn-xs fas fa-car  btn_padd"></i>
-												</span>
+													<span class="tooltext" ">Choferes</span>
 								      		</a>
-								      		<a href="box/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="">
-												<span title="Cajas">
-									      			<i class="btn btn-info btn-xs fas fa-truck-loading cBlue btn_padd"></i>	
-												</span>
+								      		<a href="box/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="tool">
+								      			<i class="btn btn-info btn-xs fas fa-truck-loading cBlue btn_padd"></i>	
+												<span class="tooltext">Cajas</span>
 								      		</a>
 
-								      		<a href="trucks/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="">
-												<span title="Trailers">
+								      		<a href="trucks/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="tool">
 								      			<i class="btn btn-xs btn-success fas fa-truck cGreen btn_padd"></i>
-												</span>
+												<span class="tooltext">Trailers</span>			
 								      		</a>
 								      	</th>
 								    </tr>

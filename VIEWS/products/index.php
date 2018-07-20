@@ -38,15 +38,14 @@
 								      	<th><?= $row['type_pack']; ?></th>
 								      	
 								      	<th>
-								      		<a href="delete/?id=<?= $row['id'];?>" onclick="erase(this);" class="">
-								      			<span title="Eliminar">
-								      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
-								      			 </span>
+								      		<a href="delete/?id=<?= $row['id'];?>" onclick="erase(this);" class="tool">
+							      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+								      			<span class="tooltext">Eliminar</span>
+								      			 
 								      		</a>
-								      		<a href="edit/?id=<?= $row['id'];?>" class="">
-								      			<span title="Editar">
-									      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
-								      			 </span>
+								      		<a href="edit/?id=<?= $row['id'];?>" class="tool">
+								      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+								      			<span class="tooltext">Editar</span>	 
 								      		</a>
 								      		
 								      	</th>
