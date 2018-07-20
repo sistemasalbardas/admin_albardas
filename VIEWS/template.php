@@ -28,8 +28,7 @@
 	<!-- nuevos link -->
 	  <link rel="stylesheet" href="<?= URL?>/VIEWS/bower_components/bootstrap/dist/css/bootstrap.min.css">
 	  <!-- Font Awesome -->
-	  <!-- <link rel="stylesheet" href="<?= URL?>/VIEWS/bower_components/font-awesome/css/font-awesome.min.css"> -->
-	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+	  <link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/all.min.css">
 	  <!-- Ionicons -->
 	  <link rel="stylesheet" href="<?= URL?>/VIEWS/bower_components/Ionicons/css/ionicons.min.css">
 	  <!-- jvectormap -->
