@@ -1,7 +1,7 @@
 <?php 
 	$data = $transporters->box();
  ?>
-<!-- <div class="mainContainer"> -->
+<div class="mainContainer">
 	<div class="clear"></div>
 	<div class="containerPanel">
 		<div class="headContent">
@@ -16,7 +16,7 @@
 				
 			</div>
 			<div class="clear"></div>
-			<div class="containerTable table-responsive">
+			<div class="containerTable">
 						<table id="tableCostumers">
 							<thead>
 								<tr>
@@ -39,14 +39,13 @@
 								      	<th><?= $row['placa']; ?></th>
 								      	<th><?= $row['num_econ']; ?></th>
 								      	<th>
-								      		<a href="<?=URL?>transporters/deleteBox/?id=<?= $row['id'];?>" onclick="erase(this);" class="tool">
-							      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
-								      			<span class="tooltext">Eliminar</span>
-								      			
+								      		<a href="<?=URL?>transporters/deleteBox/?id=<?= $row['id'];?>" onclick="erase(this);" class="tooltip">
+								      			<i class="material-icons s20 cRed">delete</i>
+								      			 <span class="tooltiptext">Eliminar</span>
 								      		</a>
-								      		<a href="<?=URL?>transporters/editBox/?id_box=<?= $row['id'];?>&id=<?= $_GET['id'] ?>&nameTransport=<?= $_GET['name'] ?>" class="tool">
-								      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
-								      			<span class="tooltext">Editar</span>
+								      		<a href="<?=URL?>transporters/editBox/?id_box=<?= $row['id'];?>&id=<?= $_GET['id'] ?>&nameTransport=<?= $_GET['name'] ?>" class="tooltip">
+								      			<i class="material-icons s20 cblue">edit</i>
+								      			 <span class="tooltiptext">Editar</span>
 								      		</a>
 								    </th>
 								    </tr>
@@ -56,4 +55,4 @@
 					</div>
 		</div>
 	</div>
-<!-- </div> -->
+</div>

@@ -35,7 +35,7 @@ $("input#flete").change(function () {
 });
 
 
-const URL = "http://localhost/admin_albardas/";  
+const URL = "http://localhost/ADMIN/";  
 //const URL = "http://192.168.1.69/ADMIN/";  
 
  function getGET()

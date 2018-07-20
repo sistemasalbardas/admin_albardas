@@ -3,7 +3,7 @@
  ?>
 
 <div class="clear"></div>
-<!-- <div class="mainContainer"> -->
+<div class="mainContainer">
 	
 	<div class="containerPanel">	
 		<form action="<?=URL?>costumers/edit/" method="post"  id="editEmploye">
@@ -57,4 +57,4 @@
 			</div>
 		</form>
 	</div>
-<!-- </div> -->
+</div>

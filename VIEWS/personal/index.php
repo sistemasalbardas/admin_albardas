@@ -16,7 +16,7 @@
 	$nRows = mysqli_num_rows($cuadrillas);
 
 ?>
-<!-- <div class="mainContainer"> -->
+<div class="mainContainer">
 	<div class="clear"></div>
 	<div class="containerPanel">
 				
@@ -82,7 +82,7 @@
 						</div>
 					</form>
 
-					<div class="table-responsive">
+					<div class="">
 						<table id="tableWorks">
 							<thead>
 								<tr>
@@ -105,15 +105,13 @@
 								      	<th><?= $row['origin_place']; ?></th>
 								      	<th><?= $row['curp']; ?></th>
 								      	<th>
-								      		<a href="deleteWork/<?= $row['id'];?>" onclick="deleteWork(this);" class="tool">
-							      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
-								      			<span class="tooltext">Eliminar</span>
-								      			 
+								      		<a href="deleteWork/<?= $row['id'];?>" onclick="deleteWork(this);" class="tooltip">
+								      			<i class="material-icons s20 cRed">delete</i>
+								      			 <span class="tooltiptext">Eliminar</span>
 								      		</a>
-								      		<a href="editWork/<?= $row['id'];?>" onclick="editWork();"  class="tool">
-								      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
-								      			<span class="tooltext">Editar</span>
-								      			
+								      		<a href="editWork/<?= $row['id'];?>" onclick="editWork();"  class="tooltip">
+								      			<i class="material-icons s20 cBlue">edit</i>
+												<span class="tooltiptext">Editar</span>
 								      		</a>
 								      				
 
@@ -140,7 +138,7 @@
 
 	<div class="clear"></div>
 	
-<!-- </div> -->
+</div>
 	
 <!--FORMULARO PRA AGREGAR CUADRILLAS-->
 <form class="modal hidden" action="#" onsubmit="saveGroup()" id="saveGroup">

@@ -665,66 +665,6 @@ ul.drivers-box li:hover{
 }
 
 
-
-
-
-/* Tooltip container */
-.tool {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-}
-
-/* Tooltip text */
-.tool .tooltext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-
-    /* Position the tooltip text */
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-
-    /* Fade in tooltip */
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-/* Tooltip arrow */
-.tool .tooltext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.tool:hover .tooltext {
-    visibility: visible;
-    opacity: 1;
-}
-
-
-
-
-
-
-
-
-
-
-
 /***/
 
 select.select > option:nth-child(1){
@@ -1026,47 +966,7 @@ background-repeat: no-repeat;
   }
 }
 
-/*Sobrescribiendo estilos de admin LTE*/
-/*header*/
-.user-panel{
-  height: 80px!important;
-}
-.user-header i{
-  width: 100%;
-  text-align: center;
-  font-size: 100px;
-}
-.sidebar-toggle:before{
-  content: ''!important;
-}
-
-/*bg del login*/
-.skin-blue .wrapper{
-  background: none!important;
-}
-
-.box-body table{
-  width: 100%!important;
-}
-/*Estilos de los botones*/
-.btnblue{
-  background-color: #0097A7!important;
-  color: #fff;
-}
-
-/*estilos para los botones de las acciones padding y tamaño*/
-i.btn_padd{
-  margin: 1px;
-}
-@media only screen and (max-width: 550px){
-  i.btn_padd{
-    margin: 2px;
-    font-size: 13px;
-  }
-}
-
-
-/*header {
+header {
   position: absolute;
   top: 0;
   left: 0;
@@ -1074,7 +974,7 @@ i.btn_padd{
   width: 100%;
   background: #2C3E50;
   z-index: 3;
-  Force Hardware Acceleration in WebKit 
+  /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
   -webkit-transition-property: -webkit-transform;
@@ -1085,7 +985,7 @@ i.btn_padd{
   transition-duration: 0.4s;
 }
 header.lateral-menu-is-open {
-  translate to show the lateral menu 
+  /* translate to show the lateral menu */
   -webkit-transform: translateX(-260px);
   -moz-transform: translateX(-260px);
   -ms-transform: translateX(-260px);
@@ -1100,7 +1000,7 @@ header.is-fixed {
     height: 70px;
   }
 }
-*/
+
 #cd-logo {
   display: block;
   float: left;
@@ -1241,4 +1141,3 @@ header.is-fixed {
     transform: translateX(0);
   }
 }
-

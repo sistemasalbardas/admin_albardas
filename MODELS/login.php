@@ -40,7 +40,7 @@
   			
   			}else{
 
-  				header("Location: ".URL."login/?error=Las credenciales no coinciden con nuestros registros");
+  				header("Location: ".URL."login/?error=usuario o correo incorractos");
   			}
 			//error_log(print_r($row,true));	
 		}
@@ -80,5 +80,5 @@
 	}
 
 
-	$login = new login();
+	//$login = new login();
  ?>

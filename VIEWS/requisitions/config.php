@@ -11,7 +11,7 @@
 	$dataSupplies = $requisitions->listSuplies();
 
  ?>
-<!-- <div class="mainContainer"> -->
+<div class="mainContainer">
 	<div class="clear"></div>
 	<div class="containerPanel">
 		<div class="headContent">
@@ -53,42 +53,44 @@
 									</div>
 									
 								</div>
-								<div class="table-responsive">
-									<table id="tableWorks">
-										<thead>
-											<tr>
-												<td>ID</td>
-												<td>name</td>
-												<td>Acciones</td>
-											</tr>
-										</thead>	
-										<tbody>
-											<?php while($row = mysqli_fetch_array($dataTable)){?>
-											    <tr>
-									
-											      	<th><?= $row['id']; ?></th>
-											      	<th><?= $row['name']; ?></th>
-											      	
-											      
-											      	
-											      	<th>
-											      		<a href="<?= URL?>requisitions/deleteCategory/?id=<?=$row['id'];?>" onclick="deleteWork(this);" class="tool">
-										      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
-											      			<span class="tooltext">Eliminar</span>
-											      		    
-											      		</a>
-											      		<a href="editWork/<?= $row['id'];?>" onclick="editWork();"  class="tool">
-											      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
-											      			<span class="tooltext">Editar Remisión</span>
-										      			   
-											      		</a>		
-														 					      	</th>
-											      	
-											    </tr>
-											<?php } ?>
-										</tbody>
-									</table>
-								</div>
+								<table id="tableWorks">
+									<thead>
+										<tr>
+											<td>ID</td>
+											<td>name</td>
+											<td>Acciones</td>
+										</tr>
+									</thead>	
+									<tbody>
+										<?php while($row = mysqli_fetch_array($dataTable)){?>
+										    <tr>
+
+										      	<th><?= $row['id']; ?></th>
+										      	<th><?= $row['name']; ?></th>
+										      	
+										      
+										      	
+										      	<th>
+										      		<a href="<?= URL?>requisitions/deleteCategory/?id=<?=$row['id'];?>" onclick="deleteWork(this);" class="tooltip">
+										      			<i class="material-icons s20 cRed">delete</i>
+										      			 <span class="tooltiptext">Eliminar</span>
+										      		</a>
+										      		<a href="editWork/<?= $row['id'];?>" onclick="editWork();"  class="tooltip">
+										      			<i class="material-icons s20 cBlue">edit</i>
+														<span class="tooltiptext">Modificar remision</span>
+										      		</a>
+										      		<a href="<?= URL?>referrals/refarralsReport/?id=<?= $row['id'];?>" class="tooltip">
+														<i class="material-icons">assessment</i>
+														<span class="tooltiptext">Reporte remision</span>
+
+													</a>
+										      				
+					 					      	</th>
+										      	
+										    </tr>
+										<?php } ?>
+									</tbody>
+								</table>
 							</div>
 						</div>
 					</div>
@@ -133,16 +135,20 @@
 										      
 										      	
 										      	<th>
-										      		<a href="<?= URL?>requisitions/deleteSupplies/?id=<?=$row['id'];?>" onclick="deleteWork(this);" class="tool">
-									      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
-										      			<span class="tooltext">Eliminar</span>
-										      			
+										      		<a href="<?= URL?>requisitions/deleteSupplies/?id=<?=$row['id'];?>" onclick="deleteWork(this);" class="tooltip">
+										      			<i class="material-icons s20 cRed">delete</i>
+										      			 <span class="tooltiptext">Eliminar</span>
 										      		</a>
-										      		<a href="<?= URL?>requisitions/editSupplies/?id=<?=$row['id'];?>" class="tool">
-										      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
-										      			<span class="tooltext">Editar Insumo</span>
-										      			
-										      		</a>		
+										      		<a href="<?= URL?>requisitions/editSupplies/?id=<?=$row['id'];?>" class="tooltip">
+										      			<i class="material-icons s20 cBlue">edit</i>
+														<span class="tooltiptext">Modificar insumo</span>
+										      		</a>
+										      		<a href="<?= URL?>referrals/refarralsReport/?id=<?= $row['id'];?>" class="tooltip">
+														<i class="material-icons">assessment</i>
+														<span class="tooltiptext">Reporte remision</span>
+
+													</a>
+										      				
 					 					      	</th>
 										      	
 										    </tr>
@@ -159,7 +165,7 @@
 
 
 			
-<!-- 	</div> -->
+	</div>
 
 	<div class="clear"></div>
 	

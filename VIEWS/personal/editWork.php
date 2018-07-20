@@ -1,4 +1,4 @@
-<!-- <div class="mainContainer"> -->
+<div class="mainContainer">
 	<div class="containerPanel">	
 		<form action="" method="post" class="saveWork" onsubmit="updateWork(this);">
 		
@@ -94,5 +94,5 @@
 			</div>
 		</form>
 	</div>
-<!-- </div> -->
+</div>
 

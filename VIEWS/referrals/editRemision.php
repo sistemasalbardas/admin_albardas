@@ -17,7 +17,7 @@
 	
 	//print_r($data['list']);
  ?>
-<!-- <div class="mainContainer"> -->
+<div class="mainContainer">
 	<div class="clear"></div>
 	<div class="containerPanel padd10">
 
@@ -537,7 +537,7 @@
 
 	</div>
 	
-<!-- </div> -->
+</div>
 </div>
 <div class="clear"></div>
 

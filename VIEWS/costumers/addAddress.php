@@ -1,5 +1,5 @@
 <div class="clear"></div>
-<!-- <div class="mainContainer"> -->
+<div class="mainContainer">
 	<div class="containerPanel">	
 		<form action="<?=URL?>costumers/addAddress/" method="post"  id="addEmploye" autocomplete="off">
 			<input type="hidden" name="id_costumer" value="<?= $_GET['id']?>">
@@ -54,4 +54,4 @@
 			</div>
 		</form>
 	</div>
-<!-- </div> -->
+</div>

@@ -6,7 +6,7 @@
 
  ?>
 
- <!-- <div class="mainContainer"> -->
+ <div class="mainContainer">
 	<div class="containerPanel">	
 		<div class="headContent">
 		
@@ -216,7 +216,7 @@
 			</div>
 		</div>
 	</div>
-<!-- </div> -->
+</div>
 <br>
 <br>
 <br>

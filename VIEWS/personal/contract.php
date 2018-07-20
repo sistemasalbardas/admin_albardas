@@ -6,9 +6,9 @@
 	$data = $personal->contract();
  ?>
 
- <!-- <div class="mainContainer"> -->
+ <div class="mainContainer">
 	<div class="clear"></div>
 	<div class="containerPanel">
 		<?php print_r($data); ?>
 	</div>
-<!-- </div> -->
+</div>
