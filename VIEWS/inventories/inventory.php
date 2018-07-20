@@ -3,7 +3,7 @@
 ?>
 
 
-<div class="mainContainer">
+<!-- <div class="mainContainer"> -->
 	<div class="clear"></div>
 	<div class="containerPanel">
 		<div class="headContent">
@@ -21,7 +21,7 @@
 				
 			</div>
 			<div class="clear"></div>
-			<div class="containerTable">
+			<div class="containerTable table-responsive">
 				<table id="tableCostumers">
 					<thead>
 						<tr>
@@ -51,4 +51,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+<!-- </div> -->

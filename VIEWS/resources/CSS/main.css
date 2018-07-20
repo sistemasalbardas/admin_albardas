@@ -966,7 +966,47 @@ background-repeat: no-repeat;
   }
 }
 
-header {
+/*Sobrescribiendo estilos de admin LTE*/
+/*header*/
+.user-panel{
+  height: 80px!important;
+}
+.user-header i{
+  width: 100%;
+  text-align: center;
+  font-size: 100px;
+}
+.sidebar-toggle:before{
+  content: ''!important;
+}
+
+/*bg del login*/
+.skin-blue .wrapper{
+  background: none!important;
+}
+
+.box-body table{
+  width: 100%!important;
+}
+/*Estilos de los botones*/
+.btnblue{
+  background-color: #0097A7!important;
+  color: #fff;
+}
+
+/*estilos para los botones de las acciones padding y tamaño*/
+i.btn_padd{
+  margin: 1px;
+}
+@media only screen and (max-width: 550px){
+  i.btn_padd{
+    margin: 2px;
+    font-size: 13px;
+  }
+}
+
+
+/*header {
   position: absolute;
   top: 0;
   left: 0;
@@ -974,7 +1014,7 @@ header {
   width: 100%;
   background: #2C3E50;
   z-index: 3;
-  /* Force Hardware Acceleration in WebKit */
+  Force Hardware Acceleration in WebKit 
   -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
   -webkit-transition-property: -webkit-transform;
@@ -985,7 +1025,7 @@ header {
   transition-duration: 0.4s;
 }
 header.lateral-menu-is-open {
-  /* translate to show the lateral menu */
+  translate to show the lateral menu 
   -webkit-transform: translateX(-260px);
   -moz-transform: translateX(-260px);
   -ms-transform: translateX(-260px);
@@ -1000,7 +1040,7 @@ header.is-fixed {
     height: 70px;
   }
 }
-
+*/
 #cd-logo {
   display: block;
   float: left;
@@ -1141,3 +1181,4 @@ header.is-fixed {
     transform: translateX(0);
   }
 }
+

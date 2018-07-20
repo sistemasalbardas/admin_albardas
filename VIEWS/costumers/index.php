@@ -1,22 +1,22 @@
 <?php 
 	$data = $costumers->index();
  ?>
-<div class="mainContainer">
+<!-- <div class="mainContainer"> -->
 	<div class="clear"></div>
 	<div class="containerPanel">
 		<div class="headContent">
 			<h4 class="text-bold">Control de clientes</h4>
 		</div>
-		<div class="mainContent">
+		<!-- <div class="mainContent"> -->
 			<div class="row">
 				<div class="col-lg-2 padd10 ">
 					
-					<a href="<?= URL?>costumers/add/" class="btn bgBlue s14">Nuevo cliente </a>
+					<a href="<?= URL?>costumers/add/" class="btn btnblue" >Nuevo cliente </a>
 				</div>
 				
 			</div>
 			<div class="clear"></div>
-			<div class="containerTable">
+			<div class="containerTable table-responsive">
 						<table id="tableCostumers">
 							<thead>
 								<tr>
@@ -38,17 +38,20 @@
 								      	<th><?= $row['phone']; ?></th>
 								      	<th><?= $row['embark']; ?></th>
 								      	<th>
-								      		<a href="delete/?id=<?= $row['id'];?>" onclick="deleteCostumer(this);" class="tooltip">
-								      			<i class="material-icons s20 cRed">delete</i>
-								      			 <span class="tooltiptext">Eliminar</span>
+								      		<a href="delete/?id=<?= $row['id'];?>" onclick="deleteCostumer(this);" class="">
+								      			 <span title="Eliminar">
+								      			<i class="btn btn-danger  btn-xs fas fa-trash cRed btn_padd"></i>
+								      			 </span>
 								      		</a>
-								      		<a href="edit/?id=<?= $row['id'];?>" onclick=""  class="tooltip">
-								      			<i class="material-icons s20 cBlue">edit</i>
-												<span class="tooltiptext">Editar</span>
+								      		<a href="edit/?id=<?= $row['id'];?>" onclick=""  class="">
+								      			 <span title="Editar">
+									      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+								      			 </span>
 								      		</a>
-								      		<a href="address/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="tooltip">
-								      			<i class="material-icons s20 cBlue">list</i>
-												<span class="tooltiptext">Direcciones</span>
+								      		<a href="address/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="">
+								      			<span title="Direcciones">
+									      			<i class="btn btn-primary btn-xs fas fa-map-marker-alt btn_padd"></i>
+												</span>
 								      		</a>
 								      	</th>
 								    </tr>
@@ -58,4 +61,4 @@
 					</div>
 		</div>
 	</div>
-</div>
+<!-- </div> -->

@@ -23,37 +23,67 @@
 	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/main.css">
 	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/jquery-ui.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+	<!-- nuevos link -->
+	  <link rel="stylesheet" href="<?= URL?>/VIEWS/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	  <!-- Font Awesome -->
+	  <!-- <link rel="stylesheet" href="<?= URL?>/VIEWS/bower_components/font-awesome/css/font-awesome.min.css"> -->
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+	  <!-- Ionicons -->
+	  <link rel="stylesheet" href="<?= URL?>/VIEWS/bower_components/Ionicons/css/ionicons.min.css">
+	  <!-- jvectormap -->
+	  <link rel="stylesheet" href="<?= URL?>/VIEWS/bower_components/jvectormap/jquery-jvectormap.css">
+	  <!-- Theme style -->
+	  <link rel="stylesheet" href="<?= URL?>/VIEWS/dist/css/AdminLTE.min.css">
+	  <link rel="stylesheet" href="<?= URL?>/VIEWS/dist/css/skins/_all-skins.min.css">
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <!-- <link href="https://unpkg.com/ionicons@4.2.4/dist/css/ionicons.min.css" rel="stylesheet"> -->
+	
 
 
 </head>
-<body>
-<div class="spinner">
-	  <div class="bounce1"></div>
-	  <div class="bounce2"></div>
-	  <div class="bounce3"></div>
-	  <span class="block s12">
-	  	Cargando..
-	  </span>
-</div>
+<body class="hold-transition skin-green sidebar-mini">
+<div class="wrapper">
+
+	<div class="spinner">
+
+		  <div class="bounce1"></div>
+		  <div class="bounce2"></div>
+		  <div class="bounce3"></div>
+		  <span class="block s12">
+		  	Cargando..
+		  </span>
+	</div>
 
 <div class="bgLightBlack"></div>
+<?php if (isset($_SESSION['user'])){require "menu.php"; } ?>
+	<section class="content">
+		<div class="box box-info">
+	        <div class="box-header with-border">
+	          <h3 class="box-title">Personal</h3>
 
-<?php 
-		
-		if (isset($_SESSION['user'])){require "menu.php"; } 
-	?>
-
-	<?php
-	}
-
-	public function __destruct(){
-	
-	?>
-
+	          <div class="box-tools pull-right">
+	            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+	            </button>
+	            <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button> -->
+	          </div>
+	        </div>
+	            <!-- /.box-header -->
+	        <div class="box-body">
+	        	<!-- contenido dinamico con la funcion destruct -->
+	<?php	}	public function __destruct(){?>
+			</div>
+            <!-- /.box-body -->
+            <div class="box-footer text-center">
+            	<p>Todos los derechos reservados &copy; 2018-2019  </p>
+            </div>
+            <!-- /.box-footer -->
+	    </div>
+	</section>
+  </div>  <!-- content-wraper -->
+</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script src="<?= URL?>/VIEWS/resources/JS/scripts.js"></script>
@@ -63,6 +93,11 @@
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 	<script src="http://cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"></script>
+
+	<!-- nuevos scripts -->
+	<!-- AdminLTE App -->
+	<script src="<?= URL?>/VIEWS/dist/js/adminlte.min.js"></script>
+	
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 <div class="clear"></div>
-<div class="mainContainer">
+<!-- <div class="mainContainer"> -->
 	<div class="containerPanel">	
 
 
@@ -44,4 +44,4 @@
 			</div>
 		</form>
 	</div>
-</div>
+<!-- </div> -->
