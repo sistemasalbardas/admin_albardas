@@ -4,6 +4,8 @@ $(document).ready(function(){
 
 
   $("#id_product").change(function () {
+    var name = $("#id_product option:selected").text();
+  
     $("input#name_product").val($("#id_product option:selected").text());
   });
 
@@ -35,7 +37,7 @@ $("input#flete").change(function () {
 });
 
 
-const URL = "http://localhost/ADMIN/";  
+const URL = "http://localhost/admin_albardas/";  
 //const URL = "http://192.168.1.69/ADMIN/";  
 
  function getGET()
@@ -264,7 +266,7 @@ function saveFreight(obj) {
             
             var formData = new FormData($(obj)[0]);
             $.ajax({
-                url: URL+"referrals/saveFreight/",
+                url: URL+"referrals/savefreight/",
                 type: 'POST',
                 data: formData,
                 contentType: false,
@@ -508,8 +510,6 @@ function addP(obj){
             location.reload();
         });
 
-
-  
     }
      
 }

@@ -229,7 +229,7 @@
 			}
 		}
 
-		public function saveFreight()
+		public function savefreight()
 		{
 			$infoFreight = array();
 			$infoFreight[]  = $_POST;
@@ -245,22 +245,11 @@
 			return $folios;
 		}
 
-		public function saveFreightInfo()
-		{	
-			$this->referrals->set("f_flete", 1);
-			$this->referrals->set("f_embark", 1);
-			$this->referrals->set("price", 1);
-			$this->referrals->set("id_trasport", 1);
-			$this->referrals->set("id_truck", 1);
-			$this->referrals->set("id_driver", 1);
-			$this->referrals->set("id_box", 1);
-			$this->referrals->set("id_client", 1);
-			$this->referrals->set("id_add", 1);
-			$this->referrals->set("status", 1);
-		}
+	
 
 		public function generateRemision()
 		{
+			error_log(print_r($_POST,true));
 
 			if (isset($_POST['f_embark'] , $_POST['f_charge'])) {
 				//ACTUALIACION DE FOLIO DE CARGA
@@ -322,6 +311,7 @@
 
 				if (isset($_POST['f_freight'])) {
 					$row = $this->referrals->updatef_freight();
+					//unset($_SESSION['infoFreight']);
 				
 				}
 				//MANDAMOS LLAMAR LA FUCNCION DEL MODELO PARA GUARDAR
@@ -337,7 +327,20 @@
 				$this->referrals->set("nTab", $_POST['nTab']);
 				$this->referrals->set("f_embark", $folios['folio_embark']);
 
-			
+				//INFORMACION PARA FLETES
+				$this->referrals->set("price", 580);
+				$this->referrals->set("tab", $_POST['tab']);
+				$this->referrals->set("ncharge", $_POST['nCharge']);
+				//$this->referrals->set("id_employe", $_POST['tab']);
+				$this->referrals->set("id_trasport", $_POST['transport']);
+				$this->referrals->set("id_truck", $_POST['truck2']);
+				$this->referrals->set("id_driver", $_POST['driver']);
+				$this->referrals->set("id_box", $_POST['id_box']);
+				$this->referrals->set("id_client", $_POST['costumer']);
+				$this->referrals->set("id_add", $_POST['add']);
+				$this->referrals->set("status", 1);
+				
+				$this->referrals->save_freight();
 				$this->referrals->saveProducts();
 				$this->referrals->save();
 					
@@ -345,6 +348,8 @@
 				return false;
 			}
 		}
+	
+		
 
 		public function control()	
 		{

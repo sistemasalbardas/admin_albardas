@@ -36,7 +36,9 @@
 
 		<div class="clear"></div>
 		<div class="clear"></div>
-		<?php if (!isset($_GET['nCharge'])){?>
+		<?php if (!isset($_GET['nCharge'])){
+			unset($_SESSION['infoFreight']);
+		?>
 		<div class="row">	
 			<div class="col-lg-3 ">	
 				<div class="block h40 text-center">	
@@ -76,18 +78,29 @@
 
 			<div class="mW900">	
 				<form action="" class="padd25 border" method="post" action="" onsubmit="generateRemision(this);">
-					<label for="date">Fecha</label>
-					<input type="date" name="date" id="date" required=""><br>
-					<label for="time">Hora</label>
-					<input type="time" name="time" id="time" required="">				
+					
+					
+								
 					<input type="hidden" name="nCharge" value="<?= $_GET['nCharge']?>">
 					<input type="hidden" name="tab" value="<?= $_GET['tab']?>">
 					<input type="hidden" name="employe" value="<?= $_GET['employe']?>">
 					<input type="hidden" name="costumer" value="<?= $_GET['costumer']?>">
 					<input type="hidden" name="city" id="city" value="<?= $add['city']?>">
 
+					<input type="hidden" name="transport" id="transport" value="<?= $_GET['transport']?>">
+					<input type="hidden" name="driver" id="driver" value="<?= $_GET['driver']?>">
+					<input type="hidden" name="id_box" id="id_box" value="<?= $_GET['box']?>">
+					<input type="hidden" name="add" id="add" value="<?= $_GET['add']?>">
+					<input type="hidden" name="truck2" id="truck2" value="<?= $_GET['truck']?>">
+
+
+
+
+
 					<input type="hidden" name="f_embark" value="f_embark">
 					<input type="hidden" name="f_charge" value="f_charge">
+
+					
 					<?php if ($_GET['tab'] == $_GET['nCharge']) {?>
 						<input type="hidden" name="f_freight" value="f_freight">
 					<?php } ?>
@@ -97,7 +110,19 @@
 							<h3 class="s18 text-600 text-uppercase">Remision de salida</h3>
 						</div>
 					</div>
+					<div class="clear"></div>
+					<div class="row">
+						<div class=" col-lg-offset-5 col-lg-4">
+							<label for="date">Fecha: </label>
+							<input type="date" name="date" id="date" required="">
+						</div>
+						<div class="col-lg-3">
+							<label for="time">Hora:</label>
 
+							<input type="time" name="time" id="time" required="">	
+						</div>
+					</div>
+					<hr>	
 					<div class="row">
 						<div class="col-lg-12   m5 padd10 ">	
 							<!--EMPRESA-->
@@ -271,7 +296,12 @@
 												<label for="" class="W100 ">Origen:</label>
 											</div>
 											<div class="col-lg-10">	
-												<input type="text" placeholder="Trasportes Albardas" class="block" value="Parras de la fuente, ejido el calabacillal, Agricola las albardas" name="origin" required="">
+												<select name="origin" id="origin" class="block" required="">
+													<option value="">SELECCIONA UNA OPCION </option>
+													<option value="Parras de la fuente, ejido el calabacillal, Agricola las albardas.">ALBARDAS</option>
+													<option value="Carretara Saltillo - matamoros, ejido el Mimbre Coah, Rancho magdalenas.">MAGDALENAS</option>
+												</select>
+											
 											</div>
 											
 										</div>
@@ -563,22 +593,7 @@
 									</div>
 								</div>
 							<?php } ?>
-							<div class="row">
-							<div class="clear">	</div>
-							<div class="col-lg-10 border">
-								<div class="block  text-left padd5">	
-									<div class="clear"></div>
-									<label for="flete" class="m5">Cliente paga flete: </label>
-									<input type="checkbox" name="flete" id="flete" >
-									 <input type="number" name="price_flete" id="price_flete" class="hidden price_flete m5" placeholder=" $ Precio" >
-									 <select name="currency" id="currency" class="price_flete hidden">
-									 	<option value=""></option>
-									 	<option value="USD">USD</option>
-									 	<option value="MXN">MXN</option>
-									 </select>
-								</div>
-							</div>
-						</div>
+						
 							<div class="row">
 							<div class="clear">	</div>
 
@@ -729,7 +744,7 @@
 							$e = 1;
 							while( $e <= $nCharge ) { ?>
 								<th class="text-center">
-									<input type="number" name="rem_<?= $e?>" id="" class="mW100 border remision" required="">
+									<input type="number" name="<?= $e?>" id="" class="mW100 border remision" required="">
 								</th>
 
 						<?php $e++; }  ?>
@@ -752,6 +767,6 @@
 			</div>
 		</div>
 	</form>
-	<div class="bgBlack2 hidden" id="bgBlack2" onclick="closeModal2();"></div>
+	<div class="bgBlack2 hidden" id="bgBlack2"></div>
 <?php  } } ?>
 <div class="bgBlack hidden" onclick="closeModal();"></div>

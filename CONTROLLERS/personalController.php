@@ -43,7 +43,7 @@
 
 
 
-		public function saveWork(){
+		public function saveajaork(){
 			if (!$_POST) {
 			//error_log("no se arma");
 				return false;

@@ -22,9 +22,11 @@
 								<tr>
 									<td>ID</td>
 									<td>NOMBRE</td>
+									<td>CALIDAD</td>
+									<td>TAMAÑO</td>
 									<td>EMPAQUE</td>
-									
-					
+									<td>MARCA</td>
+									<td>PESO</td>
 									<td>ACCIONES</td>
 								</tr>
 							</thead>	
@@ -35,7 +37,13 @@
 								      	<th>
 								      		<?= $row['name']; ?>
 								      	</th>
-								      	<th><?= $row['type_pack']; ?></th>
+								      	<th><?= $row['quality']; ?></th>
+								      	<th><?= $row['size']; ?></th>
+								      	<th><?= $row['pack']; ?></th>
+								      	<th><?= $row['brand']; ?></th>
+								      	<th>
+								      		<?= $row['weight'].' '.$row['unit_measure']; ?>
+								      	</th>
 								      	
 								      	<th>
 								      		<a href="delete/?id=<?= $row['id'];?>" onclick="erase(this);" class="tooltip">

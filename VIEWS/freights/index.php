@@ -1,5 +1,6 @@
 <?php 
 	$data = $freights->index();
+	$costumers = $freights->listCostumers();
  ?>
 
 <div class="mainContainer">
@@ -10,7 +11,6 @@
 		</div>
 		<div class="mainContent">
 
-				
 			<div class="clear"></div>
 			<div class="containerTable">
 						<table id="tableFreights">
@@ -18,7 +18,11 @@
 								<tr>
 									<td>ID</td>
 									<td>FOLIO FLETE</td>
+									<td>FOLIO EMBARQUE</td>
+									<td>CLIENTE</td>
+									
 									<td>PRECIO	</td>
+									<td>TOTAL	</td>
 									<td>ACCIONES</td>
 									
 								</tr>
@@ -27,11 +31,17 @@
 								<?php while($row = mysqli_fetch_array($data)){?>
 								    <tr>
 								      	<th><?= $row['id']; ?></th>
-								      	<th>
-								      		<?= $row['name']; ?></th>
-								      	<th><?= $row['rfc']; ?></th>
-								      	<th><?= $row['phone']; ?></th>
-								      	<th><?= $row['embark']; ?></th>
+								      	<th><?= $row['f_flete']; ?></th>
+								      	<th><?= $row['f_embark']; ?></th>
+								      	<th><?php
+								      		if ($row['id_client']  == 1) {
+								      			echo "Albardas";
+								      		}else{
+								      			echo $row['id_client'];
+								      		}
+								      	?></th>
+								      	<th> $ <?= $row['price']. " - ".$row['currency']; ?></th>
+								      	<th> $ <?= $row['total']; ?></th>
 								      	<th>
 								      		<a href="delete/?id=<?= $row['id'];?>" onclick="deleteCostumer(this);" class="tooltip">
 								      			<i class="material-icons s20 cRed">delete</i>

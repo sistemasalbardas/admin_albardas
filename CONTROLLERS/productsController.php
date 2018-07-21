@@ -30,7 +30,12 @@
 		{
 			if ($_POST) {
 				$this->products->set('name', $_POST['name']);
-				$this->products->set('type_pack', $_POST['type_pack']);
+				$this->products->set('quality', $_POST['quality']);
+				$this->products->set('size', $_POST['size']);
+				$this->products->set('pack', $_POST['pack']);
+				$this->products->set('brand', $_POST['brand']);
+				$this->products->set('weight', $_POST['weight']);
+				$this->products->set('unit_measure', $_POST['unit_measure']);
 				$this->products->save();
 				header("Location:".URL."products/");
 			}
