@@ -3,7 +3,7 @@
  ?>
 
 <div class="clear"></div>
-<div class="mainContainer">
+<!-- <div class="mainContainer"> -->
 	
 	<div class="containerPanel">	
 		
@@ -44,13 +44,15 @@
 								      	<th><?= $row['address']; ?></th>
 								      	<th><?= $row['phone']; ?></th>
 								      	<th>
-								      		<a href="<?=URL?>costumers/deleteAddres/?id=<?= $row['id'];?>" onclick="deleteAddress(this);" class="tooltip">
-								      			<i class="material-icons s20 cRed">delete</i>
-								      			 <span class="tooltiptext">Eliminar</span>
+								      		<a href="<?=URL?>costumers/deleteAddres/?id=<?= $row['id'];?>" onclick="deleteAddress(this);" class="tool">
+							      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+								      			<span class="tooltext">Eliminar</span>
+								      			 
 								      		</a>
-								      		<a href="<?=URL?>costumers/editAddress/?id=<?= $row['id'];?>" onclick=""  class="tooltip">
-								      			<i class="material-icons s20 cBlue">edit</i>
-												<span class="tooltiptext">Editar</span>
+								      		<a href="<?=URL?>costumers/editAddress/?id=<?= $row['id'];?>" onclick=""  class="tool">
+								      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+								      			<span class="tooltext">Editar</span>
+								      			 
 								      		</a>
 								      		
 
@@ -72,4 +74,4 @@
 			</div>
 		</form>
 	</div>
-</div>
+<!-- </div> -->

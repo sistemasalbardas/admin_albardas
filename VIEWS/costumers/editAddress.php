@@ -3,7 +3,7 @@
  ?>
 
 <div class="clear"></div>
-<div class="mainContainer">
+<!-- <div class="mainContainer"> -->
 	
 	<div class="containerPanel">	
 		<form action="<?=URL?>costumers/editAddress/" method="post"  id="addEmploye" autocomplete="off">
@@ -62,4 +62,4 @@
 			</div>
 		</form>
 	</div>
-</div>
+<!-- </div> -->

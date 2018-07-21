@@ -2,7 +2,7 @@
 	$row = $products->edit();
  ?>
 <div class="clear"></div>
-<div class="mainContainer">
+<!-- <div class="mainContainer"> -->
 	<div class="containerPanel">	
 		<form class="" method="post"  id="saveWork" autocomplete="off" action="<?=URL?>products/edit/">
 			<input type="hidden" name="id" value="<?= $row['id']?>" >
@@ -40,4 +40,4 @@
 			</div>
 		</form>
 	</div>
-</div>
+<!-- </div> -->

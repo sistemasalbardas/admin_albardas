@@ -1,7 +1,7 @@
 <?php 
 	$data = $transporters->index();
  ?>
-<div class="mainContainer">
+<!-- <div class="mainContainer"> -->
 	<div class="clear"></div>
 	<div class="containerPanel">
 		<div class="headContent">
@@ -16,7 +16,7 @@
 				
 			</div>
 			<div class="clear"></div>
-			<div class="containerTable">
+			<div class="containerTable table-responsive">
 						<table id="tableCostumers">
 							<thead>
 								<tr>
@@ -37,25 +37,26 @@
 								      	<th><?= $row['rfc']; ?></th>
 								      	<th><?= $row['phone']; ?></th>
 								      	<th>
-								      		<a href="delete/?id=<?= $row['id'];?>" onclick="erase(this);" class="tooltip">
-								      			<i class="material-icons s20 cRed">delete</i>
-								      			 <span class="tooltiptext">Eliminar</span>
+								      		<a href="delete/?id=<?= $row['id'];?>" onclick="erase(this);" class="tool">
+								      			 <i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+								      			 <span class="tooltext">Eliminar</span>
 								      		</a>
-								      		<a href="edit/?id=<?= $row['id'];?>" class="tooltip">
-								      			<i class="material-icons s20 cblue">edit</i>
-								      			 <span class="tooltiptext">Editar</span>
+								      		<a href="edit/?id=<?= $row['id'];?>" class="tool">
+									      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+								      			    <span  class="tooltext">Editar</span>
 								      		</a>
-								      		<a href="drivers/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="tooltip">
-								      			<i class="material-icons s20 cBlue">airline_seat_recline_normal</i>
-												<span class="tooltiptext">choferes</span>
+								      		<a href="drivers/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="tool">
+									      			<i class="btn btn-primary btn-xs fas fa-car  btn_padd"></i>
+													<span class="tooltext" ">Choferes</span>
 								      		</a>
-								      		<a href="box/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="tooltip">
-								      			<i class="material-icons s20 cBlue">branding_watermark</i>
-												<span class="tooltiptext">cajas</span>
+								      		<a href="box/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="tool">
+								      			<i class="btn btn-info btn-xs fas fa-truck-loading cBlue btn_padd"></i>	
+												<span class="tooltext">Cajas</span>
 								      		</a>
-								      		<a href="trucks/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="tooltip">
-								      			<i class="material-icons s20 cGreen">local_shipping</i>
-												<span class="tooltiptext">Trailers</span>
+
+								      		<a href="trucks/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="tool">
+								      			<i class="btn btn-xs btn-success fas fa-truck cGreen btn_padd"></i>
+												<span class="tooltext">Trailers</span>			
 								      		</a>
 								      	</th>
 								    </tr>
@@ -65,4 +66,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+<!-- </div> -->

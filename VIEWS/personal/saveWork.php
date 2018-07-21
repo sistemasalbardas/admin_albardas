@@ -5,7 +5,7 @@
 	
 ?>
 
-<div class="mainContainer">
+<!-- <div class="mainContainer"> -->
 	<?php if (isset($_GET['msg'])): ?>
 	<div class="msg"><?= $_GET['msg'];?></div>
 	<div class="clear"></div>
@@ -97,4 +97,4 @@
 			</div>
 		</form>
 	</div>
-</div>
+<!-- </div> -->

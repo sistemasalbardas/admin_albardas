@@ -32,6 +32,7 @@
 				$this->login->set("pass", $_POST['pass']);
 				$this->login->validate();
 			}
+			
 		}
 
 
@@ -39,4 +40,5 @@
 	}
 	
 	$login = new loginController();
+	
  ?>	
