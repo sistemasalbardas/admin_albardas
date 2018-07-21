@@ -54,14 +54,11 @@
 
 		public function update()
 		{
-				error_log(print_r($_POST,true));
+			///error_log(print_r($_POST,true));
 			$sql = "UPDATE products SET name = '{$this->name}', type_pack = '{$this->type_pack}' WHERE id = '{$this->id}'";
 			$this->con->consultaSimple($sql);
 		
-
 		}
-
-		
 
 	}
 
