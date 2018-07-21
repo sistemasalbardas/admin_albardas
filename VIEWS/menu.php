@@ -96,7 +96,7 @@
 	          </a>
 	          <ul class="treeview-menu">
 	            <li><a href="<?=URL?>referrals/"><i class="far fa-circle"></i> Nueva remision</a></li>
-				<li><a href="<?=URL?>referrals/control/"><i class="far fa-circle"></i> Control de remisiones</a></li>
+        			<li><a href="<?=URL?>referrals/control/"><i class="far fa-circle"></i> Control de remisiones</a></li>
 	          </ul>
 	        </li>
 	        <li class="treeview">
