@@ -35,6 +35,7 @@
 	  <link rel="stylesheet" href="<?= URL?>/VIEWS/bower_components/jvectormap/jquery-jvectormap.css">
 	  <!-- Theme style -->
 	  <link rel="stylesheet" href="<?= URL?>/VIEWS/dist/css/AdminLTE.min.css">
+	  <link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/animate.css">
 	  <link rel="stylesheet" href="<?= URL?>/VIEWS/dist/css/skins/_all-skins.min.css">
 	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">

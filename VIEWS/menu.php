@@ -28,7 +28,7 @@
               <i class="fas fa-user-circle"></i>
               <span class="hidden-xs"><?= $_SESSION['user'][0]['name']?></span>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu animated flipInY">
               <!-- User image -->
               <li class="user-header">
                 <i class="fas fa-user-circle"></i>
