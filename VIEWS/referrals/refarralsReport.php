@@ -2,7 +2,7 @@
 	$data = $referrals->refarralsReport();
  ?>
 
-<div class="mainContainer">
+<!-- <div class="mainContainer"> -->
 	<div class="clear"></div>
 	<div class="containerPanel padd10">
 		<div class="headContent">
@@ -510,7 +510,7 @@
 
 	</div>
 	
-</div>
+<!-- </div> -->
 </div>
 <div class="clear"></div>
 

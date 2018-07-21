@@ -30,7 +30,5 @@
 			return $datos;
 		}
 	}
-	//COMENTARIO	
-	// iyfiyfyfiy
-
+	
  ?>

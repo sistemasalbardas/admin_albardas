@@ -31,16 +31,18 @@
 	.panelLogin{
 		width: 100%;
 		max-width: 400px;
+		margin-top: 250px;
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translateX(-50%)  translateY(-50%);
 		background: red;
+		box-shadow: 0px 0px 7px rgba(0,0,0,.6);
 	}
 	.headerPanel{
 		display: block;
-		background: #b01c2e;
-		color: #fff;
+		background:#b01c2e; #FF5722; #b01c2e;
+		color: blue;
 		text-align: center;
 		padding: 30px;
 	}
@@ -100,25 +102,29 @@
 		border: 1px solid #4646bb;
 	}
 	body{
-		background: #ccc;
+		background: #d2d6de!important;
 	}
-	input.button{
+	.button{
 		padding: 16px 10px;
-    	border-radius: 4px;
-	    background: #b01c2e;
+    	/*border-radius: 4px;*/
+	    background:#b01c2e; #FF5722;   #891818;
 	    border: none;
 	    display: block;
 	    width: 100%;
 	    margin-top: 10px;
 	    color: #fff;
 	    cursor: pointer;
-	    border-bottom: 4px solid #811522;
-	    border-left: 2px solid #811522;
+	    /*border-bottom: 4px solid #811522;
+	    border-left: 2px solid #811522;*/
+	    border:none;
 	    outline: none;
 	    transition: all .3s;
 	}
-	input.button:focus{
+	.button:focus{
 		border: none;
+	}
+	.button:hover{
+		background-color: #801416; #E64A19;
 	}
 	.erromsg{
 		font-size: 12px;
@@ -131,9 +137,12 @@
 	.hidden{
 		display: none;
 	}
+	h5{
+		margin-top: -20px;
+	}
 </style>
-<body>	
-	
+
+<body class="login">	
 	<div class="panelLogin">	
 		<div class="headerPanel">
 			<div class="imgContent">
@@ -141,21 +150,32 @@
 			</div>
 		</div>
 		<div class="formPanel">	
-			<form action="<?= URL ?>login/validateLogin/" class="formLogin" method="POST" autocomplete="off">
-				<input type="mail" name="email" class="inputStyle2" placeholder="Nombre de usuario" required="">
+			<form action="<?= URL ?>login/validateLogin" class="formLogin" method="POST" onsubmit="login()" autocomplete="off">
+					<h5 class="text-center"><strong>Iniciar Sesión</strong></h5>
+					<div class="form-group has-feedback">
+				        <input type="email" name="email" class="form-control inputStyle2" placeholder="Direccion de correo">
+				        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+			        </div>
 
-				<input type="password" name="pass" class="inputStyle2" placeholder="Contraseña" required="">
-				
-				
-				<input type="submit" value="Entrar" class="button">
-				<?php if (isset($_GET['error'])){
-					echo '<p class="erromsg text-uppercase text-600">'.$_GET['error'].' </p>';
-				} ?>
+					
+
+					<div class="form-group has-feedback">
+				        <input type="password" name="pass" class="form-control inputStyle2" placeholder="Contraseña">
+				        <span class="fa fa-lock form-control-feedback"></span>
+			        </div>
+
+					
+					
+					<button class="button" type="submit">ENTRAR <i class="fa fa-paper-plane"></i></button>
+					<?php if (isset($_GET['error'])){
+						echo '<p class="erromsg text-uppercase text-600">'.$_GET['error'].' </p>';
+					} ?>
 			</form>
-
+				
 			
 		</div>
 	</div>
+	<script src="<?=URL?>VIEWS/resources/JS/login.js"></script>
 	
 </body>
 </html>

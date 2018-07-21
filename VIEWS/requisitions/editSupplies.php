@@ -3,7 +3,7 @@
 	$data = $requisitions->index();
 
 ?>
-<div class="mainContainer">
+<!-- <div class="mainContainer"> -->
 	<div class="containerPanel">	
 	
 		<form class="" action="<?= URL?>requisitions/updateSupplies/" method="post"  autocomplete="off" id="">
@@ -105,4 +105,4 @@
 		</form>
 	
 	</div>
-</div>
+<!-- </div> -->
