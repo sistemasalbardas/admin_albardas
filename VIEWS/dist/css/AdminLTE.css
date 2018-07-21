@@ -249,8 +249,10 @@ a:focus {
   float: left;
   background-color: transparent;
   background-image: none;
-  padding: 15px 15px;
+  padding: 17px 15px;
   font-family: fontAwesome;
+  max-height: 50px;
+  height: 100%;
 }
 .main-header .sidebar-toggle:before {
   content: "\f0c9";
