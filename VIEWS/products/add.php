@@ -110,7 +110,6 @@
 					<input type="submit" value="Guardar" class="btn green">
 				</div>
 			</div>
-		
 		</div>
 	</form>
 </div>
