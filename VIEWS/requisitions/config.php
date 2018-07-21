@@ -53,7 +53,7 @@
 									</div>
 									
 								</div>
-								<div class="table-responsive">
+								<div class="containerTable table-responsive">
 									<table id="tableWorks">
 										<thead>
 											<tr>
@@ -105,50 +105,52 @@
 									</div>
 									
 								</div>
-								<table id="tableSupplies">
-									<thead>
-										<tr>
-											<td>ID</td>
-											<td>Nombre</td>
-											<td>Category</td>
-											<td>Unidad</td>
-											<td>Precio</td>
-											<td>Moneda</td>
-											<td>Status</td>
-											<td>Acciones</td>
-										</tr>
-									</thead>	
-									<tbody>
-										<?php while($row = mysqli_fetch_array($dataSupplies)){?>
-										    <tr>
-
-										      	<th><?= $row['id']; ?></th>
-										      	<th><?= $row['name']; ?></th>
-										      	<th><?= $row['category']; ?></th>
-										      	<th><?= $row['unit']; ?></th>
-										      	<th><?= $row['precio']; ?></th>
-										      	<th><?= $row['coin']; ?></th>
-										      	<th><?=  ($row['status'] == 1) ? 'Activo' : 'Inctivo' ; ?></th>
-										      	
-										      
-										      	
-										      	<th>
-										      		<a href="<?= URL?>requisitions/deleteSupplies/?id=<?=$row['id'];?>" onclick="deleteWork(this);" class="tool">
-									      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
-										      			<span class="tooltext">Eliminar</span>
-										      			
-										      		</a>
-										      		<a href="<?= URL?>requisitions/editSupplies/?id=<?=$row['id'];?>" class="tool">
-										      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
-										      			<span class="tooltext">Editar Insumo</span>
-										      			
-										      		</a>		
-					 					      	</th>
-										      	
-										    </tr>
-										<?php } ?>
-									</tbody>
-								</table>
+								<div class="table-responsive containerTable">
+									<table id="tableSupplies">
+										<thead>
+											<tr>
+												<td>ID</td>
+												<td>Nombre</td>
+												<td>Category</td>
+												<td>Unidad</td>
+												<td>Precio</td>
+												<td>Moneda</td>
+												<td>Status</td>
+												<td>Acciones</td>
+											</tr>
+										</thead>	
+										<tbody>
+											<?php while($row = mysqli_fetch_array($dataSupplies)){?>
+											    <tr>
+									
+											      	<th><?= $row['id']; ?></th>
+											      	<th><?= $row['name']; ?></th>
+											      	<th><?= $row['category']; ?></th>
+											      	<th><?= $row['unit']; ?></th>
+											      	<th><?= $row['precio']; ?></th>
+											      	<th><?= $row['coin']; ?></th>
+											      	<th><?=  ($row['status'] == 1) ? 'Activo' : 'Inctivo' ; ?></th>
+											      	
+											      
+											      	
+											      	<th>
+											      		<a href="<?= URL?>requisitions/deleteSupplies/?id=<?=$row['id'];?>" onclick="deleteWork(this);" class="tool">
+										      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+											      			<span class="tooltext">Eliminar</span>
+											      			
+											      		</a>
+											      		<a href="<?= URL?>requisitions/editSupplies/?id=<?=$row['id'];?>" class="tool">
+											      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+											      			<span class="tooltext">Editar Insumo</span>
+											      			
+											      		</a>		
+														 					      	</th>
+											      	
+											    </tr>
+											<?php } ?>
+										</tbody>
+									</table>
+								</div>
 							</div>
 						</div>
 					</div>

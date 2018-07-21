@@ -43,7 +43,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-right">
-                  <a href="<?=URL?>login/logout" class="btn btn-default btn-flat">Salir <i class="fas fa-sign-out-alt"></i></a>
+                  <a href="<?=URL?>login/logout" class="btn btn-default btn-flat">Salir <i class="fas fa-power-off"></i></a>
                 </div>
               </li>
             </ul>

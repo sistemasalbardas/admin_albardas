@@ -1065,6 +1065,25 @@ i.btn_padd{
   }
 }
 
+/*page header del template*/
+div.page-header {
+  margin-bottom: -4px;
+}
+
+
+/*perfil del usuario*/
+
+a.salir{
+  color: #54667a;
+  display: block;
+  padding:10px 15px;
+  margin: 0; 
+}
+a:hover{
+  background-color: #f2f4f8;
+  color: #009efb;
+}
+
 
 /*header {
   position: absolute;
