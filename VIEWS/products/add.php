@@ -116,10 +116,5 @@
 			</div>
 		</form>
 	</div>
-<<<<<<< HEAD
-</div>
-
-		public $weight; 
-=======
 <!-- </div> -->
->>>>>>> ADMIN_LTE
+
