@@ -4,7 +4,7 @@
 	$products = $inventories->listProducts();
  ?>
 <div class="clear"></div>
-<!-- <div class="mainContainer"> -->
+<div class="mainContainer">
 	<div class="containerPanel">	
 		<form action="<?=URL?>inventories/newEntry/" method="post"  id="addEmploye">
 			<input type="hidden" name="id" id="id" value="<?=$_GET['id']?>">
@@ -61,4 +61,4 @@
 			</div>
 		</form>
 	</div>
-<!-- </div> -->
+</div>

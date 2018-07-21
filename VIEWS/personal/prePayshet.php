@@ -3,7 +3,7 @@
 
 ?>
 <div class="clear">	</div>
-<!-- <div class="mainContainer"> -->
+<div class="mainContainer">
 	<div class="containerPanel">	
 		<div class="headContent">
 			<h4 class="text-bold">Reporte de nomina</h4>
@@ -42,4 +42,4 @@
 			</div>
 		</div>
 	</div>
-<!-- </div> -->
+</div>

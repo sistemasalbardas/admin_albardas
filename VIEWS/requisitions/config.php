@@ -11,7 +11,7 @@
 	$dataSupplies = $requisitions->listSuplies();
 
  ?>
-<!-- <div class="mainContainer"> -->
+<div class="mainContainer">
 	<div class="clear"></div>
 	<div class="containerPanel">
 		<div class="headContent">
@@ -53,6 +53,7 @@
 									</div>
 									
 								</div>
+<<<<<<< HEAD
 								<div class="containerTable table-responsive">
 									<table id="tableWorks">
 										<thead>
@@ -89,6 +90,46 @@
 										</tbody>
 									</table>
 								</div>
+=======
+								<table id="tableWorks">
+									<thead>
+										<tr>
+											<td>ID</td>
+											<td>name</td>
+											<td>Acciones</td>
+										</tr>
+									</thead>	
+									<tbody>
+										<?php while($row = mysqli_fetch_array($dataTable)){?>
+										    <tr>
+
+										      	<th><?= $row['id']; ?></th>
+										      	<th><?= $row['name']; ?></th>
+										      	
+										      
+										      	
+										      	<th>
+										      		<a href="<?= URL?>requisitions/deleteCategory/?id=<?=$row['id'];?>" onclick="deleteWork(this);" class="tooltip">
+										      			<i class="material-icons s20 cRed">delete</i>
+										      			 <span class="tooltiptext">Eliminar</span>
+										      		</a>
+										      		<a href="editWork/<?= $row['id'];?>" onclick="editWork();"  class="tooltip">
+										      			<i class="material-icons s20 cBlue">edit</i>
+														<span class="tooltiptext">Modificar remision</span>
+										      		</a>
+										      		<a href="<?= URL?>referrals/refarralsReport/?id=<?= $row['id'];?>" class="tooltip">
+														<i class="material-icons">assessment</i>
+														<span class="tooltiptext">Reporte remision</span>
+
+													</a>
+										      				
+					 					      	</th>
+										      	
+										    </tr>
+										<?php } ?>
+									</tbody>
+								</table>
+>>>>>>> admin_lte
 							</div>
 						</div>
 					</div>
@@ -105,6 +146,7 @@
 									</div>
 									
 								</div>
+<<<<<<< HEAD
 								<div class="table-responsive containerTable">
 									<table id="tableSupplies">
 										<thead>
@@ -151,6 +193,56 @@
 										</tbody>
 									</table>
 								</div>
+=======
+								<table id="tableSupplies">
+									<thead>
+										<tr>
+											<td>ID</td>
+											<td>Nombre</td>
+											<td>Category</td>
+											<td>Unidad</td>
+											<td>Precio</td>
+											<td>Moneda</td>
+											<td>Status</td>
+											<td>Acciones</td>
+										</tr>
+									</thead>	
+									<tbody>
+										<?php while($row = mysqli_fetch_array($dataSupplies)){?>
+										    <tr>
+
+										      	<th><?= $row['id']; ?></th>
+										      	<th><?= $row['name']; ?></th>
+										      	<th><?= $row['category']; ?></th>
+										      	<th><?= $row['unit']; ?></th>
+										      	<th><?= $row['precio']; ?></th>
+										      	<th><?= $row['coin']; ?></th>
+										      	<th><?=  ($row['status'] == 1) ? 'Activo' : 'Inctivo' ; ?></th>
+										      	
+										      
+										      	
+										      	<th>
+										      		<a href="<?= URL?>requisitions/deleteSupplies/?id=<?=$row['id'];?>" onclick="deleteWork(this);" class="tooltip">
+										      			<i class="material-icons s20 cRed">delete</i>
+										      			 <span class="tooltiptext">Eliminar</span>
+										      		</a>
+										      		<a href="<?= URL?>requisitions/editSupplies/?id=<?=$row['id'];?>" class="tooltip">
+										      			<i class="material-icons s20 cBlue">edit</i>
+														<span class="tooltiptext">Modificar insumo</span>
+										      		</a>
+										      		<a href="<?= URL?>referrals/refarralsReport/?id=<?= $row['id'];?>" class="tooltip">
+														<i class="material-icons">assessment</i>
+														<span class="tooltiptext">Reporte remision</span>
+
+													</a>
+										      				
+					 					      	</th>
+										      	
+										    </tr>
+										<?php } ?>
+									</tbody>
+								</table>
+>>>>>>> admin_lte
 							</div>
 						</div>
 					</div>
@@ -161,7 +253,7 @@
 
 
 			
-<!-- 	</div> -->
+	</div>
 
 	<div class="clear"></div>
 	

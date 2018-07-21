@@ -2,7 +2,7 @@
 	$data = $requisitions->listSuplies();
 
  ?>
-<!-- <div class="mainContainer"> -->
+<div class="mainContainer">
 	<div class="clear"></div>
 	<div class="containerPanel">
 
@@ -45,5 +45,5 @@
 
 	<div class="clear"></div>
 	
-<!-- </div> -->
+</div>
 <div class="bgBlack hidden" onclick="closeModal();"></div>

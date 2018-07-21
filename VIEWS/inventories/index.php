@@ -3,7 +3,7 @@
 ?>
 
 
-<!-- <div class="mainContainer"> -->
+<div class="mainContainer">
 	<div class="clear"></div>
 	<div class="containerPanel">
 		<div class="headContent">
@@ -21,7 +21,7 @@
 				
 			</div>
 			<div class="clear"></div>
-			<div class="containerTable table-responsive">
+			<div class="containerTable">
 				<table id="tableCostumers">
 					<thead>
 						<tr>
@@ -54,30 +54,25 @@
 						      	<th><?= $utility; ?></th>
 						      
 						      	<th>
-						      		<a href="delete/?id=<?= $row['id'];?>" onclick="deleteCostumer(this);" class="tool">
-					      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
-						      			<span class="tooltext">Eliminar </span>
-						      			
+						      		<a href="delete/?id=<?= $row['id'];?>" onclick="deleteCostumer(this);" class="tooltip">
+						      			<i class="material-icons s20 cRed">delete</i>
+						      			 <span class="tooltiptext">Eliminar</span>
 						      		</a>
-						      		<a href="edit/?id=<?= $row['id'];?>" onclick=""  class="tool">
-						      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
-						      			<span class="tooltext">Editar</span>
-						        		
+						      		<a href="edit/?id=<?= $row['id'];?>" onclick=""  class="tooltip">
+						      			<i class="material-icons s20 cBlue">edit</i>
+										<span class="tooltiptext">Editar</span>
 						      		</a>
-						      		<a href="newEntry/?id=<?= $row['id'];?>&inventorie=<?= $row['name'] ?>" onclick=""  class="tool">
-						      			<i class="btn btn-primary btn-xs fas fa-arrow-right  btn_padd"></i>
-						      			<span class="tooltext">Nueva Entrada</span>
-										
+						      		<a href="newEntry/?id=<?= $row['id'];?>&inventorie=<?= $row['name'] ?>" onclick=""  class="tooltip">
+						      			<i class="material-icons s20 cBlue">arrow_forward</i>
+										<span class="tooltiptext">Nueva entrada</span>
 						      		</a>
-						      		<a href="transfer/?id=<?= $row['id'];?>&inventorie=<?= $row['name'] ?>" onclick=""  class="tool">
-						      			<i class="btn btn-info btn-xs fas fa-exchange-alt cBlue btn_padd"></i>	
-						      			<span class="tooltext">Transferencia</span>
-										
+						      		<a href="transfer/?id=<?= $row['id'];?>&inventorie=<?= $row['name'] ?>" onclick=""  class="tooltip">
+						      			<i class="material-icons s22 cBlue">compare_arrows</i>
+										<span class="tooltiptext">Trasferencia</span>
 						      		</a>
-						      		<a href="inventory/?id=<?= $row['id'];?>&inventorie=<?= $row['name'] ?>" onclick=""  class="tool">
-						      			<i class="btn btn-xs btn-success fas fa-eye cGreen btn_padd"></i>
-						      			<span class="tooltext">Ver Inventario</span>
-										
+						      		<a href="inventory/?id=<?= $row['id'];?>&inventorie=<?= $row['name'] ?>" onclick=""  class="tooltip">
+						      			<i class="material-icons s20 cBlue">remove_red_eye</i>
+										<span class="tooltiptext">Ver inventario</span>
 						      		</a>
 						      	</th>
 						    </tr>
@@ -87,4 +82,4 @@
 			</div>
 		</div>
 	</div>
-<!-- </div> -->
+</div>

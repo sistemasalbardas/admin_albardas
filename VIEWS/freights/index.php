@@ -3,7 +3,7 @@
 	$costumers = $freights->listCostumers();
  ?>
 
-<!-- <div class="mainContainer"> -->
+<div class="mainContainer">
 	<div class="clear"></div>
 	<div class="containerPanel">
 		<div class="headContent">
@@ -12,7 +12,7 @@
 		<div class="mainContent">
 
 			<div class="clear"></div>
-			<div class="containerTable text-responsive">
+			<div class="containerTable">
 						<table id="tableFreights">
 							<thead>
 								<tr>
@@ -43,20 +43,17 @@
 								      	<th> $ <?= $row['price']. " - ".$row['currency']; ?></th>
 								      	<th> $ <?= $row['total']; ?></th>
 								      	<th>
-								      		<a href="delete/?id=<?= $row['id'];?>" onclick="deleteCostumer(this);" class="tool">
-							      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
-								      			 <span class="tooltext">Eliminar</span>
-								      			 
+								      		<a href="delete/?id=<?= $row['id'];?>" onclick="deleteCostumer(this);" class="tooltip">
+								      			<i class="material-icons s20 cRed">delete</i>
+								      			 <span class="tooltiptext">Eliminar</span>
 								      		</a>
-								      		<a href="edit/?id=<?= $row['id'];?>" onclick=""  class="tool">
-								      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
-								      			<span class="tooltext">Editar</span>
-								      			
+								      		<a href="edit/?id=<?= $row['id'];?>" onclick=""  class="tooltip">
+								      			<i class="material-icons s20 cBlue">edit</i>
+												<span class="tooltiptext">Editar</span>
 								      		</a>
-								      		<a href="address/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="tool">
-								      			<i class="btn btn-info btn-xs fas fa-list btn_padd"></i>
-								      			<span class="tooltext">Ver</span>
-								      			 
+								      		<a href="address/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="tooltip">
+								      			<i class="material-icons s20 cBlue">list</i>
+												<span class="tooltiptext">Ver</span>
 								      		</a>
 								      	</th>
 								    </tr>
@@ -66,4 +63,4 @@
 					</div>
 		</div>
 	</div>
-<!-- </div> -->
+</div>

@@ -4,7 +4,7 @@
 	$inventories = $inventories->inventory();
  ?>
 <div class="clear"></div>
-<!-- <div class="mainContainer"> -->
+<div class="mainContainer">
 	<div class="containerPanel">	
 		<form action="<?=URL?>inventories/transfer/" method="post"  id="addEmploye" autocomplte="off">
 			<input type="hidden" name="id" id="id" value="<?=$_GET['id']?>">
@@ -69,4 +69,4 @@
 			</div>
 		</form>
 	</div>
-<!-- </div> -->
+</div>
