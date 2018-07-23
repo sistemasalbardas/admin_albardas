@@ -1,55 +1,67 @@
+ <header class="main-header">
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>A</b>LB</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Las AlbardasSS</b></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+       <i class="fas fa-bars"></i>
 
-<div class="menuTop block  ">
-	<div class="row">
-		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 ">
-			<div class="block h50 ">
-				<div class="content middle text-center cWhite text-uppercase ">
-					Agricola las albardas
-			
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-1 col-md-1  col-sm-1 col-xs-1 " >
-			<div class="block h50 "  id="menuToggle">
-				<div class="content middle text-center cWhite adjust"  onclick="menuToggle(this);">
+      </a>
 
-<<<<<<< HEAD
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-        
-          <!-- Notifications: style can be found in dropdown.less -->
-       
-          <!-- Tasks: style can be found in dropdown.less -->
-         
-          <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="#" class="dropdown-toggle shadow" data-toggle="dropdown">
               <i class="fas fa-user-circle"></i>
               <span class="hidden-xs"><?= $_SESSION['user'][0]['name']?></span>
             </a>
             <ul class="dropdown-menu animated flipInY">
               <!-- User image -->
-              <li class="user-header">
-                <i class="fas fa-user-circle"></i>
-
-                <p>
-                  <?= $_SESSION['user'][0]['name']?>
-                  <small><?=$_SESSION['user'][0]['department']?></small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-             
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-right">
-                  <a href="<?=URL?>login/logout" class="btn btn-default btn-flat">Salir <i class="fas fa-power-off"></i></a>
+              <li class="user-header u-color">
+                <!-- <i class="fas fa-user-circle"></i>-->
+                <div class="user-box">
+                  <div class="u-img">
+                    <img class="img-thumbnail" src="https://wrappixel.com/demos/admin-templates/monster-admin/assets/images/users/1.jpg">
+                  </div>
+                  <div class="u-text">
+                    <h4><?= $_SESSION['user'][0]['name']?> </h4>          
+                    <p class="text-muted"><?= $_SESSION['user'][0]['department']?></p>
+                    <p class="text-muted">Yair.facio11@gmail.com</p>
+                         <?php  
+                          switch ($_SESSION['user'][0]['ranch']) {
+                            case '1':
+                              $ranch = "ALBARDAS";
+                              break;
+                            case '2':
+                              $ranch = "MAGDALENAS";
+                              break;
+                            
+                            default:
+                              $ranch = "ALBARDAS";
+                              break;
+                          }
+                         ?>
+                    <p class="tiny"><?= $ranch."-" .$_SESSION['user'][0]['department'] ?></p>
+                  </div>               
                 </div>
+              </li>
+              <li class="divider" role="separator"></li>
+              <li>
+                <a href="">Profile <i class="fas fa-user"></i></a>
+              </li>
+              <li class="divider" role="separator"></li>
+              <li>
+                <a href="<?=URL?>login/logout">Salir <i class="fas fa-power-off"></i></a>
               </li>
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
-          
         </ul>
       </div>
     </nav>
@@ -76,122 +88,73 @@
 				case '2':
 					$ranch = "MAGDALENAS";
 					break;
-=======
-					<i class="material-icons">
-					menu
-					</i>
-				</div>
-			</div>
-			
-		</div>
-		<div class="col-lg-1 hidden-sm hidden-xs">
-			<div class="block h50 ">
-				<div class="content middle text-center cWhite adjust">
-					<div class="avatar centerImg" style="background: url('<?= URL_IMG ?>/rancho.jpg');">
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 hidden-sm hidden-xs ">
-			<div class="block h50 ">
-				<div class="content middle text-left cWhite  s16">
-					<?php 	
-						switch ($_SESSION['user'][0]['ranch']) {
-							case '1':
-								$ranch = "ALBARDAS";
-								break;
-							case '2':
-								$ranch = "MAGDALENAS";
-								break;
-							
-							default:
-								$ranch = "ALBARDAS";
-								break;
-						}
-					 ?>
->>>>>>> admin_lte
 				
-					<?= $ranch." - " .$_SESSION['user'][0]['department'] ?>
-					
-				</div>
-			</div>
-		</div>
+				default:
+					$ranch = "ALBARDAS";
+					break;
+			}
+		 ?>
+          <a href="#"> <?= $ranch." - " .$_SESSION['user'][0]['department'] ?></a>
+        </div>
+      </div>
 
-		<div class="col-lg-1 ol-md-1 ol-sm-1 col-xs-2 ">
-			<div class="block h50 ">
-				<div class="content middle text-center cWhite adjust">
-					<div class="avatar centerImg" style="background: url('<?= URL_IMG ?>/avatar.png');">
-						
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
-			<div class="block h50 ">
-				<div class="content middle text-left cWhite  s16">
+      <!-- Sidebar Menu -->
+	    <ul class="sidebar-menu" data-widget="tree">
+	        <li class="treeview">
+	          <a href="#"><i class="fas fa-copy"></i> <span>Remisiones</span>
+	            <span class="pull-right-container">
+	                <i class="fas fa-angle-left pull-right"></i>
+	              </span>
+	          </a>
+	          <ul class="treeview-menu">
+	            <li><a href="<?=URL?>referrals/"><i class="far fa-circle"></i> Nueva remision</a></li>
+				<li><a href="<?=URL?>referrals/control/"><i class="far fa-circle"></i> Control de remisiones</a></li>
+	          </ul>
+	        </li>
+	        <li class="treeview">
+	          <a href="#"><i class="fas fa-users"></i> <span>Personal</span>
+	            <span class="pull-right-container">
+	                <i class="fas fa-angle-left pull-right"></i>
+	              </span>
+	          </a>
+	          <ul class="treeview-menu">
+		        <li><a href="<?=URL?>personal/?tab=1"><i class="far fa-circle"></i> Personal</a></li>
+	          </ul>
+	        </li>
 				
-					Bienvenido: 
-					<?= $_SESSION['user'][0]['name']?>
-					
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<nav id="cd-lateral-nav">
-	<ul class="cd-navigation">
-		
+	        <li class="treeview">
+	          <a href="#"><i class="fas fa-file"></i> <span>Requisiciones</span>
+	            <span class="pull-right-container">
+	                <i class="fas fa-angle-left pull-right"></i>
+	              </span>
+	          </a>
+	          <ul class="treeview-menu">
+		        <li><a href="<?=URL?>requisitions/"><i class="far fa-circle"></i> nueva requisicion</a></li>
+				<li><a href="<?=URL?>requisitions/control/"><i class="far fa-circle"></i> Control </a></li>
+				<li><a href="<?=URL?>requisitions/config/"><i class="far fa-circle"></i> Configuracion </a></li>
+	          </ul>
+	        </li>
+	        <li><a href="<?=URL?>products/"><i class="far fa-circle"></i> <span>Productos</span></a></li>
+			<li><a href="<?=URL?>freights/"><i class="far fa-circle"></i> <span>Fletes</span></a></li>
+			<li><a href="<?=URL?>inventories/"><i class="far fa-circle"></i> <span>Inventarios</span></a></li>
+			<li><a href="<?=URL?>costumers/"><i class="far fa-circle"></i> <span>Clientes</span></a></li>
+			<li><a href="<?=URL?>transporters/"><i class="far fa-circle"></i> <span>Transportistas</span></a></li>
+			<li><a href="<?=URL?>login/logout/"><i class="far fa-circle"></i> <span>Salir</span></a></li>
+	    </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+</aside>
 
-		<li class="item-has-children">
-			<a href="#0">Remisiones</a>
-			<ul class="sub-menu">
-				<li><a href="<?=URL?>referrals/">Nueva remision</a></li>
-				<li><a href="<?=URL?>referrals/control/">Control de remisiones</a></li>
-		
-			</ul>
-		</li> <!-- item-has-children -->
 
-		<li class="item-has-children hidden">
-			<a href="#0">Personal</a>
-			<ul class="sub-menu">
-				<li><a href="<?=URL?>personal/?tab=1">Personal</a></li>
-				
-			</ul>
-		</li>
-		<li class="item-has-children hidden">
-			<a href="#0">Requisiciones</a>
-			<ul class="sub-menu">
-				<li><a href="<?=URL?>requisitions/">nueva requisicion</a></li>
-				<li><a href="<?=URL?>requisitions/control/">Control </a></li>
-				<li><a href="<?=URL?>requisitions/config/">Configuracion </a></li>
-		
-			</ul>
-		</li> <!-- item-has-children -->
-		
-	</ul> <!-- cd-navigation -->
+<!-- contenedor principal para todas las paginas -->
+ <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Panel
+        <small>Administrativo</small>
+      </h1>
+    </section>
 
-	<ul class="cd-navigation cd-single-item-wrapper">
-	
-		<li><a href="<?=URL?>products/">Productos</a></li>
-		<li><a href="<?=URL?>freights/">Fletes</a></li>
-		<li><a href="<?=URL?>inventories/">Inventarios</a></li>
-		<li><a href="<?=URL?>costumers/">Clientes</a></li>
-		<li><a href="<?=URL?>transporters/">Transportistas</a></li>
-		<li><a href="<?=URL?>login/logout/">Salir</a></li>
-	</ul> <!-- cd-single-item-wrapper -->
 
-	<ul class="cd-navigation cd-single-item-wrapper hidden">
-		<li><a class="current" href="#0">Journal</a></li>
-		<li><a href="#0">FAQ</a></li>
-		<li><a href="#0">Terms &amp; Conditions</a></li>
-		<li><a href="#0">Careers</a></li>
-		<li><a href="#0">Students</a></li>
-	</ul> <!-- cd-single-item-wrapper -->
-
-	<div class="cd-navigation socials hidden">
-		<a class="cd-twitter cd-img-replace" href="#0">Twitter</a>
-		<a class="cd-github cd-img-replace" href="#0">Git Hub</a>
-		<a class="cd-facebook cd-img-replace" href="#0">Facebook</a>
-		<a class="cd-google cd-img-replace" href="#0">Google Plus</a>
-	</div> <!-- socials -->
-</nav>

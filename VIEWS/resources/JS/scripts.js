@@ -1,4 +1,5 @@
 $(document).ready(function() { 
+  
     openModal2(null,'freight');
   $('#products').selectpicker();
 	event.preventDefault();

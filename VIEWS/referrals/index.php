@@ -26,18 +26,10 @@
 	
 	//print_r($data['list']);
  ?>
-<<<<<<< HEAD
-	<!-- <div class="mainContainer">
-		<div class="clear"></div> -->
-		<div class="containerPanel padd10">
-
-<<<<<<< HEAD
-=======
-<div class="mainContainer">
+<div class="">
 	<div class="clear"></div>
 	<div class="containerPanel padd10">
 
->>>>>>> admin_lte
 		<div class="headContent">
 			<h4 class="text-bold text-uppercase">Generador de remisiones</h4>
 		</div>
@@ -66,21 +58,10 @@
 					<option value="5">5</option>
 					<option value="6">6</option>
 				</select>
-<<<<<<< HEAD
-=======
-			<div class="headContent">
-				<h4 class="text-bold text-uppercase">Generador de remisiones</h4>
->>>>>>> ADMIN_LTE
-=======
->>>>>>> admin_lte
 			</div>
 		</div>
 		<?php 	} ?>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> admin_lte
 		<?php 	if (isset($_GET['nCharge'])	) {?>
 		
 			<ul class="tabs"> 
@@ -164,36 +145,6 @@
 									<input type="text" name="address_employe" id="" value="<?= $datos['addres'];?>" class="w100 block" required="">
 									<input type="text" name="rfc_employe" id="" value="<?= $datos['rfc'];?>" class="w100 block" required=""><br>
 									<input type="hidden" name="id_employe" id="" value="<?= $datos['id'];?>" class="w100 block" required="">
-<<<<<<< HEAD
-=======
-			<div class="clear"></div>
-			<div class="clear"></div>
-			<?php if (!isset($_GET['nCharge'])){?>
-			<div class="row">	
-				<div class="col-lg-3 ">	
-					<div class="block h40 text-center">	
-						<div class="middle content">
-							<label for="nCharge">Numero de embarques:</label>
-						</div>
-					</div>	
-				</div>	
->>>>>>> ADMIN_LTE
-
-				<div class="col-lg-1">	
-					<select name="n" id="nCharge" class="inputStyle" onchange="nCharge(this);" required="">
-						<option value="0">0</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-					</select>
-				</div>
-			</div>
-			<?php 	} ?>
-=======
->>>>>>> admin_lte
 
 								</div>	
 
@@ -322,10 +273,6 @@
 											<div class="col-lg-4 ">	
 												<label for="" class="W100 ">Chofer: </label>
 											</div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> admin_lte
 											<div class="col-lg-8">	
 											
 
@@ -373,17 +320,6 @@
 														<option value="<?= $row['id']?>"><?= $row['name']?>	</option>
 													<?php } ?>
 												</select>
-<<<<<<< HEAD
-=======
-											<div class="clear"></div>
-											<div class="row">	
-												<div class="col-lg-4 ">	
-													<label for="" class="W100 ">Chofer: </label>
-												</div>
-												<div class="col-lg-8">	
->>>>>>> ADMIN_LTE
-=======
->>>>>>> admin_lte
 												
 											</div>
 										</div>
@@ -656,22 +592,10 @@
 										</div>
 									</div>
 								</div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> admin_lte
 							<?php } ?>
 						
 							<div class="row">
 							<div class="clear">	</div>
-<<<<<<< HEAD
-=======
-							</div>
-								<div class="row">
-								<div class="clear">	</div>
->>>>>>> ADMIN_LTE
-=======
->>>>>>> admin_lte
 
 								<div class="col-lg-12 border">
 									<div class="block  text-left">	

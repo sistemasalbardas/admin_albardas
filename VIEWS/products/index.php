@@ -1,8 +1,8 @@
 <?php 
 	$data = $products->index();
  ?>
-<div class="mainContainer">
-	<div class="clear"></div>
+<!-- <div class="mainContainer">
+	<div class="clear"></div> -->
 	<div class="containerPanel">
 		<div class="headContent">
 			<h4 class="text-bold">Control de productos</h4>
@@ -16,7 +16,7 @@
 				
 			</div>
 			<div class="clear"></div>
-			<div class="containerTable">
+			<div class="containerTable table-responsive">
 						<table id="tableCostumers">
 							<thead>
 								<tr>
@@ -46,13 +46,14 @@
 								      	</th>
 								      	
 								      	<th>
-								      		<a href="delete/?id=<?= $row['id'];?>" onclick="erase(this);" class="tooltip">
-								      			<i class="material-icons s20 cRed">delete</i>
-								      			 <span class="tooltiptext">Eliminar</span>
+								      		<a href="delete/?id=<?= $row['id'];?>" onclick="erase(this);" class="tool">
+							      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+								      			<span class="tooltext">Eliminar</span>
+								      			 
 								      		</a>
-								      		<a href="edit/?id=<?= $row['id'];?>" class="tooltip">
-								      			<i class="material-icons s20 cblue">edit</i>
-								      			 <span class="tooltiptext">Editar</span>
+								      		<a href="edit/?id=<?= $row['id'];?>" class="tool">
+								      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+								      			<span class="tooltext">Editar</span>	 
 								      		</a>
 								      		
 								      	</th>
@@ -63,4 +64,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+<!-- </div> -->

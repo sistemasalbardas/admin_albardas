@@ -1,15 +1,10 @@
 <div class="clear"></div>
-<<<<<<< HEAD
 <!-- <div class="mainContainer"> -->
 <div class="containerPanel">	
 	<form class="" method="post"  id="saveWork" autocomplete="off" action="<?=URL?>/products/add/">
 		<div class="headContent">
 			<h4 class="text-bold">Nuevo producto</h4>
 		</div>
-=======
-<div class="mainContainer">
-	<div class="containerPanel">	
->>>>>>> admin_lte
 
 
 		<div class="mainContent mW600">
@@ -115,15 +110,7 @@
 					<input type="submit" value="Guardar" class="btn green">
 				</div>
 			</div>
-<<<<<<< HEAD
 		</div>
 	</form>
 </div>
 
-=======
-		</form>
-	</div>
-</div>
-
-		public $weight; 
->>>>>>> admin_lte

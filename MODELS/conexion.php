@@ -30,8 +30,5 @@
 			return $datos;
 		}
 	}
-	//COMENTARIO	
-	// iyfiyfyfiy
-	// otro comentario
-	//otrsos cohsdckjs
+	
  ?>

@@ -1,6 +1,6 @@
 
 <div class="clear"></div>
-<div class="mainContainer">
+<!-- <div class="mainContainer"> -->
 	
 	<div class="containerPanel">	
 		<form action="<?=URL?>costumers/add/" method="post"  id="addEmploye">
@@ -53,4 +53,4 @@
 			</div>
 		</form>
 	</div>
-</div>
+<!-- </div> -->

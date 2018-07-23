@@ -1,3 +1,7 @@
+body{
+  font-family: 'Rubik', sans-serif !important;
+}
+
 nav.menuNav{
 	position: fixed;
 	top: 0;
@@ -665,6 +669,66 @@ ul.drivers-box li:hover{
 }
 
 
+
+
+
+/* Tooltip container */
+.tool {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tool .tooltext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tool .tooltext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tool:hover .tooltext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
 /***/
 
 select.select > option:nth-child(1){
@@ -966,7 +1030,6 @@ background-repeat: no-repeat;
   }
 }
 
-<<<<<<< HEAD
 /*Sobrescribiendo estilos de admin LTE*/
 /*header*/
 .user-panel{
@@ -1012,24 +1075,73 @@ div.page-header {
 }
 
 
-/*perfil del usuario*/
+/*perfil del usuario  ---user-header--*/
 
-a.salir{
-  color: #54667a;
-  display: block;
-  padding:10px 15px;
-  margin: 0; 
+/*.user-menu a.shadow:focus,
+.user-menu a.shadow:active:focus{
+  animation: shadow .6s linear;
 }
-a:hover{
-  background-color: #f2f4f8;
-  color: #009efb;
+@keyframes shadow{
+  0%,100%{
+    box-shadow: inset 0px 0px 0px white;
+  }
+  50%{
+    box-shadow: inset 0px -50px 0px white;
+  }
+}*/
+
+li.user-header.u-color{
+  height: auto!important;
+  background: none!important;
+  padding: 0!important;
+  text-align: left!important;
+
 }
+li.user-header.u-color .user-box{
+  padding: 10px 15px;
+  height: 80px;
+  box-sizing: content-box;
+}
+li.user-header.u-color .user-box .u-img{
+  width: 80px;
+  display: inline-block;
+  vertical-align: top;
+}
+.user-box .u-img img{
+  width: 100%;
+}
+li.user-header.u-color .user-box .u-text{
+  display: inline-block;
+  padding-left: 10px;
+  text-align: left;
+  border-left: solid 1px #009efb;
+}
+.user-box .u-text h4{
+ color: #2c2b2e;
+ margin: 0;
+ margin-bottom: 5px;
+}
+.u-text p{
+  padding: 0;
+  margin: 0;
+}
+.u-text p:last-child{
+  font-size: 10px;  
+}
+/*perfil del usuario  ---li--*/
+.dropdown-menu li a{
+  padding: 9px 10px!important;
+  color:#54667a!important;
+  font-size: 1.5rem!important;
+} 
+.dropdown-menu li a:hover{
+  background: #f2f4f8!important;
+  color: #009efb!important;
+}
+
 
 
 /*header {
-=======
-header {
->>>>>>> admin_lte
   position: absolute;
   top: 0;
   left: 0;
@@ -1037,7 +1149,7 @@ header {
   width: 100%;
   background: #2C3E50;
   z-index: 3;
-  /* Force Hardware Acceleration in WebKit */
+  Force Hardware Acceleration in WebKit 
   -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
   -webkit-transition-property: -webkit-transform;
@@ -1048,7 +1160,7 @@ header {
   transition-duration: 0.4s;
 }
 header.lateral-menu-is-open {
-  /* translate to show the lateral menu */
+  translate to show the lateral menu 
   -webkit-transform: translateX(-260px);
   -moz-transform: translateX(-260px);
   -ms-transform: translateX(-260px);
@@ -1063,7 +1175,7 @@ header.is-fixed {
     height: 70px;
   }
 }
-
+*/
 #cd-logo {
   display: block;
   float: left;
@@ -1204,3 +1316,4 @@ header.is-fixed {
     transform: translateX(0);
   }
 }
+

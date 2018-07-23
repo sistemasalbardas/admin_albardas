@@ -23,11 +23,11 @@
     display: block!important;
     width: 100%!important;
 }
-.content{
+/*.content{
 	display: table-cell!important;
     width: 100%!important;
     height: auto!important;
-}
+}*/
 .top{
 	vertical-align: top;
 }
@@ -161,7 +161,7 @@
     letter-spacing: 1.2 !important;
 }
 .padd10{
-  padding: 10px ;
+  padding: 10px;
 }
 .padd25{
   padding: 25px;
@@ -3237,7 +3237,7 @@ select[multiple].input-lg {
 }
 
 .btn{
-      color: #fff;
+     /* color: #fff;
     font-size: 16px;
     box-sizing: border-box;
     border-radius: 4px;
@@ -3250,7 +3250,7 @@ select[multiple].input-lg {
     display: block !important;
     outline: none;
     padding: 10px 0px;
-    text-align: center;
+    text-align: center;*/
 }
 
 .little-btn{
