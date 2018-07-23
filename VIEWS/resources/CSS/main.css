@@ -1139,6 +1139,25 @@ li.user-header.u-color .user-box .u-text{
   color: #009efb!important;
 }
 
+/*estilos del menu horizontal*/
+header.skin-blue{
+   background: #009efb;
+    background: -moz-linear-gradient(left, #0178bc 0%, #00bdda 100%);
+    background: -webkit-linear-gradient(left, #0178bc 0%, #00bdda 100%);
+    background: linear-gradient(to right, #0178bc 0%, #00bdda 100%);
+}
+span.logo-mini,
+span.logo-lg,
+i.fa-bars{
+  color: rgba(255, 255, 255, 0.9);
+}
+span.logo-mini:hover,
+span.logo-lg:hover,
+i.fa-bars:hover{
+  color: rgba(255, 255, 255, 1);
+  transition: all 0.3s ease-out;
+}
+
 
 
 /*header {
