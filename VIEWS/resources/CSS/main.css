@@ -1123,7 +1123,7 @@ li.user-header.u-color .user-box .u-text{
   display: inline-block;
   padding-left: 10px;
   text-align: left;
-  border-left: solid 1px #009efb;
+  border-left: solid 1px #00a65a; ;#009efb;
 }
 .user-box .u-text h4{
  color: #2c2b2e;
@@ -1166,7 +1166,7 @@ li.user-header.u-color .user-box .u-text{
 } 
 .dropdown-menu li a:hover{
   background: #f2f4f8!important;
-  color: #009efb!important;
+  color: #00a65a!important; #009efb!important;
 }
 
 
