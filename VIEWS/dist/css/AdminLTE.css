@@ -196,7 +196,7 @@ a:focus {
   transition: margin-left 0.3s ease-in-out;
   margin-bottom: 0;
   margin-left: 230px;
-  border: none;
+  /*border: none!important;*/
   min-height: 50px;
   border-radius: 0;
 }

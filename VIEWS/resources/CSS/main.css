@@ -1,5 +1,6 @@
 body{
   font-family: 'Rubik', sans-serif !important;
+  overflow: hidden!important;
 }
 
 nav.menuNav{
@@ -1047,6 +1048,7 @@ background-repeat: no-repeat;
 /*bg del login*/
 .skin-blue .wrapper{
   background: none!important;
+
 }
 
 .box-body table{
@@ -1074,6 +1076,10 @@ div.page-header {
   margin-bottom: -4px;
 }
 
+
+.box.box-info{
+  border-top-color: #00a65a!important;
+}
 
 /*perfil del usuario  ---user-header--*/
 
@@ -1109,7 +1115,7 @@ li.user-header.u-color .user-box .u-img{
 }
 .user-box .u-img img{
   width: 100%;
-<<<<<<< HEAD
+
 }
 li.user-header.u-color .user-box .u-text{
   display: inline-block;
@@ -1129,7 +1135,7 @@ li.user-header.u-color .user-box .u-text{
 .u-text p:last-child{
   font-size: 10px;  
 }
-=======
+
 }
 li.user-header.u-color .user-box .u-text{
   display: inline-block;
@@ -1149,7 +1155,7 @@ li.user-header.u-color .user-box .u-text{
 .u-text p:last-child{
   font-size: 10px;  
 }
->>>>>>> master
+
 /*perfil del usuario  ---li--*/
 .dropdown-menu li a{
   padding: 9px 10px!important;
@@ -1161,7 +1167,7 @@ li.user-header.u-color .user-box .u-text{
   color: #009efb!important;
 }
 
-<<<<<<< HEAD
+
 /*estilos del menu horizontal*/
 header.skin-blue{
    background: #009efb;
@@ -1181,8 +1187,18 @@ i.fa-bars:hover{
   transition: all 0.3s ease-out;
 }
 
-=======
->>>>>>> master
+/*contenido principal*/
+.main-header{
+  max-height: 8vh!important;
+  height: 8vh;
+}
+
+
+.content-wrapper{
+  max-height: 92vh!important;
+  height: 92vh!important;
+  overflow: auto!important;
+}
 
 
 /*header {
