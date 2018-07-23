@@ -1,20 +1,13 @@
 $(document).ready(function(){
  
-
-
+    $("div.spinner").addClass("hidden");
+    $("div.bgLightBlack").addClass("hidden");
 
   $("#id_product").change(function () {
     var name = $("#id_product option:selected").text();
   
     $("input#name_product").val($("#id_product option:selected").text());
   });
-
-
-
-    $("div.spinner").addClass("hidden");
-    $("div.bgLightBlack").addClass("hidden");
-
-
 
 });
 
