@@ -27,12 +27,13 @@
                 <!-- <i class="fas fa-user-circle"></i>-->
                 <div class="user-box">
                   <div class="u-img">
-                    <img class="img-thumbnail" src="https://wrappixel.com/demos/admin-templates/monster-admin/assets/images/users/1.jpg">
+                    <img class="img-thumbnail" src="<?=URL_IMG?>profile-avatar.png">
                   </div>
                   <div class="u-text">
-                    <h4><?= $_SESSION['user'][0]['name']?> </h4>          
+                    <h4><?= $_SESSION['user'][0]['name']?> </h4>  
                     <p class="text-muted"><?= $_SESSION['user'][0]['department']?></p>
-                    <p class="text-muted">Yair.facio11@gmail.com</p>
+                   
+          
                          <?php  
                           switch ($_SESSION['user'][0]['ranch']) {
                             case '1':
@@ -47,13 +48,15 @@
                               break;
                           }
                          ?>
+                    <div class="clear"></div>        
+
                     <p class="tiny"><?= $ranch."-" .$_SESSION['user'][0]['department'] ?></p>
                   </div>               
                 </div>
               </li>
               <li class="divider" role="separator"></li>
               <li>
-                <a href="">Profile <i class="fas fa-user"></i></a>
+                <a href="<?=URL?>profile?id=<?=$_SESSION['user'][0]['id']?>">Profile <i class="fas fa-user"></i></a>
               </li>
               <li class="divider" role="separator"></li>
               <li>
