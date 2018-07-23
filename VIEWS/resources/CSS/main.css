@@ -1,3 +1,7 @@
+body{
+  font-family: 'Rubik', sans-serif !important;
+}
+
 nav.menuNav{
 	position: fixed;
 	top: 0;
@@ -1071,18 +1075,70 @@ div.page-header {
 }
 
 
-/*perfil del usuario*/
+/*perfil del usuario  ---user-header--*/
 
-a.salir{
-  color: #54667a;
-  display: block;
-  padding:10px 15px;
-  margin: 0; 
+/*.user-menu a.shadow:focus,
+.user-menu a.shadow:active:focus{
+  animation: shadow .6s linear;
 }
-a:hover{
-  background-color: #f2f4f8;
-  color: #009efb;
+@keyframes shadow{
+  0%,100%{
+    box-shadow: inset 0px 0px 0px white;
+  }
+  50%{
+    box-shadow: inset 0px -50px 0px white;
+  }
+}*/
+
+li.user-header.u-color{
+  height: auto!important;
+  background: none!important;
+  padding: 0!important;
+  text-align: left!important;
+
 }
+li.user-header.u-color .user-box{
+  padding: 10px 15px;
+  height: 80px;
+  box-sizing: content-box;
+}
+li.user-header.u-color .user-box .u-img{
+  width: 80px;
+  display: inline-block;
+  vertical-align: top;
+}
+.user-box .u-img img{
+  width: 100%;
+}
+li.user-header.u-color .user-box .u-text{
+  display: inline-block;
+  padding-left: 10px;
+  text-align: left;
+  border-left: solid 1px #009efb;
+}
+.user-box .u-text h4{
+ color: #2c2b2e;
+ margin: 0;
+ margin-bottom: 5px;
+}
+.u-text p{
+  padding: 0;
+  margin: 0;
+}
+.u-text p:last-child{
+  font-size: 10px;  
+}
+/*perfil del usuario  ---li--*/
+.dropdown-menu li a{
+  padding: 9px 10px!important;
+  color:#54667a!important;
+  font-size: 1.5rem!important;
+} 
+.dropdown-menu li a:hover{
+  background: #f2f4f8!important;
+  color: #009efb!important;
+}
+
 
 
 /*header {

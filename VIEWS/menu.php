@@ -16,40 +16,52 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-        
-          <!-- Notifications: style can be found in dropdown.less -->
-       
-          <!-- Tasks: style can be found in dropdown.less -->
-         
-          <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="#" class="dropdown-toggle shadow" data-toggle="dropdown">
               <i class="fas fa-user-circle"></i>
               <span class="hidden-xs"><?= $_SESSION['user'][0]['name']?></span>
             </a>
             <ul class="dropdown-menu animated flipInY">
               <!-- User image -->
-              <li class="user-header">
-                <i class="fas fa-user-circle"></i>
-
-                <p>
-                  <?= $_SESSION['user'][0]['name']?>
-                  <small><?=$_SESSION['user'][0]['department']?></small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-             
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-right">
-                  <a href="<?=URL?>login/logout" class="btn btn-default btn-flat">Salir <i class="fas fa-power-off"></i></a>
+              <li class="user-header u-color">
+                <!-- <i class="fas fa-user-circle"></i>-->
+                <div class="user-box">
+                  <div class="u-img">
+                    <img class="img-thumbnail" src="https://wrappixel.com/demos/admin-templates/monster-admin/assets/images/users/1.jpg">
+                  </div>
+                  <div class="u-text">
+                    <h4><?= $_SESSION['user'][0]['name']?> </h4>          
+                    <p class="text-muted"><?= $_SESSION['user'][0]['department']?></p>
+                    <p class="text-muted">Yair.facio11@gmail.com</p>
+                         <?php  
+                          switch ($_SESSION['user'][0]['ranch']) {
+                            case '1':
+                              $ranch = "ALBARDAS";
+                              break;
+                            case '2':
+                              $ranch = "MAGDALENAS";
+                              break;
+                            
+                            default:
+                              $ranch = "ALBARDAS";
+                              break;
+                          }
+                         ?>
+                    <p class="tiny"><?= $ranch."-" .$_SESSION['user'][0]['department'] ?></p>
+                  </div>               
                 </div>
+              </li>
+              <li class="divider" role="separator"></li>
+              <li>
+                <a href="">Profile <i class="fas fa-user"></i></a>
+              </li>
+              <li class="divider" role="separator"></li>
+              <li>
+                <a href="<?=URL?>login/logout">Salir <i class="fas fa-power-off"></i></a>
               </li>
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
-          
         </ul>
       </div>
     </nav>
