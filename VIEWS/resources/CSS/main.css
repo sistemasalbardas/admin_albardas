@@ -1050,6 +1050,7 @@ background-repeat: no-repeat;
 /*bg del login*/
 .skin-blue .wrapper{
   background: none!important;
+  min-width: 80%;
 
 }
 
