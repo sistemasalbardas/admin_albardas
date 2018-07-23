@@ -32,8 +32,7 @@
 								'email' => $row['email'],
 								'phone' => $row['phone'],
 								'ranch' => $row['ranch'],
-								'department' => $row['department'],
-								'img_profile' => $row['img_profile']);
+								'department' => $row['department']);
   				
   				$_SESSION['user'][] = $array;
   				header("Location: ".URL."personal/");
