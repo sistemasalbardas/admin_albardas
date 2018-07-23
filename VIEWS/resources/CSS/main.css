@@ -305,6 +305,7 @@ table{
 	height: 100%;
 	background: rgba(0,0,0,.7);
 	z-index: 10;
+  display: none;
 }
 .bgLightBlack{
   position: fixed;
@@ -388,7 +389,7 @@ button.buttonTab:before{
     border-bottom: 35px solid transparent;
     overflow: hidden;
 }
-.modal, .modal2{
+.modalContent, .modal2{
 	position: fixed;
   top: 50%;
   left: 50%;
@@ -400,6 +401,7 @@ button.buttonTab:before{
   box-shadow: 3px 3px 20px #434141;
   height: auto;
   max-height: 90vh;
+  display: none;
 }
 .containerPanel{
   box-sizing: border-box;

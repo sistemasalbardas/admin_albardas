@@ -221,7 +221,7 @@ namespace MODELS;
 
 		
 		public function save_remision(){
-			$sql = "INSERT INTO referrals (id, date, f_flete, f_embarque, f_carga, user, name_file, id_prod, cant, moneda, id_employe, id_costumer, file_report) VALUES ('','{$this->date}','{$this->f_freight}','{$this->f_embark}', '{$this->f_charge}','{$this->user}','{$this->file}','',
+			$sql = "INSERT INTO referrals (id, date, f_flete, f_embarque, f_carga, user, name_file, id_prod, cant, trasporter, id_employe, id_costumer, file_report) VALUES ('','{$this->date}','{$this->f_freight}','{$this->f_embark}', '{$this->f_charge}','{$this->user}','{$this->file}','',
 				'','','{$this->id_employe}','{$this->id_costumer}','')";
 			$this->con->consultaSimple($sql);
 

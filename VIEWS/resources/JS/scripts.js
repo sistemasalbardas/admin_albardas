@@ -1,6 +1,6 @@
 $(document).ready(function() { 
-  
-    openModal2(null,'freight');
+
+  openModal2(null,'freight');
   $('#products').selectpicker();
 	event.preventDefault();
   var $lateral_menu_trigger = $('#cd-menu-trigger'),
@@ -186,7 +186,7 @@ function openModal2(obj,name){
 
 function closeModal(){
 	$(".bgBlack").fadeOut("fast");
-	$(".modal").fadeOut("fast");
+	$(".modalContent").fadeOut("fast");
 }
 
 function closeModal2(){

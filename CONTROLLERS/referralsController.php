@@ -342,7 +342,7 @@
 				
 				$this->referrals->save_freight();
 				$this->referrals->saveProducts();
-				$this->referrals->save();
+				$this->referrals->save_remision();
 					
 			}else{
 				return false;
