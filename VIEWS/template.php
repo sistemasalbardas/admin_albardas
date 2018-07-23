@@ -27,9 +27,7 @@
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 	<!-- nuevos link -->
-	  <link rel="stylesheet" href="<?= URL?>/VIEWS/resources/bower_components/bootstrap/dist/css/bootstrap.min.css">
-	  <!-- Font Awesome -->
-	  <link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/all.min.css">
+	
 	  <!-- Ionicons -->
 	  <link rel="stylesheet" href="<?= URL?>/VIEWS/resources/bower_components/Ionicons/css/ionicons.min.css">
 	  <!-- jvectormap -->
@@ -42,6 +40,11 @@
 	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
       <!-- <link href="https://unpkg.com/ionicons@4.2.4/dist/css/ionicons.min.css" rel="stylesheet"> -->
+      <!-- Latest compiled and minified CSS -->
+      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="<?= URL?>/VIEWS/resources/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	  <!-- Font Awesome -->
+	  <link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/all.min.css">
 	
 
 
