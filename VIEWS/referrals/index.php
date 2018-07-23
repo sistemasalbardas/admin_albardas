@@ -628,7 +628,7 @@
 </div>
 <div class="clear"></div>
 
-<form class="modal hidden" id="searchP">
+<form class="modalContent " id="searchP">
 	<div class="headModal">
 		<h4 class="text-bold">Agregar productos </h4>
 	</div>
@@ -695,7 +695,7 @@
 
 <?php if (isset($_GET['nCharge'])){ 
 	if (!$_SESSION['infoFreight']) { ?>
-	<form class="modal2 hidden" id="freight" onsubmit="saveFreight(this);" method="post">
+	<form class="modal2 " id="freight" onsubmit="saveFreight(this);" method="post">
 		<div class="headModal">
 			<h4 class="text-bold text-center"> INFORMACION DEL FLETE  </h4>
 		</div>
@@ -767,6 +767,6 @@
 			</div>
 		</div>
 	</form>
-	<div class="bgBlack2 hidden" id="bgBlack2"></div>
+	<div class="bgBlack2 " id="bgBlack2"></div>
 <?php  } } ?>
-<div class="bgBlack hidden" onclick="closeModal();"></div>
+<div class="bgBlack " onclick="closeModal();"></div>
