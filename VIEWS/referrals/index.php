@@ -77,7 +77,7 @@
 			</ul>
 
 			<div class="mW900">	
-				<form action="" class="padd25 border" method="post" action="" onsubmit="generateRemision(this);">
+				<form action="" class="padd25 border form-horizontal" method="post" action="" onsubmit="generateRemision(this);">
 					
 					
 								
@@ -112,14 +112,21 @@
 					</div>
 					<div class="clear"></div>
 					<div class="row">
-						<div class=" col-lg-offset-5 col-lg-4">
-							<label for="date">Fecha: </label>
-							<input type="date" name="date" id="date" required="">
+						<div class=" col-sm-6 col-lg-6">
+							<div class="form-group">
+								<label for="date" class="control-label col-md-2">Fecha: </label>
+								<div class="col-md-10">
+									<input type="date" class="form-control" name="date" id="date" required="">
+								</div>
+							</div>
 						</div>
-						<div class="col-lg-3">
-							<label for="time">Hora:</label>
-
-							<input type="time" name="time" id="time" required="">	
+						<div class=" col-sm-6 col-lg-6">
+							<div class="form-group">
+								<label for="time" class="control-label col-md-2">Hora:</label>
+								<div class="col-md-10">
+									<input type="time" class="form-control" name="time" id="time" required="">
+								</div>
+							</div>
 						</div>
 					</div>
 					<hr>	

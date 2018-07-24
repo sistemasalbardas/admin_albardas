@@ -1048,10 +1048,44 @@ background-repeat: no-repeat;
 }
 
 /*bg del login*/
-.skin-blue .wrapper{
+.skin-green .wrapper{
   background: none!important;
-  min-width: 80%;
+  min-width: 80%!important;
 
+}
+@media only screen and (min-width: 1005px){
+  .skin-green .wrapper .content-wrapper{
+    margin-top: -10px!important;
+  }
+}
+@media only screen and (min-width: 767px){
+  .skin-green .wrapper .content-wrapper{
+    min-width: 100%!important;
+    margin-top: -20px;
+  }
+}
+@media only screen and (max-width: 766px){
+  .skin-green .wrapper .content-wrapper{
+    margin-top: 45px!important;
+    min-width: 100%!important;
+  }
+}
+@media only screen and (max-width: 737px){
+  .skin-green .wrapper .content-wrapper{
+    margin-top: 50px!important;
+    min-width: 100%!important;
+  }
+}
+@media only screen and (max-width: 685px){
+  .skin-green .wrapper .content-wrapper{
+    margin-top: 50px!important;
+    min-width: 100%!important;
+  }
+}
+@media only screen and (max-width: 414px){
+  .skin-green .wrapper .content-wrapper{
+    margin-top: 50px!important;
+  }
 }
 
 .box-body table{
