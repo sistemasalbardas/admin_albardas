@@ -134,30 +134,32 @@
 						<div class="col-lg-12   m5 padd10 ">	
 							<!--EMPRESA-->
 							<div class="row borderB">
-								
-								<div class="col-lg-2 ">
-									<label for=""><b>EMPRESA:</b></label> <br>
-									<label for="">DOMICILIO:</label> <br>
-									<label for="">RFC:</label> <br>
-									<div class="clear">	</div>
-								</div>
-
-								<div class="col-lg-7 col-md-7  ">
-									<select name="name_employe" id="employe" onchange="setUrl(this);" class="select block" required="">
+								<div class="form-group has-success">
+									<label for="employe" class="control-label col-md-2"><b>EMPRESA:</b></label>
+									<div class="col-md-5">
+										<select name="name_employe" id="employe" onchange="setUrl(this);" class="select block form-control selectpicker" data-live-search="true" required="">
 										<option value="<?=  $datos['name'];?>"><?=  $datos['name'];?></option>
 										<option value="4">El Cegador SPR de RL de CV</option>
 										<option value="3">Las Albardas SPR de RL de CV</option>
 										<option value="1">El Calabacillal SPR de RL de CV</option>
 									</select>
-									<input type="text" name="address_employe" id="" value="<?= $datos['addres'];?>" class="w100 block" required="">
-									<input type="text" name="rfc_employe" id="" value="<?= $datos['rfc'];?>" class="w100 block" required=""><br>
-									<input type="hidden" name="id_employe" id="" value="<?= $datos['id'];?>" class="w100 block" required="">
-
-								</div>	
-
-								<div class="col-lg-3">
-									<br>					
-								</div>	
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="address_employe" class="control-label col-md-2">DOMICILIO:</label>
+									<div class="col-md-5">
+										<input type="text" name="address_employe" id="address_employe" value="<?= $datos['addres'];?>" class="w100 block form-control" required="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="rfc_employe" class="control-label col-md-2">RFC:</label>
+									<div class="col-md-5">
+										<input type="text" name="rfc_employe" id="rfc_employe" value="<?= $datos['rfc'];?>" class="w100 block form-control" required="">
+									</div>
+								</div>
+								<div class="clear">
+										<input type="hidden" name="id_employe" id="" value="<?= $datos['id'];?>" class="w100 block" required="">
+								</div>
 							</div>
 							
 							<!--CLIENTE-->
