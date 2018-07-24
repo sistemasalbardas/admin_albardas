@@ -146,7 +146,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="address_employe" class="control-label col-md-2">DOMICILIO:</label>
+									<label for="address_employe" class="control-label col-md-2">DOMICILIOo:</label>
 									<div class="col-md-5">
 										<input type="text" name="address_employe" id="address_employe" value="<?= $datos['addres'];?>" class="w100 block form-control" required="">
 									</div>
