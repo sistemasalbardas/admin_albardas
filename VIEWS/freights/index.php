@@ -12,7 +12,7 @@
 		<div class="mainContent">
 
 			<div class="clear"></div>
-			<div class="containerTable text-responsive">
+			<div class="containerTable table-responsive">
 						<table id="tableFreights">
 							<thead>
 								<tr>
@@ -63,7 +63,7 @@
 								<?php } ?>
 							</tbody>
 						</table>
-					</div>
+			</div>
 		</div>
 	</div>
 <!-- </div> -->

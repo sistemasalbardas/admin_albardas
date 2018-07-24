@@ -30,8 +30,9 @@ $("input#flete").change(function () {
 });
 
 
+
 const URL = "http://192.168.50.109/admin_albardas/";  
-//const URL = "http://192.168.1.69/ADMIN/";  
+
 
  function getGET()
 {
