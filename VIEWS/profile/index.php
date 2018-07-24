@@ -1,52 +1,45 @@
 <?php 
 	$row = $profile->index();
 ?>
-<div class="containerPanel">	
+<div class="col-md-6">
+	  <!-- general form elements -->
+	<div class="box box-success">
+	    <div class="box-header with-border">
+	      <h3 class="box-title">Informacion del perfil</h3>
+	    </div>
+	    <!-- /.box-header -->
+	    <!-- form start -->
+	    <form action="<?=URL?>profile/update/" method="post"  id="" onsubmit="updateProfile(this)" autocomplete="off" class="box-body">
+	    	<input type="hidden" name="id" value="<?= $row['id']?>">
+	      	<div class="box-body">
+		        <div class="form-group">
+		          <label for="name">Nombre: </label>
+		          <input type="text" class="form-control" id="name" name="name" value="<?= $row['name']?>">
+		        </div>
+		        <div class="form-group">
+		          <label for="last_name">Apellidos: </label>
+		          <input type="text" class="form-control" id="last_name" name="last_name" value="<?= $row['last_name']?>">
+		        </div>
+		        <div class="form-group">
+		          <label for="phone">Telefono: </label>
+		          <input type="number" class="form-control" id="phone" name="phone" value="<?= $row['phone']?>">
+		        </div>
+		        <div class="form-group">
+		          <label for="email">Correo electronico: </label>
+		          <input type="email" class="form-control" id="email" name="email" value="<?= $row['email']?>">
+		        </div>
+	      </div>
+	      <!-- /.box-body -->
 
-		
-	<form action="<?=URL?>profile/update/" method="post"  id="" onsubmit="updateProfile(this)">
-		<input type="hidden" name="id" value="<?= $row['id']?>">
-		<div class="headContent">
-			<h4 class="text-bold">Editar informacion de perfil</h4>
-		</div>
-
-		<div class="mainContent mW600">
-			<div class="row">
-				<div class="col-lg-10">
-					<label for="name">Nombre:</label>
-					<input type="text" name="name" id="name" class="inputStyle" required value="<?= $row['name']?>"> 
-				</div>
-			</div>
-			<div class="clear"></div>
-			<div class="row">
-				<div class="col-lg-10">
-					<label for="last_name">Apellidos:</label>
-					<input type="text" name="last_name" id="last_name" class="inputStyle" required value="<?= $row['last_name']?>"> 
-				</div>
-			</div>
-			<div class="clear"></div>
-			<div class="row">
-				<div class="col-lg-10">
-					<label for="email">Correo electronico:</label>
-					<input type="text" name="email" id="email" class="inputStyle" required value="<?= $row['email']?>"> 
-				</div>
-			</div>
-			<div class="clear"></div>
-			<div class="row">
-				<div class="col-lg-10">
-					<label for="phone">Telefono:</label>
-					<input type="text" name="phone" id="phone" class="inputStyle" required value="<?= $row['phone']?>"> 
-				</div>
-			</div>
-		</div>
-		<div class="footerModal">
-			<div class="row">
-				<div class="col-lg-4 ">
-					<input type="submit" value="Actualizar" class="btn green">
-				</div>
-			</div>
-		
-		</div>
-	</form>
+	      <div class="box-footer">
+	        <button type="submit" class="btn btn-primary">Actualizar informacion</button>
+	      </div>
+	    </form>
+	</div>
 </div>
+          <!-- /.box -->
+
+							
+
+							
 

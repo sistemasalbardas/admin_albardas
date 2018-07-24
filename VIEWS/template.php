@@ -43,7 +43,7 @@
       <!-- <link href="https://unpkg.com/ionicons@4.2.4/dist/css/ionicons.min.css" rel="stylesheet"> -->
       <!-- Latest compiled and minified CSS -->
       <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-      <link rel="stylesheet" href="<?= URL?>/VIEWS/resources/bower_components/bootstrap/dist/css/bootstrap.min.css">
+     <link rel="stylesheet" href="<?= URL?>/VIEWS/resources/bower_components/bootstrap/dist/css/bootstrap.min.css">
 	  <!-- Font Awesome -->
 	  <link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/all.min.css">
 	
@@ -51,50 +51,29 @@
 
 </head>
 <body class="hold-transition skin-green sidebar-mini">
-<div class="wrapper">
-
-	<div class="spinner">
-		  <div class="bounce1"></div>
-		  <div class="bounce2"></div>
-		  <div class="bounce3"></div>
-		  <span class="block s12">
-		  	Cargando..
-		  </span>
-	</div>
-
-<div class="bgLightBlack"></div>
+	<div class="wrapper">
+		<div class="spinner">
+			  <div class="bounce1"></div>
+			  <div class="bounce2"></div>
+			  <div class="bounce3"></div>
+			  <span class="block s12">
+			  	Cargando..
+			  </span>
+		</div>
+		<div class="bgLightBlack"></div>
 <?php if (isset($_SESSION['user'])){require "menu.php"; } ?>
-	<section class="content">
-		<div class="box box-info">
-	        <div class="box-header with-border">
-	          <div class="page-header col-md-6">
-	          	<h3 class="box-title text-muted">
-	          		<strong>Las Albardas</strong>
-	          		<small>-Agricola</small>
-	          	</h3>
-	          </div>
+	
 
 
-	          <div class="box-tools pull-right">
-	            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-	            </button>
-	            <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button> -->
-	          </div>
-	        </div>
+	          
+	        
 	            <!-- /.box-header -->
-	        <div class="box-body">
+	        
 	        	<!-- contenido dinamico con la funcion destruct -->
 	<?php	}	public function __destruct(){?>
-			</div>
-            <!-- /.box-body -->
-            <div class="box-footer text-center">
-            	<p>Todos los derechos reservados &copy; 2018-2019  </p>
-            </div>
-            <!-- /.box-footer -->
-	    </div>
-	</section>
-  </div>  <!-- content-wraper -->
-</div>
+			
+
+	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script src="<?= URL?>/VIEWS/resources/JS/scripts.js"></script>
@@ -109,7 +88,7 @@
 	<!-- nuevos scripts -->
 	<!-- AdminLTE App -->
 	<script src="<?= URL?>/VIEWS/dist/js/adminlte.min.js"></script>
-	
+
 
 </body>
 </html>

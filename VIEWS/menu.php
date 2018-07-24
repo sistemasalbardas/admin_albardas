@@ -159,8 +159,9 @@
     <section class="content-header">
       <h1>
         Panel
-        <small>Administrativo</small>
+        <small>de administracion</small>
       </h1>
     </section>
+    <div class="clear"> </div>
 
 
