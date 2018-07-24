@@ -23,10 +23,17 @@
 
 		public function update()
 		{
-			
+			if ($_POST) {
+				$this->profile->set("id", $_POST['id']);
+				$this->profile->set("name", $_POST['name']);
+				$this->profile->set("last_name", $_POST['last_name']);
+				$this->profile->set("email", $_POST['email']);
+				$this->profile->set("phone", $_POST['phone']);
+				$this->profile->update_user();
+				
+			}
 		}
 		
 	}
-	
 	$profile = new profileController();
  ?>	

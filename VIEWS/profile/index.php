@@ -4,7 +4,7 @@
 <div class="containerPanel">	
 
 		
-	<form action="<?=URL?>transporters/add/" method="post"  id="addEmploye">
+	<form action="<?=URL?>profile/update/" method="post"  id="" onsubmit="updateProfile(this)">
 		<input type="hidden" name="id" value="<?= $row['id']?>">
 		<div class="headContent">
 			<h4 class="text-bold">Editar informacion de perfil</h4>
@@ -42,7 +42,7 @@
 		<div class="footerModal">
 			<div class="row">
 				<div class="col-lg-4 ">
-					<input type="submit" value="Actalizar" class="btn green">
+					<input type="submit" value="Actualizar" class="btn green">
 				</div>
 			</div>
 		

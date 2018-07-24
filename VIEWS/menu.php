@@ -30,8 +30,9 @@
                     <img class="img-thumbnail" src="<?=URL_IMG?>profile-avatar.png">
                   </div>
                   <div class="u-text">
-                    <h4><?= $_SESSION['user'][0]['name']?> </h4>  
-                    <p class="text-muted"><?= $_SESSION['user'][0]['department']?></p>
+                    <div class="clear"></div>
+                    <h4><?= $_SESSION['user'][0]['name']?></h4>  
+                  
                    
           
                          <?php  
@@ -48,15 +49,17 @@
                               break;
                           }
                          ?>
-                    <div class="clear"></div>        
-
-                    <p class="tiny"><?= $ranch."-" .$_SESSION['user'][0]['department'] ?></p>
+   
+                    <div class="clear"></div>
+                    <p class="tiny s12"><?= $ranch."-" .$_SESSION['user'][0]['department'] ?></p>
+                    <div class="clear"></div>
+                    
                   </div>               
                 </div>
               </li>
               <li class="divider" role="separator"></li>
               <li>
-                <a href="<?=URL?>profile?id=<?=$_SESSION['user'][0]['id']?>">Profile <i class="fas fa-user"></i></a>
+                <a href="<?=URL?>profile?id=<?=$_SESSION['user'][0]['id']?>">Perfil <i class="fas fa-user"></i></a>
               </li>
               <li class="divider" role="separator"></li>
               <li>
@@ -78,7 +81,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?= URL_IMG ?>/rancho.jpg" class="img-circle" alt="User Image">
+          <img src="<?= URL_IMG ?>/logo.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p><?= $_SESSION['user'][0]['name']?></p>
