@@ -1,6 +1,6 @@
 body{
   font-family: 'Rubik', sans-serif !important;
-  overflow: hidden!important;
+  /*overflow: hidden!important;*/
 }
 
 nav.menuNav{
@@ -1053,18 +1053,18 @@ background-repeat: no-repeat;
   min-width: 80%!important;
 
 }
-@media only screen and (min-width: 1005px){
+/*@media only screen and (min-width: 1005px){
   .skin-green .wrapper .content-wrapper{
     margin-top: -10px!important;
   }
 }
-@media only screen and (min-width: 767px){
+@media only screen and (min-width: 768px) {
   .skin-green .wrapper .content-wrapper{
-    min-width: 100%!important;
+    min-width: 70%!important;
     margin-top: -20px;
   }
 }
-@media only screen and (max-width: 766px){
+@media only screen and (max-width: 767px){
   .skin-green .wrapper .content-wrapper{
     margin-top: 45px!important;
     min-width: 100%!important;
@@ -1086,7 +1086,7 @@ background-repeat: no-repeat;
   .skin-green .wrapper .content-wrapper{
     margin-top: 50px!important;
   }
-}
+}*/
 
 .box-body table{
   width: 100%!important;
@@ -1226,15 +1226,15 @@ i.fa-bars:hover{
 
 /*contenido principal*/
 .main-header{
-  max-height: 8vh!important;
-  height: 8vh;
+  /*max-height: 8vh!important;
+  height: 8vh;*/
 }
 
 
 .content-wrapper{
-  max-height: 92vh!important;
+  /*max-height: 92vh!important;
   height: 92vh!important;
-  overflow: auto!important;
+  overflow: auto!important;*/
 }
 
 

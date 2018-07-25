@@ -107,46 +107,98 @@
       <!-- Sidebar Menu -->
 	    <ul class="sidebar-menu" data-widget="tree">
 	        <li class="treeview">
-	          <a href="#"><i class="fas fa-copy"></i> <span>Remisiones</span>
-	            <span class="pull-right-container">
-	                <i class="fas fa-angle-left pull-right"></i>
-	              </span>
-	          </a>
-	          <ul class="treeview-menu">
-	            <li><a href="<?=URL?>referrals/"><i class="far fa-circle"></i> Nueva remision</a></li>
-				<li><a href="<?=URL?>referrals/control/"><i class="far fa-circle"></i> Control de remisiones</a></li>
-	          </ul>
+  	          <a href="#">
+                <i class="fas fa-copy"></i> <span>Remisiones</span>
+  	            <span class="pull-right-container">
+  	                <i class="fas fa-angle-left pull-right"></i>
+  	            </span>
+  	          </a>
+  	          <ul class="treeview-menu">
+  	            <li>
+                  <a href="<?=URL?>referrals/">
+                    <i class="far fa-circle"></i> Nueva remision
+                  </a>
+                </li>
+  				      <li>
+                  <a href="<?=URL?>referrals/control/">
+                    <i class="far fa-circle"></i> Control de remisiones
+                  </a>
+                </li>
+  	          </ul>
 	        </li>
 	        <li class="treeview">
-	          <a href="#"><i class="fas fa-users"></i> <span>Personal</span>
-	            <span class="pull-right-container">
-	                <i class="fas fa-angle-left pull-right"></i>
-	              </span>
-	          </a>
-	          <ul class="treeview-menu">
-		        <li><a href="<?=URL?>personal/?tab=1"><i class="far fa-circle"></i> Personal</a></li>
-	          </ul>
+  	          <a href="#">
+                <i class="fas fa-users"></i> <span>Personal</span>
+  	            <span class="pull-right-container">
+  	                <i class="fas fa-angle-left pull-right"></i>
+  	            </span>
+  	          </a>
+  	          <ul class="treeview-menu">
+  		          <li>
+                  <a href="<?=URL?>personal/?tab=1">
+                    <i class="far fa-circle"></i> Personal
+                  </a>
+                </li>
+  	          </ul>
 	        </li>
 				
 	        <li class="treeview">
-	          <a href="#"><i class="fas fa-file"></i> <span>Requisiciones</span>
+	          <a href="#">
+              <i class="fas fa-file"></i> <span>Requisiciones</span>
 	            <span class="pull-right-container">
 	                <i class="fas fa-angle-left pull-right"></i>
-	              </span>
+	            </span>
 	          </a>
 	          <ul class="treeview-menu">
-		        <li><a href="<?=URL?>requisitions/"><i class="far fa-circle"></i> nueva requisicion</a></li>
-				<li><a href="<?=URL?>requisitions/control/"><i class="far fa-circle"></i> Control </a></li>
-				<li><a href="<?=URL?>requisitions/config/"><i class="far fa-circle"></i> Configuracion </a></li>
+		          <li>
+                <a href="<?=URL?>requisitions/">
+                  <i class="far fa-circle"></i> nueva requisicion
+                </a>
+              </li>
+				      <li>
+                <a href="<?=URL?>requisitions/control/">
+                  <i class="far fa-circle"></i> Control 
+                </a>
+              </li>
+				      <li>
+                <a href="<?=URL?>requisitions/config/">
+                  <i class="far fa-circle"></i> Configuracion 
+                </a>
+              </li>
 	          </ul>
 	        </li>
-	        <li><a href="<?=URL?>products/"><i class="far fa-circle"></i> <span>Productos</span></a></li>
-			<li><a href="<?=URL?>freights/"><i class="far fa-circle"></i> <span>Fletes</span></a></li>
-			<li><a href="<?=URL?>inventories/"><i class="far fa-circle"></i> <span>Inventarios</span></a></li>
-			<li><a href="<?=URL?>costumers/"><i class="far fa-circle"></i> <span>Clientes</span></a></li>
-			<li><a href="<?=URL?>transporters/"><i class="far fa-circle"></i> <span>Transportistas</span></a></li>
-			<li><a href="<?=URL?>login/logout/"><i class="far fa-circle"></i> <span>Salir</span></a></li>
-	    </ul>
+	        <li>
+            <a href="<?=URL?>products/">
+              <i class="far fa-circle"></i> <span>Productos</span>
+            </a>
+          </li>
+    			<li>
+            <a href="<?=URL?>freights/">
+              <i class="far fa-circle"></i> <span>Fletes</span>
+            </a>
+          </li>
+    			<li>
+            <a href="<?=URL?>inventories/">
+              <i class="far fa-circle"></i> <span>Inventarios</span>
+            </a>
+          </li>
+    			<li>
+            <a href="<?=URL?>costumers/">
+              <i class="far fa-circle"></i> <span>Clientes</span>
+            </a>
+          </li>
+    			<li>
+            <a href="<?=URL?>transporters/">
+              <i class="far fa-circle"></i> <span>Transportistas</span>
+            </a>
+          </li>
+    			<li>
+            <a href="<?=URL?>login/logout/">
+              <i class="far fa-circle"></i> <span>Salir</span>
+            </a>
+          </li>
+          
+    	</ul>
       <!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

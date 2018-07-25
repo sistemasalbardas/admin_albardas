@@ -50,7 +50,7 @@
 
 
 </head>
-<body class="hold-transition skin-green sidebar-mini">
+<body class="hold-transition skin-green sidebar-mini fixed">
 	<div class="wrapper">
 		<div class="spinner">
 			  <div class="bounce1"></div>
