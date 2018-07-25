@@ -1,35 +1,37 @@
-<div class="clear"></div>
-<!-- <div class="mainContainer"> -->
-<div class="containerPanel">	
-	<form class="" method="post"  id="saveWork" autocomplete="off" action="<?=URL?>/products/add/">
-		<div class="headContent">
-			<h4 class="text-bold">Nuevo producto</h4>
-		</div>
-
-
-		<div class="mainContent mW600">
-			<div class="row">
-				<div class="col-lg-8">
-					<label for="name">Nombre del producto:</label>
-					<input type="text" name="name" id="name" class="inputStyle" value="" required> 
-				</div>
-			</div>
-			<div class="clear"></div>
-			<div class="row">
-				<div class="col-lg-8">
-					<label for="quality">Calidad:</label>
-					<select name="quality" id="quality" class="inputStyle" required="">
+<div class="col-md-6">
+	  <!-- general form elements -->
+	<div class="box box-success">
+	    <div class="box-header with-border">
+	      <h3 class="box-title">Nuevo producto</h3>
+	      <div class="box-tools pull-right">
+	      	                
+                <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            
+           </div>
+	    </div>
+	    <!-- /.box-header -->
+	    <!-- form start -->
+	    <form class="box-body" method="post"  id="saveWork" autocomplete="off" action="<?=URL?>/products/add/">
+	    	
+	      	<div class="box-body">
+		        <div class="form-group">
+		          	<label for="name">Nombre del producto:</label>
+					<input type="text" name="name" id="name" class="form-control" value="" required> 
+		        </div>
+		        <div class="form-group">
+		         
+		          <label for="quality">Calidad:</label>
+					<select name="quality" id="quality" class="form-control" required="">
 						<option value="">SELECCIONA</option>
 						<option value="1 RA">1 RA </option>
 						<option value="2 DA">2 DA</option>
 					</select>
-				</div>
-			</div>
-			<div class="clear"></div>
-			<div class="row">
-				<div class="col-lg-8">
-					<label for="size">TAMAÑO:</label>
-					<select name="size" id="size" class="inputStyle" required="">
+		        </div>
+		        <div class="form-group">
+		        	<label for="size">Tamaño:</label>
+					<select name="size" id="size" class="form-control" required="">
 						<option value="">SELECCIONA</option>
 						<optgroup label="TAMAÑOS DE CHILES">
 						    <option value="XL"> XL</option>
@@ -43,15 +45,11 @@
 							<option value="PP"> PP</option>
 							<option value="J"> J</option>
 						</optgroup>
-						
 					</select>
-				</div>
-			</div>
-			<div class="clear"></div>
-			<div class="row">
-				<div class="col-lg-8">
-					<label for="pack">EMPAQUE:</label>
-					<select name="pack" id="pack" class="inputStyle" required="">
+		        </div>
+		        <div class="form-group">
+		          <label for="pack">Empaque:</label>
+					<select name="pack" id="pack" class="form-control" required="">
 						<option value="">SELECCIONA</option>
 						<optgroup label="EMPAQUE CHILES">
 						    <option value=" CARTON 1 1/9">  CARTON 1 1/9</option>
@@ -63,17 +61,11 @@
 							<option value="ARPILLA MORADA">ARPILLA MORADA</option>
 							<option value="ARPILLA MEXICAN">ARPILLA MEXICAN </option>
 						</optgroup>
-						
 					</select>
-				</div>
-			</div>
-			
-
-			<div class="clear"></div>
-			<div class="row">
-				<div class="col-lg-8">
-					<label for="brand">MARCA:</label>
-					<select name="brand" id="brand" class="inputStyle" required="">
+		        </div>
+		        <div class="form-group">
+		        	<label for="brand">Marca:</label>
+					<select name="brand" id="brand" class="form-control" required="">
 						<option value="">SELECCIONA</option>
 						<option value="GENERICO">GENERICO</option>
 					    <option value="ANAVALE">ANAVALE </option>
@@ -83,34 +75,30 @@
 						<option value="CHILOSO">CHILOSO </option>
 						<option value="CASCO"> CASCO</option>
 					</select>
-				</div>
-			</div>
-			<div class="clear"></div>
-			<div class="row">
-				<div class="col-lg-2">
-					<label for="weight">PESO:</label>
-					<input type="number" id="weight" name="weight" class="inputStyle" required="">
-					
-				</div>
-				<div class="col-lg-3">
-					<label for=""> <br></label>
-					<select name="unit_measure" id="unit_measure" class="inputStyle" required="">
-						<option value=""></option>
-						<option value="LBS">LBS</option>
-						<option value="KG">KG</option>
-					    
-					</select>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>	
-		<div class="footerModal">
-			<div class="row">
-				<div class="col-lg-4 ">
-					<input type="submit" value="Guardar" class="btn green">
-				</div>
-			</div>
-		</div>
-	</form>
-</div>
+		        </div>	
+		        <div class="form-group">
+		        	<div class="row">
+			        	<div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+							<label for="weight">Peso:</label>
+							<input type="number" id="weight" name="weight" class="form-control" required="">
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+							<label for=""> <br></label>
+							<select name="unit_measure" id="unit_measure" class="form-control" required="">
+								<option value=""></option>
+								<option value="LBS">LBS</option>
+								<option value="KG">KG</option>
+							    
+							</select>
+						</div>
+					</div>
+			    </div>
+	      </div>
+	      <!-- /.box-body -->
 
+	      <div class="box-footer">
+	        <button type="submit" class="btn btn-primary">Guardar</button>
+	      </div>
+	    </form>
+	</div>
+</div>

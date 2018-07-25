@@ -1,39 +1,44 @@
 <?php 
 	$data = $products->index();
  ?>
-<!-- <div class="mainContainer">
-	<div class="clear"></div> -->
-	<div class="containerPanel">
-		<div class="headContent">
-			<h4 class="text-bold">Control de productos</h4>
-		</div>
-		<div class="mainContent">
+
+<div class="col-md-12">
+	<div class="box box-success">
+	    <div class="box-header with-border">
+	      <h3 class="box-title text-600">Listado de productos</h3>
+	      <div class="box-tools pull-right">
+	      	                
+                <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            
+           </div>
+	    </div>
+		<div class="box-body padd10 bgWhite table-responsive">
 			<div class="row">
-				<div class="col-lg-2 padd10 ">
-					
-					<a href="<?= URL?>products/add/" class="btn bgBlue s14">Nuevo producto</a>
+				<div class="col-lg-2  ">
+					<a href="<?= URL?>products/add/" class="btn btn-primary s14">Nuevo producto</a>
 				</div>
 				
 			</div>
 			<div class="clear"></div>
-			<div class="containerTable table-responsive">
-						<table id="tableCostumers">
-							<thead>
-								<tr>
-									<td>ID</td>
-									<td>NOMBRE</td>
-									<td>CALIDAD</td>
-									<td>TAMAÑO</td>
-									<td>EMPAQUE</td>
-									<td>MARCA</td>
-									<td>PESO</td>
-									<td>ACCIONES</td>
-								</tr>
-							</thead>	
-							<tbody>
-								<?php while($row = mysqli_fetch_array($data)){?>
-								    <tr>
-								      	<th><?= $row['id']; ?></th>
+			<table id="tableCostumers" class="table bgWhite">
+				<thead>
+					<tr>
+						<th scope="col" >ID</th>
+						<th scope="col" >NOMBRE</th>
+						<th scope="col" >CALIDAD</th>
+						<th scope="col" >TAMAÑO</th>
+						<th scope="col" >EMPAQUE</th>
+						<th scope="col" >MARCA</th>
+						<th scope="col" >PESO</th>
+						<th scope="col" >ACCIONES</th>
+					</tr>
+				</thead>	
+				<tbody>
+					<?php while($row = mysqli_fetch_array($data)){?>
+					    <tr>
+					    	<th><?= $row['id']; ?></th>
 								      	<th>
 								      		<?= $row['name']; ?>
 								      	</th>
@@ -57,11 +62,13 @@
 								      		</a>
 								      		
 								      	</th>
-								    </tr>
-								<?php } ?>
-							</tbody>
-						</table>
-			</div>
+
+					    </tr>
+					<?php } ?>
+				</tbody>
+			</table>
+		</div>
+		<div class="box-footer">
 		</div>
 	</div>
-<!-- </div> -->
+</div>
