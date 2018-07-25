@@ -134,7 +134,7 @@
 						<div class="col-lg-12   m5 padd10 ">	
 							<!--EMPRESA-->
 							<div class="row borderB">
-								<div class="form-group has-success">
+								<div class="form-group">
 									<label for="employe" class="control-label col-md-2"><b>EMPRESA:</b></label>
 									<div class="col-md-5">
 										<select name="name_employe" id="employe" onchange="setUrl(this);" class="select block form-control selectpicker" data-live-search="true" required="">
@@ -165,7 +165,7 @@
 							<!--CLIENTE-->
 							<div class="clear">	</div>
 							<div class="row borderB">
-								<div class="form-group has-success">
+								<div class="form-group ">
 									<label for="costumer" class="control-label col-md-2"><b>CLIENTE:</b></label>
 									<div class="col-md-5">
 										<select name="name_costumer" id="costumer" onchange="setUrl(this);" required="" class="select form-control selectpicker"  data-live-search="true">
@@ -274,7 +274,7 @@
 								<div class="row">
 									<div class="col-lg-6 border padd5">
 										<div class="row">
-											<div class="form-group has-success">
+											<div class="form-group">
 												<label for="transport" class="control-label col-md-4"><b>Transportista:</b></label>
 												<div class="col-md-8">
 													<select name="name_trasport" id="transport" class="block select form-control selectpicker" data-live-search="true"  onchange="setUrl(this);">
@@ -700,7 +700,7 @@
 
 				</div>
 				<div class="clear"></div>
-				<div class="containerTable">
+				<div class="containerTable table-responsive">
 					<table>
 						<thead>
 						<tr>
