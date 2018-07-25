@@ -414,7 +414,7 @@ button.buttonTab:before{
 .headModal, .mainModal, .headContent, .mainContent{
   display: block;
   padding: 10px 15px;
-  border-bottom: 1px solid rgba(0,0,0,.1);
+  /* border-bottom: 1px solid rgba(0,0,0,.1); */
 }
 .mainContent{
   /**max-width: 650px;**/
@@ -1173,7 +1173,7 @@ li.user-header.u-color .user-box .u-text{
   font-size: 10px;  
 }
 
-}
+
 li.user-header.u-color .user-box .u-text{
   display: inline-block;
   padding-left: 10px;
@@ -1278,6 +1278,12 @@ header.is-fixed {
   }
 }
 */
+
+/* footer */
+footer.main-footer{
+  border:0px solid rgba(0,0,0,0)!important;
+  margin-left: 0px!important;
+}
 #cd-logo {
   display: block;
   float: left;

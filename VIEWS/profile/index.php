@@ -11,7 +11,7 @@
                 </button>
                 <a href="" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-home"></i></a>
             
-           </div>
+        </div>
 	    </div>
 	    <!-- /.box-header -->
 	    <!-- form start -->
