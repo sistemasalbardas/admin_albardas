@@ -2,33 +2,33 @@
 	$data = $costumers->index();
  ?>
 <!-- <div class="mainContainer"> -->
-<div class="col-md-10">
+<div class="col-md-12">
 	<div class="box box-success">
 	    <div class="box-header with-border">
-	      <h3 class="box-title">Listado de clientes</h3>
+	      <h3 class="box-title text-600">Listado de clientes</h3>
 	    </div>
 		<div class="box-body padd10 bgWhite table-responsive">
 			<table id="tableCostumers" class="table bgWhite">
 				<thead>
 					<tr>
-						<th scope="col" class="s14 text-center">ID</th>
-						<th scope="col" class="s14 text-center">RAZÓN SOCIAL</th>
-						<th scope="col" class="s14 text-center">RFC	</th>
-						<th scope="col" class="s14 text-center">TELEFONO</th>
-						<th scope="col" class="s14 text-center">EMBARQUES</th>
-						<th scope="col" class="s14 text-center">ACCIONES</th>
+						<th scope="col" >ID</th>
+						<th scope="col" >RAZÓN SOCIAL</th>
+						<th scope="col" >RFC	</th>
+						<th scope="col" >TELEFONO</th>
+						<th scope="col" >EMBARQUES</th>
+						<th scope="col" >ACCIONES</th>
 					</tr>
 				</thead>	
 				<tbody>
 					<?php while($row = mysqli_fetch_array($data)){?>
 					    <tr>
-					      	<th class="s12"><?= $row['id']; ?></th>
-					      	<th class="s12">	
-					      		<a href="viewWork/<?= $row['id'];?>"><?= $row['name']; ?></a></th>
-					      	<th class="s12"><?= $row['rfc']; ?></th>
-					      	<th class="s12"><?= $row['phone']; ?></th>
-					      	<th class="s12"><?= $row['embark']; ?></th>
-					      	<th class="s12">
+					      	<th ><?= $row['id']; ?></th>
+					      	<th >	
+					      		<a href="#"><?= $row['name']; ?></a></th>
+					      	<th ><?= $row['rfc']; ?></th>
+					      	<th ><?= $row['phone']; ?></th>
+					      	<th ><?= $row['embark']; ?></th>
+					      	<th >
 					      		<a href="delete/?id=<?= $row['id'];?>" onclick="deleteCostumer(this);" class="tool">
 					      			<i class="btn btn-danger  btn-xs fas fa-trash cRed btn_padd"></i>
 					      			 <span class="tooltext">Eliminar</span>

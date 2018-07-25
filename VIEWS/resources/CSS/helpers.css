@@ -83,7 +83,18 @@
 .h25vh{
   height: 25vh;
 }
-
+/***ESTILOS DEL HEADER**/
+table.table thead tr th{
+  text-align: center;
+  font-size: 14px !important;
+  font-weight: bold !important;
+}
+/***ESTILOS DEL BODY**/
+table.table tbody tr th{
+  text-align: center;
+  font-size: 12px !important;
+  font-weight: normal;
+}
 .s14{ font-size: 14px !important; }
 .h0{ 
   height: 0px !important;
@@ -6891,3 +6902,7 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+/*LASES PARA AJUSTES*/
+#tableCostumers_length{
+  text-align: left !important;
+}
