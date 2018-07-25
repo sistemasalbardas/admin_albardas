@@ -1,15 +1,8 @@
 <?php 	
-	
-	//session_destroy();
-	
+
 	if(isset($_SESSION['user'])){
 		header("Location: ".URL."personal/");
-		//session_destroy();
 	}
-
-	
-	
-
  ?>
 
 	
@@ -29,7 +22,7 @@
 
 <style>	
 	.panelLogin{
-		width: 100%;
+		width: 90%;
 		max-width: 400px;
 		position: absolute;
 		top: 50%;

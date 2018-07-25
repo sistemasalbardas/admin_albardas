@@ -2,34 +2,39 @@
 	$data = $referrals->control();
 
 ?>
-<!-- <div class="mainContainer">
-	<div class="clear"></div> -->
-	<div class="containerPanel">
-	
-		<div class="headContent">
-			<h4 class="text-bold">Control de remisiones</h4>
-		</div>
-		<div class="mainContent">
-			<div class="containerTable">
-			<div class="table-responsive">
-				<table id="tableWorks">
-					<thead>
-						<tr>
-							<td>ID</td>
-							<td>FECHA</td>
-							<td>FLETE</td>
-							<td>EMBARQUE</td>
-							<td>CARGA</td>
-							<td>USUARIO</td>
-							<td>ARCHIVOS</td>
-							<td>ACCIONES</td>
-						</tr>
-					</thead>	
-					<tbody>
-						<?php while($row = mysqli_fetch_array($data)){?>
-						    <tr>
-				
-						      	<th><?= $row['id']; ?></th>
+
+<div class="col-md-12">
+	<div class="box box-success">
+	    <div class="box-header with-border">
+	      <h3 class="box-title text-600">Control de remisiones</h3>
+	      <div class="box-tools pull-right">
+	      	                
+                <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            
+           </div>
+	    </div>
+		<div class="box-body padd10 bgWhite table-responsive">
+			
+			<div class="clear"></div>
+			<table id="tableCostumers" class="table bgWhite">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">FECHA</th>
+						<th scope="col">FLETE</th>
+						<th scope="col">EMBARQUE</th>
+						<th scope="col">CARGA</th>
+						<th scope="col">USUARIO</th>
+						<th scope="col">ARCHIVOS</th>
+						<th scope="col">ACCIONES</th>
+					</tr>
+				</thead>	
+				<tbody>
+					<?php while($row = mysqli_fetch_array($data)){?>
+					    <tr>
+					    		<th><?= $row['id']; ?></th>
 						      	<th><?= $row['date']; ?></th>
 						      	<th><?= $row['f_flete']; ?></th>
 						      	<th><?= $row['f_embarque']; ?></th>
@@ -47,7 +52,6 @@
 										
 									</a>
 						      	</th>
-						      	
 						      	<th>
 						      		<a href="deleteWork/<?= $row['id'];?>" onclick="deleteWork(this);" class="tool">
 						      			<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
@@ -62,14 +66,17 @@
 						      			<i class="btn btn-success btn-xs fas fa-dollar-sign btn_padd"></i>
 										<span class="tooltext">Rep. Remisión</span>			 
 									</a>
-				 					      	</th>
-						      	
-						    </tr>
-						<?php } ?>
-					</tbody>
-				</table>
-			</div>
-			</div>
+				 				</th>
+
+
+
+
+					    </tr>
+					<?php } ?>
+				</tbody>
+			</table>
+		</div>
+		<div class="box-footer">
 		</div>
 	</div>
-<!-- </div> -->
+</div>
