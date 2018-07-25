@@ -31,7 +31,6 @@
 	.panelLogin{
 		width: 100%;
 		max-width: 400px;
-		margin-top: 250px;
 		position: absolute;
 		top: 50%;
 		left: 50%;
