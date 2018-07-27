@@ -1,82 +1,89 @@
 
 
-<div class="clear"></div>
-<!-- <div class="mainContainer"> -->
-	
-	<div class="containerPanel">	
-		<form action="<?=URL?>transporters/add/" method="post"  id="addEmploye">
-			<div class="headContent">
-				<h4 class="text-bold">Nuevo trasportista</h4>
-			</div>
-
-			<div class="mainContent mW600">
-				<div class="row">
-					<div class="col-lg-10">
-						<label for="name">Razón social:</label>
-						<input type="text" name="name" id="name" class="inputStyle" required> 
+<div class="col-md-12">
+	<div class="box box-success">
+		<div class="box-header with-border">
+			<h3 class="box-title text-600">
+			  Nuevo trasportista
+			</h3>
+			<div class="box-tools pull-right">
+			    <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            </div>
+		</div>
+		<div class="box-body padd10 bgWhite table-responsive">
+			<form action="<?=URL?>transporters/add/" method="post"  id="addEmploye">
+				<div class="mainContent mW600">
+					<div class="row">
+						<div class="col-lg-10">
+							<label for="name">Razón social:</label>
+							<input type="text" name="name" id="name" class="inputStyle" required> 
+						</div>
 					</div>
-				</div>
-				<div class="clear"></div>
-				<div class="row">
-					<div class="col-lg-10">
-						<label for="rfc">R F C:</label>
-						<input type="text" name="rfc" id="rfc" class="inputStyle" required> 
+					<div class="clear"></div>
+					<div class="row">
+						<div class="col-lg-10">
+							<label for="rfc">R F C:</label>
+							<input type="text" name="rfc" id="rfc" class="inputStyle" required> 
+						</div>
 					</div>
-				</div>
-				<div class="clear"></div>
-				<div class="row">
-				
-					<div class="col-lg-10">
-						<label for="address">Direccion fiscal:</label>
-						<input type="text" name="address" id="address" placeholder="" class="inputStyle" required> 
-					</div>
-				</div>
-				<div class="clear"></div>
-				
-				<div class="row">
-				
-					<div class="col-lg-10">
-						<label for="phone">Telefono:</label>
-						<input type="text" name="phone" id="phone" placeholder="" class="inputStyle" required> 
-					</div>
-				</div>
-				<div class="clear"></div>
-				<div class="row">
-				
-					<div class="col-lg-5">
-						<label for="caat">CAAT:</label>
-						<input type="text" name="caat" id="caat" placeholder="" class="inputStyle" required> 
-					</div>
-					<div class="col-lg-5">
-						<label for="alpha">ALPHA:</label>
-						<input type="text" name="alpha" id="alpha" placeholder="" class="inputStyle" required> 
-					</div>
+					<div class="clear"></div>
+					<div class="row">
 					
-				</div>
-				<div class="clear"></div>
-				<div class="row">
-				
-					<div class="col-lg-5">
-						<label for="iccmx">ICCMX:</label>
-						<input type="text" name="iccmx" id="iccmx" placeholder="" class="inputStyle" required> 
+						<div class="col-lg-10">
+							<label for="address">Direccion fiscal:</label>
+							<input type="text" name="address" id="address" placeholder="" class="inputStyle" required> 
+						</div>
 					</div>
-					<div class="col-lg-5">
-						<label for="us_dot">US DOT:</label>
-						<input type="text" name="us_dot" id="us_dot" placeholder="" class="inputStyle" required> 
-					</div>
+					<div class="clear"></div>
 					
-				</div>
-				<div class="clear"></div>
-
-			</div>
-			<div class="footerModal">
-				<div class="row">
-					<div class="col-lg-4 ">
-						<input type="submit" value="Guardar" class="btn green">
+					<div class="row">
+					
+						<div class="col-lg-10">
+							<label for="phone">Telefono:</label>
+							<input type="text" name="phone" id="phone" placeholder="" class="inputStyle" required> 
+						</div>
 					</div>
+					<div class="clear"></div>
+					<div class="row">
+					
+						<div class="col-lg-5">
+							<label for="caat">CAAT:</label>
+							<input type="text" name="caat" id="caat" placeholder="" class="inputStyle" required> 
+						</div>
+						<div class="col-lg-5">
+							<label for="alpha">ALPHA:</label>
+							<input type="text" name="alpha" id="alpha" placeholder="" class="inputStyle" required> 
+						</div>
+						
+					</div>
+					<div class="clear"></div>
+					<div class="row">
+					
+						<div class="col-lg-5">
+							<label for="iccmx">ICCMX:</label>
+							<input type="text" name="iccmx" id="iccmx" placeholder="" class="inputStyle" required> 
+						</div>
+						<div class="col-lg-5">
+							<label for="us_dot">US DOT:</label>
+							<input type="text" name="us_dot" id="us_dot" placeholder="" class="inputStyle" required> 
+						</div>
+						
+					</div>
+					<div class="clear"></div>
+
 				</div>
-			
-			</div>
-		</form>
+				<div class="col-lg-4 ">
+					<input type="submit" value="Guardar" class="btn green">
+				</div>
+			</form>
+		</div>
+		<div class="box-footer">
+			<footer class="main-footer text-center">
+				<strong class="">Copyright © 2018-2018 <a href="#">Agricola Las Albardas</a>.</strong> Todos los derechos reservados.
+			</footer>
+		</div>
 	</div>
-<!-- </div> -->
+</div>
+	

@@ -8,9 +8,9 @@
 			  Control de choferes de  <span class="text-decoration"><?= $_GET['name'];?></span>
 			</h3>
 			<div class="box-tools pull-right">
-				<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-				</button>
-				<a href="" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-home"></i></a>    
+			    <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
 			</div>
 		</div>
 		<div class="box-body  padd10 bgWhite table-responsive">
@@ -18,7 +18,7 @@
 				<div class="row">
 					<div class="col-lg-2 padd10 ">
 						
-						<a href="<?= URL?>transporters/addDriver/?id=<?= $_GET['id'];?>&nameTransport=<?= $_GET['name'] ?>" class="btn bgBlue s14">Nuevo chofer</a>
+						<a href="<?= URL?>transporters/addDriver/?id=<?= $_GET['id'];?>&nameTransport=<?= $_GET['name'] ?>" class="button cyan"> <i class="fas fa-car"></i> Nuevo chofer</a>
 					</div>
 					
 				</div>

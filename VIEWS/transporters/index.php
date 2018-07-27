@@ -5,21 +5,20 @@
 	<div class="col-md-12">
 		<div class="box box-success">
 			<div class="box-header with-border">
-				<h3 class="box-title-text-600">
+				<h3 class="box-title text-600">
 				   Control de transportistas
 				</h3>
 				<div class="box-tools pull-right">
+					<a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
 					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
 					</button>
-					<a href="" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-home"></i></a>    
                 </div>
 			</div>
 			<div class="box-body padd10 bgWhite table-responsive">
 				<div class="mainContent">
 						<div class="row">
 							<div class="col-lg-2 padd10 ">
-								
-								<a href="<?= URL?>transporters/add/" class="btn bgBlue s14">Nuevo transportista</a>
+								<a href="<?= URL?>transporters/add/" class="button cyan large"><span class="icon-codeforces"></span>  Nuevo transportista</a>
 							</div>
 							
 						</div>
