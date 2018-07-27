@@ -1,8 +1,11 @@
 <?php 	
+	
+
 	$data = $referrals->selectCostumers();
 	$dataProducts = $referrals->products();
 	$listP = $referrals->listarP();
 	$addreses = $referrals->selectAddres();
+	$add = $referrals->selectAdd();
 	$transporters = $referrals->selectTransporters();
 	$transporter = $referrals->selectTransporter();
 	$drivers = $referrals->drivers();
@@ -11,537 +14,478 @@
 	$truck = $referrals->truck();
 	$boxes = $referrals->boxes();
 	$box = $referrals->box();
+	//print_r($reftransportererrals->products());
+	//$dataPrody = $referrals->selectCostumers();
 	$costumer = $data['costumer'];
 	$list = $data['list'];
 	
-	
 	//print_r($data['list']);
  ?>
-<!-- <div class="mainContainer"> -->
-	<div class="clear"></div>
-	<div class="containerPanel padd10">
+ <div class="col-md-10">
+	<div class="box box-success">
+	    <div class="box-header with-border">
+	      <h3 class="box-title text-600">Generador de remisiones</h3>
+	      <div class="box-tools pull-right">
+	      	                
+                <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            
+           </div>
+	    </div>
+		<div class="box-body padd10">	
+			<form action="" class="padd25 border form-horizontal block" method="post" action="" onsubmit="generateRemision(this);">
 
-		<div class="headContent">
-			<h4 class="text-bold text-uppercase">Editar remision</h4>
-		</div>
+				<input type="hidden" name="nCharge" value="<?= $_GET['nCharge']?>">
+				<input type="hidden" name="tab" value="<?= $_GET['tab']?>">
+				<input type="hidden" name="employe" value="<?= $_GET['employe']?>">
+				<input type="hidden" name="costumer" value="<?= $_GET['costumer']?>">
+				<input type="hidden" name="city" id="city" value="<?= $add['city']?>">
 
-		<div class="clear"></div>
-		<div class="clear"></div>
-	
+				<input type="hidden" name="transport" id="transport" value="<?= $_GET['transport']?>">
+				<input type="hidden" name="driver" id="driver" value="<?= $_GET['driver']?>">
+				<input type="hidden" name="id_box" id="id_box" value="<?= $_GET['box']?>">
+				<input type="hidden" name="add" id="add" value="<?= $_GET['add']?>">
+				<input type="hidden" name="truck2" id="truck2" value="<?= $_GET['truck']?>">
 
-		<?php 	if (isset($_GET['id_ref'])	) {?>
-		
 
-			<div class="mW900">	
-				<form action="" class="padd25 border" method="post" action="" onsubmit="generateRemision(this);">
-					<div class="row">
-						<div class="col-lg-12   m5 padd10 ">	
-							<!--EMPRESA-->
-							<div class="row borderB">
-								
-								<div class="col-lg-2 ">
-									<label for=""><b>EMPRESA:</b></label> <br>
-									<label for="">DOMICILIO:</label> <br>
-									<label for="">RFC:</label> <br>
-									<div class="clear">	</div>
-								</div>
 
-								<div class="col-lg-7 col-md-7  ">
-									<select name="name_employe" id="employe" onchange="setUrlEdit(this);" class="select block" required="">
-										<option value="<?=  $datos['name'];?>"><?=  $datos['name'];?></option>
-										<option value="4">El Cegador SPR de RL de CV</option>
-										<option value="3">Las Albardas SPR de RL de CV</option>
-										<option value="1">El Calabacillal SPR de RL de CV</option>
-									</select>
-									<input type="text" name="address_employe" id="" value="<?= $datos['addres'];?>" class="w100 block" required="">
-									<input type="text" name="rfc_employe" id="" value="<?= $datos['rfc'];?>" class="w100 block" required=""><br>
-									<input type="hidden" name="id_employe" id="" value="<?= $datos['id'];?>" class="w100 block" required="">
-								</div>	
 
-								<div class="col-lg-3">
-									<br>					
-								</div>	
+
+				<input type="hidden" name="f_embark" value="f_embark">
+				<input type="hidden" name="f_charge" value="f_charge">
+
+				
+				
+
+				<div class="row">	
+					<div class="col-lg-12 text-center borderB">	
+						<h3 class="s18 text-600 text-uppercase">Remision de salida</h3>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="row">
+					<div class="col-lg-offset-6 col-sm-4 col-lg-3">
+						<div class="form-group">
+							<label for="date" class="control-label col-md-2">Fecha: </label>
+							<div class="col-md-10">
+								<input type="date" class="form-control" name="date" id="date" required="">
 							</div>
-							
-							<!--CLIENTE-->
-							<div class="clear">	</div>
-							<div class="row borderB">
-								<div class="col-lg-2 ">
-									<label for="">CLIENTE:</label> <br>
-									<label for="">DOMICILIO:</label> <br>
-									<label for="">RFC:</label> <br>
-									<div class="clear">	</div>
-
+						</div>
+					</div>
+					<div class=" col-sm-4 col-lg-3">
+						<div class="form-group">
+							<label for="time" class="control-label col-md-2">Hora:</label>
+							<div class="col-md-10">
+								<input type="time" class="form-control" name="time" id="time" required="">
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>	
+				<div class="row">
+					<div class="col-lg-12   m5 padd10 ">	
+						<!--EMPRESA-->
+						<div class="row borderB">
+							<div class="form-group">
+								<label for="employe" class="control-label col-md-2"><b>EMPRESA:</b></label>
+								<div class="col-md-5">
+									<select name="name_employe" id="employe" onchange="setUrl(this, 'referrals/editRemision/');" class="select block form-control selectpicker" data-live-search="true" required="">
+									<option value="<?=  $datos['name'];?>"><?=  $datos['name'];?></option>
+									<option value="4">El Cegador SPR de RL de CV</option>
+									<option value="3">Las Albardas SPR de RL de CV</option>
+									<option value="1">El Calabacillal SPR de RL de CV</option>
+								</select>
 								</div>
+							</div>
+							<div class="form-group">
+								<label for="address_employe" class="control-label col-md-2">DOMICILIO:</label>
+								<div class="col-md-5">
+									<input type="text" name="address_employe" id="address_employe" value="<?= $datos['addres'];?>" class="w100 block form-control" required="">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="rfc_employe" class="control-label col-md-2">RFC:</label>
+								<div class="col-md-5">
+									<input type="text" name="rfc_employe" id="rfc_employe" value="<?= $datos['rfc'];?>" class="w100 block form-control" required="">
+								</div>
+							</div>
+							<div class="clear">
+									<input type="hidden" name="id_employe" id="" value="<?= $datos['id'];?>" class="w100 block" required="">
+							</div>
+						</div>
+						
+						<!--CLIENTE-->
+						<div class="clear">	</div>
 
-								<div class="col-lg-7 col-md-7  ">
-							 		<select name="name_costumer" id="costumer" onchange="setUrlEdit(this);" required="" class="select">
+						<div class="row borderB">
+							<div class="form-group ">
+								<label for="costumer" class="control-label col-md-2"><b>CLIENTE:</b></label>
+								<div class="col-md-5">
+									<select name="name_costumer" id="costumer" onchange="setUrl(this, 'referrals/editRemision/');" required="" class="select form-control selectpicker"  data-live-search="true">
 										<option value="<?= $costumer['name'];?>"><?= $costumer['name'];?></option>
 										<?php while($row = mysqli_fetch_array($list)){ ?>
-											<option value="<?= $row['id'];?>"><?= $row['name']; ?></option>
-										<?php } ?>
-									</select>
-									<input type="hidden" name="id_costumer" id="id_costumer" value="<?= $costumer['id'];?>">
-									<input type="text" name="address_costumer" id="name_costumer" value="<?= $costumer['address'];?>" required="" class="block"> 	
-									<input type="text" name="rfc_costumer" id="name_costumer" value="<?= $costumer['rfc'];?>" required=""  class="block">
-									<input type="hidden" name="phone_costumer" value="<?= $costumer['phone'];?>">
-								</div>	
+										<option value="<?= $row['id'];?>"><?= $row['name']; ?></option>
+									<?php } ?>
+								    </select>
+								</div>
 							</div>
+							<div class="form-group">
+								<label for="name_costumer" class="control-label col-md-2">DOMICILIO:</label>
+								<div class="col-md-5">
+									<input type="text" name="address_costumer" id="name_costumer" value="<?= $costumer['address'];?>" required="" class="block form-control"> 	
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="rfc_costumer" class="control-label col-md-2">RFC:</label>
+								<div class="col-md-5">
+									<input type="text" name="rfc_costumer" id="rfc_costumer" value="<?= $costumer['rfc'];?>" required=""  class="block form-control">
+								</div>
+							</div>
+							<div class="clear">
+								<input type="hidden" name="id_costumer" id="id_costumer" value="<?= $costumer['id'];?>">
+								<input type="hidden" name="phone_costumer" value="<?= $costumer['phone'];?>">
+							</div>
+							
+						</div>
+						<!--PRODUCTOS-->
+						<div class="row">	
+							<div class="col-lg-12 ">	
+								<br>
+								<div class="containerTable table-responsive">	
 
-							<!--PRODUCTOS-->
-							<div class="row">	
-								<div class="col-lg-12 ">	
-									<br>
-									<div class="containerTable">	
+									<table  class="block tableP" id="tableRemisions">	
+										<thead>	
+											<tr>
+												<td>Cantidad</td>
+												<td>Concepto</td>
+												<td>Precio</td>
+												<td>Acciones</td>
+											</tr>
+										</thead>
+										<tbody>	
+											<?php
+												if (isset($listP)) {
+												
+												$i = 0;
+												foreach ($listP as $key ) {
+													$i++;
+													$id = key($listP);
+													next($listP);
+													?>	
+													<tr>
+														<th class="s12">
+															<input type="hidden" name="cant_<?= $i?>" value="<?= $key[2]?>">
+															<?= $key[2]?>
+														</th>
+														<th class="s12">
+															<input type="hidden" name="nTab" value="<?=$i?>">
+															<input type="hidden" name="name_<?= $i?>" value="<?= $key[1]?>">
 
-										<table  class="block tableP" id="tableRemisions">	
-											<thead>	
-												<tr>
-													<td>Cantidad</td>
-													<td>Concepto</td>
-													<td>Precio</td>
-													<td>Acciones</td>
-												</tr>
-											</thead>
-											<tbody>	
-												<?php
-													if (isset($listP)) {
-													
-													$i = 0;
-													foreach ($listP as $key ) {
-														$i++;
-														$id = key($listP);
-														next($listP);
-														?>	
-														<tr>
-															<th class="s12">
-																<input type="hidden" name="cant_<?= $i?>" value="<?= $key[2]?>">
-																<?= $key[2]?>
-															</th>
-															<th class="s12">
-																<input type="hidden" name="nTab" value="<?=$i?>">
-																<input type="hidden" name="name_<?= $i?>" value="<?= $key[1]?>">
-
-																<?= $key[1]?>
-															</th>
-															<th class="s12">$ 0.00</th>
-															<th class="s12 text-center">
-																<a href="<?= $id;?>" onclick="eraseP(this);" class="block">Eliminar</a>
-															</th>
-															
-
-														</tr>
-												<?php } }
+															<?= $key[1]?>
+														</th>
+														<th class="s12">$ 0.00</th>
+														<th class="s12 text-center">
+															<a href="<?= $id;?>" onclick="eraseP(this);" class="tool">
+																<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+															    <span class="tooltext">Eliminar</span>
+															</a>
+														</th>
 														
-													?>
+
+													</tr>
+											<?php } }?>
+												
 													
-														
-											
+										
 
-											</tbody>
-										</table>
-
-										</div>
-									<div class="block text-center">	
-										<div class="clear">	</div>
-										<button onclick="openModal(this,'searchP');" class="btn blue s14 center	" type="button">	
-											Agregar Productos
-										</button>
-										<div class="clear">	</div>
+										</tbody>
+									</table>
 
 									</div>
-									
-									<br>
-									
+								<div class="block text-center">	
+									<div class="clear">	</div>
+									<button onclick="openModal(this,'searchP');" class="btn btn-primary s14 center	" type="button">
+										Agregar Productos
+									</button>
+									<div class="clear">	</div>
+
 								</div>
-								
-							</div>	
-								
+								<br>
+							</div>
+						</div>	
+				
 							
-							<?php  if ($_GET['tab'] == 1 ){ ?>
-								
-							
-								<div class="row">
-									<div class="col-lg-6 border padd5">
-										<div class="row">	
-											<div class="col-lg-4 ">	
-												<label for="" class="W100 ">Transportista: </label>
-											</div>
-											<div class="col-lg-8">	
-												
-												<select name="name_trasport" id="transport" class="block select" onchange="setUrlEdit(this);">
+							<div class="row">
+								<div class="col-lg-6 border padd5">
+									<div class="row">
+										<div class="form-group">
+											<label for="transport" class="control-label col-md-4"><b>Transportista:</b></label>
+											<div class="col-md-8">
+												<select name="name_trasport" id="transport" class="block select form-control selectpicker" data-live-search="true"  onchange="setUrl(this, 'referrals/editRemision/');">
 													<option value="<?= $transporter['name']; ?>"><?= $transporter['name']; ?></option>
 													<?php while ($row  = mysqli_fetch_array($transporters)) { ?>
-														<option value="<?= $row['id']?>"><?= $row['name']?></option>
-													<?php } ?>
-												</select>
-											</div>
-											
-										</div>
-										<div class="clear"></div>
-										<div class="row">	
-											<div class="col-lg-4 ">	
-												<label for="" class="W100 ">Chofer: </label>
-											</div>
-											<div class="col-lg-8">	
-											
-
-											<select name="name_driver" id="driver" class="block select"  onchange="setUrlEdit(this)">
-												<option value="<?= $driver['name']?>"><?= $driver['name'];?></option>
-												<?php while ($row  = mysqli_fetch_array($drivers)) { ?>
 													<option value="<?= $row['id']?>"><?= $row['name']?></option>
-												<?php } ?>
-											</select>
-											<input type="hidden" name="phone_driver" value="<?= $driver['phone'];?>">
-
-
-											</div>
-											
-										</div>
-																	 
-									</div>
-									<div class="col-lg-6 border padd5">
-										<div class="row">	
-											<div class="col-lg-2 ">	
-												<label for="" class="W100 ">Origen:</label>
-											</div>
-											<div class="col-lg-10">	
-												<input type="text" placeholder="Trasportes Albardas" class="block" value="Parras de la fuente, ejido el calabacillal, Agricola las albardas" name="origin" required="">
-											</div>
-											
-										</div>
-										<div class="clear"></div>
-
-										<div class="row">	
-											<div class="col-lg-2 ">	
-												<label for="" class="W100 ">Destino: </label>
-											</div>
-											<div class="col-lg-10">	
-												<select name="destination" id="add" class="block" required onchange="setUrlEdit(this);">
-													<option value="<?= $_GET['add']?>"><?= $_GET['add']?></option>
-													<?php while ($row = mysqli_fetch_array($addreses)) {?>
-														<option value="<?= $row['address'].'<br> Telefono: '.$row['phone']?>"><?= $row['name']?></option>
-
-														
 													<?php } ?>
-													
-												</select>
-											
-
+											    </select>
 											</div>
-											
 										</div>
-																	 
 									</div>
-								</div>
-
-								<div class="clear">	</div>
-
-								<div class="row">	
-									<!--INFORMACION DEL TRACTOR-->
-									<div class="col-lg-4  border">
-										<div class="clear">	</div>
-										<label for="" class="text-bold s18 ">Informacion del tractor</label>
-										<div class="clear">	</div>
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">Selecciona: </label>
+									
+									<div class="row">	
+										<div class="form-group">
+											<label for="driver" class="control-label col-md-4">Chofer: </label>
+											<div class="col-md-8">
+												<select name="name_driver" id="driver" class="block select form-control selectpicker" data-live-search="true"  onchange="setUrl(this, 'referrals/editRemision/')">
+													<option value="<?= $driver['name']?>"><?= $driver['name'];?></option>
+													<?php while ($row  = mysqli_fetch_array($drivers)) { ?>
+													<option value="<?= $row['id']?>"><?= $row['name']?></option>
+													<?php } ?>
+												</select>
 											</div>
-											<div class="col-lg-8">	
-												<select name="truck" id="truck" class="block" onchange="setUrlEdit(this);">
+											<input type="hidden" name="phone_driver" value="<?= $driver['phone'];?>">
+										</div>
+									</div>						 
+								</div>
+								<div class="col-lg-6 border padd5">
+									<div class="row">	
+										<div class="form-group">
+											<label for="origin" class="control-label col-md-4">Origen: </label>
+											<div class="col-md-8">
+												<select name="origin" id="origin" class="block form-control selectpicker" data-live-search="true" required="">
+													<!-- <option value="">SELECCIONA UNA OPCION </option> -->
+													<option value="Parras de la fuente, ejido el calabacillal, Agricola las albardas.">ALBARDAS</option>
+													<option value="Carretara Saltillo - matamoros, ejido el Mimbre Coah, Rancho magdalenas.">MAGDALENAS</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								
+
+									<div class="row">
+										<div class="form-group">
+											<label for="add" class="control-label col-md-4">Destino: </label>
+											<div class="col-md-8">
+												<select name="destination" id="add" class="block form-control selectpicker" data-live-search="true" required onchange="setUrl(this, 'referrals/editRemision/');">
+													<option value="<?= $add['address'].' - '.$add['city'].' - '.$add['phone']?>">
+														<?= $add['address'].' - '.$add['city'].' - '.$add['phone']?>	
+													</option>
+													<?php while ($row = mysqli_fetch_array($addreses)) {?>
+														<option value="<?= $row['id']?>"><?= $row['name']?>	</option>
+													<?php } ?>
+												</select>
+											</div>
+										</div>	
+									</div>				 
+								</div>
+							</div>
+
+							<div class="clear">	</div>
+
+							<div class="row">	
+								<!--INFORMACION DEL TRACTOR-->
+								<div class="col-lg-4  border">
+									
+									<label for="" class="text-bold s18 ">Informacion del tractor</label>
+									<!-- <div class="clear">	</div> -->
+									<div class="row">	
+										<div class="form-group">
+											<label for="truck" class="control-label col-md-4">Selecciona: </label>
+											<div class="col-md-8">
+												<select name="truck" id="truck" class="block form-control selectpicker" data-live-search="true" onchange="setUrl(this, 'referrals/editRemision/');">
 													<option value=""><?= $truck['brand'];?></option>
 													<?php while ($row = mysqli_fetch_array($trucks)) {?>
 														<option value="<?= $row['id'];?>"><?= $row['brand']?></option>
-
-														
 													<?php } ?>
 												</select>
 											</div>
-										</div>
-										<div class="clear"></div>
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">Marca: </label>
-
-											</div>
-											<div class="col-lg-8">	
-												<input type="text" name="brand" id="brand" class="block" required="" value="<?= $truck['brand'];?>">
-											</div>
-										</div>
-										<div class="clear">	</div>
-
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">Modelo: </label>
-
-											</div>
-											<div class="col-lg-8">	
-												<input type="number" name="model" id="model" class="block" required="" value="<?= $truck['model'];?>">
-											</div>
-										</div>
-										<div class="clear">	</div>
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">N econ: </label>
-
-											</div>
-											<div class="col-lg-8">	
-												<input type="text" name="n_economic" id="" class="block" required="" value="<?= $truck['num_econ'];?>">
-											</div>
-										</div>
-										<div class="clear">	</div>
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">Placas: </label>
-
-											</div>
-											<div class="col-lg-8">	
-												<input type="text" name="plates_t" id="" class="block" required="" value="<?= $truck['placa']." - ".$truck['placa_2']?>">
-											</div>
-										</div>
-										<div class="clear">	</div>
+										</div>	
 									</div>
-									<!--INFORMACION DE LA CAJA-->
-									<div class="col-lg-4  border">
-										<div class="clear">	</div>
-										<label for="" class="text-bold s18 ">Informacion de caja</label>
-										<div class="clear">	</div>
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">Selecciona: </label>
-												
-
+									<div class="row">	
+										<div class="form-group">
+											<label for="brand" class="control-label col-md-4">Marca: </label>
+											<div class="col-md-8">
+												<input type="text" name="brand" id="brand" class="block form-control" required="" value="<?= $truck['brand'];?>">
 											</div>
-											<div class="col-lg-8">	
-												
-												<select name="box" id="box" class="block" onchange="setUrlEdit(this);">
+										</div>	
+									</div>
+									<div class="row">	
+										<div class="form-group">
+											<label for="model" class="control-label col-md-4">Modelo: </label>
+											<div class="col-md-8">
+												<input type="number" name="model" id="model" class="block form-control" required="" value="<?= $truck['model'];?>">
+											</div>
+										</div>	
+									</div>
+									<div class="row">
+									    <div class="form-group">
+											<label for="N-econ" class="control-label col-md-4">N econ: </label>
+											<div class="col-md-8">
+												<input type="text" name="n_economic" id="N-econ" class="block form-control" required="" value="<?= $truck['num_econ'];?>">
+											</div>
+										</div>		
+									</div>
+
+									<div class="row">
+									    <div class="form-group">
+											<label for="placas" class="control-label col-md-4">Placas: </label>
+											<div class="col-md-8">
+												<input type="text" name="plates_t" id="placas" class="block form-control" required="" value="<?= $truck['placa']." - ".$truck['placa_2']?>">
+											</div>
+										</div>			
+									</div>
+									
+								</div>
+
+								<!--INFORMACION DE LA CAJA-->
+								<div class="col-lg-4  border">
+									
+									<label for="" class="text-bold s18 ">Informacion de caja</label>
+									
+									<div class="row">	
+										<div class="form-group">
+											<label for="sel" class="control-label col-md-4">Selecciona: </label>
+											<div class="col-md-8">
+												<select name="box" id="sel" class="block form-control selectpicker" data-live-search="true" onchange="setUrl(this, 'referrals/editRemision/');">
 													<option value="<?= $box['id']?>">
 														<?= $box['type']." - ".$box['num_econ'];?></option>
 													<?php while ($row = mysqli_fetch_array($boxes)) {?>
 														<option value="<?= $row['id']?>"><?= $row['type']. "-".$row['num_econ']?></option>
-
-														
 													<?php } ?>
 												</select>
 											</div>
 										</div>
-										<div class="clear"></div>
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">Caja: </label>
-
-											</div>
-											<div class="col-lg-8">	
-												<input type="text" name="box" id="" class="block" required="" value="<?= $box['type']?>">
-											</div>
-										</div>
-										<div class="clear">	</div>
-										
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">Tempertura: </label>
-											</div>
-											<div class="col-lg-5">	
-												<input type="text" name="temperature" id="" class="block" required="" value="<?= $box['temperature']?>">
-											</div>
-											<div class="col-lg-3">	
-												<select name="degrees" id="degrees" class="block" required="">
-													<option value="<?= $box['grades']?>"><?= $box['grades']?></option>
-													<option value="C °">C °</option>		
-													<option value="F °">F °</option>		
-													<option value="K °">K °</option>		
-												</select>
-											</div>
-										</div>
-										<div class="clear">	</div>
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">N econ: </label>
-
-											</div>
-											<div class="col-lg-8">	
-												<input type="text" name="n_economicBox" id="" class="block" required="" value="<?= $box['num_econ']?>">
-											</div>
-										</div>
-										<div class="clear">	</div>
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">Placas: </label>
-
-											</div>
-											<div class="col-lg-8">	
-												<input type="text" name="plates" id="" class="block" required="" value="<?= $box['placa']?>">
-											</div>
-										</div>
-										<div class="clear">	</div>
 									</div>
-
-									<!--Otros permisos-->
-									<div class="col-lg-4  border">
-										<div class="clear">	</div>
-										<label for="" class="text-bold s18 ">Otros permisos</label>
-										<div class="clear">	</div>
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">CAAT: </label>
-
-											</div>
-											<div class="col-lg-8">	
-												<input type="text" name="CAAT" id="" class="block" required="" value="<?= $transporter['caat']?>">
+								
+									<div class="row">	
+										<div class="form-group">
+											<label for="box" class="control-label col-md-4">Caja: </label>
+											<div class="col-md-8">
+												<input type="text" name="box" id="box" class="block form-control" required="" value="<?= $box['type']?>">
 											</div>
 										</div>
-										<div class="clear">	</div>
-										
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">ALPHA: </label>
-											</div>
-											<div class="col-lg-8">	
-												<input type="text" name="ALPHA" id="" class="block" required="" value="<?= $transporter['alpha']?>">
-											</div>
-										</div>
-										<div class="clear">	</div>
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">ICCMX: </label>
-
-											</div>
-											<div class="col-lg-8">	
-												<input type="text" name="ICCMX" id="" class="block" required="" value="<?= $transporter['iccmx']; ?>">
-											</div>
-										</div>
-										<div class="clear">	</div>
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">US DOT: </label>
-
-											</div>
-											<div class="col-lg-8">	
-												<input type="text" name="US_DOT" id="" class="block" required="" value="<?= $transporter['us_dot']; ?>">
-											</div>
-										</div>
-										<div class="clear">	</div>
-										<div class="clear">	</div>
-										<div class="clear">	</div>
-										<div class="clear">	</div>
 									</div>
-								</div>	
-							<?php }else{ ?>
-								<div class="row">
-									<!--INFORMACION DE LA CAJA-->
-									<div class="col-lg-4  border">
-										<div class="clear">	</div>
-										<label for="" class="text-bold s18 ">Informacion de caja</label>
-										<div class="clear">	</div>
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">Selecciona: </label>
-												
-
-											</div>
-											<div class="col-lg-8">	
-												
-												<select name="box" id="box" class="block" onchange="setUrlEdit(this);">
-													<option value="<?= $box['id']?>">
-														<?= $box['type']." - ".$box['num_econ'];?></option>
-													<?php while ($row = mysqli_fetch_array($boxes)) {?>
-														<option value="<?= $row['id']?>"><?= $row['type']. "-".$row['num_econ']?></option>
-
-														
-													<?php } ?>
-												</select>
+									
+									<div class="row">	
+										<div class="form-group">
+											<label for="temperature" class="control-label col-md-4">Tempertura: </label>
+											<div class="col-md-8">
+												<div class="col-md-5">
+													<input type="text" name="temperature" id="temperature" class="block form-control" required="" value="<?= $box['temperature']?>">
+												</div>
+												<div class="col-md-3">
+													<select name="degrees" id="degrees" class="block form-control selectpicker" data-live-search="true" required="">
+														<option value="<?= $box['grades']?>"><?= $box['grades']?></option>
+														<option value="C °">C °</option>		
+														<option value="F °">F °</option>		
+														<option value="K °">K °</option>		
+													</select>
+												</div>
 											</div>
 										</div>
-										<div class="clear"></div>
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">Caja: </label>
-
-											</div>
-											<div class="col-lg-8">	
-												<input type="text" name="box" id="" class="block" required="" value="<?= $box['type']?>">
-											</div>
-										</div>
-										<div class="clear">	</div>
-										
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">Tempertura: </label>
-											</div>
-											<div class="col-lg-5">	
-												<input type="text" name="temperature" id="" class="block" required="" value="<?= $box['temperature']?>">
-											</div>
-											<div class="col-lg-3">	
-												<select name="degrees" id="degrees" class="block" required="">
-													<option value="<?= $box['grades']?>"><?= $box['grades']?></option>
-													<option value="C °">C °</option>		
-													<option value="F °">F °</option>		
-													<option value="K °">K °</option>		
-												</select>
+									</div>
+									
+									<div class="row">	
+										<div class="form-group">
+											<label for="n" class="control-label col-md-4">N econ: </label>
+											<div class="col-md-8">
+												<input type="text" name="n_economicBox" id="n" class="block form-control" required="" value="<?= $box['num_econ']?>">
 											</div>
 										</div>
-										<div class="clear">	</div>
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">N econ: </label>
-
+									</div>
+									
+									<div class="row">
+									    <div class="form-group">
+											<label for="p" class="control-label col-md-4">Placas: </label>
+											<div class="col-md-8">
+												<input type="text" name="plates" id="p" class="block form-control" required="" value="<?= $box['placa']?>">
 											</div>
-											<div class="col-lg-8">	
-												<input type="text" name="n_economicBox" id="" class="block" required="" value="<?= $box['num_econ']?>">
-											</div>
-										</div>
-										<div class="clear">	</div>
-										<div class="row">	
-											<div class="col-lg-4">	
-												<label for="">Placas: </label>
-
-											</div>
-											<div class="col-lg-8">	
-												<input type="text" name="plates" id="" class="block" required="" value="<?= $box['placa']?>">
-											</div>
-										</div>
+										</div>	
 									</div>
 								</div>
-							<?php } ?>
-							<div class="clear">	</div>
-							<div class="row">
-							<div class="clear">	</div>
 
-								<div class="col-lg-12 border">
-									<div class="block  text-left">	
-										<div class="clear"></div>
-										<label for="" class="text-bold s18 ">Comentarios</label> <br>
-										<textarea name="comments" id="comments" cols="40" rows="3" class="block padd5 r5"></textarea>
-										<div class="clear"></div>
+								<!--Otros permisos-->
+								<div class="col-lg-4  border">
+									<label for="" class="text-bold s18 ">Otros permisos</label>
+									<div class="row">	
+										<div class="form-group">
+											<label for="c" class="control-label col-md-4">CAAT: </label>
+											<div class="col-md-8">
+												<input type="text" name="CAAT" id="c" class="block form-control" required="" value="<?= $transporter['caat']?>">
+											</div>
+										</div>
+									</div>
+								
+									<div class="row">	
+										<div class="form-group">
+											<label for="a" class="control-label col-md-4">ALPHA: </label>
+											<div class="col-md-8">
+												<input type="text" name="ALPHA" id="a" class="block form-control" required="" value="<?= $transporter['alpha']?>">
+											</div>
+										</div>
+									</div>
 
-									</div>		 
-								</div>
-							</div>
-							<div class="clear">	</div>
-
-							
-
-						</div>
-					</div>
-
-					<button class="btn Green s14" type="submit" >
-						<b>Generar remision</b>
-					</button>
-				</form>
-
-			</div>
-			
-		<?php } ?>
+									<div class="row">	
+										<div class="form-group">
+											<label for="i" class="control-label col-md-4">ICCMX: </label>
+											<div class="col-md-8">
+												<input type="text" name="ICCMX" id="i" class="block form-control" required="" value="<?= $transporter['iccmx']; ?>">
+											</div>
+										</div>
+									</div>
 		
-		<div class="clear"></div>
+									<div class="row">
+									    <div class="form-group">
+											<label for="u" class="control-label col-md-4">US DOT: </label>
+											<div class="col-md-8">
+												<input type="text" name="US_DOT" id="u" class="block form-control" required="" value="<?= $transporter['us_dot']; ?>">
+											</div>
+										</div>	
+									</div>
+									<div class="clear">	</div>
+									<div class="clear">	</div>
+									<div class="clear">	</div>
+									<div class="clear">	</div>
+								</div>
+							</div>	
 
+					
+
+						
+
+						
+					
+						<div class="row">
+							<div class="clear">	</div>
+							<div class="col-lg-12 border">
+								<div class="block  text-left">	
+									<div class="form-group">
+											<div class="col-md-12">
+												<div class="page-header">
+													<h4 class="">Comentarios</h4>
+												</div>
+												<textarea name="comments" id="comments" cols="40" rows="3" class="block padd5 r5 form-control"></textarea>
+											</div>
+									</div>	
+								</div>		 
+							</div>
+						</div>
+						<div class="clear">	</div>
+					</div>
+				</div>
+
+				<button class="btn Green s14" type="submit" >
+					<b>Generar remision</b>
+				</button>
+			</form>
+		</div>
 	</div>
-	
-<!-- </div> -->
 </div>
-<div class="clear"></div>
 
-<form class="modal hidden" id="searchP">
+
+
+
+<form class="modalContent " id="searchP">
 	<div class="headModal">
 		<h4 class="text-bold">Agregar productos </h4>
 	</div>
@@ -606,4 +550,80 @@
 	</div>
 </form>
 
-<div class="bgBlack hidden" onclick="closeModal();"></div>
+<?php if (isset($_GET['nCharge'])){ 
+	if (!$_SESSION['infoFreight']) { ?>
+	<form class="modal2 " id="freight" onsubmit="saveFreight(this);" method="post">
+		<div class="headModal">
+			<h4 class="text-bold text-center"> INFORMACION DEL FLETE  </h4>
+		</div>
+		<div class="mainModal">
+		
+				<div class="row">
+					<div class="col-lg-3 col-md-4 col-lg-offset-7">
+						<label for="">Precio:</label> <br>
+						<input type="number" name="quantity" id="quantity" class="block border" required="">
+					</div>
+					<div class="col-lg-2 col-md-2">
+						<label for="">Moneda:</label> <br>
+						<select name="currency" id="currency" required="" class="block border ">
+							<option value=""></option>
+							<option value="MXN">MXN</option>
+							<option value="USD">USD</option>
+						</select> 
+					</div>
+
+				</div>
+				<div class="clear"></div>
+				<div class="containerTable table-responsive">
+					<table>
+						<thead>
+						<tr>
+							<?php 	
+							$e = 1;
+							while( $e <= $nCharge ) { ?>
+								<td class="text-center">
+									Remision <?= $e?>
+								</td>
+
+						<?php $e++; }  ?>
+							<td>
+								Agricola	
+							</td>
+							<td>
+								Total	
+							</td>
+							
+						</tr>
+						</thead>
+						<tbody>
+							<tr>
+									<?php 	
+							$e = 1;
+							while( $e <= $nCharge ) { ?>
+								<th class="text-center">
+									<input type="number" name="<?= $e?>" id="" class="mW100 border remision" required="">
+								</th>
+
+						<?php $e++; }  ?>
+								<th class="text-center">
+									<input type="number" name="agricola" id="" class="mW100 border remision" required="" >
+								</th>
+								<th class="text-center">
+									<input type="number" name="total" id="importe_total" class="mW100 border total">
+								</th>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="clear"></div>
+			<div class="row">
+				<div class="col-lg-offset-7 col-md-offset-7 col-lg-4 col-md-4">
+					<input type="submit" value="Guardar informacion" class="little-btn blue adjust s12  text-600">
+					
+				</div>
+			</div>
+		</div>
+	</form>
+	<div class="bgBlack2 " id="bgBlack2"></div>
+<?php  } } ?>
+<div class="bgBlack " onclick="closeModal();"></div>

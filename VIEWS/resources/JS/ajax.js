@@ -31,7 +31,7 @@ $("input#flete").change(function () {
 
 
 
-const URL = "http://192.168.50.111/admin_albardas/";  
+const URL = "http://192.168.50.109/admin_albardas/";  
 
 
  function getGET()
@@ -128,7 +128,7 @@ function nCharge(obj){
 
 }
 
-function setUrl(obj){
+function setUrl(obj , rute){
     var data = getGET();
     
     var val = $(obj).val();
@@ -156,8 +156,9 @@ function setUrl(obj){
              parameters[par] = val;
         }
     }
-    location.href= URL+"referrals?nCharge="+parameters['nCharge']+"&tab="+parameters['tab']+"&employe="+parameters['employe']+"&costumer="+parameters['costumer']+"&transport="+parameters['transport']+"&driver="+parameters['driver']+"&box="+parameters['box']+"&box_2="+parameters['box_2']+"&truck="+parameters['truck']+"&add="+parameters['add']+"";
+    location.href= URL+rute+"?nCharge="+parameters['nCharge']+"&tab="+parameters['tab']+"&employe="+parameters['employe']+"&costumer="+parameters['costumer']+"&transport="+parameters['transport']+"&driver="+parameters['driver']+"&box="+parameters['box']+"&box_2="+parameters['box_2']+"&truck="+parameters['truck']+"&add="+parameters['add']+"";
 }
+
 
 function setUrlEdit(obj){
     var data = getGET();
