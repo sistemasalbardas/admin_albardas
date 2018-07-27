@@ -1,10 +1,10 @@
  <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="<?= URL?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LB</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Las Albardas</b></span>
+      <span class="logo-lg nopad"><b>Las Albardas</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -108,7 +108,7 @@
 	    <ul class="sidebar-menu" data-widget="tree">
 	        <li class="treeview">
   	          <a href="#">
-                <i class="fas fa-copy"></i> <span>Remisiones</span>
+                <i class="fas fa-copy icon"></i> <span>Remisiones</span>
   	            <span class="pull-right-container">
   	                <i class="fas fa-angle-left pull-right"></i>
   	            </span>
@@ -128,7 +128,7 @@
 	        </li>
 	        <li class="treeview">
   	          <a href="#">
-                <i class="fas fa-users"></i> <span>Personal</span>
+                <i class="fas fa-users icon"></i> <span>Personal</span>
   	            <span class="pull-right-container">
   	                <i class="fas fa-angle-left pull-right"></i>
   	            </span>
@@ -144,7 +144,7 @@
 				
 	        <li class="treeview">
 	          <a href="#">
-              <i class="fas fa-file"></i> <span>Requisiciones</span>
+              <i class="fas fa-file icon"></i> <span>Requisiciones</span>
 	            <span class="pull-right-container">
 	                <i class="fas fa-angle-left pull-right"></i>
 	            </span>
@@ -169,32 +169,32 @@
 	        </li>
 	        <li>
             <a href="<?=URL?>products/">
-              <i class="far fa-circle"></i> <span>Productos</span>
+              <i class="far fa-circle icon"></i> <span>Productos</span>
             </a>
           </li>
     			<li>
             <a href="<?=URL?>freights/">
-              <i class="far fa-circle"></i> <span>Fletes</span>
+              <i class="far fa-circle icon"></i> <span>Fletes</span>
             </a>
           </li>
     			<li>
             <a href="<?=URL?>inventories/">
-              <i class="far fa-circle"></i> <span>Inventarios</span>
+              <i class="far fa-circle icon"></i> <span>Inventarios</span>
             </a>
           </li>
     			<li>
             <a href="<?=URL?>costumers/">
-              <i class="far fa-circle"></i> <span>Clientes</span>
+              <i class="far fa-circle icon"></i> <span>Clientes</span>
             </a>
           </li>
     			<li>
             <a href="<?=URL?>transporters/">
-              <i class="far fa-circle"></i> <span>Transportistas</span>
+              <i class="far fa-circle icon"></i> <span>Transportistas</span>
             </a>
           </li>
     			<li>
             <a href="<?=URL?>login/logout/">
-              <i class="far fa-circle"></i> <span>Salir</span>
+              <i class="far fa-circle icon"></i> <span>Salir</span>
             </a>
           </li>
           

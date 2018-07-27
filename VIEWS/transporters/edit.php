@@ -78,7 +78,7 @@
 
 				</div>
 				<div class="col-lg-4 ">
-					<input type="submit" value="Guardar" class="btn green">
+					<input type="submit" value="Guardar" class="button blue">
 				</div>
 			</form>
 		</div>

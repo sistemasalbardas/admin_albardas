@@ -1239,9 +1239,35 @@ i.fa-bars:hover{
 
 
 /*sidebar-menu*/
-.sidebar-menu li:hover i{
-  color: #4CAF50!important;
+.main-header a.logo:hover{
+  text-decoration: none!important;
 }
+
+
+
+.sidebar-menu li:hover i.icon{
+  color: #4CAF50!important;
+  text-decoration: none!important;
+}
+.skin-green .sidebar-menu>li>ul>li:hover>a>i{
+  color: #4CAF50!important;
+  text-decoration: none!important;
+  
+}
+
+.skin-green .sidebar-menu>li:hover>a{
+  text-decoration: none!important;
+ 
+}
+.skin-green .sidebar-menu>li:hover>a,
+.skin-green .sidebar-menu>li.active>a,
+.skin-green .sidebar-menu>li.menu-open>a,
+.skin-green .sidebar-menu>li.focus>a,
+.skin-green .sidebar-menu>li.visited>a,
+.skin-green .sidebar-menu>li.link>a{
+  text-decoration: none!important;
+}
+
 
 
 /* Botones custom */
