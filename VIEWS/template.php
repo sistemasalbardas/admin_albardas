@@ -46,6 +46,7 @@
      <link rel="stylesheet" href="<?= URL?>/VIEWS/resources/bower_components/bootstrap/dist/css/bootstrap.min.css">
 	  <!-- Font Awesome -->
 	  <link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/all.min.css">
+	  <link rel="stylesheet" href="<?= URL?>/VIEWS/resources/fonts/style.css">
 	
 
 

@@ -9,9 +9,9 @@
 			Editar informacion de trasportista
 			</h3>
 			<div class="box-tools pull-right">
-					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-					</button>
-					<a href="" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-home"></i></a>    
+			    <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
             </div>
 		</div>
 		<div class="box-body padd10 bgWhite table-responsive">
