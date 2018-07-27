@@ -224,3 +224,20 @@ function quantity(obj) {
 }
 
 
+function validatePass(obj) {
+
+  var pass = $("input#password").val();
+
+  var pass2 = $(obj).val();
+
+  if (pass == pass2) {
+    $("label.correct").removeClass("hidden");
+    $("label.incorrect").addClass("hidden");
+    $("input#validate").removeAttr("required");
+  }else{
+    $("label.correct").addClass("hidden");
+    $("label.incorrect").removeClass("hidden");
+    $( "input#validate" ).attr("required", "required");
+  }
+  // body...
+}
