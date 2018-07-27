@@ -182,6 +182,11 @@
               <i class="far fa-circle"></i> <span>Inventarios</span>
             </a>
           </li>
+            <li>
+            <a href="<?=URL?>users/">
+              <i class="far fa-circle"></i> <span>Usuarios</span>
+            </a>
+          </li>
     			<li>
             <a href="<?=URL?>costumers/">
               <i class="far fa-circle"></i> <span>Clientes</span>
