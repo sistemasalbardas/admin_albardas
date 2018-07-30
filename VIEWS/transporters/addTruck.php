@@ -19,7 +19,7 @@
 					<div class="row">
 						<div class="col-lg-8">
 							<label for="brand">Marca de camion:</label>
-							<select name="brand" id="brand" required class="inputStyle">
+							<select name="brand" id="brand" required class="form-control selectpicker" data-live-search="true">
 								<option value="Kenwort">Kenwort</option>
 								<option value="International">International</option>
 								<option value="Volvo">Volvo</option>
@@ -31,11 +31,11 @@
 					<div class="row">
 						<div class="col-lg-4">
 							<label for="model">Modelo:</label>
-							<input type="number" name="model" id="model" class="inputStyle" required> 
+							<input type="number" name="model" placeholder="Modelo" id="model" class="form-control" required> 
 						</div>
 						<div class="col-lg-4">
 							<label for="color">Color:</label>
-							<input type="text" name="color" id="color" class="inputStyle" required> 
+							<input type="text" name="color" id="color" placeholder="Color" class="form-control" required> 
 						
 						</div>
 						
@@ -43,8 +43,8 @@
 					<div class="clear"></div>
 					<div class="row">
 						<div class="col-lg-8">
-							<label for="num_econ">Numero economico:</label>
-							<input type="text" name="num_econ" id="num_econ" class="inputStyle" required> 
+							<label for="num_econ">Número Economico:</label>
+							<input type="text" name="num_econ" placeholder="Número Economico" id="num_econ" class="form-control" required> 
 						</div>
 					</div>
 					
@@ -53,11 +53,11 @@
 					
 						<div class="col-lg-4">
 							<label for="placa">Placa 1</label>
-							<input type="text" name="placa" id="placa" placeholder="" class="inputStyle" required> 
+							<input type="text" name="placa" id="placa" placeholder="Placa 1" class="form-control" required> 
 						</div>
 						<div class="col-lg-4">
 							<label for="placa_2">Placa 2</label>
-							<input type="text" name="placa_2" id="placa_2" placeholder="" class="inputStyle" required> 
+							<input type="text" name="placa_2" id="placa_2" placeholder=" Placa 2" class="form-control" required> 
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -67,7 +67,7 @@
 
 				</div>
 				<div class="col-lg-4 ">
-					<input type="submit" value="Guardar" class="button blue">
+					<input type="submit" value="Guardar" class="btn btn-success sgreen">
 				</div>
 			</form> 
 		</div>

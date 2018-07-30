@@ -22,32 +22,37 @@
 	$data = $personal->paysheet();
 
 ?>
-<div class="clear">	</div>
-<!-- <div class="mainContainer"> -->
-	<div class="containerPanel">	
-		
-			
-			<div class="headContent">
-				<h4 class="text-bold">Capturar nomina de cuadrilla</h4>
+
+<div class="col-md-12">
+	<div class="box box-success">
+		<div class="box-header with-border">
+			<div class="box-title text-600">
+				<h3>Capturar nomina de cuadrilla</h3>
 			</div>
-			
-			<div class="mainContent ">
+			<div class="box-tools pull-right">
+				<a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
+				<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+				</button>
+			</div>
+		</div>
+		<div class="box-body padd10 bgWhite table-responsive">
+		<div class="mainContent ">
 				<div class="filters">
 					<div class="row">
 						<form action="#"  method="post" autocomplete="off" onsubmit="range_date(this);">
 							<div class="col-lg-2 ">
 								<label for="">Inicio de semana:</label>
-								<input type="text" name="startDate" id="startDate" class="block" autocomplete="off">
+								<input type="text" class="form-control" name="startDate" id="startDate" class="block" autocomplete="off">
 							</div>
 
 							<div class="col-lg-2 ">
 								<label for="">Fin de semana:</label>
-								<input type="text" name="endDate" id="endDate" class="block" autocomplete="off">
+								<input type="text" class="form-control" name="endDate" id="endDate" class="block" autocomplete="off">
 							</div>
 							<div class="col-lg-2 ">
 								<br>
 								
-								<input type="submit" value="Generar" onclick="setDates();">
+								<input type="submit" class="btn btn-success sgreen" value="Generar" onclick="setDates();">
 							
 							</div>
 						</form>
@@ -162,19 +167,22 @@
 				<?php } ?>
 			</div>
 
-		<div class="row">
-			<div class="col-lg-2">
-		<a href="<?=URL?>personal/" class="padd10 block">Volver</a>
-				
-			</div>
-			<div class="col-lg-2">
-				<?php if(isset($_GET['start_date'])){ ?>
-					<a href="<?=URL?>personal/prePayshet/" class="padd10 block">Prenomina</a>
-				<?php 	} ?>
-				
+			<div class="row">
+				<div class="col-lg-2">
+					<?php if(isset($_GET['start_date'])){ ?>
+						<a href="<?=URL?>personal/prePayshet/" class="btn btn-success sgreen">Prenomina</a>
+					<?php 	} ?>
+					
+				</div>
 			</div>
 		</div>
-	
+		<div class="box-footer">
+			<footer class="main-footer text-center">
+				<strong class="">Copyright © 2018-2018 <a href="#">Agricola Las Albardas</a>.</strong> Todos los derechos reservados.
+			</footer>
+		</div>
 	</div>
+</div>		
+			
+	
 
-<!-- </div> -->

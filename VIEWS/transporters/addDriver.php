@@ -18,14 +18,14 @@
 					<div class="row">
 						<div class="col-lg-10">
 							<label for="name">Nombre:</label>
-							<input type="text" name="name" id="name" class="inputStyle" required> 
+							<input type="text" name="name" id="name" class="form-control" placeholder="Nombre" required> 
 						</div>
 					</div>
 					<div class="clear"></div>
 					<div class="row">
 						<div class="col-lg-10">
 							<label for="last_name">Apellidos:</label>
-							<input type="text" name="last_name" id="last_name" class="inputStyle" required> 
+							<input type="text" name="last_name" id="last_name" class="form-control" placeholder="Apellidos" required> 
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -33,7 +33,7 @@
 					
 						<div class="col-lg-5">
 							<label for="phone">Telefono:</label>
-							<input type="text" name="phone" id="phone" placeholder="" class="inputStyle" required> 
+							<input type="text" name="phone" id="phone"  class="form-control" placeholder="Telefono" required> 
 						</div>
 						
 						
@@ -43,7 +43,7 @@
 					
 						<div class="col-lg-10">
 							<label for="num_lic">Numero de licencia:</label>
-							<input type="text" name="num_lic" id="num_lic" placeholder="" class="inputStyle" required> 
+							<input type="text" name="num_lic" id="num_lic"  class="form-control" placeholder="Numero de licencia" required> 
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -51,8 +51,8 @@
 					<div class="row">
 					
 						<div class="col-lg-10">
-							<label for="address">Direccion:</label>
-							<input type="text" name="address" id="address" placeholder="" class="inputStyle" required> 
+							<label for="address">Dirección:</label>
+							<input type="text" name="address" id="address"  class="form-control" placeholder="Dirección" required> 
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -60,7 +60,7 @@
 
 				</div>
 				<div class="col-lg-4 ">
-					<input type="submit" value="Guardar" class="button blue">
+					<input type="submit" value="Guardar" class="btn btn-success sgreen">
 				</div>
 			</form>
 		</div>

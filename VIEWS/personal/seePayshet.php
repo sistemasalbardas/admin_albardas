@@ -6,219 +6,234 @@
 
  ?>
 
- <!-- <div class="mainContainer"> -->
-	<div class="containerPanel">	
-		<div class="headContent">
-		
-					<?php
 
-				
-					$i = 0;
-					
-					while ($row = mysqli_fetch_array($cuadrillas)) {
-							
-							$days = 0;
-							
-							while ($row2 = mysqli_fetch_array($data[$i])) {
-								//echo $row2['assis'] . "<br>";
+<div class="col-md-12">
+		<div class="box box-success">
+			<div class="box-header with-border">
+				<h3 class="box-title text-600">
+				   Reporte de Nomina
+				</h3>
+				<div class="box-tools pull-right">
+					<a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
+					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+					</button>
+                </div>
+			</div>
+			<div class="box-body padd10 bgWhite table-responsive">
+				<div class="containerPanel">	
+					<div class="headContent">
 								
-								$days += (DOUBLE)$row2['assis'];
-								  
-
-							}
+								<?php
 
 							
+								$i = 0;
+								
+								while ($row = mysqli_fetch_array($cuadrillas)) {
+										
+										$days = 0;
+										
+										while ($row2 = mysqli_fetch_array($data[$i])) {
+											//echo $row2['assis'] . "<br>";
+											
+											$days += (DOUBLE)$row2['assis'];
+											
 
-							$days = (DOUBLE)$days;
-						
+										}
 
-							$i++;
+										
 
-						?>
-						<div class="clear"></div>
-						<hr>
-						<div class="row ">
-						<div class="col-lg-9 ">	
-							<div class="block ">	
+										$days = (DOUBLE)$days;
+									
 
-								<div class="row">	
-									<div class="col-lg-4 text-left">
-										Recibo de Nomina <br>	
-										UUID
-									</div>
-									<div class="col-lg-4 text-center">
-										Joranelero
-									</div>
-									<div class="col-lg-4">
-										RFC: XAXX-010101-00C
+										$i++;
+
+									?>
+									<div class="clear"></div>
+									<hr>
+									<div class="row ">
+									<div class="col-lg-9 ">	
+										<div class="block ">	
+
+											<div class="row">	
+												<div class="col-lg-4 text-left">
+													Recibo de Nomina <br>	
+													UUID
+												</div>
+												<div class="col-lg-4 text-center">
+													Joranelero
+												</div>
+												<div class="col-lg-4">
+													RFC: XAXX-010101-00C
+												</div>
+											</div>
+											<div class="row ">
+												<div class="col-lg-12 border">	
+													<div class="row">	
+														<div class="col-lg-6">
+															#0037  <?= $row['name']." ".$row['second_name']." ".$row['last_name']." ".$row['second_last_name'];?>
+														</div>
+
+														<div class="col-lg-6">
+															RFC: MORC-960807-3D0 
+														</div>
+													</div>
+													<div class="row">	
+														<div class="col-lg-4">
+															Departamento: Sistemas
+														</div>
+
+														<div class="col-lg-4">
+															<?= $days; ?> dias laborados  - periodo #23 semanal
+														</div>
+
+														<div class="col-lg-4">
+															31/may/2018 - 03/jun/2018
+														</div>
+
+													</div>
+												</div>
+												<div class="col-lg-12">	
+													<div class="row">	
+														<div class="col-lg-6 text-center border">
+															PERCEPCIONES
+														</div>
+														<div class="col-lg-6 text-center border">
+															DEDUCCIONES
+														</div>
+													</div>
+													<div class="row">	
+														<div class="col-lg-6 text-center border">
+															<div class="row">	
+																<div class="col-lg-6">
+																	Concepto
+																</div>
+																<div class="col-lg-6">
+																	Importe
+																</div>
+															</div>
+														</div>
+														<div class="col-lg-6 text-center border">
+															<div class="row">	
+																<div class="col-lg-6">
+																	Concepto
+																</div>
+																<div class="col-lg-6">
+																	Importe
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="row">	
+														
+														<div class="col-lg-6 text-center border">
+															<div class="block h120">
+																<div class="row">	
+																	<div class="col-lg-8">
+																		<div class="row">	
+																			<div class="col-lg-8 text-left s12">
+																				1 sueldo	
+																			</div>
+																			<div class="col-lg-4">
+																				6.00	
+																			</div>
+																		</div>
+																		<div class="row">	
+																			<div class="col-lg-8 text-left s12">
+																				3 spetimo dia	
+																			</div>
+																			<div class="col-lg-4">
+																				285.72	
+																			</div>
+																		</div>
+																	</div>
+																	<div class="col-lg-4">
+																		<label for="" class="block text-right">
+																			$ 3
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-lg-6 text-center border">
+															<div class="block h120 ">
+																<div class="row">
+																	<div class="row">	
+																		<div class="col-lg-6">
+																			Concepto
+																		</div>
+																		<div class="col-lg-6">
+																			Importe
+																		</div>
+																	</div>
+																</div>
+															</div>
+															
+														</div>
+													</div>
+													<div class="row">	
+														
+														<div class="col-lg-6 text-center border">
+															<div class="block h30">
+																<div class="row">	
+																	<div class="col-lg-8">
+																	
+																		<label for="">Suma de percepciones $</label>
+																	</div>
+																	<div class="col-lg-4">
+																		<label for="" class="block text-right">
+																			$ <?php echo number_format($days * 160 ); ?>
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-lg-6 text-center border">
+															<div class="block h30">
+																<div class="row">	
+																	<div class="col-lg-8">
+																	
+																		<label for="">Suma de deducciones $</label>
+																	</div>
+																	<div class="col-lg-4">
+																		<label for="" class="block text-right">
+																			$ 500.00
+																		</label>
+																	</div>
+																</div>
+															</div>
+															
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+
 									</div>
 								</div>
-								<div class="row ">
-									<div class="col-lg-12 border">	
-										<div class="row">	
-											<div class="col-lg-6">
-												#0037  <?= $row['name']." ".$row['second_name']." ".$row['last_name']." ".$row['second_last_name'];?>
-											</div>
-
-											<div class="col-lg-6">
-												RFC: MORC-960807-3D0 
-											</div>
-										</div>
-										<div class="row">	
-											<div class="col-lg-4">
-												Departamento: Sistemas
-											</div>
-
-											<div class="col-lg-4">
-												<?= $days; ?> dias laborados  - periodo #23 semanal
-											</div>
-
-											<div class="col-lg-4">
-												31/may/2018 - 03/jun/2018
-											</div>
-
-										</div>
-									</div>
-									<div class="col-lg-12">	
-										<div class="row">	
-											<div class="col-lg-6 text-center border">
-												PERCEPCIONES
-											</div>
-											<div class="col-lg-6 text-center border">
-												DEDUCCIONES
-											</div>
-										</div>
-										<div class="row">	
-											<div class="col-lg-6 text-center border">
-												<div class="row">	
-													<div class="col-lg-6">
-														Concepto
-													</div>
-													<div class="col-lg-6">
-														Importe
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-6 text-center border">
-												<div class="row">	
-													<div class="col-lg-6">
-														Concepto
-													</div>
-													<div class="col-lg-6">
-														Importe
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="row">	
 											
-											<div class="col-lg-6 text-center border">
-												<div class="block h120">
-													<div class="row">	
-														<div class="col-lg-8">
-															<div class="row">	
-																<div class="col-lg-8 text-left s12">
-																	1 sueldo	
-																</div>
-																<div class="col-lg-4">
-																	6.00	
-																</div>
-															</div>
-															<div class="row">	
-																<div class="col-lg-8 text-left s12">
-																	3 spetimo dia	
-																</div>
-																<div class="col-lg-4">
-																	285.72	
-																</div>
-															</div>
-														</div>
-														<div class="col-lg-4">
-															<label for="" class="block text-right">
-																$ 3
-															</label>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-6 text-center border">
-												<div class="block h120 ">
-													<div class="row">
-														<div class="row">	
-															<div class="col-lg-6">
-																Concepto
-															</div>
-															<div class="col-lg-6">
-																Importe
-															</div>
-														</div>
-													</div>
-												</div>
-												
-											</div>
-										</div>
-										<div class="row">	
-											
-											<div class="col-lg-6 text-center border">
-												<div class="block h30">
-													<div class="row">	
-														<div class="col-lg-8">
-														
-															<label for="">Suma de percepciones $</label>
-														</div>
-														<div class="col-lg-4">
-															<label for="" class="block text-right">
-																$ <?php echo number_format($days * 160 ); ?>
-															</label>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-6 text-center border">
-												<div class="block h30">
-													<div class="row">	
-														<div class="col-lg-8">
-														
-															<label for="">Suma de deducciones $</label>
-														</div>
-														<div class="col-lg-4">
-															<label for="" class="block text-right">
-																$ 500.00
-															</label>
-														</div>
-													</div>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-								</div>
+								<?php 
+										
+									} 
+								
+										//echo $data[0]['name'];
+										
 
-							</div>
-
+										
+								?>
+					
+					</div>
+					<div class="mainContent">	
+						<div class="row">	
+							
 						</div>
 					</div>
-								
-					<?php 
-							
-						} 
-					
-							//echo $data[0]['name'];
-						 	
-
-							
-					?>
-		
-		</div>
-		<div class="mainContent">	
-			<div class="row">	
-				
+				</div>
 			</div>
+			<div class="box-footer">
+				<footer class="main-footer text-center">
+					<strong class="">Copyright © 2018-2018 <a href="#">Agricola Las Albardas</a>.</strong> Todos los derechos reservados.
+				</footer>
+		    </div>
 		</div>
-	</div>
-<!-- </div> -->
-<br>
-<br>
-<br>
-<br>
-<br>
+</div>

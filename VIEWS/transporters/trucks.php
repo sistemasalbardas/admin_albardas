@@ -18,7 +18,7 @@
 			<div class="mainContent">
 				<div class="row">
 					<div class="col-lg-2 padd10 ">
-						<a href="<?= URL?>transporters/addTruck/?id=<?= $_GET['id'];?>&nameTransport=<?= $_GET['name'] ?>" class="button cyan"><span class="icon-truck"></span> Nuevo camion</a>
+						<a href="<?= URL?>transporters/addTruck/?id=<?= $_GET['id'];?>&nameTransport=<?= $_GET['name'] ?>" class="btn btn-primary sblue"><span class="icon-truck"></span> Nuevo camion</a>
 					</div>
 					
 				</div>

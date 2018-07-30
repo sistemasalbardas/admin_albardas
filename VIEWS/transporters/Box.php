@@ -17,7 +17,7 @@
 			<div class="mainContent">
 				<div class="row">
 					<div class="col-lg-2 padd10 ">
-						<a href="<?= URL?>transporters/addBox/?id=<?= $_GET['id'];?>&nameTransport=<?= $_GET['name'] ?>" class="button cyan "><i class="fas fa-truck-loading"></i> Nueva caja</a>
+						<a href="<?= URL?>transporters/addBox/?id=<?= $_GET['id'];?>&nameTransport=<?= $_GET['name'] ?>" class="btn btn-primary sblue "><i class="fas fa-truck-loading"></i> Nueva caja</a>
 					</div>
 				</div>
 				<div class="clear"></div>

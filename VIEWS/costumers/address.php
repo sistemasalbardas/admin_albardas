@@ -2,17 +2,20 @@
 	$data = $costumers->address();
  ?>
 
-
-<!-- <div class="mainContainer"> -->
 <div class="col-md-12">
 	<div class="box box-success">
 	    <div class="box-header with-border">
-	      <h3 class="box-title text-600">Direcciones de entrega - <b><?= $_GET['name'];?></h3>
+		  <h3 class="box-title text-600">Direcciones de entrega - <b><?= $_GET['name'];?></h3>
+		  <div class="box-tools pull-right">
+			    <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+          </div>
 	    </div>
 		<div class="box-body padd10 bgWhite table-responsive">
 			<div class="row">
 				<div class="col-lg-2">
-					<a href="<?= URL?>costumers/addAddress/?id=<?=$_GET['id']?>&name=<?=$_GET['name']?>" class="btn btn-primary s14"><i class="fas fa-plus"></i> Nueva direccion </a>
+					<a href="<?= URL?>costumers/addAddress/?id=<?=$_GET['id']?>&name=<?=$_GET['name']?>" class="btn btn-primary sblue"><i class="fas fa-plus"></i> Nueva direccion </a>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -52,6 +55,9 @@
 			</table>
 		</div>
 		<div class="box-footer">
+			<footer class="main-footer text-center">
+				<strong class="">Copyright © 2018-2018 <a href="#">Agricola Las Albardas</a>.</strong> Todos los derechos reservados.
+			</footer>
 		</div>
 	</div>
 </div>

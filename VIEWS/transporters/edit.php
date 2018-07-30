@@ -21,14 +21,14 @@
 					<div class="row">
 						<div class="col-lg-10">
 							<label for="name">Razón social:</label>
-							<input type="text" name="name" id="name" class="inputStyle" required value="<?= $row['name']?>"> 
+							<input type="text" name="name" id="name" class="form-control" required value="<?= $row['name']?>"> 
 						</div>
 					</div>
 					<div class="clear"></div>
 					<div class="row">
 						<div class="col-lg-10">
 							<label for="rfc">R F C:</label>
-							<input type="text" name="rfc" id="rfc" class="inputStyle" required  value="<?= $row['rfc']?>"> 
+							<input type="text" name="rfc" id="rfc" class="form-control" required  value="<?= $row['rfc']?>"> 
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -36,7 +36,7 @@
 					
 						<div class="col-lg-10">
 							<label for="address">Direccion fiscal:</label>
-							<input type="text" name="address" id="address" placeholder="" class="inputStyle" required  value="<?= $row['address']?>"> 
+							<input type="text" name="address" id="address" placeholder="" class="form-control" required  value="<?= $row['address']?>"> 
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -45,7 +45,7 @@
 					
 						<div class="col-lg-10">
 							<label for="phone">Telefono:</label>
-							<input type="text" name="phone" id="phone" placeholder="" class="inputStyle" required  value="<?= $row['phone']?>"> 
+							<input type="text" name="phone" id="phone" placeholder="" class="form-control" required  value="<?= $row['phone']?>"> 
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -53,11 +53,11 @@
 					
 						<div class="col-lg-5">
 							<label for="caat">CAAT:</label>
-							<input type="text" name="caat" id="caat" placeholder="" class="inputStyle" required  value="<?= $row['caat']?>"> 
+							<input type="text" name="caat" id="caat" placeholder="" class="form-control" required  value="<?= $row['caat']?>"> 
 						</div>
 						<div class="col-lg-5">
 							<label for="alpha">ALPHA:</label>
-							<input type="text" name="alpha" id="alpha" placeholder="" class="inputStyle" required  value="<?= $row['alpha']?>"> 
+							<input type="text" name="alpha" id="alpha" placeholder="" class="form-control" required  value="<?= $row['alpha']?>"> 
 						</div>
 						
 					</div>
@@ -66,19 +66,17 @@
 					
 						<div class="col-lg-5">
 							<label for="iccmx">ICCMX:</label>
-							<input type="text" name="iccmx" id="iccmx" placeholder="" class="inputStyle" required  value="<?= $row['iccmx']?>"> 
+							<input type="text" name="iccmx" id="iccmx" placeholder="" class="form-control" required  value="<?= $row['iccmx']?>"> 
 						</div>
 						<div class="col-lg-5">
 							<label for="us_dot">US DOT:</label>
-							<input type="text" name="us_dot" id="us_dot" placeholder="" class="inputStyle" required  value="<?= $row['us_dot']?>"> 
+							<input type="text" name="us_dot" id="us_dot" placeholder="" class="form-control" required  value="<?= $row['us_dot']?>"> 
 						</div>
 						
 					</div>
-					<!-- <div class="clear"></div> -->
-
 				</div>
 				<div class="col-lg-4 ">
-					<input type="submit" value="Guardar" class="button blue">
+					<input type="submit" value="Guardar" class="btn btn-success sgreen">
 				</div>
 			</form>
 		</div>
