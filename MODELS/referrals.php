@@ -6,6 +6,7 @@ namespace MODELS;
 		public $id;
 		public $tab;
 		public $date;
+		public $time;
 		public $ncharge;
 		public $nTab;
 		public $folio;
@@ -30,6 +31,9 @@ namespace MODELS;
 		public $id_truck;
 		public $id_box;
 		public $id_add;
+		public $id_user;
+		public $file_remision;
+		public $file_responsive;
 
 	
 		public function __construct(){
@@ -221,12 +225,27 @@ namespace MODELS;
 
 		
 		public function save_remision(){
-			$sql = "INSERT INTO referrals (id, date, f_flete, f_embarque, f_carga, user, name_file, id_prod, cant, trasporter, id_employe, id_costumer, file_report) VALUES ('','{$this->date}','{$this->f_freight}','{$this->f_embark}', '{$this->f_charge}','{$this->user}','{$this->file}','',
-				'','','{$this->id_employe}','{$this->id_costumer}','')";
-			$this->con->consultaSimple($sql);
 
+			$sql = "INSERT INTO remisions (id, date, time, f_freight, f_embark, f_charge, id_employe, id_costumer, id_trasport, id_truck, id_box, id_driver, id_user, file_remision, file_report, file_edited, file_responsive) VALUES(
+				'',
+				'{$this->date}',
+				'{$this->time}',
+				'{$this->f_freight}',
+				'{$this->f_embark}',
+				'{$this->f_charge}',
+				'{$this->id_employe}',
+				'{$this->id_costumer}',
+				'{$this->id_trasport}',
+				'{$this->id_truck}',
+				'{$this->id_box}',
+				'{$this->id_driver}',
+				'{$this->id_user}',
+				'{$this->file_remision}',
+				'',
+				'',
+				'{$this->file_responsive}')";
 
-		
+				$this->con->consultaSimple($sql);
 		}
 	
 		public function saveProducts(){
@@ -264,20 +283,20 @@ namespace MODELS;
 
 
 		public function view(){	
-			$sql = "SELECT * FROM referrals";
+			$sql = "SELECT * FROM remisions";
 			$data = $this->con->consultaRetorno($sql);
 			return $data;
 		}
 
 		public function selectRemison(){	
 			//CONSULTA PARA TRAER LA INFORMACION DE REMISION
-			$sql = "SELECT * FROM referrals WHERE id = '{$this->id}'";
+			$sql = "SELECT * FROM remisions WHERE id = '{$this->id}'";
 			$datos = $this->con->consultaRetorno($sql);
 			$row = mysqli_fetch_assoc($datos);
 
 			$this->set("id_costumer", $row['id_costumer']);
 			$this->set("id_employe", $row['id_employe']);
-			$this->set("f_embark", $row['f_embarque']);
+			$this->set("f_embark", $row['f_embark']);
 
 			$dataCostumer = $this->getCostumer();
 			$datEmploye = $this->getEmploye();

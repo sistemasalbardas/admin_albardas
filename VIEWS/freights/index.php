@@ -1,6 +1,5 @@
 <?php 
 	$data = $freights->index();
-	$costumers = $freights->listCostumers();
  ?>
 
 

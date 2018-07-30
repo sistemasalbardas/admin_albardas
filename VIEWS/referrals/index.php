@@ -52,7 +52,7 @@
 			</div>	
 
 			<div class="col-lg-2">	
-				<select name="n" id="nCharge" class="inputStyle" onchange="nCharge(this);" required="">
+				<select name="n" id="nCharge" class="form-control-sm" onchange="nCharge(this);" required="">
 					<option value="0">0</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -136,7 +136,7 @@
 							<div class="form-group">
 								<label for="employe" class="control-label col-md-2"><b>EMPRESA:</b></label>
 								<div class="col-md-5">
-									<select name="name_employe" id="employe" onchange="setUrl(this);" class="select block form-control selectpicker" data-live-search="true" required="">
+									<select name="name_employe" id="employe" onchange="setUrl(this);" class="select block selectpicker form-control-sm" data-live-search="true" required="">
 									<option value="<?=  $datos['name'];?>"><?=  $datos['name'];?></option>
 									<option value="4">El Cegador SPR de RL de CV</option>
 									<option value="3">Las Albardas SPR de RL de CV</option>
@@ -147,7 +147,7 @@
 							<div class="form-group">
 								<label for="address_employe" class="control-label col-md-2">DOMICILIO:</label>
 								<div class="col-md-5">
-									<input type="text" name="address_employe" id="address_employe" value="<?= $datos['addres'];?>" class="w100 block form-control" required="">
+									<input type="text" name="address_employe" id="address_employe" value="<?= $datos['addres'];?>" class="w100 block form-control form-control-sm" required="">
 								</div>
 							</div>
 							<div class="form-group">
@@ -394,7 +394,7 @@
 										<div class="form-group">
 											<label for="sel" class="control-label col-md-4">Selecciona: </label>
 											<div class="col-md-8">
-												<select name="box" id="sel" class="block form-control selectpicker" data-live-search="true" onchange="setUrl(this);">
+												<select name="box" id="box" class="block form-control selectpicker" data-live-search="true" onchange="setUrl(this);">
 													<option value="<?= $box['id']?>">
 														<?= $box['type']." - ".$box['num_econ'];?></option>
 													<?php while ($row = mysqli_fetch_array($boxes)) {?>

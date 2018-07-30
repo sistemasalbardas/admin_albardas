@@ -128,7 +128,7 @@ function nCharge(obj){
 
 }
 
-function setUrl(obj , rute){
+function setUrl(obj){
     var data = getGET();
     
     var val = $(obj).val();
@@ -156,7 +156,7 @@ function setUrl(obj , rute){
              parameters[par] = val;
         }
     }
-    location.href= URL+rute+"?nCharge="+parameters['nCharge']+"&tab="+parameters['tab']+"&employe="+parameters['employe']+"&costumer="+parameters['costumer']+"&transport="+parameters['transport']+"&driver="+parameters['driver']+"&box="+parameters['box']+"&box_2="+parameters['box_2']+"&truck="+parameters['truck']+"&add="+parameters['add']+"";
+    location.href= URL+"referrals?nCharge="+parameters['nCharge']+"&tab="+parameters['tab']+"&employe="+parameters['employe']+"&costumer="+parameters['costumer']+"&transport="+parameters['transport']+"&driver="+parameters['driver']+"&box="+parameters['box']+"&box_2="+parameters['box_2']+"&truck="+parameters['truck']+"&add="+parameters['add']+"";
 }
 
 

@@ -25,7 +25,6 @@
 						<th scope="col">FLETE</th>
 						<th scope="col">EMBARQUE</th>
 						<th scope="col">CARGA</th>
-						<th scope="col">USUARIO</th>
 						<th scope="col">ARCHIVOS</th>
 						<th scope="col">ACCIONES</th>
 					</tr>
@@ -35,17 +34,16 @@
 					    <tr>
 					    		<th><?= $row['id']; ?></th>
 						      	<th><?= $row['date']; ?></th>
-						      	<th><?= $row['f_flete']; ?></th>
-						      	<th><?= $row['f_embarque']; ?></th>
-						      	<th><?= $row['f_carga']; ?></th>
-						      	<th><?= $row['user']; ?></th>
+						      	<th><?= $row['f_freight']; ?></th>
+						      	<th><?= $row['f_embark']; ?></th>
+						      	<th><?= $row['f_charge']; ?></th>
 						      	<th>
-						      		<a href="<?=URL?>VIEWS/pdf_files/referrals/rem_<?= $row['name_file']; ?>" target="_blank" class="tool">
+						      		<a href="<?=URL?>VIEWS/pdf_files/referrals/<?= $row['file_remision']; ?>" target="_blank" class="tool">
 								      	<i class="btn btn-primary btn-xs far fa-file-pdf btn_padd"></i>
 						      			<span class="tooltext">Remisión</span>
 										
 									</a>
-									<a href="<?=URL?>VIEWS/pdf_files/responsives/res_<?= $row['name_file']; ?>" target="_blank" class="tool">
+									<a href="<?=URL?>VIEWS/pdf_files/responsives/<?= $row['file_responsive']; ?>" target="_blank" class="tool">
 								      	<i class="btn btn-primary btn-xs far fa-file-pdf btn_padd"></i>
 						      			<span class="tooltext">Responsiva
 										
@@ -56,11 +54,12 @@
 						      			<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
 								      	<span class="tooltext">Eliminar</span>
 						      		</a>
-						      		<a href="<?= URL?>referrals/editRemision/?id_ref=<?= $row['id'];?>"  class="tool">
+						      		<a href="<?= URL?>referrals/editRemision/?id_ref=<?= $row['id'];?>&employe=<?= $row['id_employe'];?>&costumer=<?= $row['id_costumer'];?>&transport=<?= $row['id_trasport'];?>&driver=<?= $row['id_driver'];?>&box=<?= $row['id_box'];?>&truck=<?= $row['id_truck'];?>&add=0"  class="tool">
 						      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
 						      			<span class="tooltext">Editar</span>
 						      			 
 						      		</a>
+
 						      		<a href="<?= URL?>referrals/refarralsReport/?id=<?= $row['id'];?>" class="tool">
 						      			<i class="btn btn-success btn-xs fas fa-dollar-sign btn_padd"></i>
 										<span class="tooltext">Rep. Remisión</span>			 

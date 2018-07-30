@@ -109,6 +109,8 @@
 			$resultado2 = substr($palabra2, 0 , 1);
 			$resultado3 = substr($palabra1, 0 , 2);
 
+			$nString = strlen($newEmbark); 
+
 			if (count($nWord) > 1) {
 				
 				switch ($nString) {
@@ -306,7 +308,7 @@
 				//$this->referrals->set("date", date('y-m-d'));	
 				$this->referrals->set("date", $_POST['date']);	
 				$this->referrals->set("time", $_POST['time']);	
-				$this->referrals->set("user", $_SESSION['user'][0]['name']);
+				$this->referrals->set("id_user", $_SESSION['user'][0]['id']);
 				$this->referrals->set("id_employe",  $_POST['id_employe']);
 
 				if (isset($_POST['f_freight'])) {
@@ -323,9 +325,9 @@
 				$this->referrals->set("f_freight", $folios['folio_freight']);
 				$this->referrals->set("f_embark", $folios['folio_embark']);
 				$this->referrals->set("f_charge", $folios['folio_charge']);	
-				$this->referrals->set("file", $folios['folio_charge'].".pdf");
+				$this->referrals->set("file_remision", "REM_".$folios['folio_charge'].".pdf");
+				$this->referrals->set("file_responsive", "RES_".$folios['folio_charge'].".pdf");
 				$this->referrals->set("nTab", $_POST['nTab']);
-				$this->referrals->set("f_embark", $folios['folio_embark']);
 
 				//INFORMACION PARA FLETES
 				$this->referrals->set("price", 580);
@@ -462,9 +464,16 @@
 
 		public function editRemision()
 		{
-			$this->referrals->set("id", $_GET['id']);
+			$this->referrals->set("id", $_GET['id_ref']);
 			$data = $this->referrals->selectRemison();
-			return $data;
+
+			$products = array();
+ 			while ($prod = mysqli_fetch_array($data['products']) ) {
+				array_push($products, $prod['id'], $prod['concept'] , $prod['count']);
+			}
+			
+			$_SESSION['products'][] = $products;
+	
 		}
 	}
 

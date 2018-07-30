@@ -813,12 +813,12 @@ $html2 .= '<table class="table" style="font-size: 13px ; font-family: Calibri; b
   $mpdf->WriteHTML($html);
   ob_clean();
 
-  $mpdf->Output(dirname(__FILE__).'/../pdf_files/referrals/rem_'.$folios['folio_charge'].'.pdf','F');
+  $mpdf->Output(dirname(__FILE__).'/../pdf_files/referrals/REM_'.$folios['folio_charge'].'.pdf','F');
 
   $mpdf2 = new Mpdf();
   $mpdf2->WriteHTML($html2);
   ob_clean();
-  $mpdf2->Output(dirname(__FILE__).'/../pdf_files/responsives/res_'.$folios['folio_charge'].'.pdf','F');
+  $mpdf2->Output(dirname(__FILE__).'/../pdf_files/responsives/RES_'.$folios['folio_charge'].'.pdf','F');
 
  // $mpdf->Output('rem'.$folios['folio_charge'].'.pdf','D');
  

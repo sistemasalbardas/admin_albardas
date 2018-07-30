@@ -6,7 +6,7 @@
 	  <!-- general form elements -->
 	<div class="box box-success">
 	    <div class="box-header with-border">
-	      <h3 class="box-title">Nuevo usuario</h3>
+	      <h3 class="box-title">Editar usuario</h3>
 	    </div>
 	    <!-- /.box-header -->
 	    <!-- form start -->
