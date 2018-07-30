@@ -107,15 +107,29 @@
 				</div>
 				<div class="clear"></div>
 				<div class="row">
-					<div class="col-lg-offset-6 col-sm-4 col-lg-3">
+					<div class=" col-lg-offset-6 col-sm-4 col-lg-3">
+					<div class="clear"></div>
 						<div class="form-group">
-							<label for="date" class="control-label col-md-2">Fecha: </label>
-							<div class="col-md-10">
-								<input type="date" class="form-control" name="date" id="date" required="">
+						<label for="time" class="control-label">Fecha: </label>
+							<div class="input-group date" data-provide="datepicker">					
+								<input type="text" class="form-control" id="datepicker" name="date" id="date" required="">
+								<span class="input-group-addon">
+								<i class="fas fa-calendar-alt"></i>
+								</span>
 							</div>
 						</div>
 					</div>
 					<div class=" col-sm-4 col-lg-3">
+					<div class="clear"></div>
+					<div class="form-group">
+						<div class='input-group date' id='datetimepicker3'>
+							<input type='text' class="form-control" />
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-time"></span>
+							</span>
+						</div>
+					</div>
+					<!-- hbk -->
 						<div class="form-group">
 							<label for="time" class="control-label col-md-2">Hora:</label>
 							<div class="col-md-10">
@@ -247,7 +261,7 @@
 									</table>
 
 									</div>
-								<div class="block text-center">	
+								<div class="block text-center  ">	
 									<div class="clear">	</div>
 									<button onclick="openModal(this,'searchP');" class="btn btn-primary sblue" type="button">
 										Agregar Productos
