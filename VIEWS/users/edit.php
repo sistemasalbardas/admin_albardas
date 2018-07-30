@@ -4,18 +4,16 @@
 <div class="col-md-12">
 	<div class="box box-success">
 	    <div class="box-header with-border">
-<<<<<<< HEAD
 	      <h3 class="box-title">Editar usuario</h3>
-=======
-	      <h3 class="box-title text-600">Nuevo usuario</h3>
-				<div class="box-tools pull-right">
-							<a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
-							<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-							</button>
-				</div>
->>>>>>> 12afbdc163099bc043d29d274fe64fc9bfc4bc16
+
+			<div class="box-tools pull-right">
+				<a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
+				<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+				</button>
+			</div>
+
 	    </div>
-			<div class="box-body padd10 bgWhite table-responsive">
+		<div class="box-body padd10 bgWhite table-responsive">
 	    	<form action="<?=URL?>users/edit/" method="post"  id="addEmploye" autocomplete="off">
 							<input type="hidden" name="id" value="<?= $row['id']?>">
 							<div class="form-group has-error <?= (isset($_GET['msg'])) ? null : 'hidden'; ?>">
@@ -87,12 +85,12 @@
 							<div class="col-lg-4">
 								<button type="submit" class="btn btn-success sgreen">Guardar</button>
 							</div>
-				</form>
-			</div>
-			<div class="box-footer">
-					<footer class="main-footer text-center">
-						<strong class="">Copyright © 2018-2018 <a href="#">Agricola Las Albardas</a>.</strong> Todos los derechos reservados.
-					</footer>
-			</div>
+			</form>
+		</div>
+		<div class="box-footer">
+			<footer class="main-footer text-center">
+				<strong class="">Copyright © 2018-2018 <a href="#">Agricola Las Albardas</a>.</strong> Todos los derechos reservados.
+			</footer>
+		</div>
 	</div>
 </div>

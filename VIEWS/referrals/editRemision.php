@@ -1,6 +1,4 @@
 <?php 	
-	
-
 	$data = $referrals->selectCostumers();
 	$dataProducts = $referrals->products();
 	$listP = $referrals->listarP();
@@ -14,6 +12,7 @@
 	$truck = $referrals->truck();
 	$boxes = $referrals->boxes();
 	$box = $referrals->box();
+	$datos = $referrals->index();
 	//print_r($reftransportererrals->products());
 	//$dataPrody = $referrals->selectCostumers();
 	$costumer = $data['costumer'];
@@ -27,11 +26,9 @@
 	      <h3 class="box-title text-600">Editar remision</h3>
 	     
 	      <div class="box-tools pull-right">
-	      	                
                 <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                 </button>
-            
            </div>
 	    </div>
 		<div class="box-body padd10">	
