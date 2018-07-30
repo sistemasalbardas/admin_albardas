@@ -17,9 +17,9 @@
 				<input type="hidden" name="nameTransport" value="<?= $_GET['nameTransport']?>">
 				<div class="mainContent mW600">
 					<div class="row">
-						<div class="col-lg-7">
+						<div class="col-lg-8">
 							<label for="type">Tipo de caja:</label>
-							<select name="type" id="type" required class="inputStyle">
+							<select name="type" id="type" required class="form-control selectpicker" data-live-search="true">
 								<option value="Remolque">Remolque</option>
 								<option value="Estaca">Estaca</option>
 								<option value="Refrigerado">Refrigerado</option>
@@ -31,13 +31,13 @@
 					</div>
 					<div class="clear"></div>
 					<div class="row">
-						<div class="col-lg-4">
+						<div class="col-lg-5">
 							<label for="temperature">Temperatura:</label>
-							<input type="text" name="temperature" id="temperature" class="inputStyle" required> 
+							<input type="text" name="temperature" id="temperature" placeholder="Temperatura" class="form-control" required> 
 						</div>
 						<div class="col-lg-3">
 							<label for="degrees">Grados:</label>
-							<select name="degrees" id="degrees" class="inputStyle" required="">
+							<select name="degrees" id="degrees" class="form-control selectpicker" data-live-search="true" required="">
 								<option value="C °">C °</option>		
 								<option value="F °">F °</option>		
 								<option value="K °">K °</option>		
@@ -47,24 +47,24 @@
 					</div>
 					<div class="clear"></div>
 					<div class="row">
-						<div class="col-lg-7">
+						<div class="col-lg-8">
 							<label for="placa"> Numero de Placa:</label>
-							<input type="text" name="placa" id="placa" class="inputStyle" required> 
+							<input type="text" name="placa" id="placa" class="form-control" placeholder="Numero de Placa" required> 
 						</div>
 					</div>
 					
 					<div class="clear"></div>
 					<div class="row">
 					
-						<div class="col-lg-7">
-							<label for="num_econ">Numero economico</label>
-							<input type="text" name="num_econ" id="num_econ" placeholder="" class="inputStyle" required> 
+						<div class="col-lg-8">
+							<label for="num_econ">Numero economico:</label>
+							<input type="text" name="num_econ" id="num_econ" placeholder="Numero economico" class="form-control" required> 
 						</div>
 					</div>
 					<div class="clear"></div>
 				</div>
 					<div class="col-lg-4 ">
-						<input type="submit" value="Guardar" class="button blue">
+						<input type="submit" value="Guardar" class="btn btn-success sgreen">
 					</div>
 			</form>
 		</div>

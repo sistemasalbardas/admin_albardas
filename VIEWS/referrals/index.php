@@ -26,7 +26,7 @@
 	
 	//print_r($data['list']);
  ?>
- <div class="col-md-10">
+ <div class="col-md-12">
 	<div class="box box-success">
 	    <div class="box-header with-border">
 	      <h3 class="box-title text-600">Generador de remisiones</h3>
@@ -39,45 +39,41 @@
            </div>
 	    </div>
 		<div class="box-body padd10">
-			<?php if (!isset($_GET['nCharge'])){
-			unset($_SESSION['infoFreight']);
-		?>
-		<div class="row ">	
-			<div class="col-lg-3 ">	
-				<div class="block h40 text-center">	
-					<div class="middle content">
-						<label for="nCharge">Numero de embarques:</label>
-					</div>
+				<?php if (!isset($_GET['nCharge'])){
+				unset($_SESSION['infoFreight']);
+			?>
+			<div class="row ">	
+				<div class="col-lg-3 ">	
+					<div class="block h40 text-center">	
+						<div class="middle content">
+							<label for="nCharge">Numero de embarques:</label>
+						</div>
+					</div>	
 				</div>	
-			</div>	
-
-			<div class="col-lg-2">	
-				<select name="n" id="nCharge" class="form-control-sm" onchange="nCharge(this);" required="">
-					<option value="0">0</option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-				</select>
+				<div class="col-lg-2">	
+					<select name="n" id="nCharge" class="form-control" onchange="nCharge(this);" required="">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+					</select>
+				</div>
 			</div>
-		</div>
 		<?php 	} ?>
 
-		<?php 	if (isset($_GET['nCharge'])	) {?>
-		
+			<?php 	if (isset($_GET['nCharge'])	) {?>
 			<ul class="tabs"> 
 				<?php 	
 					$x = 1;
 					while( $x <= $nCharge ) { ?>
-				   		<li class="<?= ($tab == $x) ? 'current' : null ; ?> tabP" id="" > 
-						 	<a href="#">Remision <?= $x?></a>
+						<li class="<?= ($tab == $x) ? 'current' : null ; ?> tabP" id="" > 
+							<a href="#">Remision <?= $x?></a>
 						</li>
 				<?php $x++; }  ?>
 			</ul>
-
-	
 			<form action="" class="padd25 border form-horizontal block" method="post" action="" onsubmit="generateRemision(this);">
 
 				<input type="hidden" name="nCharge" value="<?= $_GET['nCharge']?>">
@@ -173,7 +169,7 @@
 										<?php while($row = mysqli_fetch_array($list)){ ?>
 										<option value="<?= $row['id'];?>"><?= $row['name']; ?></option>
 									<?php } ?>
-								    </select>
+									</select>
 								</div>
 							</div>
 							<div class="form-group">
@@ -234,7 +230,7 @@
 														<th class="s12 text-center">
 															<a href="<?= $id;?>" onclick="eraseP(this);" class="tool">
 																<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
-															    <span class="tooltext">Eliminar</span>
+																<span class="tooltext">Eliminar</span>
 															</a>
 														</th>
 														
@@ -253,7 +249,7 @@
 									</div>
 								<div class="block text-center">	
 									<div class="clear">	</div>
-									<button onclick="openModal(this,'searchP');" class="btn btn-primary s14 center	" type="button">
+									<button onclick="openModal(this,'searchP');" class="btn btn-primary sblue" type="button">
 										Agregar Productos
 									</button>
 									<div class="clear">	</div>
@@ -275,7 +271,7 @@
 													<?php while ($row  = mysqli_fetch_array($transporters)) { ?>
 													<option value="<?= $row['id']?>"><?= $row['name']?></option>
 													<?php } ?>
-											    </select>
+												</select>
 											</div>
 										</div>
 									</div>
@@ -366,7 +362,7 @@
 										</div>	
 									</div>
 									<div class="row">
-									    <div class="form-group">
+										<div class="form-group">
 											<label for="N-econ" class="control-label col-md-4">N econ: </label>
 											<div class="col-md-8">
 												<input type="text" name="n_economic" id="N-econ" class="block form-control" required="" value="<?= $truck['num_econ'];?>">
@@ -375,7 +371,7 @@
 									</div>
 
 									<div class="row">
-									    <div class="form-group">
+										<div class="form-group">
 											<label for="placas" class="control-label col-md-4">Placas: </label>
 											<div class="col-md-8">
 												<input type="text" name="plates_t" id="placas" class="block form-control" required="" value="<?= $truck['placa']." - ".$truck['placa_2']?>">
@@ -443,7 +439,7 @@
 									</div>
 									
 									<div class="row">
-									    <div class="form-group">
+										<div class="form-group">
 											<label for="p" class="control-label col-md-4">Placas: </label>
 											<div class="col-md-8">
 												<input type="text" name="plates" id="p" class="block form-control" required="" value="<?= $box['placa']?>">
@@ -483,7 +479,7 @@
 									</div>
 		
 									<div class="row">
-									    <div class="form-group">
+										<div class="form-group">
 											<label for="u" class="control-label col-md-4">US DOT: </label>
 											<div class="col-md-8">
 												<input type="text" name="US_DOT" id="u" class="block form-control" required="" value="<?= $transporter['us_dot']; ?>">
@@ -558,7 +554,7 @@
 									</div>
 									
 									<div class="row">
-									    <div class="form-group">
+										<div class="form-group">
 											<label for="p" class="control-label col-md-4">Placas: </label>
 											<div class="col-md-8">
 												<input type="text" name="plates" id="p" class="block form-control" required="" value="<?= $box['placa']?>">
@@ -589,14 +585,16 @@
 					</div>
 				</div>
 
-				<button class="btn Green s14" type="submit" >
+				<button class="btn btn-success sgreen" type="submit" >
 					<b>Generar remision</b>
 				</button>
-			</form>
-
-		
-			
-		<?php } ?>
+			</form>	
+			<?php } ?>
+		</div>
+		<div class="box-footer">
+			<footer class="main-footer text-center">
+				<strong class="">Copyright © 2018-2018 <a href="#">Agricola Las Albardas</a>.</strong> Todos los derechos reservados.
+			</footer>
 		</div>
 	</div>
 </div>

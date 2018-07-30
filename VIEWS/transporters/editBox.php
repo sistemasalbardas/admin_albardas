@@ -32,7 +32,7 @@
 						<div class="col-lg-7">
 							<br>
 							<label for="type">Tipo de caja:</label>
-							<select name="type" id="type" required class="inputStyle">
+							<select name="type" id="type" required class="form-control selectpicker" data-live-search="true">
 
 								<option value="Remolque" <?= ($row['type'] == 'Remolque') ? 'selected' :null ; ?>>Remolque</option>
 								<option value="Estaca" <?= ($row['type'] == 'Estaca') ? 'selected' : null ; ?>>Estaca</option>
@@ -47,11 +47,11 @@
 					<div class="row">
 						<div class="col-lg-4">
 							<label for="temperature">Temperatura:</label>
-							<input type="text" name="temperature" id="temperature" class="inputStyle" required value="<?= $row['temperature']?>"> 
+							<input type="text" name="temperature" id="temperature" class="form-control" required value="<?= $row['temperature']?>"> 
 						</div>
 						<div class="col-lg-3">
 							<label for="degrees">Grados:</label>
-							<select name="degrees" id="degrees" class="inputStyle" required="">
+							<select name="degrees" id="degrees" class="form-control selectpicker" data-live-search="true" required="">
 								<option value="C °">C °</option>		
 								<option value="F °">F °</option>		
 								<option value="K °">K °</option>		
@@ -63,7 +63,7 @@
 					<div class="row">
 						<div class="col-lg-7">
 							<label for="placa"> Numero de Placa:</label>
-							<input type="text" name="placa" id="placa" class="inputStyle" required value="<?= $row['placa']?>"> 
+							<input type="text" name="placa" id="placa" class="form-control" required value="<?= $row['placa']?>"> 
 						</div>
 					</div>
 					
@@ -72,13 +72,13 @@
 					
 						<div class="col-lg-7">
 							<label for="num_econ">Numero economico</label>
-							<input type="text" name="num_econ" id="num_econ" placeholder="" class="inputStyle" required value="<?= $row['num_econ']?>"> 
+							<input type="text" name="num_econ" id="num_econ" placeholder="" class="form-control" required value="<?= $row['num_econ']?>"> 
 						</div>
 					</div>
 					<div class="clear"></div>
 				</div>	
 				<div class="col-lg-4 ">
-					<input type="submit" value="Guardar" class="button blue">
+					<input type="submit" value="Guardar" class="btn btn-success sgreen">
 				</div>
 			</form>
 		</div>

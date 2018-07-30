@@ -15,12 +15,10 @@
                 </div>
 			</div>
 			<div class="box-body padd10 bgWhite table-responsive">
-				<div class="mainContent">
 						<div class="row">
-							<div class="col-lg-2 padd10 ">
-								<a href="<?= URL?>transporters/add/" class="button cyan large"><span class="icon-codeforces"></span>  Nuevo transportista</a>
+							<div class="col-lg-2">
+								<a href="<?= URL?>transporters/add/" class="btn btn-primary sblue"><span class="icon-codeforces"></span>  Nuevo transportista</a>
 							</div>
-							
 						</div>
 						<div class="clear"></div>
 						<div class="containerTable table-responsive">
@@ -72,7 +70,7 @@
 										</tbody>
 									</table>
 						</div>
-				</div>
+				
 			</div>
 			<div class="box-footer">
 				<footer class="main-footer text-center">
