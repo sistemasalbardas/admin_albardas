@@ -76,6 +76,9 @@
 			</table>
 		</div>
 		<div class="box-footer">
+			<footer class="main-footer text-center">
+				<strong class="">Copyright © 2018-2018 <a href="#">Agricola Las Albardas</a>.</strong> Todos los derechos reservados.
+			</footer>
 		</div>
 	</div>
 </div>

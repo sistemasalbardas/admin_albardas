@@ -64,7 +64,7 @@
               <li class="divider" role="separator"></li>
               <li>
                 <a href="<?=URL?>login/logout">Salir <i class="fas fa-power-off"></i></a>
-              </li>
+              </li>  
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
