@@ -464,15 +464,32 @@
 
 		public function editRemision()
 		{
-			$this->referrals->set("id", $_GET['id_ref']);
-			$data = $this->referrals->selectRemison();
+			if ($_POST) {
+				# code...
+				$this->referrals->set("id", $_POST['id']);
+				$this->referrals->set("date", $_POST['date']);
+				$this->referrals->set("time", $_POST['time']);
+				$this->referrals->set("id_employe", $_POST['id_employe']);
+				$this->referrals->set("id_costumer", $_POST['id_costumer']);
+				$this->referrals->set("id_trasport", $_POST['id_trasport']);
+				$this->referrals->set("id_truck", $_POST['id_truck']);
+				$this->referrals->set("id_box", $_POST['id_box']);
+				$this->referrals->set("id_driver", $_POST['id_driver']);
+				$this->referrals->set("id_user", $_POST['id_user']);
+				$this->referrals->edit_remision();
 
-			$products = array();
- 			while ($prod = mysqli_fetch_array($data['products']) ) {
-				array_push($products, $prod['id'], $prod['concept'] , $prod['count']);
+			}else{
+				$this->referrals->set("id", $_GET['id_ref']);
+				$data = $this->referrals->selectRemison();
+
+				$products = array();
+	 			while ($prod = mysqli_fetch_array($data['products']) ) {
+					array_push($products, $prod['id'], $prod['concept'] , $prod['count']);
+				}
+				
+				$_SESSION['products'][] = $products;
 			}
 			
-			$_SESSION['products'][] = $products;
 	
 		}
 	}

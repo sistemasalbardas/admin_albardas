@@ -54,7 +54,7 @@
 						      			<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
 								      	<span class="tooltext">Eliminar</span>
 						      		</a>
-						      		<a href="<?= URL?>referrals/editRemision/?id_ref=<?= $row['id'];?>&employe=<?= $row['id_employe'];?>&costumer=<?= $row['id_costumer'];?>&transport=<?= $row['id_trasport'];?>&driver=<?= $row['id_driver'];?>&box=<?= $row['id_box'];?>&truck=<?= $row['id_truck'];?>&add=0"  class="tool">
+						      		<a href="<?= URL?>referrals/editRemision/?id_ref=<?= $row['id'];?>&employe=<?= $row['id_employe'];?>&costumer=<?= $row['id_costumer'];?>&transport=<?= $row['id_trasport'];?>&driver=<?= $row['id_driver'];?>&box=<?= $row['id_box'];?>&truck=<?= $row['id_truck'];?>&add=<?= $row['id_add'];?>"  class="tool">
 						      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
 						      			<span class="tooltext">Editar</span>
 						      			 

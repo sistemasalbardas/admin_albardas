@@ -227,7 +227,7 @@ namespace MODELS;
 		
 		public function save_remision(){
 
-			$sql = "INSERT INTO remisions (id, date, time, f_freight, f_embark, f_charge, id_employe, id_costumer, id_trasport, id_truck, id_box, id_driver, id_user, file_remision, file_report, file_edited, file_responsive) VALUES(
+			$sql = "INSERT INTO remisions (id, date, time, f_freight, f_embark, f_charge, id_employe, id_costumer, id_trasport, id_truck, id_box, id_driver, id_user, file_remision, file_report, file_edited, file_responsive, id_add) VALUES(
 				'',
 				'{$this->date}',
 				'{$this->time}',
@@ -244,7 +244,8 @@ namespace MODELS;
 				'{$this->file_remision}',
 				'',
 				'',
-				'{$this->file_responsive}')";
+				'{$this->file_responsive}',
+				'{$this->id_add}')";
 
 				$this->con->consultaSimple($sql);
 		}
@@ -260,9 +261,10 @@ namespace MODELS;
 				id_truck = '{$this->id_truck}',
 				id_box = '{$this->id_costumer}',
 				id_driver = '{$this->id_driver}',
-				id_user = '{$this->id_user}',
-				WHERE  = '{$this->id}'";
+				id_user = '{$this->id_user}' WHERE  id = '{$this->id}'";
 			$this->con->consultaSimple($sql);	
+			error_log("--------");
+			error_log("actualizada");
 
 		
 		}

@@ -36,20 +36,24 @@
 			 	
 			
 			<form action="" class="padd25 border form-horizontal block" method="post" action="" onsubmit="editRemision(this);">
-				<input type="text" name="id" id="id" value="<?=  $datos['id'];?>">
-				<input type="text" name="id_user" id="id_user" value="<?=  $_SESSION['user'][0]['id']; ?>">
 
+
+    
+
+				<input type="text" name="id" id="id" value="<?=  $_GET['id_ref'];?>">
+				<input type="text" name="id_user" id="id_user" value="<?=  $_SESSION['user'][0]['id']; ?>">
+     
 				<input type="hidden" name="nCharge" value="<?= $_GET['nCharge']?>">
 				<input type="hidden" name="tab" value="<?= $_GET['tab']?>">
-				<input type="hidden" name="employe" value="<?= $_GET['employe']?>">
-				<input type="hidden" name="costumer" value="<?= $_GET['costumer']?>">
+				<input type="hidden" name="id_employe" value="<?= $_GET['employe']?>">
+				<input type="hidden" name="id_costumer" value="<?= $_GET['costumer']?>">		
 				<input type="hidden" name="city" id="city" value="<?= $add['city']?>">
 
-				<input type="hidden" name="transport" id="transport" value="<?= $_GET['transport']?>">
-				<input type="hidden" name="driver" id="driver" value="<?= $_GET['driver']?>">
+				<input type="hidden" name="id_trasport" id="transport" value="<?= $_GET['transport']?>">
+				<input type="hidden" name="id_driver" id="driver" value="<?= $_GET['driver']?>">
 				<input type="hidden" name="id_box" id="id_box" value="<?= $_GET['box']?>">
 				<input type="hidden" name="add" id="add" value="<?= $_GET['add']?>">
-				<input type="hidden" name="truck2" id="truck2" value="<?= $_GET['truck']?>">
+				<input type="hidden" name="id_truck" id="truck2" value="<?= $_GET['truck']?>">
 
 				<input type="hidden" name="f_embark" value="f_embark">
 				<input type="hidden" name="f_charge" value="f_charge">

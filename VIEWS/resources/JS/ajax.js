@@ -606,27 +606,7 @@ function editRemision(obj){
     event.preventDefault();
 
     var formData = new FormData($(obj)[0]);
-
-    var data = getGET();
-    //PARAMETROS POR POST
-    var id = $("input#id").val();
-    var id_user = $("input#id_user").val();
-    var date = $("input#date").val();
-    var time = $("input#time").val();
-    var parameters = {
-      date: date,
-      time: time,
-      id_employe: data.employe,
-      id_costumer: data.costumer,
-      id_trasport: data.transport,
-      id_truck: data.truck,
-      id_box: data.box,
-      id_driver: data.driver,
-      id_user: id_user,
-      id: id
-    }
-
-
+     
     $.ajax({
         url: URL+"referrals/editRemision/",
         type: 'POST',
