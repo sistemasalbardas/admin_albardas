@@ -3,6 +3,7 @@ namespace MODELS;
 	
 	class referrals
 	{
+		///VARIABLES PARA ALMACENAR LOS PARAMETROS
 		public $id;
 		public $tab;
 		public $date;
@@ -246,6 +247,24 @@ namespace MODELS;
 				'{$this->file_responsive}')";
 
 				$this->con->consultaSimple($sql);
+		}
+
+		public function edit_remision()
+		{
+			$sql = "UPDATE remisions SET 
+				date = '{$this->date}',
+				time = '{$this->time}',
+				id_employe = '{$this->id_employe}',
+				id_costumer = '{$this->id_costumer}',
+				id_trasport = '{$this->id_trasport}',
+				id_truck = '{$this->id_truck}',
+				id_box = '{$this->id_costumer}',
+				id_driver = '{$this->id_driver}',
+				id_user = '{$this->id_user}',
+				WHERE  = '{$this->id}'";
+			$this->con->consultaSimple($sql);	
+
+		
 		}
 	
 		public function saveProducts(){

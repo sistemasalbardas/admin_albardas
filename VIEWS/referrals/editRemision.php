@@ -35,7 +35,9 @@
 
 			 	
 			
-			<form action="" class="padd25 border form-horizontal block" method="post" action="" onsubmit="generateRemision(this);">
+			<form action="" class="padd25 border form-horizontal block" method="post" action="" onsubmit="editRemision(this);">
+				<input type="text" name="id" id="id" value="<?=  $datos['id'];?>">
+				<input type="text" name="id_user" id="id_user" value="<?=  $_SESSION['user'][0]['id']; ?>">
 
 				<input type="hidden" name="nCharge" value="<?= $_GET['nCharge']?>">
 				<input type="hidden" name="tab" value="<?= $_GET['tab']?>">
@@ -443,11 +445,6 @@
 							</div>
 						</div>	
 
-					
-
-						
-
-						
 					
 						<div class="row">
 							<div class="clear">	</div>

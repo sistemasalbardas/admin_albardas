@@ -600,6 +600,81 @@ function generateRemision(obj){
     });
 }
 
+
+function editRemision(obj){
+    
+    event.preventDefault();
+
+    var formData = new FormData($(obj)[0]);
+
+    var data = getGET();
+    //PARAMETROS POR POST
+    var id = $("input#id").val();
+    var id_user = $("input#id_user").val();
+    var date = $("input#date").val();
+    var time = $("input#time").val();
+    var parameters = {
+      date: date,
+      time: time,
+      id_employe: data.employe,
+      id_costumer: data.costumer,
+      id_trasport: data.transport,
+      id_truck: data.truck,
+      id_box: data.box,
+      id_driver: data.driver,
+      id_user: id_user,
+      id: id
+    }
+
+
+    $.ajax({
+        url: URL+"referrals/editRemision/",
+        type: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        beforeSend: function(){
+            $("div.spinner").removeClass("hidden");
+            $("div.bgLightBlack").removeClass("hidden");
+
+        },
+        error: function(jqXHR, exception){
+            var msg = '';
+            if (jqXHR.status === 0) {
+                msg = 'Not connect.\n Verify Network.';
+            } else if (jqXHR.status == 404) {
+                msg = 'Requested page not found. [404]';
+            } else if (jqXHR.status == 500) {
+                msg = 'Internal Server Error [500].';
+            } else if (exception === 'parsererror') {
+                msg = 'Requested JSON parse failed.';
+            } else if (exception === 'timeout') {
+                msg = 'Time out error.';
+            } else if (exception === 'abort') {
+                msg = 'Ajax request aborted.';
+            } else {
+                msg = 'Uncaught Error.\n' + jqXHR.responseText;
+            }
+            alert(msg);
+        },
+        success: function(status){
+             swal("Ok!", "Remision actualizada con exito", "success");   
+            //window.location= URL+"referrals/";
+            setTimeout(redirect_control, 3000);    
+            function redirect_control(){
+                location.href= URL+"referrals/control/";
+            }
+                            
+
+        }
+
+
+
+        });
+
+}
+
+
 function calcular_total(obj) {
 
     event.preventDefault();
