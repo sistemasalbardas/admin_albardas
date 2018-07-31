@@ -1054,7 +1054,7 @@
 					clsName = $.unique(clsName);
 				}
 
-				html.push('<td class="'+clsName.join(' ')+'"' + (tooltip ? ' title="'+tooltip+'"' : '') + ' data-date="' + prevMonth.getTime().toString() + '">' + content + '</td>');
+				html.push('<td class="'+clsName.join(' ')+'"' + (tooltip ? ' title="'+tooltip+'"' : '') + ' data-date="' + '<div>' + prevMonth.getTime().toString() + '</div>' + '">' + content + '</td>');
 				tooltip = null;
 				if (weekDay === this.o.weekEnd){
 					html.push('</tr>');

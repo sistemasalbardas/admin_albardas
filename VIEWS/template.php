@@ -22,7 +22,7 @@
   	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/helpers.css">
 	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/bootstrap-select.min.css">
 	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/bower_components/bootstrap-timepicker/dist/css/timepicker.less">
+	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/bower_components/bootstrap-timepicker/css/timepicker.less">
 	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/main.css">
 	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/jquery-ui.min.css">
 	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet"> -->
@@ -84,9 +84,9 @@
 	<script src="<?= URL?>/VIEWS/resources/JS/ajax.js"></script>
 	<script src="<?= URL?>/VIEWS/resources/JS/jquery-ui/jquery-ui.min.js"></script>
 	<script src="<?= URL?>/VIEWS/resources/bower_components/bootstrap-select/js/bootstrap-select.min.js"></script>
+	<script src="<?= URL?>/VIEWS/resources/bower_components/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
 	<script src="<?= URL?>/VIEWS/resources/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 	<script src="<?= URL?>/VIEWS/resources/bower_components/bootstrap-datepicker/dist/js/datepicker-es.js"></script>
-	<script src="<?= URL?>/VIEWS/resources/bower_components/bootstrap-timepicker/dist/js/bootstrap-timepicker.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 	<script src="http://cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"></script>
@@ -96,15 +96,9 @@
 	<script src="<?= URL?>/VIEWS/dist/js/adminlte.min.js"></script>
 	<script>
 	 $("#datepicker").datepicker($.datepicker.regional[ "es" ]);
+	 $('#datetimepicker3').datetimepicker({ format: 'LT'});
+     $('#datetimepicker3').datetimepicker({ pickDate: false});
 	</script>
-
-	 <script>
-	    $('#datetimepicker3').datetimepicker({
-				format: 'LT'
-		});
-	</script>
-
-
 </body>
 </html>
 

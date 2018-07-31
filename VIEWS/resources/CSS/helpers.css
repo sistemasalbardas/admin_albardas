@@ -164,6 +164,7 @@ table.table tbody tr th{
   border-bottom: 1px solid rgba(0,0,0,.4);
 }
 .border{ border: 1px solid rgba(0,0,0,.4); }
+
 .text-shadow{    text-shadow: 1px 1px 1px #000;  }
 .label{
     font-size: 14px !important;
