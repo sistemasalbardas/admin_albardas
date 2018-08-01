@@ -1356,6 +1356,13 @@ footer.main-footer{
   }
 }
 
+/* modal de agragar productos */
+@media only screen and (max-width:768px){
+  form.frm_prod{
+    max-width: 95%;
+    margin-top: 60px!important;
+  }
+}
 
 /* estilos del formulario de remisiones */
 @media only screen and (max-width:475px){
