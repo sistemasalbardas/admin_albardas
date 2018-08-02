@@ -29,7 +29,7 @@ $("input#flete").change(function () {
     $("select.price_flete").toggleClass('hidden').attr("required", true);
 });
 
-const URL = "http://192.168.50.110/admin_albardas/";  
+const URL = "http://192.168.50.109/admin_albardas/";  
 
  function getGET()
 {
@@ -185,7 +185,7 @@ function setUrlEdit(obj){
         }
     }
     if (true) {}
-    location.href= URL+"referrals/editRemision/?id_ref="+parameters['id_ref']+"&employe="+parameters['employe']+"&costumer="+parameters['costumer']+"&transport="+parameters['transport']+"&driver="+parameters['driver']+"&box="+parameters['box']+"&box_2="+parameters['box_2']+"&truck="+parameters['truck']+"&add="+parameters['add']+"";
+    location.href= URL+"referrals/edit/?id_ref="+parameters['id_ref']+"&employe="+parameters['employe']+"&costumer="+parameters['costumer']+"&transport="+parameters['transport']+"&driver="+parameters['driver']+"&box="+parameters['box']+"&box_2="+parameters['box_2']+"&truck="+parameters['truck']+"&add="+parameters['add']+"";
 }
 
 function saveGroup(obj) {

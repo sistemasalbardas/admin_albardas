@@ -1,10 +1,4 @@
 <?php 	
-	$nCharge = 0;
-	$tab = 1;
-	if (isset($_GET['nCharge'])) {
-		$nCharge = $_GET['nCharge'];
-		$tab = $_GET['tab'];
-	}
 
 	$data = $referrals->selectCostumers();
 	$dataProducts = $referrals->products();
