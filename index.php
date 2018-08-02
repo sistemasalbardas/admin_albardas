@@ -3,7 +3,7 @@
 	define('DS', DIRECTORY_SEPARATOR);
 	define('ROOT', realpath(dirname(__FILE__)) . DS);
 
-	define('URL', "http://192.168.50.109/admin_albardas/");
+	define('URL', "http://192.168.50.110/admin_albardas/");
 
 	define('URL_IMG', URL."VIEWS/RESOURCES/IMG/");
 	define('URL_RES', URL."RESOURCES/");
