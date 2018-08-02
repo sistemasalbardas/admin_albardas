@@ -38,19 +38,19 @@
 						      	<th><?= $row['f_embark']; ?></th>
 						      	<th><?= $row['f_charge']; ?></th>
 						      	<th>
-						      		<a href="<?=URL?>VIEWS/pdf_files/referrals/<?= $row['file_remision']; ?>" target="_blank" class="tool">
+						      		<a href="<?=URL?>VIEWS/pdf_files/referrals/<?= $row['file_remision']; ?>" target="_blank" class="tool" download>
 								      	<i class="btn btn-primary btn-xs far fa-file-pdf btn_padd"></i>
 						      			<span class="tooltext">Remisión</span>
 										
 									</a>
-									<a href="<?=URL?>VIEWS/pdf_files/responsives/<?= $row['file_responsive']; ?>" target="_blank" class="tool">
+									<a href="<?=URL?>VIEWS/pdf_files/responsives/<?= $row['file_responsive']; ?>" target="_blank" class="tool" download>
 								      	<i class="btn btn-primary btn-xs far fa-file-pdf btn_padd"></i>
 						      			<span class="tooltext">Responsiva</span>
 										
 									</a>
 									<?php 
 									if (!empty($row['file_edited'])) {?>
-										<a href="<?=URL?>VIEWS/pdf_files/responsives/<?= $row['file_edited']; ?>" target="_blank" class="tool">
+										<a href="<?=URL?>VIEWS/pdf_files/responsives/<?= $row['file_edited']; ?>" target="_blank" class="tool" download>
 								      	<i class="btn btn-primary btn-xs far fa-file-pdf btn_padd"></i>
 						      			<span class="tooltext">Responsiva modificada</span>
 										

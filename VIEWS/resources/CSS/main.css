@@ -1046,7 +1046,17 @@ background-repeat: no-repeat;
 .sidebar-toggle:before{
   content: ''!important;
 }
-
+.sidebar-toggle{
+  padding: 18px 15px!important;
+}
+@media only screen and (max-width:768px){
+  .sidebar-toggle{
+    padding: 22px 15px!important;
+  }
+  .dropdown-toggle{
+    padding: 19px 15px!important;
+  }
+}
 /*bg del login*/
 .skin-green .wrapper{
   background: none!important;
