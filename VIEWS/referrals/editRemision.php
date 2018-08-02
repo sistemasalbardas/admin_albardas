@@ -629,6 +629,6 @@
     $mpdf->WriteHTML($html);
     ob_clean();
 
-    $mpdf->Output(dirname(__FILE__).'/../pdf_files/referrals/EDIT_REM2_'.$_POST['f_charge'].'.pdf','F');
+    $mpdf->Output(dirname(__FILE__).'/../pdf_files/referrals/EDIT_REM_'.$_POST['f_charge'].'.pdf','F');
   
 ?>
