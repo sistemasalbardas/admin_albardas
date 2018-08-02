@@ -476,7 +476,7 @@
 				$this->referrals->set("id_box", $_POST['id_box']);
 				$this->referrals->set("id_driver", $_POST['id_driver']);
 				$this->referrals->set("id_user", $_POST['id_user']);
-				$this->referrals->set("file_edited", "EDIT_REM_".$_POST['f_charge'].".pdf");
+				$this->referrals->set("file_edited", $_POST['f_charge']);
 				$this->referrals->edit_remision();
 
 			}else{
@@ -503,7 +503,9 @@
 				$this->referrals->set("id_box", $_POST['id_box']);
 				$this->referrals->set("id_driver", $_POST['id_driver']);
 				$this->referrals->set("id_user", $_POST['id_user']);
+				$this->referrals->set("f_charge", $_POST['f_charge']);
 				$this->referrals->edit_remision();
+				
 
 			}else{
 				return false;

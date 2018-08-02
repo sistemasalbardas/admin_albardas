@@ -50,7 +50,7 @@
 									</a>
 									<?php 
 									if (!empty($row['file_edited'])) {?>
-										<a href="<?=URL?>VIEWS/pdf_files/responsives/<?= $row['file_edited']; ?>" target="_blank" class="tool">
+										<a href="<?=URL?>VIEWS/pdf_files/referrals/EDIT_REM_<?= $row['file_edited']; ?>.pdf" target="_blank" class="tool">
 								      	<i class="btn btn-primary btn-xs far fa-file-pdf btn_padd"></i>
 						      			<span class="tooltext">Responsiva modificada</span>
 										

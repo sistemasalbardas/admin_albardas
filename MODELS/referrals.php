@@ -254,7 +254,7 @@ namespace MODELS;
 		public function edit_remision()
 		{	
 			error_log("---------------");
-			error_log($this->file_edited);
+			error_log($this->f_charge);
 			$sql = "UPDATE remisions SET 
 				date = '{$this->date}',
 				time = '{$this->time}',
@@ -265,7 +265,7 @@ namespace MODELS;
 				id_box = '{$this->id_box}',
 				id_driver = '{$this->id_driver}',
 				id_user = '{$this->id_user}',
-				file_edited = '{$this->file_edited}' WHERE  id = '{$this->id}'";
+				file_edited = '{$this->f_charge}' WHERE  id = '{$this->id}'";
 			$this->con->consultaSimple($sql);	
 			
 			
