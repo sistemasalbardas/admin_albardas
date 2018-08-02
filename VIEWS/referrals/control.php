@@ -45,16 +45,24 @@
 									</a>
 									<a href="<?=URL?>VIEWS/pdf_files/responsives/<?= $row['file_responsive']; ?>" target="_blank" class="tool">
 								      	<i class="btn btn-primary btn-xs far fa-file-pdf btn_padd"></i>
-						      			<span class="tooltext">Responsiva
+						      			<span class="tooltext">Responsiva</span>
 										
 									</a>
+									<?php 
+									if (!empty($row['file_edited'])) {?>
+										<a href="<?=URL?>VIEWS/pdf_files/responsives/<?= $row['file_edited']; ?>" target="_blank" class="tool">
+								      	<i class="btn btn-primary btn-xs far fa-file-pdf btn_padd"></i>
+						      			<span class="tooltext">Responsiva modificada</span>
+										
+									</a>
+									<?php } ?>
 						      	</th>
 						      	<th>
 						      		<a href="deleteWork/<?= $row['id'];?>" onclick="deleteWork(this);" class="tool">
 						      			<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
 								      	<span class="tooltext">Eliminar</span>
 						      		</a>
-						      		<a href="<?= URL?>referrals/editRemision/?id_ref=<?= $row['id'];?>&employe=<?= $row['id_employe'];?>&costumer=<?= $row['id_costumer'];?>&transport=<?= $row['id_trasport'];?>&driver=<?= $row['id_driver'];?>&box=<?= $row['id_box'];?>&truck=<?= $row['id_truck'];?>&add=<?= $row['id_add'];?>"  class="tool">
+						      		<a href="<?= URL?>referrals/edit/?id_ref=<?= $row['id'];?>&employe=<?= $row['id_employe'];?>&costumer=<?= $row['id_costumer'];?>&transport=<?= $row['id_trasport'];?>&driver=<?= $row['id_driver'];?>&box=<?= $row['id_box'];?>&truck=<?= $row['id_truck'];?>&add=<?= $row['id_add'];?>"  class="tool">
 						      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
 						      			<span class="tooltext">Editar</span>
 						      			 

@@ -143,6 +143,7 @@
 	        </li>
 				
 	        <li class="treeview">
+
 	          <a href="#">
               <i class="fas fa-file icon"></i> <span>Requisiciones</span>
 	            <span class="pull-right-container">
@@ -172,7 +173,7 @@
               <i class="far fa-circle icon"></i> <span>Productos</span>
             </a>
           </li>
-    			<li>
+    			<li >
             <a href="<?=URL?>freights/">
               <i class="far fa-circle icon"></i> <span>Fletes</span>
             </a>

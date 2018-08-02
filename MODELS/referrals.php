@@ -34,6 +34,7 @@ namespace MODELS;
 		public $id_add;
 		public $id_user;
 		public $file_remision;
+		public $file_edited;
 		public $file_responsive;
 
 	
@@ -251,7 +252,9 @@ namespace MODELS;
 		}
 
 		public function edit_remision()
-		{
+		{	
+			error_log("---------------");
+			error_log($this->file_edited);
 			$sql = "UPDATE remisions SET 
 				date = '{$this->date}',
 				time = '{$this->time}',
@@ -259,12 +262,13 @@ namespace MODELS;
 				id_costumer = '{$this->id_costumer}',
 				id_trasport = '{$this->id_trasport}',
 				id_truck = '{$this->id_truck}',
-				id_box = '{$this->id_costumer}',
+				id_box = '{$this->id_box}',
 				id_driver = '{$this->id_driver}',
-				id_user = '{$this->id_user}' WHERE  id = '{$this->id}'";
+				id_user = '{$this->id_user}',
+				file_edited = '{$this->file_edited}' WHERE  id = '{$this->id}'";
 			$this->con->consultaSimple($sql);	
-			error_log("--------");
-			error_log("actualizada");
+			
+			
 
 		
 		}

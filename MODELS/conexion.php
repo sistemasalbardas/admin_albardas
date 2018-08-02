@@ -4,14 +4,14 @@
 	class conexion
 	{
 		
+		private $con;
+
 		private $datos = array(
 			'host' => 'localhost',
 			'user' => 'root',
 			'pass' => '',
 			'db' => 'albardas'
 		);
-
-		private $con;
 
 		public function __construct(){
 			$this->con = new \mysqli(
