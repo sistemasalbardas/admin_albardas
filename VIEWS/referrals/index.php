@@ -69,7 +69,7 @@
 				<?php $x++; }  ?>
 			</ul>
 			<div class="tam_frm">
-				<form action="" class=" frm_rem padd25 border form-horizontal block" method="post" action="" onsubmit="generateRemision(this);">
+				<form action="" class=" frm_rem padd25 padd10 border form-horizontal block" method="post" action="" onsubmit="generateRemision(this);">
 				
 					<input type="hidden" name="nCharge" value="<?= $_GET['nCharge']?>">
 					<input type="hidden" name="tab" value="<?= $_GET['tab']?>">
@@ -614,12 +614,12 @@
 
 
 
-<form class="modalContent " id="searchP">
-	<div class="headModal">
+<form class="modalContent frm_prod " id="searchP">
+	<div class="modal-header">
 		<h4 class="text-bold">Agregar productos </h4>
 	</div>
 	<div class="mainModal">
-		<div class="containerTable">	
+		<div class="containerTable table-responsive">	
 		<table id="tableProducts" class="block">	
 			<thead>	
 				<tr>
