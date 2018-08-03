@@ -29,7 +29,7 @@ $("input#flete").change(function () {
     $("select.price_flete").toggleClass('hidden').attr("required", true);
 });
 
-const URL = "http://192.168.50.110/admin_albardas/";  
+const URL = "http://192.168.1.71/admin_albardas/";  
 
  function getGET()
 {
