@@ -441,13 +441,13 @@
               <table width="100%">
                 <tr>
                   <th width="50%" style="text-align: left; padding: 0px 15px; border: 1px solid #000; text-align: left; ">
-                    <div>Trasportista:' . $_SESSION['remision']['name_trasport'] . '</div></br>
-                    <div>Chofer: ' . $_SESSION['remision']['name_driver'] . '</div>
-                    <div>Telefono: ' . $_SESSION['remision']['phone'] . '</div>
+                    <div>TRASPORTISTA:' . $_SESSION['remision']['name_trasport'] . '</div></br>
+                    <div>CHOFER: ' . $_SESSION['remision']['name_driver'] . '</div>
+                    <div>TELEFONO: ' . $_SESSION['remision']['phone'] . '</div>
                   </th>
-                  <th width="50%" style="border: 1px solid #000; text-align: left;"> 
-                    <div style="display:block;">Origen:' .  $_SESSION['remision']['origin'] . '</div></br>
-                    <div style="display:block;">Destino: ' . $_SESSION['remision']['destination'] . '</div>
+                  <th width="50%" style="border: 1px solid #000; text-align: left;  text-transform: uppercase;"> 
+                    <div style="display:block;  text-transform: uppercase;">ORIGEN:' .  $_SESSION['remision']['origin'] . '</div></br>
+                    <div style="display:block;  text-transform: uppercase;">DESTINO: ' . $_SESSION['remision']['destination'] . '</div>
                   </th>
                 </tr>
               </table>
@@ -464,7 +464,7 @@
                       
                       <tr>
                         <th width="50%" style=" text-align:left;" >
-                          <span style="font-weight: 400; font-size: 14px;">Marca:</span>
+                          <span style="font-weight: 400; font-size: 14px; text-transform: uppercase;">Marca:</span>
                         </th width="50%">
                         <th style=" text-align:left;" >
                           <span style="font-weight: normal; font-size: 14px;">
@@ -474,7 +474,7 @@
                       </tr>
                       <tr>
                         <th width="50%" style=" text-align:left;">
-                          <span style="font-weight: 400; font-size: 14px;">Modelo:</span>
+                          <span style="font-weight: 400; font-size: 14px;  text-transform: uppercase;">Modelo:</span>
                         </th width="50%" style=" text-align:left;">
                         <th style=" text-align:left;" >
                           <span style="font-weight: normal; font-size: 14px;">
@@ -484,7 +484,7 @@
                       </tr>
                       <tr>
                         <th width="50%" style=" text-align:left;">
-                          <span style="font-weight: 400; font-size: 14px;">N economico:</span>
+                          <span style="font-weight: 400; font-size: 14px;  text-transform: uppercase;">N economico:</span>
                         </th width="50%">
                         <th style=" text-align:left;"  style=" text-align:left;">
                           <span style="font-weight: normal; font-size: 14px;">
@@ -494,7 +494,7 @@
                       </tr>
                       <tr>
                         <th width="50%" style=" text-align:left;">
-                          <span style="font-weight: 400; font-size: 14px;">Placas:</span>
+                          <span style="font-weight: 400; font-size: 14px;  text-transform: uppercase;">Placas:</span>
                         </th width="50%">
                         <th style=" text-align:left;">
                           <span style="font-weight: normal; font-size: 14px;">
@@ -511,7 +511,7 @@
                       
                       <tr>
                         <th width="50%" style=" text-align:left;">
-                          <span style="font-weight: 400; font-size: 14px;">Tipo de caja:</span>
+                          <span style="font-weight: 400; font-size: 14px;  text-transform: uppercase;">Tipo de caja:</span>
                         </th width="50%">
                         <th style=" text-align:left;" >
                           <span style="font-weight: normal; font-size: 14px;">
@@ -521,7 +521,7 @@
                       </tr>
                       <tr>
                         <th width="50%" style=" text-align:left;">
-                          <span style="font-weight: 400; font-size: 14px;">Temperatura:</span>
+                          <span style="font-weight: 400; font-size: 14px;  text-transform: uppercase;">Temperatura:</span>
                         </th width="50%">
                         <th style=" text-align:left;">
                           <span style="font-weight: normal; font-size: 14px;">
@@ -530,7 +530,7 @@
                         </th>
                       </tr>
                       <tr>
-                        <th width="50%" style=" text-align:left;">
+                        <th width="50%" style=" text-align:left;  text-transform: uppercase;">
                           <span style="font-weight: 400; font-size: 14px;">N economico:</span>
                         </th width="50%">
                         <th style=" text-align:left;" >
@@ -540,8 +540,8 @@
                         </th>
                       </tr>
                       <tr>
-                        <th width="50%" style=" text-align:left;">
-                          <span style="font-weight: 400; font-size: 14px;">Placass:</span>
+                        <th width="50%" style=" text-align:left;  text-transform: uppercase;">
+                          <span style="font-weight: 400; font-size: 14px;">Placas:</span>
                         </th width="50%">
                         <th style=" text-align:left;" >
                           <span style="font-weight: normal; font-size: 14px;">
@@ -605,7 +605,7 @@
             </th>
           </tr>
           <tr>  
-            <th style="padding: 15px; text-align: left;  border: 1px solid #000; margin:2px;">
+            <th style="padding: 15px; text-align: left;  border: 1px solid #000; margin:2px;  text-transform: uppercase;">
              <span>Comentarios: </span> <br>'.$_POST['comments'].'
             </th>
           </tr>
@@ -616,12 +616,12 @@
                   <th width="45%" style="padding: 15px;">
                     <br><br><br>
                     <hr>
-                    <span style="font-weight: 300; padding: 5px; margin: 2px; font-size: 13px;">Persona que formula</span>
+                    <span style="font-weight: 300; padding: 5px; margin: 2px; font-size: 12px;">Persona que formula</span>
                   </th>
                   <th width="45%" style="padding: 15px;">
                     <br><br><br>
                     <hr>
-                    <span style="font-weight: 300; padding: 5px; margin: 2px; font-size: 13px;">Persona que recibe</span>
+                    <span style="font-weight: 300; padding: 5px; margin: 2px; font-size: 12px;">Persona que recibe</span>
                   </th>
                 </tr>
             </table> 
