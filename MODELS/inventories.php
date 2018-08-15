@@ -20,11 +20,9 @@
 		public $responsable;
 		public $comments;
 		public $name_product;
-
 		public $exit;
 		public $entry;
 		public $prod;
-
 
 
 		public function __construct(){
