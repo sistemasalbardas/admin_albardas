@@ -40,6 +40,13 @@
 		}
 
 		public function info_status(){
+			$sql ="SELECT  *  FROM remisions INNER JOIN transporters 
+			            ON remisions.id_trasport = transporters.id where f_freight = '{$this->f_flete}'";
+			$datos = $this->con->consultaRetorno($sql);
+			$row = mysqli_fetch_assoc($datos);
+			return $row;
+
+		
 			
 		}
 
