@@ -39,15 +39,16 @@
 					</thead>	
 					<tbody>
 						<?php while($row = mysqli_fetch_array($data)){?>
+							
 							<tr>
 								<th><?= $row['id']; ?></th>
-								  <th><?= $row['f_flete']; ?></th>
+								  <th><?= $row['f_freight']; ?></th>
 								  <th><?= $row['f_embark']; ?></th>
 								  <th><?php
 									  if ($row['id_client']  == 1) {
 										  echo "Albardas";
 									  }else{
-										  echo $row['id_client'];
+										  echo $row['name'];
 									  }
 								  ?></th>
 								  <th> $ <?= $row['price']. " - ".$row['currency']; ?></th>
@@ -69,6 +70,10 @@
 									  <a href="edit/?id=<?= $row['id'];?>" class="tool">
 										  <i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
 										  <span class="tooltext">Editar</span>	 
+									  </a>
+									  <a href="status/?id=<?= $row['f_freight'];?>" class="tool">
+										  <i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+										  <span class="tooltext">Status</span>	 
 									  </a>
 									<?php } ?>
 									  

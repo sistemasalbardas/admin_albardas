@@ -47,6 +47,16 @@
 				return false;
 			}
 		}
+		public function status()
+		{
+			if (isset($_GET['id'])) {
+				$this->freights->set('f_flete', $_GET['id']);
+				$data = $this->freights->info_status();
+				return $data;
+			}else{
+				return false;
+			}	
+		}
 
 		public function permits()
 		{

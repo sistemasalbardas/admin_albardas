@@ -23,7 +23,9 @@
 		}
 
 		public function list(){	
-			$sql = "SELECT * FROM freights";
+	
+			$sql ="SELECT   *  FROM remisions INNER JOIN costumers 
+			            ON remisions.id_costumer = costumers.id";
 			$datos = $this->con->consultaRetorno($sql);
 			return $datos;
 		}
@@ -35,6 +37,10 @@
 			$data = $this->con->consultaRetorno($sql);
 			$row = mysqli_fetch_assoc($data);
 			return $row;
+		}
+
+		public function info_status(){
+			
 		}
 
 		public function update_freight()
