@@ -4,6 +4,7 @@
 	define('ROOT', realpath(dirname(__FILE__)) . DS);
 
 	//LOCAL->
+
 	define('URL', "http://192.168.50.110/admin_albardas/");
 
 	define('URL_IMG', URL."VIEWS/resources/IMG/");

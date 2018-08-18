@@ -9,6 +9,10 @@
 		public $price; 
 		public $currency; 
 		public $date; 
+		public $f_freight; 
+		public $concept; 
+		public $amount; 
+		public $coments; 
 
 		public function __construct(){
 			$this->con = new conexion();
@@ -24,10 +28,11 @@
 
 		public function list(){	
 	
-			$sql ="SELECT   *  FROM remisions INNER JOIN costumers 
-			            ON remisions.id_costumer = costumers.id";
+			$sql = "SELECT * FROM remisions r INNER JOIN costumers c ON r.id_costumer = c.id INNER JOIN freights f ON f.f_flete = r.f_freight AND f.price > 0";
 			$datos = $this->con->consultaRetorno($sql);
 			return $datos;
+
+
 		}
 
 		public function select_freight()
@@ -40,13 +45,11 @@
 		}
 
 		public function info_status(){
-			$sql ="SELECT  *  FROM remisions INNER JOIN transporters 
-			            ON remisions.id_trasport = transporters.id where f_freight = '{$this->f_flete}'";
+
+			$sql = "SELECT * FROM remisions r INNER JOIN costumers c ON r.id_costumer = c.id INNER JOIN freights f ON f.f_flete = r.f_freight AND f.price > 0 INNER JOIN transporters t ON r.id_trasport = t.id WHERE r.f_freight = '{$this->f_flete}'";
 			$datos = $this->con->consultaRetorno($sql);
 			$row = mysqli_fetch_assoc($datos);
 			return $row;
-
-		
 			
 		}
 
@@ -62,6 +65,20 @@
 			$this->con->consultaSimple($sql);
 			header("Location: ".URL."freights/");
 			
+		}
+
+		public function new_payment(){
+
+			$sql = "INSERT INTO freight_payment (id, f_freight, date, concept, amount, comments) VALUES (
+				null, 
+				'{$this->f_freight}',
+				'{$this->date}',
+				'{$this->concept}',
+				'{$this->amount}',
+				'{$this->coments}'
+			)";
+			$this->con->consultaSimple($sql);
+
 		}
 	
 

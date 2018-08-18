@@ -13,7 +13,7 @@
 		<div class="box box-success">
 			<div class="box-header with-border">
 				<h3 class="box-title text-600">
-				   Control de transportistas
+				   Control de transportistas DE LAS ALBARDAS !!!
 				</h3>
 				<div class="box-tools pull-right">
 					<a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>

@@ -63,6 +63,19 @@
 			$p_freights = $_SESSION['user'][0]['permits'][4];
 			return $p_freights;
 		}
+
+		public function newPayment(){
+			if ($_POST) {
+				
+				$this->users->set('f_freight', $_POST['f_freight']);
+				$this->users->set('date', $_POST['date']);
+				$this->users->set('concept', $_POST['concept']);
+				$this->users->set('amount', $_POST['amount']);
+				$this->users->set('coments', $_POST['coments']);
+				$this->users->new_payment();
+			}
+
+		}
 	}
 	
 	$freights = new freightsController();

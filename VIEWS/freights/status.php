@@ -1,137 +1,153 @@
 <?php 	
 	$data = $freights->status();
  ?>
+<div class="col-md-12">
+  <div class="box box-success">
+    <div class="box-header with-border">
+      <h3 class="box-title text-600">
+         <i class="fa fa-file-invoice-dollar"></i> 
+            ESTADO DE CUENTA 
+      </h3>
+      <div class="box-tools pull-right">
+                        
+              <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+              </button>
+          
+         </div>
+    </div>
+     
+    <div class="box-body padd10 bgWhite table-responsive">
+      <div class="row invoice-info ">
+          <div class="col-sm-4 invoice-col">
+            Trasportista
+            <address>
+              <strong><?=$data['name']?></strong><br>
+              <?=$data['address']?><br>
+              Phone: <?=$data['phone']?><br>
+           
+            </address>
+          </div>
+        
+          <!-- /.col -->
+          <div class="col-sm-4 invoice-col">
+            <br>
+              <b>Flete #<?=$_GET['id']?></b><br>
+              
+              <small class=""> <b> </b></small>
+              <b>Fecha:</b> 2/22/2014<br>
+              <a  href="<?=URL?>VIEWS/pdf_files/referrals/<?= $data['file_remision']; ?>" target="_blank" download>
+                <i class="fas fa-file-pdf"></i>
+                Remision
+              </a> <br> 
+              <?php if (!empty($row['file_edited'])) {?>
+                  <a href="<?=URL?>VIEWS/pdf_files/referrals/EDIT_REM_<?= $row['file_edited']; ?>.pdf" target="_blank" download>
+                      <i class="fas fa-file-pdf"></i>
+                      Remision modificada
+                  </a>
+              <?php } ?>
+             
+           
+            
+          </div>
+          <!-- /.col -->
+        </div>
+      <hr>
 
-<section class="invoice">
-	<pre>	
-		<?php 	
-			print_r($data);
-		 ?>
-	</pre>
-      <!-- title row -->
-      <div class="row">
-        <div class="col-xs-12">
-          <h4 class="box-title text-600">
-            <i class="fa fa-file-invoice-dollar"></i> 
-            	ESTADO DE CUENTA 
-          </h4>
-         
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- info row -->
-      <div class="row invoice-info">
-        <div class="col-sm-4 invoice-col">
-          Trasportista
-          <address>
-            <strong>Admin, Inc.</strong><br>
-            795 Folsom Ave, Suite 600<br>
-            San Francisco, CA 94107<br>
-            Phone: (804) 123-5432<br>
-            Email: info@almasaeedstudio.com
-          </address>
-        </div>
-        <!-- /.col -->
-        <div class="col-sm-4 invoice-col">
-          To
-          <address>
-            <strong>John Doe</strong><br>
-            795 Folsom Ave, Suite 600<br>
-            San Francisco, CA 94107<br>
-            Phone: (555) 539-1037<br>
-            Email: john.doe@example.com
-          </address>
-        </div>
-        <!-- /.col -->
-        <div class="col-sm-4 invoice-col">
-        	<br>
-          	<b>Flete #<?=$_GET['id']?></b><br>
-          	<small class=""> <b> </b></small>
-          	<b>Fecha:</b> 2/22/2014<br>
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
+      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+        Abonar
+      </button>
 
-      <!-- Table row -->
-      <div class="row">
-        <div class="col-xs-12 table-responsive">
-          <table class="table table-striped">
+      <table class="table bgWhite">
             <thead>
             <tr>
-              <th>Qty</th>
-              <th>Product</th>
-              <th>Serial #</th>
-              <th>Description</th>
+              <th>Pago</th>
+              <th>Concepto</th>
+              <th>Cantidad</th>
               <th>Subtotal</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <td>1</td>
-              <td>Call of Duty</td>
-              <td>455-981-221</td>
-              <td>El snort testosterone trophy driving gloves handsome</td>
-              <td>$64.50</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Need for Speed IV</td>
-              <td>247-925-726</td>
-              <td>Wes Anderson umami biodiesel</td>
-              <td>$50.00</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Monsters DVD</td>
-              <td>735-845-642</td>
-              <td>Terry Richardson helvetica tousled street art master</td>
-              <td>$10.70</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Grown Ups Blue Ray</td>
-              <td>422-568-642</td>
-              <td>Tousled lomo letterpress</td>
-              <td>$25.99</td>
-            </tr>
+              <tr>
+                <th>1</th>
+                <th>Abono</th>
+                <th>$500.00</th>
+                <th>$500.00</th>
+              </tr>
             </tbody>
-          </table>
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
+      </table>
 
-      <div class="row">
-     
-        <!-- /.col -->
-        <div class="col-xs-6">
-          <p class="lead">Resumen 2/22/2014</p>
+    </div>
+    <div class="box-footer">
+      <footer class="main-footer text-center">
+        <strong class="">Copyright © 2018-2018 <a href="#">Agricola Las Albardas</a>.</strong> Todos los derechos reservados.
+      </footer>
+    </div>
+  </div>
+</div>
 
-          <div class="table-responsive">
-            <table class="table">
-              <tbody><tr>
-                <th style="width:50%">Acumulado:</th>
-                <td>$250.30</td>
-              </tr>
-              <tr>
-                <th>Tax (9.3%)</th>
-                <td>$10.34</td>
-              </tr>
-              <tr>
-                <th>Deuda:</th>
-                <td>$5.80</td>
-              </tr>
-              <tr>
-                <th>Restante:</th>
-                <td>$265.24</td>
-              </tr>
-            </tbody></table>
+
+
+  <div class="modal fade" id="modal-default" style="display: none;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Nuevo abono</h4>
+               
+              </div>
+              <form role="form" onsubmit="newPayment(this);" method="post">
+                <div class="modal-body">
+                   <input type="hidden" name="f_freight" value="<?= $_GET['id']; ?>">
+                  <div class="box-body">
+
+                      <div class="row">
+                        <div class="col-md-10">
+                          <div class="form-group">
+                            <label for="date">Fecha: </label>
+                            <input type="date" class="form-control" id="date" placeholder="" name="date">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-10">
+                           <div class="form-group">
+                            <label for="concept">Concepto: </label>
+                            <select name="concept" id="concept" class="form-control" >
+                              <option value="">SELCCIONA</option>
+                              <option value="abono">Abono</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-7">
+                          <div class="form-group">
+                          <label for="amount">Monto: </label>
+                          <input type="number" name="amount" class="form-control" id="amount" placeholder="$ 00.00" >
+                        </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-10">
+                          <div class="form-group">
+                          <label for="coments">Comentarios: </label>
+                          <textarea name="coments" id="coments" class="form-control"></textarea>
+                        </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                  </div>
+                </div>
+            </form>
+            <!-- /.modal-content -->
           </div>
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-
-     
-    </section>
+          <!-- /.modal-dialog -->
+  </div>
