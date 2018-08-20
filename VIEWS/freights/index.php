@@ -25,7 +25,7 @@
 			
 			<div class="clear"></div>
 			<div class="containerTable table-responsive">
-				<table id="tableCostumers" class="table bgWhite">
+				<table id="tableFreights" class="table bgWhite">
 					<thead>
 						<tr>
 							<th scope="col" >ID</th>
@@ -38,8 +38,9 @@
 						</tr>
 					</thead>	
 					<tbody>
+						<?php $total_final = 0; ?>
 						<?php while($row = mysqli_fetch_array($data)){?>
-							
+							<?php $total_final = $total_final + $row['total'];?>
 							<tr>
 								<th><?= $row['id']; ?></th>
 								  <th><?= $row['f_freight']; ?></th>
@@ -72,7 +73,7 @@
 										  <span class="tooltext">Editar</span>	 
 									  </a>
 									  <a href="status/?id=<?= $row['f_freight'];?>" class="tool">
-										  <i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+										  <i class="btn btn-success btn-xs fas fa-dollar-sign btn_padd"></i>
 										  <span class="tooltext">Status</span>	 
 									  </a>
 									<?php } ?>
@@ -81,6 +82,15 @@
 				
 							</tr>
 						<?php } ?>
+							<tr role="row">
+								<th>Monto</th>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th class="text-right">Total</th>
+								<th class="text-left"><?=number_format($total_final,2,'.',',')?></th>
+								<th></th>
+							</tr>
 					</tbody>
 				</table>
 			</div>

@@ -31,7 +31,7 @@
 						</div>
 						<div class="clear"></div>
 						<div class="containerTable table-responsive">
-									<table id="tableCostumers">
+									<table id="tableTransporters">
 										<thead>
 											<tr>
 												<td>ID</td>
@@ -53,7 +53,7 @@
 													<th>
 														<?php if ($delete == 1) { ?>
 															<a href="delete/?id=<?= $row['id'];?>" onclick="erase(this);" class="tool">
-																<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+																<i class="btn btn-danger btn-xs fas fa-times btn_padd"></i>
 																<span class="tooltext">Eliminar</span>
 															</a>
 														<?php } ?>
