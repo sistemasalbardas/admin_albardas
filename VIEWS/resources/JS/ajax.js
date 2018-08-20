@@ -930,7 +930,53 @@ function newPayment(obj){
         success: function(status){
 
             $(obj)[0].reset();
-            swal("Ok!", "Abono registrado", "success"); 
+            swal("Ok!", "Abono registrado", "success");
+            location.reload(); 
+             
+            //window.location= URL+"referrals/";
+        }
+
+    });
+}
+
+
+
+function saveBill(obj){
+    event.preventDefault();
+    var formData = new FormData($(obj)[0]);
+    $.ajax({
+        url: URL+"freights/chargeInvoice/",
+        type: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        beforeSend: function(){
+            //alert("generando remision");
+        },
+        error: function(jqXHR, exception){
+            var msg = '';
+            if (jqXHR.status === 0) {
+                msg = 'Not connect.\n Verify Network.';
+            } else if (jqXHR.status == 404) {
+                msg = 'Requested page not found. [404]';
+            } else if (jqXHR.status == 500) {
+                msg = 'Internal Server Error [500].';
+            } else if (exception === 'parsererror') {
+                msg = 'Requested JSON parse failed.';
+            } else if (exception === 'timeout') {
+                msg = 'Time out error.';
+            } else if (exception === 'abort') {
+                msg = 'Ajax request aborted.';
+            } else {
+                msg = 'Uncaught Error.\n' + jqXHR.responseText;
+            }
+            alert(msg);
+        },
+        success: function(status){
+
+            $(obj)[0].reset();
+            swal("Ok!", "Factura guardada", "success");
+            location.reload(); 
              
             //window.location= URL+"referrals/";
         }

@@ -64,17 +64,49 @@
 			return $p_freights;
 		}
 
+		public function payments(){
+			if (isset($_GET['id'])) {
+				$this->freights->set('f_flete', $_GET['id']);
+				$data = $this->freights->list_payments();
+				return $data;
+			}else{
+				return false;
+			}	
+		}
+
 		public function newPayment(){
 			if ($_POST) {
 				
-				$this->users->set('f_freight', $_POST['f_freight']);
-				$this->users->set('date', $_POST['date']);
-				$this->users->set('concept', $_POST['concept']);
-				$this->users->set('amount', $_POST['amount']);
-				$this->users->set('coments', $_POST['coments']);
-				$this->users->new_payment();
+				$this->freights->set('f_freight', $_POST['f_freight']);
+				$this->freights->set('date', $_POST['date']);
+				$this->freights->set('concept', $_POST['concept']);
+				$this->freights->set('amount', $_POST['amount']);
+				$this->freights->set('coments', $_POST['coments']);
+				$this->freights->new_payment();
 			}
 
+		}
+		public function chargeInvoice(){
+		
+			$uploadDirectory = ROOT."VIEWS".DS."pdf_files".DS."freights_bills".DS;
+
+			if(isset($_FILES['documento'])){
+				$first_name = $_FILES['documento']['tmp_name'];
+				$final_name = 'invoice_'.$_POST['folio'].'.pdf';
+
+				$uploadDirectory = ROOT."/VIEWS/pdf_files/freights_bills/";
+
+				if(move_uploaded_file ($_FILES['documento']['tmp_name'] , $uploadDirectory.$final_name)){ 
+					$this->freights->set('name_invoice', $final_name);
+					$this->freights->set('folio', $_POST['folio']);
+					$this->freights->set_invoice();
+				}else{ 
+				   return false;
+				}  
+
+				
+				;
+			}
 		}
 	}
 	

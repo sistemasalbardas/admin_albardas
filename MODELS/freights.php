@@ -13,6 +13,8 @@
 		public $concept; 
 		public $amount; 
 		public $coments; 
+		public $name_invoice; 
+		public $folio; 
 
 		public function __construct(){
 			$this->con = new conexion();
@@ -47,10 +49,15 @@
 		public function info_status(){
 
 			$sql = "SELECT * FROM remisions r INNER JOIN costumers c ON r.id_costumer = c.id INNER JOIN freights f ON f.f_flete = r.f_freight AND f.price > 0 INNER JOIN transporters t ON r.id_trasport = t.id WHERE r.f_freight = '{$this->f_flete}'";
-			$datos = $this->con->consultaRetorno($sql);
-			$row = mysqli_fetch_assoc($datos);
+			$data = $this->con->consultaRetorno($sql);
+			$row = mysqli_fetch_assoc($data);
 			return $row;
 			
+		}
+		public function list_payments(){
+			$sql = "SELECT * FROM freight_payment WHERE f_freight = '{$this->f_flete}'";
+			$data = $this->con->consultaRetorno($sql);
+			return $data;
 		}
 
 		public function update_freight()
@@ -80,10 +87,14 @@
 			$this->con->consultaSimple($sql);
 
 		}
-	
 
+		public function set_invoice(){
+			$sql = "UPDATE freights SET bills = '{$this->name_invoice}' WHERE f_flete = {$this->folio}";
+			$this->con->consultaSimple($sql);
+		}
 
-				
+		
+
 	}
 
  ?>

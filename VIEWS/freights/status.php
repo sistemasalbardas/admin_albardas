@@ -1,5 +1,6 @@
 <?php 	
-	$data = $freights->status();
+  $data = $freights->status();
+	$payments = $freights->payments();
  ?>
 <div class="col-md-12">
   <div class="box box-success">
@@ -24,7 +25,7 @@
             <address>
               <strong><?=$data['name']?></strong><br>
               <?=$data['address']?><br>
-              Phone: <?=$data['phone']?><br>
+              Telefono: <?=$data['phone']?><br>
            
             </address>
           </div>
@@ -32,7 +33,8 @@
           <!-- /.col -->
           <div class="col-sm-4 invoice-col">
             <br>
-              <b>Flete #<?=$_GET['id']?></b><br>
+              <b>Flete: #<?=$_GET['id']?></b><br>
+              <b>Total: $ <?= number_format($data['total']); ?></b><br>
               
               <small class=""> <b> </b></small>
               <b>Fecha:</b> 2/22/2014<br>
@@ -40,10 +42,23 @@
                 <i class="fas fa-file-pdf"></i>
                 Remision
               </a> <br> 
-              <?php if (!empty($row['file_edited'])) {?>
-                  <a href="<?=URL?>VIEWS/pdf_files/referrals/EDIT_REM_<?= $row['file_edited']; ?>.pdf" target="_blank" download>
+              <?php if (!empty($data['file_edited'])) {?>
+                  <a href="<?=URL?>VIEWS/pdf_files/referrals/EDIT_REM_<?= $data['file_edited']; ?>.pdf" target="_blank" download>
                       <i class="fas fa-file-pdf"></i>
                       Remision modificada
+                  </a>
+              <?php } ?>
+              <?php if (empty($data['bills'])) {?>
+                <form method="post" enctype="multipart/form-data" onsubmit="saveBill(this);">
+                  <input type="hidden" name="folio" id="folio" value="<?=$data['f_freight']?>">
+                  <input type="file" name="documento">
+                  <input type="submit">
+                </form>
+              
+              <?php } else { ?>
+                <a href="<?=URL?>VIEWS/pdf_files/freights_bills/<?= $data['bills']; ?>" target="_blank" download>
+                      <i class="fas fa-file-pdf"></i>
+                      Factura
                   </a>
               <?php } ?>
              
@@ -62,19 +77,45 @@
             <thead>
             <tr>
               <th>Pago</th>
+              <th>Fecha</th>
               <th>Concepto</th>
               <th>Cantidad</th>
               <th>Subtotal</th>
             </tr>
             </thead>
             <tbody>
-              <tr>
-                <th>1</th>
-                <th>Abono</th>
-                <th>$500.00</th>
-                <th>$500.00</th>
-              </tr>
+              <?php 
+                $i = 1;
+                while ($row = mysqli_fetch_array($payments)) {
+                $p += $row['amount'];
+                $subtotal = $data['total'] - $p;
+                ?>
+                <tr>
+                  <th><?=$i;?></th>
+                  <th><?=$row['date']?></th>
+                  <th><?=$row['concept']?></th>
+                  <th>$ <?=$row['amount']?></th>  
+                  <th>$ <?= number_format($subtotal); ?></th>
+                </tr>
+             <?php 
+              $i++;
+
+              } ?>
+             
             </tbody>
+            <tfoot>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>
+                  <b>$ <?=$p;?></b>
+                </th>
+                <th>
+                  
+                </th>
+              </tr>
+            </tfoot>
       </table>
 
     </div>
