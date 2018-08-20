@@ -26,7 +26,8 @@
 	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/main.css">
 	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/jquery-ui.min.css">
 	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet"> -->
-	<link href="https://fonts.googleapis.com/css?family=Rubik:300,400" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Rubik:300,400" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <!-- <link rel="stylesheet" href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css"> -->
 	<!-- nuevos link -->
