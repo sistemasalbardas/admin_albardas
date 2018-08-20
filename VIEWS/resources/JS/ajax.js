@@ -30,7 +30,7 @@ $("input#flete").change(function () {
 });
 
 ///LOCAL-> 
-const URL = "http://localhost/admin_albardas/";    
+const URL = "http://192.168.50.110/admin_albardas/";    
 //const URL = "http://lasalbardas.com/ADMIN/";  
 
  function getGET()
@@ -512,9 +512,10 @@ function addP(obj){
 function eraseP(obj){
     event.preventDefault();
     var id = $(obj).attr('href');
-    var url = URL+"referrals/delete/"+id;
+    var url = URL+"referrals/delete/?id="+id;
     $.get(url, function(data, status){
         location.reload();
+        //alert("ya");
     });
 }
 

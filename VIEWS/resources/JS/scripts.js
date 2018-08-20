@@ -194,7 +194,7 @@ $(document).ready(function() {
                       className: 'btn btn-success',
                       title: "Reporte de Fletes",
                       exportOptions: {
-                      columns: [ 0, 1, 2, 3, 4, 5]
+                      columns: [ 0, 1, 2, 3, 4, 5, 6, 7]
                       },
                       titleAttr: 'Excel'
                     },
@@ -204,7 +204,7 @@ $(document).ready(function() {
                       className: 'btn btn-danger',
                       title: "Reporte de Fletes",
                       exportOptions: {
-                        columns: [ 0, 1, 2, 3, 4, 5]
+                        columns: [ 0, 1, 2, 3, 4, 5, 6, 7]
                       },
                       titleAttr: 'PDF'
                     }

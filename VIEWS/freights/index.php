@@ -29,8 +29,10 @@
 					<thead>
 						<tr>
 							<th scope="col" >ID</th>
+							<th scope="col" >FECHA</th>
 							<th scope="col" >FOLIO FLETE</th>
 							<th scope="col" >FOLIO EMBARQUE</th>
+							<th scope="col" >FACTURA</th>
 							<th scope="col" >CLIENTE</th>
 							<th scope="col" >PRECIO</th>
 							<th scope="col" >TOTAL</th>
@@ -43,8 +45,10 @@
 							<?php $total_final = $total_final + $row['total'];?>
 							<tr>
 								<th><?= $row['id']; ?></th>
+								<th><?= $row['date']; ?></th>
 								  <th><?= $row['f_freight']; ?></th>
 								  <th><?= $row['f_embark']; ?></th>
+								  <th><?= $row['n_bills']; ?></th>
 								  <th><?php
 									  if ($row['id_client']  == 1) {
 										  echo "Albardas";

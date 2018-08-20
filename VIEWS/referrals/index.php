@@ -628,8 +628,8 @@
 				<tr>
 					<td>Id</td>
 					<td>Nombre</td>
-					<td>Disponible</td>
 					<td>Marca</td>
+					<td>Cantidad</td>
 					<td>Acciones</td>
 
 				</tr>

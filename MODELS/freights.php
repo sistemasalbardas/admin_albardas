@@ -89,7 +89,9 @@
 		}
 
 		public function set_invoice(){
-			$sql = "UPDATE freights SET bills = '{$this->name_invoice}' WHERE f_flete = {$this->folio}";
+			$sql = "UPDATE freights SET 
+					bills = '{$this->name_invoice}',
+					n_bills = '{$this->n_bills}' WHERE f_flete = {$this->folio}";
 			$this->con->consultaSimple($sql);
 		}
 

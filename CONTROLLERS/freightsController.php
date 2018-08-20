@@ -99,6 +99,7 @@
 				if(move_uploaded_file ($_FILES['documento']['tmp_name'] , $uploadDirectory.$final_name)){ 
 					$this->freights->set('name_invoice', $final_name);
 					$this->freights->set('folio', $_POST['folio']);
+					$this->freights->set('n_bills', $_POST['n_bills']);
 					$this->freights->set_invoice();
 				}else{ 
 				   return false;

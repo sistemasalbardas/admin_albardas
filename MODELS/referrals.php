@@ -113,6 +113,9 @@ namespace MODELS;
 
 			if ($id == null) {
 				$id = 0;
+				unset($_SESSION['products'][$id]);
+
+				//unset($_SESSION['products'][$id]);
 			}else{
 				$id = $id;
 				unset($_SESSION['products'][$id]);

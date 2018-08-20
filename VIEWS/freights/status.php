@@ -9,13 +9,12 @@
          <i class="fa fa-file-invoice-dollar"></i> 
             ESTADO DE CUENTA 
       </h3>
+
       <div class="box-tools pull-right">
-                        
-              <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
-              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-              </button>
-          
-         </div>
+        <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
+        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+        </button>
+      </div>
     </div>
      
     <div class="box-body padd10 bgWhite table-responsive">
@@ -31,7 +30,7 @@
           </div>
         
           <!-- /.col -->
-          <div class="col-sm-4 invoice-col">
+          <div class="col-sm-3 invoice-col">
             <br>
               <b>Flete: #<?=$_GET['id']?></b><br>
               <b>Total: $ <?= number_format($data['total']); ?></b><br>
@@ -48,14 +47,9 @@
                       Remision modificada
                   </a>
               <?php } ?>
-              <?php if (empty($data['bills'])) {?>
-                <form method="post" enctype="multipart/form-data" onsubmit="saveBill(this);">
-                  <input type="hidden" name="folio" id="folio" value="<?=$data['f_freight']?>">
-                  <input type="file" name="documento">
-                  <input type="submit">
-                </form>
-              
-              <?php } else { ?>
+              <?php if (!empty($data['bills'])) {?>
+               
+
                 <a href="<?=URL?>VIEWS/pdf_files/freights_bills/<?= $data['bills']; ?>" target="_blank" download>
                       <i class="fas fa-file-pdf"></i>
                       Factura
@@ -65,13 +59,33 @@
            
             
           </div>
-          <!-- /.col -->
-        </div>
-      <hr>
+          <div class="col-sm-4 invoice-col">
+            <?php if (empty($data['bills'])) {?>
+                <form method="post" enctype="multipart/form-data" onsubmit="saveBill(this);">
+                  <label for="documento">Factura:</label>
+                  <input type="hidden" name="folio" id="folio" value="<?=$data['f_freight']?>">
+                  <input type="file" name="documento" id="documento" required=""> 
+                  <label for="n_bills" class="block">Numero de factura</label> 
+                  <input type="text" name="n_bills" id="n_bills" required=""> <br>
+                  <input type="submit" value="Guardar">
+                </form>
+              
+              <?php } ?>
+          </div>
 
-      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
-        Abonar
-      </button>
+          <!-- /.col -->
+      </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-lg-2">
+          <button type="button" class="btn btn-primary sblue" data-toggle="modal" data-target="#modal-default">
+            Abonar
+          </button>
+        </div>
+      </div>
+      <div class="clear"></div>
 
       <table class="table bgWhite">
             <thead>
@@ -81,6 +95,7 @@
               <th>Concepto</th>
               <th>Cantidad</th>
               <th>Subtotal</th>
+              <th>Acciones</th>
             </tr>
             </thead>
             <tbody>
@@ -96,6 +111,10 @@
                   <th><?=$row['concept']?></th>
                   <th>$ <?=$row['amount']?></th>  
                   <th>$ <?= number_format($subtotal); ?></th>
+                  <th>
+                    <a href="#">Eliminar</a>
+                    <a href="#">Editar</a>
+                  </th>
                 </tr>
              <?php 
               $i++;
@@ -111,12 +130,46 @@
                 <th>
                   <b>$ <?=$p;?></b>
                 </th>
-                <th>
-                  
-                </th>
+                <th> </th>
+                <th> </th>
               </tr>
             </tfoot>
       </table>
+
+
+      <div class="col-xs-4">
+          <p class="lead">RESUMEN DE FLETE</p>
+
+
+          <div class="table-responsive">
+            <table class="table">
+              <tbody><tr>
+                <th style="width:50%">
+                  <b>TOTAL FLETE:</b>
+                </th>
+                <th>$ <?= number_format($data['total']); ?></th>
+              </tr>
+             
+              <tr>
+                <th>
+                  <b> ABONOS :</b>
+                </th>
+                <th>
+                  $ <?= number_format($p);?>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <b>PENDIENTE:</b>
+                </th>
+                <?php 
+                  $pending = ($data['total'] - $p);
+                 ?>
+                <th>$ <?= number_format($pending); ?> </th>
+              </tr>
+            </tbody></table>
+          </div>
+      </div>
 
     </div>
     <div class="box-footer">
@@ -129,66 +182,67 @@
 
 
 
-  <div class="modal fade" id="modal-default" style="display: none;">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">Nuevo abono</h4>
-               
-              </div>
-              <form role="form" onsubmit="newPayment(this);" method="post">
-                <div class="modal-body">
-                   <input type="hidden" name="f_freight" value="<?= $_GET['id']; ?>">
-                  <div class="box-body">
+<div class="modal fade" id="modal-default" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">Nuevo abono</h4>
+       
+      </div>
+      <form role="form" onsubmit="newPayment(this);" method="post">
+        <div class="modal-body">
+           <input type="hidden" name="f_freight" value="<?= $_GET['id']; ?>">
+          <div class="box-body">
 
-                      <div class="row">
-                        <div class="col-md-10">
-                          <div class="form-group">
-                            <label for="date">Fecha: </label>
-                            <input type="date" class="form-control" id="date" placeholder="" name="date">
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-10">
-                           <div class="form-group">
-                            <label for="concept">Concepto: </label>
-                            <select name="concept" id="concept" class="form-control" >
-                              <option value="">SELCCIONA</option>
-                              <option value="abono">Abono</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-7">
-                          <div class="form-group">
-                          <label for="amount">Monto: </label>
-                          <input type="number" name="amount" class="form-control" id="amount" placeholder="$ 00.00" >
-                        </div>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-10">
-                          <div class="form-group">
-                          <label for="coments">Comentarios: </label>
-                          <textarea name="coments" id="coments" class="form-control"></textarea>
-                        </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+              <div class="row">
+                <div class="col-md-10">
+                  <div class="form-group">
+                    <label for="date">Fecha: </label>
+                    <input type="date" class="form-control" id="date" placeholder="" name="date">
                   </div>
                 </div>
-            </form>
-            <!-- /.modal-content -->
+              </div>
+
+              <div class="row">
+                <div class="col-md-10">
+                   <div class="form-group">
+                    <label for="concept">Concepto: </label>
+                    <select name="concept" id="concept" class="form-control" >
+                      <option value="">SELCCIONA</option>
+                      <option value="abono">Abono</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-7">
+                  <div class="form-group">
+                  <label for="amount">Monto: </label>
+                  <input type="number" name="amount" class="form-control" id="amount" placeholder="$ 00.00" >
+                </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-10">
+                  <div class="form-group">
+                  <label for="coments">Comentarios: </label>
+                  <textarea name="coments" id="coments" class="form-control"></textarea>
+                </div>
+                </div>
+              </div>
           </div>
-          <!-- /.modal-dialog -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </form>
+      <!-- /.modal-content -->
+    </div>
+        <!-- /.modal-dialog -->
   </div>
+</div>

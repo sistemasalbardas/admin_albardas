@@ -98,9 +98,9 @@
 			}
 		}
 
-		public function delete($id)
+		public function delete()
 		{
-			$this->referrals->set("id", $id);
+			$this->referrals->set("id", $_GET['id']);
 			$this->referrals->deleteP();
 		}
 
