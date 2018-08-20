@@ -27,8 +27,8 @@
 	<link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/jquery-ui.min.css">
 	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet"> -->
 	<link href="https://fonts.googleapis.com/css?family=Rubik:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <!-- <link rel="stylesheet" href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css"> -->
 	<!-- nuevos link -->
 	
 	  <!-- Ionicons -->
@@ -49,6 +49,9 @@
 	  <!-- Font Awesome -->
 	  <link rel="stylesheet" href="<?= URL?>/VIEWS/resources/CSS/all.min.css">
 	  <link rel="stylesheet" href="<?= URL?>/VIEWS/resources/fonts/style.css">
+
+	  <link rel="stylesheet" type="text/css" href="<?= URL?>/VIEWS/resources/datatables/dataTables.bootstrap.min.css"/>
+	  <link rel="stylesheet" type="text/css" href="<?= URL?>/VIEWS/resources/datatables/buttons.bootstrap.min.css"/>
 	
 
 
@@ -79,7 +82,8 @@
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<script src="<?= URL?>/VIEWS/resources/JS/scripts.js"></script>
+	 
+	
 	<script src="<?= URL?>/VIEWS/resources/JS/bootstrap-select.js"></script>
 	<script src="<?= URL?>/VIEWS/resources/JS/ajax.js"></script>
 	<script src="<?= URL?>/VIEWS/resources/JS/jquery-ui/jquery-ui.min.js"></script>
@@ -88,9 +92,19 @@
 	<script src="<?= URL?>/VIEWS/resources/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 	<script src="<?= URL?>/VIEWS/resources/bower_components/bootstrap-datepicker/dist/js/datepicker-es.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-	<script src="http://cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"></script>
+	<!-- <script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> -->
+	<!-- <script src="http://cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"></script> -->
 
+	<script type="text/javascript" src="<?= URL?>/VIEWS/resources/datatables/jszip.min.js"></script>
+	<script type="text/javascript" src="<?= URL?>/VIEWS/resources/datatables/pdfmake.min.js"></script>
+	<script type="text/javascript" src="<?= URL?>/VIEWS/resources/datatables/vfs_fonts.js"></script>
+	<script type="text/javascript" src="<?= URL?>/VIEWS/resources/datatables/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="<?= URL?>/VIEWS/resources/datatables/dataTables.bootstrap.js"></script>
+	<script type="text/javascript" src="<?= URL?>/VIEWS/resources/datatables/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" src="<?= URL?>/VIEWS/resources/datatables/buttons.bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?= URL?>/VIEWS/resources/datatables/buttons.html5.min.js"></script>
+
+	<script src="<?= URL?>/VIEWS/resources/JS/scripts.js"></script>
 	<!-- nuevos scripts -->
 	<!-- AdminLTE App -->
 	<script src="<?= URL?>/VIEWS/dist/js/adminlte.min.js"></script>

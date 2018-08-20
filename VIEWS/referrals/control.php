@@ -28,7 +28,7 @@
 			<?php } ?>
 			<div class="clear"></div>
 
-			<table id="tableCostumers" class="table bgWhite">
+			<table id="tableReferrals" class="table bgWhite">
 				<thead>
 					<tr>
 						<th scope="col">ID</th>

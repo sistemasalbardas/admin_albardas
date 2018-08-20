@@ -31,7 +31,7 @@
 			</div>
 			<div class="clear"></div>
 			<div class="containerTable table-responsive">
-				<table id="tableCostumers" class="table bgWhite">
+				<table id="tableUsers" class="table bgWhite">
 					<thead>
 						<tr>
 							<th scope="col">ID</th>

@@ -51,49 +51,342 @@ $(document).ready(function() {
 
 
   ////********************/////
+  $(document).ready(function() {
+    // Obtengo la url actual
+    let url = window.location.pathname;
+    // Cortamos la primara diagonal "/"
+    url = url.substr(1);
+    // Cortamos la ultima diagonal "/"
+    let url_limpia = url.substr(0,url.lastIndexOf('/'));
+    // Creamos el arreglo con split
+    let url_array= url_limpia.split('/');
+    // console.log('array url: '+url_array[1]);
+    // Obtenemos el path de la posicion del arreglo
+    let pathName = url_array[1];
+    console.log(pathName);
+    
+    switch (pathName) {
+      case 'referrals':
+          $('table#tableReferrals').dataTable(
+          {
+            "aProcessing": true,//Activamos el procesamiento del datatables
+            "aServerSide": true,//Paginacion y filtrado realizados por el servidor
+            dom: "<'row'<'text-center ' <''B>>>"+
+                  "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                  "<'row'<'col-lg-12'tr>>" +
+                  "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+            buttons: [
+                  {
+                    extend: 'excelHtml5',
+                    text: '<strong><i class="fas fa-file"></i> Excel</strong>',
+                    className: 'btn btn-success',
+                    title: "Reporte de Remisiones",
+                    exportOptions: {
+                    columns: [ 0, 1, 2, 3, 4]
+                    },
+                    titleAttr: 'Excel'
+                  },
+                  {
+                    extend: 'pdfHtml5',
+                    text: '<strong><i class="fas fa-file-pdf-o"></i> PDF</strong>',
+                    className: 'btn btn-danger',
+                    title: "Reporte de Remisiones",
+                    exportOptions: {
+                      columns: [ 0, 1, 2, 3, 4]
+                    },
+                    titleAttr: 'PDF'
+                  }
+            ],
+            "language": {
+              "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+            },
+            
+          }).DataTable();
+      break;
+      case 'personal':
+          $('table#tableWorks').dataTable(
+          {
+            "aProcessing": true,//Activamos el procesamiento del datatables
+            "aServerSide": true,//Paginacion y filtrado realizados por el servidor
+            dom: "<'row'<'text-center ' <''B>>>"+
+                  "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                  "<'row'<'col-lg-12'tr>>" +
+                  "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+            buttons: [
+                  {
+                    extend: 'excelHtml5',
+                    text: '<strong><i class="fa fa-file-excel-o"></i> Excel</strong>',
+                    className: 'btn btn-success',
+                    title: "Reporte de Personal",
+                    exportOptions: {
+                    columns: [ 0, 1, 2, 3, 4]
+                    },
+                    titleAttr: 'Excel'
+                  },
+                  {
+                    extend: 'pdfHtml5',
+                    text: '<strong><i class="fa fa-file-pdf-o"></i> PDF</strong>',
+                    className: 'btn btn-danger',
+                    title: "Reporte de Personal",
+                    exportOptions: {
+                      columns: [ 0, 1, 2, 3, 4]
+                    },
+                    titleAttr: 'PDF'
+                  }
+            ],
+            "language": {
+              "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+            },
+            
+          }).DataTable();
+      break;
+      case 'products':
+          $('table#tableProducts').dataTable(
+          {
+            "aProcessing": true,//Activamos el procesamiento del datatables
+            "aServerSide": true,//Paginacion y filtrado realizados por el servidor
+            dom: "<'row'<'text-center ' <''B>>>"+
+                  "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                  "<'row'<'col-lg-12'tr>>" +
+                  "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+            buttons: [
+                  {
+                    extend: 'excelHtml5',
+                    text: '<strong><i class="fa fa-file-excel-o"></i> Excel</strong>',
+                    className: 'btn btn-success',
+                    title: "Reporte de Productos",
+                    exportOptions: {
+                    columns: [ 0, 1, 2, 3, 4, 5, 6]
+                    },
+                    titleAttr: 'Excel'
+                  },
+                  {
+                    extend: 'pdfHtml5',
+                    text: '<strong><i class="fa fa-file-pdf-o"></i> PDF</strong>',
+                    className: 'btn btn-danger',
+                    title: "Reporte de Productos",
+                    exportOptions: {
+                      columns: [ 0, 1, 2, 3, 4, 5, 6 ]
+                    },
+                    titleAttr: 'PDF'
+                  }
+            ],
+            "language": {
+              "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+            },
+            
+          }).DataTable();
+      break;
+      
+      case 'freights':
+          $('table#tableFreights').dataTable(
+            {
+              "aProcessing": true,//Activamos el procesamiento del datatables
+              "aServerSide": true,//Paginacion y filtrado realizados por el servidor
+              dom: "<'row'<'text-center ' <''B>>>"+
+                    "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                    "<'row'<'col-lg-12'tr>>" +
+                    "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+              buttons: [
+                    {
+                      extend: 'excelHtml5',
+                      text: '<strong><i class="fa fa-file-excel-o"></i> Excel</strong>',
+                      className: 'btn btn-success',
+                      title: "Reporte de Fletes",
+                      exportOptions: {
+                      columns: [ 0, 1, 2, 3, 4, 5]
+                      },
+                      titleAttr: 'Excel'
+                    },
+                    {
+                      extend: 'pdfHtml5',
+                      text: '<strong><i class="fa fa-file-pdf-o"></i> PDF</strong>',
+                      className: 'btn btn-danger',
+                      title: "Reporte de Fletes",
+                      exportOptions: {
+                        columns: [ 0, 1, 2, 3, 4, 5]
+                      },
+                      titleAttr: 'PDF'
+                    }
+              ],
+              "language": {
+                "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+              },
+              
+          }).DataTable();
+      break;
 
+      case 'users':
+          $('table#tableUsers').dataTable(
+            {
+              "aProcessing": true,//Activamos el procesamiento del datatables
+              "aServerSide": true,//Paginacion y filtrado realizados por el servidor
+              dom: "<'row'<'text-center ' <''B>>>"+
+                    "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                    "<'row'<'col-lg-12'tr>>" +
+                    "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+              buttons: [
+                    {
+                      extend: 'excelHtml5',
+                      text: '<strong><i class="fa fa-file-excel-o"></i> Excel</strong>',
+                      className: 'btn btn-success',
+                      title: "Reporte de Usuarios",
+                      exportOptions: {
+                      columns: [ 0, 1, 2, 3, 4]
+                      },
+                      titleAttr: 'Excel'
+                    },
+                    {
+                      extend: 'pdfHtml5',
+                      text: '<strong><i class="fa fa-file-pdf-o"></i> PDF</strong>',
+                      className: 'btn btn-danger',
+                      title: "Reporte de Usuarios",
+                      exportOptions: {
+                        columns: [ 0, 1, 2, 3, 4]
+                      },
+                      titleAttr: 'PDF'
+                    }
+              ],
+              "language": {
+                "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+              },
+              
+          }).DataTable();
+      break;
+      case 'costumers':
+          $('table#tableCostumers').dataTable(
+            {
+              "aProcessing": true,//Activamos el procesamiento del datatables
+              "aServerSide": true,//Paginacion y filtrado realizados por el servidor
+              dom: "<'row'<'text-center ' <''B>>>"+
+                    "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                    "<'row'<'col-lg-12'tr>>" +
+                    "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+              buttons: [
+                    {
+                      extend: 'excelHtml5',
+                      text: '<strong><i class="fa fa-file-excel-o"></i> Excel</strong>',
+                      className: 'btn btn-success',
+                      title: "Reporte de Clientes",
+                      exportOptions: {
+                      columns: [ 0, 1, 2, 3, 4]
+                      },
+                      titleAttr: 'Excel'
+                    },
+                    {
+                      extend: 'pdfHtml5',
+                      text: '<strong><i class="fa fa-file-pdf-o"></i> PDF</strong>',
+                      className: 'btn btn-danger',
+                      title: "Reporte de Clientes",
+                      exportOptions: {
+                        columns: [ 0, 1, 2, 3, 4]
+                      },
+                      titleAttr: 'PDF'
+                    }
+              ],
+              "language": {
+                "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+              },
+              
+          }).DataTable();
+      break;
+
+      case'transporters':
+          $('table#tableTransporters').dataTable(
+            {
+              "aProcessing": true,//Activamos el procesamiento del datatables
+              "aServerSide": true,//Paginacion y filtrado realizados por el servidor
+              dom: "<'row'<'text-center ' <''B>>>"+
+                    "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                    "<'row'<'col-lg-12'tr>>" +
+                    "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+              buttons: [
+                    {
+                      extend: 'excelHtml5',
+                      text: '<strong><i class="fa fa-file-excel-o"></i> Excel</strong>',
+                      className: 'btn btn-success',
+                      title: "Reporte de Transportistas",
+                      exportOptions: {
+                      columns: [ 0, 1, 2, 3 ]
+                      },
+                      titleAttr: 'Excel'
+                    },
+                    {
+                      extend: 'pdfHtml5',
+                      text: '<strong><i class="fa fa-file-pdf-o"></i> PDF</strong>',
+                      className: 'btn btn-danger',
+                      title: "Reporte de Transportistas",
+                      exportOptions: {
+                        columns: [ 0, 1, 2, 3 ]
+                      },
+                      titleAttr: 'PDF'
+                    }
+              ],
+              "language": {
+                "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+              },
+              
+          }).DataTable();
+      break;
+
+      // No se sabe cual es????
+      // case 'supplies':
+      //     $('table#tableSupplies').dataTable(
+      //       {
+      //         "aProcessing": true,//Activamos el procesamiento del datatables
+      //         "aServerSide": true,//Paginacion y filtrado realizados por el servidor
+      //         dom: "<'row'<'text-center ' <''B>>>"+
+      //               "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+      //               "<'row'<'col-lg-12'tr>>" +
+      //               "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+      //         buttons: [
+      //               {
+      //                 extend: 'excelHtml5',
+      //                 text: '<strong><i class="fa fa-file-excel-o"></i> Excel</strong>',
+      //                 className: 'btn btn-success',
+      //                 title: "Reporte de Plantillas",
+      //                 // exportOptions: {
+      //                 // columns: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+      //                 // },
+      //                 titleAttr: 'Excel'
+      //               },
+      //               {
+      //                 extend: 'pdfHtml5',
+      //                 text: '<strong><i class="fa fa-file-pdf-o"></i> PDF</strong>',
+      //                 className: 'btn btn-danger',
+      //                 title: "Reporte de Plantillas",
+      //                 // exportOptions: {
+      //                 //   columns: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+      //                 // },
+      //                 titleAttr: 'PDF'
+      //               }
+      //         ],
+      //         "language": {
+      //           "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+      //         },
+              
+      //     }).DataTable();
+      // break;
+    }
+  });
 
 	//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js
-  $('table#tableWorks').DataTable(
-  {
-    "language": {
-      "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-    }
-  });
-  
-   $('table#tableCostumers').DataTable(
-  {
-    "language": {
-      "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-    }
-  });
-  $('table#tableProducts').DataTable(
-  {
-    "language": {
-      "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-    }
-  });
-
-	$('table#tableRemisions').DataTable(
-  {
-    "language": {
-      "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-    }
-  });
+  // $('table#tableWorks').DataTable(
+  // {
+  //   "language": {
+  //     "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+  //   }
+  // });
   
 
-  $('table#tableSupplies').DataTable(
-  {
-    "language": {
-      "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-    }
-  });
-    $('table#tableFreights').DataTable(
-  {
-    "language": {
-      "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-    }
-  });
+
+  
+
+
+
+
+
+   
 
   $("div.headC").click(function(){
     $(this).siblings("div.mainC").toggleClass("h0");
