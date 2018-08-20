@@ -87,11 +87,14 @@
 								<th></th>
 								<th></th>
 								<th></th>
+								<th></th>
+								<th></th>
 								<th class="text-right">Total</th>
 								<th class="text-left"><?=number_format($total_final,2,'.',',')?></th>
 								<th></th>
 							</tr>
 					</tbody>
+					
 				</table>
 			</div>
 		</div>
