@@ -5,7 +5,7 @@
 
 	//LOCAL->
 
-	define('URL', "http://localhost/admin_albardas/");
+	define('URL', "http://192.168.50.110/admin_albardas/");
 
 	define('URL_IMG', URL."VIEWS/resources/IMG/");
 	define('URL_RES', URL."resources/");

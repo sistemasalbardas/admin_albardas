@@ -84,8 +84,7 @@
 						<?php } ?>
 							<tr role="row">
 								<th>Monto</th>
-								<th></th>
-								<th></th>
+						
 								<th></th>
 								<th></th>
 								<th></th>

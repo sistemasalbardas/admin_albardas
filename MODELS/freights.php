@@ -48,10 +48,11 @@
 
 		public function info_status(){
 
-			$sql = "SELECT * FROM remisions r INNER JOIN costumers c ON r.id_costumer = c.id INNER JOIN freights f ON f.f_flete = r.f_freight AND f.price > 0 INNER JOIN transporters t ON r.id_trasport = t.id WHERE r.f_freight = '{$this->f_flete}'";
+
+			$sql = "SELECT * FROM remisions r INNER JOIN costumers c ON r.id_costumer = c.id INNER JOIN freights f ON f.f_flete = r.f_freight AND f.price > 0 INNER JOIN transporters t ON r.id_trasport = t.id  WHERE r.f_freight = '{$this->f_flete}'";
 			$data = $this->con->consultaRetorno($sql);
-			$row = mysqli_fetch_assoc($data);
-			return $row;
+		
+			return $data;
 			
 		}
 		public function list_payments(){
