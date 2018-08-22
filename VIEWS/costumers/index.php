@@ -51,20 +51,20 @@
 								  <th >
 								  	<?php if ($delete == 1) { ?>
 									  <a href="delete/?id=<?= $row['id'];?>" onclick="deleteCostumer(this);" class="tool">
-										  <i class="btn btn-danger  btn-xs fas fa-trash cRed btn_padd"></i>
+										  <i class="btn btn-danger  btn-xs s16 cRed btn_padd"><span class="icon-trash"></span></i>
 										   <span class="tooltext">Eliminar</span>
 										   
 									  </a>
 									<?php } ?>
 									<?php if ($edit == 1) { ?>
 									  <a href="edit/?id=<?= $row['id'];?>" onclick=""  class="tool">
-										  <i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+										  <i class="btn btn-warning btn-xs btn_padd s16"><span class="icon-pencil"></span></i>
 										   <span class="tooltext">Editar </span>
 										  
 									  </a>
 									 <?php } ?>
 									  <a href="address/?id=<?= $row['id'];?>&name=<?= $row['name'] ?>" onclick=""  class="tool">
-										  <i class="btn btn-primary btn-xs fas fa-map-marker-alt btn_padd"></i>
+										  <i class="btn btn-primary btn-xs s16 btn_padd"><span class="icon-add_location"></span></i>
 										  <span class="tooltext">Direcciones</span>
 										
 									  </a>

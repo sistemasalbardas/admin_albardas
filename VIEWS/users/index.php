@@ -23,7 +23,7 @@
 				<div class="col-lg-2">
 					<?php if ($write == 1) { ?>
 						<a href="add/" class="btn btn-primary sblue">
-							Nuevo usuario
+							Nuevo usuario <span class="icon-add s16"></span>
 						</a>	
 					<?php } ?>		
 
@@ -59,18 +59,20 @@
 								  <th >
 									<?php if ($delete == 1) { ?>
 									  <a href="delete/?id=<?= $row['id'];?>" onclick="erase(this);" class="tool">
-										   <i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+										   <i class="btn btn-danger btn-xs s16 btn_padd"><span class="icon-trash"></span></i>
 										  <span class="tooltext">Eliminar</span>
 										   
 									  </a>
 									<?php } ?>
 									<?php if ($edit == 1) { ?>
 									  <a href="edit/?id=<?= $row['id'];?>" onclick=""  class="tool">
-										  <i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+										  <i class="btn btn-warning btn-xs s16 btn_padd"><span class="icon-pencil"></span></i>
 										   <span class="tooltext">Editar </span>
 									  </a>
 									  <a href="permits/?id=<?= $row['id'];?>" onclick=""  class="tool">
-										  <i class="btn btn-primary btn-xs fas fa-user-shield btn_padd"></i>
+										  <!-- <i class="btn btn-primary btn-xs s16 btn_padd"><span class="icon-assignment_ind"></span></i> -->
+										  <i class="btn btn-primary btn-xs s16 btn_padd"><span class="icon-verified_user"></span></i>
+										  <!-- <i class="btn btn-primary btn-xs s16 btn_padd"><span class="icon-people"></span></i> -->
 										   <span class="tooltext">Permisos </span>
 										  
 									  </a>
