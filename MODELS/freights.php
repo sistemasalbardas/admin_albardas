@@ -15,6 +15,9 @@
 		public $coments; 
 		public $name_invoice; 
 		public $folio; 
+		public $id; 
+
+
 
 		public function __construct(){
 			$this->con = new conexion();
@@ -30,12 +33,14 @@
 
 		public function list(){	
 	
-			$sql = "SELECT * FROM remisions r INNER JOIN costumers c ON r.id_costumer = c.id INNER JOIN freights f ON f.f_flete = r.f_freight AND f.price > 0";
+			$sql = "SELECT * FROM remisions r INNER JOIN costumers c ON r.id_costumer = c.id INNER JOIN freights f ON f.f_flete = r.f_freight AND f.price > 0 AND f.id_client = 1";
 			$datos = $this->con->consultaRetorno($sql);
 			return $datos;
 
 
 		}
+
+		
 
 		public function select_freight()
 		{
@@ -96,6 +101,31 @@
 			$this->con->consultaSimple($sql);
 		}
 
+		public function select_pay_id(){
+			$sql = "SELECT * FROM freight_payment WHERE id = '{$this->id}'";
+			$data = $this->con->consultaRetorno($sql);
+			$row = mysqli_fetch_assoc($data);
+			return $row;
+
+		}
+
+		public function update_pay(){
+
+			$sql = "UPDATE freight_payment SET 
+					f_freight = '{$this->f_freight}',
+					date = '{$this->date}',
+					concept = '{$this->concept}', 
+					amount = '{$this->amount}', 
+					comments = '{$this->comments}' WHERE id = {$this->id}";
+			$this->con->consultaSimple($sql);
+			
+		}
+
+		public function delete_payment()
+		{
+			$sql = "DELETE FROM freight_payment WHERE id = '{$this->id}'";
+			$this->con->consultaSimple($sql);
+		}
 		
 
 	}

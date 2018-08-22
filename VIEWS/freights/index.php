@@ -1,5 +1,6 @@
 <?php 
 	$data = $freights->index();
+	
 
 	$permits = $freights->permits();
 	$read = $permits[3];
@@ -33,14 +34,16 @@
 							<th scope="col" >FOLIO EMBARQUE</th>
 							<th scope="col" >CLIENTE</th>
 							<th scope="col" >PRECIO</th>
-							<th scope="col" >TOTAL</th>
+							<th scope="col" >SALDO</th>
 							<th scope="col" >ACCIONES</th>
 						</tr>
 					</thead>	
 					<tbody>
-						<?php $total_final = 0; ?>
-						<?php while($row = mysqli_fetch_array($data)){?>
-							<?php $total_final = $total_final + $row['total'];?>
+						<?php 
+						$total_final = 0;
+						while($row = mysqli_fetch_array($data)){
+							$balance = $freights->balance($row['f_freight']);
+						 	$total_final = $total_final + $balance; ?>
 							<tr>
 								<th><?= $row['id']; ?></th>
 								  <th><?= $row['f_freight']; ?></th>
@@ -53,12 +56,8 @@
 									  }
 								  ?></th>
 								  <th> $ <?= $row['price']. " - ".$row['currency']; ?></th>
-								  <th> $ <?= $row['total']; ?></th>
+								  <th> $ <?= number_format($balance);?></th>
 				
-				
-				
-				
-								
 								  <th>
 								  	<?php if ($edit == 1) { ?>
 									  <a href="delete/?id=<?= $row['id'];?>" onclick="erase(this);" class="tool">

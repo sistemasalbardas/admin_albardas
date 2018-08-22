@@ -560,3 +560,16 @@ function userMaster(obj){
     $("select option:nth-child(2)").removeAttr('selected');
   }
 }
+function validatePay(obj){
+  var valPending = $("span.pending").text();
+  var pending = parseInt(valPending); 
+  var val1 = parseInt($(obj).val());
+  if (val1 > pending) {
+    alert("el monto no es valido");
+    $(obj).val('');
+  }else if (val1 <= 0){
+    alert("el monto no es valido");
+    $(obj).val('');
+  }
+
+}

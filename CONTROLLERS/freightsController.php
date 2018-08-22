@@ -38,15 +38,7 @@
 
 		}
 
-		public function delete()
-		{
-			if (isset($_GET['id'])) {
-				$this->users->set('id', $_GET['id']);
-				$this->users->delete_user();
-			}else{
-				return false;
-			}
-		}
+		
 		public function status()
 		{
 			if (isset($_GET['id'])) {
@@ -73,7 +65,18 @@
 				return false;
 			}	
 		}
+		public function balance($id)
+		{
+			
+			$this->freights->set('f_flete', $id);
 
+			$data = $this->freights->list_payments();
+			while ($row = mysqli_fetch_array($data)) {
+				$p += $row['amount'];
+			}
+			
+			return $p;
+		}
 		public function newPayment(){
 			if ($_POST) {
 				
@@ -109,6 +112,37 @@
 				;
 			}
 		}
+
+		public function delete()
+		{
+			if (isset($_GET['id'])) {
+				$this->freights->set('id', $_GET['id']);
+				$this->freights->delete_payment();
+			}else{
+				return false;
+			}
+		}
+
+		public function editpay()
+		{
+			if ($_POST) {
+				$this->freights->set('id', $_POST['id']);
+				$this->freights->set('f_freight', $_POST['f_freight']);
+				$this->freights->set('date', $_POST['date']);
+				$this->freights->set('concept', $_POST['concept']);
+				$this->freights->set('amount', $_POST['amount']);
+				$this->freights->set('comments', $_POST['comments']);
+				$this->freights->update_pay();
+				header("Location: ".URL."freights/status/?id=".$_POST['f_freight']);
+			}else{
+
+				$this->freights->set('id', $_GET['id']);
+				$row = $this->freights->select_pay_id();
+				return $row;
+			}
+		}
+
+
 	}
 	
 	$freights = new freightsController();

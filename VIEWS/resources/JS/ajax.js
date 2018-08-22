@@ -984,3 +984,41 @@ function saveBill(obj){
 
     });
 }
+
+//FUNCIONES AJAX PARA EL MODULO DE FLETES
+function deletePay(obj){
+    event.preventDefault();
+    var id = $(obj).attr('href');
+
+    event.preventDefault();
+    swal({
+      title: "Estas seguro?",
+      text: "eliminar registro",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        $.ajax({
+        url: URL+'freights/delete/?id='+id,
+        type: "GET",
+        data: "",
+        contentType: false,
+        processData: false,
+        success: function(datos)
+        {
+            swal("Registro eliminado!", {
+              icon: "success",
+            });
+            location.reload();
+           
+        }
+    }); 
+      } else {
+        swal("Operacion cancelada");
+      }
+    });
+
+    
+}
