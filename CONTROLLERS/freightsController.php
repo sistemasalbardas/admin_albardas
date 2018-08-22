@@ -69,12 +69,10 @@
 		{
 			
 			$this->freights->set('f_flete', $id);
-
 			$data = $this->freights->list_payments();
 			while ($row = mysqli_fetch_array($data)) {
 				$p += $row['amount'];
 			}
-			
 			return $p;
 		}
 		public function newPayment(){
