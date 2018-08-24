@@ -67,6 +67,7 @@ $(document).ready(function() {
         entonces el path lo igualamos a la posicion 2 del arreglo
         [0,1,2]
     */
+
     if(url_array.length==3){
       pathName = url_array[2];
     }else{
@@ -77,7 +78,7 @@ $(document).ready(function() {
       // [2] = drivers
       pathName = url_array[1];
     }
-    // console.log(pathName); 
+   // console.log(pathName); 
     
     switch (pathName) {
       case 'control':
@@ -460,6 +461,45 @@ $(document).ready(function() {
       break; 
       case 'address': 
       $("table#tableCostumersAddress") 
+        .dataTable({
+          aProcessing: true, //Activamos el procesamiento del datatables
+          aServerSide: true, //Paginacion y filtrado realizados por el servidor
+          dom:
+            "<'row'<'text-center ' <''B>>>" +
+            "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+            "<'row'<'col-lg-12'tr>>" +
+            "<'row'<'col-sm-5'i><'col-sm-7'p>>", 
+          buttons: [
+            {
+              extend: "excelHtml5",
+              text:'<span class="icon-microsoftexcel"></span>',
+              className: "btn btn-success btn-lg",
+              title: "Reporte de Direcciones de Clientes",
+              exportOptions: {
+                columns: [0, 1, 2, 3]
+              },
+              titleAttr: "Excel"
+            },
+            {
+              extend: "pdfHtml5",
+              text:'<span class="icon-picture_as_pdf"></span>',
+              className: "btn btn-danger btn-lg",
+              title: "Reporte de Direcciones de Clientes",
+              exportOptions: {
+                columns: [0, 1, 2, 3]
+              },
+              titleAttr: "PDF"
+            }
+          ],
+          language: {
+            url:
+              "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+          }
+        })
+        .DataTable();
+      break; 
+       case 'referrals': 
+         $('table#tableProducts')
         .dataTable({
           aProcessing: true, //Activamos el procesamiento del datatables
           aServerSide: true, //Paginacion y filtrado realizados por el servidor

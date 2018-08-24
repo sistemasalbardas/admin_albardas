@@ -62,7 +62,7 @@ function getEmploye(obj){
     var nCharge = data.nCharge;
     var tab = data.tab;
     var employe = $(obj).val();
-    location.href= URL+"referrals?nCharge="+nCharge+"&tab="+tab+"&employe="+employe+"&costumer=0";
+    location.href= URL+"referrals/?nCharge="+nCharge+"&tab="+tab+"&employe="+employe+"&costumer=0";
 }
 
 function setDates(){
@@ -82,7 +82,7 @@ function getCostumer(obj){
     var nCharge = data.nCharge;
     var tab = data.tab;
     var employe = data.employe;
-    location.href= URL+"referrals?nCharge="+nCharge+"&tab="+tab+"&employe="+employe+"&costumer="+val+"";
+    location.href= URL+"referrals/?nCharge="+nCharge+"&tab="+tab+"&employe="+employe+"&costumer="+val+"";
     
 }
 function validateQuantity(obj) {
@@ -126,7 +126,7 @@ function validateEntry(obj) {
 function nCharge(obj){
         
     var tab = $(obj).val();
-    location.href= URL+"referrals?nCharge="+tab+"&tab=1&employe=3&costumer=0&transport=0&driver=0&box=0&box_2=0&truck=0&add=0";
+    location.href= URL+"referrals/?nCharge="+tab+"&tab=1&employe=3&costumer=0&transport=0&driver=0&box=0&box_2=0&truck=0&add=0";
 
 }
 
@@ -158,7 +158,7 @@ function setUrl(obj){
              parameters[par] = val;
         }
     }
-    location.href= URL+"referrals?nCharge="+parameters['nCharge']+"&tab="+parameters['tab']+"&employe="+parameters['employe']+"&costumer="+parameters['costumer']+"&transport="+parameters['transport']+"&driver="+parameters['driver']+"&box="+parameters['box']+"&box_2="+parameters['box_2']+"&truck="+parameters['truck']+"&add="+parameters['add']+"";
+    location.href= URL+"referrals/?nCharge="+parameters['nCharge']+"&tab="+parameters['tab']+"&employe="+parameters['employe']+"&costumer="+parameters['costumer']+"&transport="+parameters['transport']+"&driver="+parameters['driver']+"&box="+parameters['box']+"&box_2="+parameters['box_2']+"&truck="+parameters['truck']+"&add="+parameters['add']+"";
 }
 
 
@@ -586,13 +586,13 @@ function generateRemision(obj){
 
                 setTimeout(redirect, 3000);    
                 function redirect(){
-                    location.href= URL+"referrals";
+                    location.href= URL+"referrals/";
                 }
             }else{
                 setTimeout(redirect2, 2000);    
                 function redirect2(){
                    // location.href= URL+"referrals?nCharge="+nCharge+"&tab="+newTab+"&employe=3&costumer=0";
-                    location.href= URL+"referrals?nCharge="+nCharge+"&tab="+newTab+"&employe="+parameters['employe']+"&costumer="+parameters['costumer']+"&transport="+parameters['transport']+"&driver="+parameters['driver']+"&box="+parameters['box']+"&box_2="+parameters['box_2']+"&truck="+parameters['truck']+"&add="+parameters['add']+"";
+                    location.href= URL+"referrals/?nCharge="+nCharge+"&tab="+newTab+"&employe="+parameters['employe']+"&costumer="+parameters['costumer']+"&transport="+parameters['transport']+"&driver="+parameters['driver']+"&box="+parameters['box']+"&box_2="+parameters['box_2']+"&truck="+parameters['truck']+"&add="+parameters['add']+"";
 
                 }
                
