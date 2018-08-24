@@ -244,7 +244,7 @@
 															<th class="s12">$ 0.00</th>
 															<th class="s12 text-center">
 																<a href="<?= $id;?>" onclick="eraseP(this);" class="tool">
-																	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+																	<i class="btn btn-danger btn-xs s16 btn_padd"><span class="icon-trash"></span></i>
 																	<span class="tooltext">Eliminar</span>
 																</a>
 															</th>

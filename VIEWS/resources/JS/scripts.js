@@ -228,7 +228,7 @@ $(document).ready(function() {
               buttons: [
                     {
                       extend: 'excelHtml5',
-                      text: '<strong><i class="fa fa-file-excel-o"></i> Excel</strong>',
+                      text: '<strong><i class=""></i> Excel</strong> <span class="icon-microsoftexcel White"></span>',
                       className: 'btn btn-success',
                       title: "Reporte de Usuarios",
                       exportOptions: {
@@ -238,7 +238,7 @@ $(document).ready(function() {
                     },
                     {
                       extend: 'pdfHtml5',
-                      text: '<strong><i class="fa fa-file-pdf-o"></i> PDF</strong>',
+                      text: '<strong><i class=""></i> PDF</strong> <span class="icon-picture_as_pdf"></span>',
                       className: 'btn btn-danger',
                       title: "Reporte de Usuarios",
                       exportOptions: {

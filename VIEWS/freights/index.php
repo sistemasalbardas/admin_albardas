@@ -61,18 +61,18 @@
 								  <th>
 								  	<?php if ($edit == 1) { ?>
 									  <a href="delete/?id=<?= $row['id'];?>" onclick="erase(this);" class="tool">
-										   <i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+										   <i class="btn btn-danger btn-xs s16 btn_padd"><span class="icon-trash"></span></i>
 										  <span class="tooltext">Eliminar</span>
 										   
 									  </a>
 									<?php } ?>
 									<?php if ($delete == 1) { ?>
 									  <a href="edit/?id=<?= $row['id'];?>" class="tool">
-										  <i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+										  <i class="btn btn-warning btn-xs s16 btn_padd"><span class="icon-pencil"></span></i>
 										  <span class="tooltext">Editar</span>	 
 									  </a>
 									  <a href="status/?id=<?= $row['f_freight'];?>" class="tool">
-										  <i class="btn btn-success btn-xs fas fa-dollar-sign btn_padd"></i>
+										  <i class="btn btn-success btn-xs s16 btn_padd"><span class="icon-attach_money"></span></i>
 										  <span class="tooltext">Status</span>	 
 									  </a>
 									<?php } ?>

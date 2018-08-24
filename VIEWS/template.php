@@ -110,9 +110,9 @@
 	<!-- AdminLTE App -->
 	<script src="<?= URL?>/VIEWS/dist/js/adminlte.min.js"></script>
 	<script>
-	 $("#datepicker").datepicker($.datepicker.regional[ "es" ]);
-	 $('#datetimepicker3').datetimepicker({ format: 'LT'});
-     $('#datetimepicker3').datetimepicker({ pickDate: false});
+	//  $("#datepicker").datepicker($.datepicker.regional[ "es" ]);
+	//  $('#datetimepicker3').datetimepicker({ format: 'LT'});
+    //  $('#datetimepicker3').datetimepicker({ pickDate: false});
 	</script>
 </body>
 </html>

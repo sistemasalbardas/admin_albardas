@@ -3,6 +3,9 @@ body{
   font-family: 'Source Sans Pro', sans-serif !important;
   /*overflow: hidden!important;*/
 }
+.White{
+  color: white!important;
+}
 
 nav.menuNav{
 	position: fixed;
