@@ -34,7 +34,7 @@
 									<table id="tableTransporters">
 										<thead>
 											<tr>
-												<td>ID</td>
+												<td>IDD</td>
 												<td>RAZÓN SOCIAL</td>
 												<td>RFC	</td>
 												<td>TELEFONO</td>
