@@ -11,8 +11,8 @@
 
 	    <!-- form start -->
 	    <form action="<?=URL?>freights/editpay/" method="post" autocomplete="off">
-	    	<input type="text" name="f_freight" id="" value="<?=$row['f_freight']?>">
-	    	<input type="text" name="id" value="<?= $row['id']?>">
+	    	<input type="hidden" name="f_freight" id="" value="<?=$row['f_freight']?>">
+	    	<input type="hidden" name="id" value="<?= $row['id']?>">
 	      	<div class="box-body">
 		        <div class="form-group">
 		          	<label for="date">Fecha:  </label>
