@@ -23,8 +23,8 @@
 					</div>
 				</div>
 				<div class="clear"></div>
-				<div class="containerTable table-responsive">
-							<table id="tableCostumers">
+				<div class="containerTable table-responsive"> 
+							<table id="tableTransportersBox">
 								<thead>
 									<tr>
 										<td>ID</td>
@@ -48,13 +48,13 @@
 											<th>
 												<?php if ($delete == 1) { ?>
 													<a href="<?=URL?>transporters/deleteBox/?id=<?= $row['id'];?>" onclick="erase(this);" class="tool">
-														<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+														<i class="btn btn-danger btn-xs s16"><span class="icon-trash"></span></i>
 														<span class="tooltext">Eliminar</span>
 														
 													</a>
 												<?php } ?>
 												<a href="<?=URL?>transporters/editBox/?id_box=<?= $row['id'];?>&id=<?= $_GET['id'] ?>&nameTransport=<?= $_GET['name'] ?>" class="tool">
-													<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+													<i class="btn btn-warning btn-xs s16"><span class="icon-pencil"></span></i>
 													<span class="tooltext">Editar</span>
 												</a>
 										</th>

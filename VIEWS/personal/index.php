@@ -36,7 +36,7 @@
 			<div class="mainContent">
 				<?php if ($write == 1) {?>
 					<button class="btn btn-primary sblue" onclick="openModal(this,'saveGroup');">
-						<b>Nueva cuadrilla</b>
+						<b>Nueva cuadrilla</b><span class="icon-add s16"></span>
 					</button>
 				<?php } ?>
 				<div class="clear"></div>
@@ -57,7 +57,7 @@
 						<div class="row">
 							<?php if ($write == 1) {?>
 								<div class="col-lg-2 padd10 ">
-									<button onclick="openModal(this,'searchWork');" class="btn btn-success sgreen">	Agregar trabajador
+									<button onclick="openModal(this,'searchWork');" class="btn btn-success sgreen">	Agregar trabajador 
 									</button>
 								</div>
 								<div class="col-lg-2 padd10">

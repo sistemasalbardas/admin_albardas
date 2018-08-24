@@ -44,7 +44,7 @@
        
 
              <a href="<?=URL?>VIEWS/pdf_files/referrals/<?= $data['file_remision']; ?>" target="_blank" class="tool no-print" download>
-                <i class="btn btn-success btn-xs fas fa-dollar-sign btn_padd"></i>
+                <i class="btn btn-success btn-xs s16"><span class="icon-attach_money"></span></i>
                 <span class="tooltext">Remision</span>   
               </a>
               <?php if (!empty($data['bills'])){ ?>

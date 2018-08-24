@@ -24,13 +24,13 @@
 			<div class="row">
 				<div class="col-lg-2">
 					<?php if ($write == 1) { ?>
-						<a href="<?= URL?>costumers/addAddress/?id=<?=$_GET['id']?>&name=<?=$_GET['name']?>" class="btn btn-primary sblue"><i class="fas fa-plus"></i> Nueva direccion </a>
+						<a href="<?= URL?>costumers/addAddress/?id=<?=$_GET['id']?>&name=<?=$_GET['name']?>" class="btn btn-primary sblue"><span class="icon-add_location"></span> Nueva direccion </a>
 					<?php } ?>
 					
 				</div>
 				<div class="clear"></div>
 			</div>
-			<table id="tableCostumers" class="table bgWhite">
+			<table id="tableCostumersAddress" class="table bgWhite">
 				<thead>
 					<tr>
 						<th scope="col" >ID</th>
@@ -51,13 +51,13 @@
 					      	<th >
 					      		<?php if ($delete == 1) { ?>
 						      		<a href="<?=URL?>costumers/deleteAddres/?id=<?= $row['id'];?>" onclick="deleteAddress(this);" class="tool">
-					      			 	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
+					      			 	<i class="btn btn-danger btn-xs s16"><span class="icon-trash"></span></i>
 						      			<span class="tooltext">Eliminar</span>
 						      		</a>
 					      		<?php } ?>
 					      		<?php if ($edit == 1) { ?>
 						      		<a href="<?=URL?>costumers/editAddress/?id=<?= $row['id'];?>" onclick=""  class="tool">
-						      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
+						      			<i class="btn btn-warning btn-xs s16"><span class="icon-pencil"></span></i>
 						      			<span class="tooltext">Editar</span>
 						      		</a>
 					      		<?php } ?>

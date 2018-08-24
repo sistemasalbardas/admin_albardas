@@ -118,8 +118,8 @@
 										</div>
 									<div class="block text-center">	
 										<div class="clear">	</div>
-										<button onclick="openModal(this,'searchP');" class="btn blue s14 center	" type="button">	
-											Agregar Productos
+										<button onclick="openModal(this,'searchP');" class="btn center btn-primary sblue" type="button">	
+											Agregar Productos <span class="icon-add s16"></span>
 										</button>
 										<div class="clear">	</div>
 
@@ -498,7 +498,7 @@
 						</div>
 					</div>
 
-					<button class="btn Green s14" type="submit" >
+					<button class="btn s14 btn-success sgreen" type="submit" >
 						<b>Generar remision</b>
 					</button>
 				</form>

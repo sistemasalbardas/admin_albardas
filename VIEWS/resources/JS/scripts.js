@@ -60,13 +60,27 @@ $(document).ready(function() {
     let url_limpia = url.substr(0,url.lastIndexOf('/'));
     // Creamos el arreglo con split
     let url_array= url_limpia.split('/');
-    // console.log('array url: '+url_array[1]);
+    // console.log('array url: '+url_array.length); 
     // Obtenemos el path de la posicion del arreglo
-    let pathName = url_array[1];
-    console.log(pathName);
+    let pathName; 
+    /* si el arreglo de la url es igual a 3
+        entonces el path lo igualamos a la posicion 2 del arreglo
+        [0,1,2]
+    */
+    if(url_array.length==3){
+      pathName = url_array[2];
+    }else{
+      // de lo contrario si por defecto como ya se sabe
+      // se utiliza la posicion 1 es decir [0,1]
+      // [0]= admin_albardas
+      // [1] = transporters
+      // [2] = drivers
+      pathName = url_array[1];
+    }
+    // console.log(pathName); 
     
     switch (pathName) {
-      case 'referrals':
+      case 'control':
           $('table#tableReferrals').dataTable(
           {
             "aProcessing": true,//Activamos el procesamiento del datatables
@@ -78,8 +92,8 @@ $(document).ready(function() {
             buttons: [
                   {
                     extend: 'excelHtml5',
-                    text: '<strong><i class="fas fa-file"></i> Excel</strong>',
-                    className: 'btn btn-success',
+                    text: '<span class="icon-microsoftexcel"></span>',
+                    className: 'btn btn-success btn-lg',
                     title: "Reporte de Remisiones",
                     exportOptions: {
                     columns: [ 0, 1, 2, 3, 4]
@@ -88,8 +102,8 @@ $(document).ready(function() {
                   },
                   {
                     extend: 'pdfHtml5',
-                    text: '<strong><i class="fas fa-file-pdf-o"></i> PDF</strong>',
-                    className: 'btn btn-danger',
+                    text: '<span class="icon-picture_as_pdf"></span>',
+                    className: 'btn btn-danger btn-lg',
                     title: "Reporte de Remisiones",
                     exportOptions: {
                       columns: [ 0, 1, 2, 3, 4]
@@ -115,8 +129,8 @@ $(document).ready(function() {
             buttons: [
                   {
                     extend: 'excelHtml5',
-                    text: '<strong><i class="fa fa-file-excel-o"></i> Excel</strong>',
-                    className: 'btn btn-success',
+                    text: '<span class="icon-microsoftexcel"></span>',
+                    className: 'btn btn-success btn-lg',
                     title: "Reporte de Personal",
                     exportOptions: {
                     columns: [ 0, 1, 2, 3, 4]
@@ -125,8 +139,8 @@ $(document).ready(function() {
                   },
                   {
                     extend: 'pdfHtml5',
-                    text: '<strong><i class="fa fa-file-pdf-o"></i> PDF</strong>',
-                    className: 'btn btn-danger',
+                    text: '<span class="icon-picture_as_pdf"></span>',
+                    className: 'btn btn-danger btn-lg',
                     title: "Reporte de Personal",
                     exportOptions: {
                       columns: [ 0, 1, 2, 3, 4]
@@ -152,8 +166,8 @@ $(document).ready(function() {
             buttons: [
                   {
                     extend: 'excelHtml5',
-                    text: '<strong><i class="fa fa-file-excel-o"></i> Excel</strong>',
-                    className: 'btn btn-success',
+                    text: '<span class="icon-microsoftexcel"></span>',
+                    className: 'btn btn-success btn-lg',
                     title: "Reporte de Productos",
                     exportOptions: {
                     columns: [ 0, 1, 2, 3, 4, 5, 6]
@@ -162,8 +176,8 @@ $(document).ready(function() {
                   },
                   {
                     extend: 'pdfHtml5',
-                    text: '<strong><i class="fa fa-file-pdf-o"></i> PDF</strong>',
-                    className: 'btn btn-danger',
+                    text: '<span class="icon-picture_as_pdf"></span>',
+                    className: 'btn btn-danger btn-lg',
                     title: "Reporte de Productos",
                     exportOptions: {
                       columns: [ 0, 1, 2, 3, 4, 5, 6 ]
@@ -176,8 +190,7 @@ $(document).ready(function() {
             },
             
           }).DataTable();
-      break;
-      
+      break;    
       case 'freights':
           $('table#tableFreights').dataTable(
             {
@@ -190,8 +203,8 @@ $(document).ready(function() {
               buttons: [
                     {
                       extend: 'excelHtml5',
-                      text: '<strong><i class="fa fa-file-excel-o"></i> Excel</strong>',
-                      className: 'btn btn-success',
+                      text: '<span class="icon-microsoftexcel"></span>',
+                      className: 'btn btn-success btn-lg',
                       title: "Reporte de Fletes",
                       exportOptions: {
                       columns: [ 0, 1, 2, 3, 4, 5]
@@ -200,8 +213,8 @@ $(document).ready(function() {
                     },
                     {
                       extend: 'pdfHtml5',
-                      text: '<strong><i class="fa fa-file-pdf-o"></i> PDF</strong>',
-                      className: 'btn btn-danger',
+                      text: '<span class="icon-picture_as_pdf"></span>',
+                      className: 'btn btn-danger btn-lg',
                       title: "Reporte de Fletes",
                       exportOptions: {
                         columns: [ 0, 1, 2, 3, 4, 5]
@@ -215,7 +228,6 @@ $(document).ready(function() {
               
           }).DataTable();
       break;
-
       case 'users':
           $('table#tableUsers').dataTable(
             {
@@ -228,8 +240,8 @@ $(document).ready(function() {
               buttons: [
                     {
                       extend: 'excelHtml5',
-                      text: '<strong><i class=""></i> Excel</strong> <span class="icon-microsoftexcel White"></span>',
-                      className: 'btn btn-success',
+                      text: '<span class="icon-microsoftexcel"></span>',
+                      className: 'btn btn-success btn-lg',
                       title: "Reporte de Usuarios",
                       exportOptions: {
                       columns: [ 0, 1, 2, 3, 4]
@@ -238,8 +250,8 @@ $(document).ready(function() {
                     },
                     {
                       extend: 'pdfHtml5',
-                      text: '<strong><i class=""></i> PDF</strong> <span class="icon-picture_as_pdf"></span>',
-                      className: 'btn btn-danger',
+                      text: '<span class="icon-picture_as_pdf"></span>',
+                      className: 'btn btn-danger btn-lg',
                       title: "Reporte de Usuarios",
                       exportOptions: {
                         columns: [ 0, 1, 2, 3, 4]
@@ -265,8 +277,8 @@ $(document).ready(function() {
               buttons: [
                     {
                       extend: 'excelHtml5',
-                      text: '<strong><i class="fa fa-file-excel-o"></i> Excel</strong>',
-                      className: 'btn btn-success',
+                      text: '<span class="icon-microsoftexcel"></span>',
+                      className: 'btn btn-success btn-lg',
                       title: "Reporte de Clientes",
                       exportOptions: {
                       columns: [ 0, 1, 2, 3, 4]
@@ -275,8 +287,8 @@ $(document).ready(function() {
                     },
                     {
                       extend: 'pdfHtml5',
-                      text: '<strong><i class="fa fa-file-pdf-o"></i> PDF</strong>',
-                      className: 'btn btn-danger',
+                      text: '<span class="icon-picture_as_pdf"></span>',
+                      className: 'btn btn-danger btn-lg',
                       title: "Reporte de Clientes",
                       exportOptions: {
                         columns: [ 0, 1, 2, 3, 4]
@@ -290,7 +302,6 @@ $(document).ready(function() {
               
           }).DataTable();
       break;
-
       case'transporters':
           $('table#tableTransporters').dataTable(
             {
@@ -303,8 +314,8 @@ $(document).ready(function() {
               buttons: [
                     {
                       extend: 'excelHtml5',
-                      text: '<strong><i class="fa fa-file-excel-o"></i> Excel</strong>',
-                      className: 'btn btn-success',
+                      text: '<span class="icon-microsoftexcel"></span>',
+                      className: 'btn btn-success btn-lg',
                       title: "Reporte de Transportistas",
                       exportOptions: {
                       columns: [ 0, 1, 2, 3 ]
@@ -313,8 +324,8 @@ $(document).ready(function() {
                     },
                     {
                       extend: 'pdfHtml5',
-                      text: '<strong><i class="fa fa-file-pdf-o"></i> PDF</strong>',
-                      className: 'btn btn-danger',
+                      text: '<span class="icon-picture_as_pdf"></span>',
+                      className: 'btn btn-danger btn-lg',
                       title: "Reporte de Transportistas",
                       exportOptions: {
                         columns: [ 0, 1, 2, 3 ]
@@ -328,7 +339,164 @@ $(document).ready(function() {
               
           }).DataTable();
       break;
-
+         
+      case 'drivers':
+        $("table#tableTransportersDrivers") 
+          .dataTable({
+            aProcessing: true, //Activamos el procesamiento del datatables
+            aServerSide: true, //Paginacion y filtrado realizados por el servidor
+            dom:
+              "<'row'<'text-center ' <''B>>>" +
+              "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+              "<'row'<'col-lg-12'tr>>" +
+              "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+            buttons: [
+              {
+                extend: "excelHtml5",
+                text:
+                  '<span class="icon-microsoftexcel"></span>',
+                className: "btn btn-success btn-lg",
+                title: "Reporte de Choferes",
+                exportOptions: {
+                  columns: [0, 1, 2, 3]
+                },
+                titleAttr: "Excel"
+              },
+              {
+                extend: "pdfHtml5",
+                text:'<span class="icon-picture_as_pdf"></span>',
+                className: "btn btn-danger btn-lg",
+                title: "Reporte de Choferes",
+                exportOptions: {
+                  columns: [0, 1, 2, 3]
+                },
+                titleAttr: "PDF"
+              }
+            ],
+            language: {
+              url:
+                "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+            }
+          })
+          .DataTable();
+      break;
+      case 'box': 
+      $("table#tableTransportersBox")  
+        .dataTable({
+          aProcessing: true, //Activamos el procesamiento del datatables
+          aServerSide: true, //Paginacion y filtrado realizados por el servidor
+          dom:
+            "<'row'<'text-center ' <''B>>>" +
+            "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+            "<'row'<'col-lg-12'tr>>" +
+            "<'row'<'col-sm-5'i><'col-sm-7'p>>", 
+          buttons: [
+            {
+              extend: "excelHtml5",
+              text: '<span class="icon-microsoftexcel"></span>',
+              className: "btn btn-success btn-lg",
+              title: "Reporte de Cajas",
+              exportOptions: {
+                columns: [0, 1, 2, 3, 4]
+              },
+              titleAttr: "Excel"
+            },
+            {
+              extend: "pdfHtml5",
+              text:'<span class="icon-picture_as_pdf"></span>',
+              className: "btn btn-danger btn-lg",
+              title: "Reporte de Cajas",
+              exportOptions: {
+                columns: [0, 1, 2, 3, 4]
+              },
+              titleAttr: "PDF"
+            }
+          ],
+          language: {
+            url:
+              "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+          }
+        })
+        .DataTable();
+      break; 
+      case 'trucks': 
+      $("table#tableTransportersTrucks") 
+        .dataTable({
+          aProcessing: true, //Activamos el procesamiento del datatables
+          aServerSide: true, //Paginacion y filtrado realizados por el servidor
+          dom:
+            "<'row'<'text-center ' <''B>>>" +
+            "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+            "<'row'<'col-lg-12'tr>>" +
+            "<'row'<'col-sm-5'i><'col-sm-7'p>>", 
+          buttons: [
+            {
+              extend: "excelHtml5",
+              text:'<span class="icon-microsoftexcel"></span>',
+              className: "btn btn-success btn-lg",
+              title: "Reporte de Trailers",
+              exportOptions: {
+                columns: [0, 1, 2, 3, 4]
+              },
+              titleAttr: "Excel"
+            },
+            {
+              extend: "pdfHtml5",
+              text:'<span class="icon-picture_as_pdf"></span>',
+              className: "btn btn-danger btn-lg",
+              title: "Reporte de Trailers",
+              exportOptions: {
+                columns: [0, 1, 2, 3, 4]
+              },
+              titleAttr: "PDF"
+            }
+          ],
+          language: {
+            url:
+              "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+          }
+        })
+        .DataTable();
+      break; 
+      case 'address': 
+      $("table#tableCostumersAddress") 
+        .dataTable({
+          aProcessing: true, //Activamos el procesamiento del datatables
+          aServerSide: true, //Paginacion y filtrado realizados por el servidor
+          dom:
+            "<'row'<'text-center ' <''B>>>" +
+            "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+            "<'row'<'col-lg-12'tr>>" +
+            "<'row'<'col-sm-5'i><'col-sm-7'p>>", 
+          buttons: [
+            {
+              extend: "excelHtml5",
+              text:'<span class="icon-microsoftexcel"></span>',
+              className: "btn btn-success btn-lg",
+              title: "Reporte de Direcciones de Clientes",
+              exportOptions: {
+                columns: [0, 1, 2, 3]
+              },
+              titleAttr: "Excel"
+            },
+            {
+              extend: "pdfHtml5",
+              text:'<span class="icon-picture_as_pdf"></span>',
+              className: "btn btn-danger btn-lg",
+              title: "Reporte de Direcciones de Clientes",
+              exportOptions: {
+                columns: [0, 1, 2, 3]
+              },
+              titleAttr: "PDF"
+            }
+          ],
+          language: {
+            url:
+              "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+          }
+        })
+        .DataTable();
+      break; 
       // No se sabe cual es????
       // case 'supplies':
       //     $('table#tableSupplies').dataTable(
