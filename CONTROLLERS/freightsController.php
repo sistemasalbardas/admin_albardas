@@ -75,8 +75,9 @@
 			}
 			return $p;
 		}
-		public function newPayment(){
+		public function newpayment(){
 			if ($_POST) {
+				error_log(print_r($_POST,true));
 				
 				$this->freights->set('f_freight', $_POST['f_freight']);
 				$this->freights->set('date', $_POST['date']);
@@ -84,10 +85,12 @@
 				$this->freights->set('amount', $_POST['amount']);
 				$this->freights->set('coments', $_POST['coments']);
 				$this->freights->new_payment();
+
+		
 			}
 
 		}
-		public function chargeInvoice(){
+		public function chargeinvoice(){
 		
 			$uploadDirectory = ROOT."VIEWS".DS."pdf_files".DS."freights_bills".DS;
 

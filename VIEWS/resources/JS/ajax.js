@@ -30,8 +30,10 @@ $("input#flete").change(function () {
 });
 
 ///LOCAL-> 
-const URL = "http://localhost/admin_albardas/";    
-//const URL = "http://lasalbardas.com/ADMIN/";  
+
+const URL = "http://192.168.50.110/admin_albardas/";    
+//const URL = "http://lasalbardas.com/TESTS/";  
+
 
  function getGET()
 {
@@ -901,7 +903,7 @@ function newPayment(obj){
     var formData = new FormData($(obj)[0]);
 
     $.ajax({
-        url: URL+"freights/newPayment/",
+        url: URL+"freights/newpayment/",
         type: 'POST',
         data: formData,
         contentType: false,
@@ -946,7 +948,7 @@ function saveBill(obj){
     event.preventDefault();
     var formData = new FormData($(obj)[0]);
     $.ajax({
-        url: URL+"freights/chargeInvoice/",
+        url: URL+"freights/chargeinvoice/",
         type: 'POST',
         data: formData,
         contentType: false,
