@@ -39,7 +39,7 @@
 												<td>RFC	</td>
 												<td>TELEFONO</td>
 								
-												<td>OPCIONES Extras</td>
+												<td>ACCIONES</td>
 											</tr>
 										</thead>	
 										<tbody>

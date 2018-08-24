@@ -3,6 +3,13 @@ body{
   font-family: 'Source Sans Pro', sans-serif !important;
   /*overflow: hidden!important;*/
 }
+
+.sidebar.slimScrollDiv>.user-panel{
+  font-size: 17px!important;
+}
+.sidebar.slimScrollDiv>.sidebar-menu.tree{
+   font-size: 15px!important;
+}
 .White{
   color: white!important;
 }

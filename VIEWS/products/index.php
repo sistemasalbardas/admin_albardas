@@ -25,7 +25,7 @@
 			<div class="row">
 				<?php if ($write == 1) { ?>
 					<div class="col-lg-2  ">
-						<a href="<?= URL?>products/add/" class="btn btn-primary sblue">Nuevo producto</a>
+						<a href="<?= URL?>products/add/" class="btn btn-primary sblue">Nuevo producto <span class="icon-add s16"></span></a>
 					</div>
 				<?php } ?>
 			</div>
