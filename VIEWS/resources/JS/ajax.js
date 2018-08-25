@@ -31,7 +31,7 @@ $("input#flete").change(function () {
 
 ///LOCAL-> 
 
-const URL = "http://192.168.50.110/admin_albardas/";    
+const URL = "http://localhost/admin_albardas/";    
 //const URL = "http://lasalbardas.com/TESTS/";  
 
 

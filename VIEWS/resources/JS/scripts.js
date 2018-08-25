@@ -509,26 +509,26 @@ $(document).ready(function() {
             "<'row'<'col-lg-12'tr>>" +
             "<'row'<'col-sm-5'i><'col-sm-7'p>>", 
           buttons: [
-            {
-              extend: "excelHtml5",
-              text:'<span class="icon-microsoftexcel"></span>',
-              className: "btn btn-success btn-lg",
-              title: "Reporte de Direcciones de Clientes",
-              exportOptions: {
-                columns: [0, 1, 2, 3]
-              },
-              titleAttr: "Excel"
-            },
-            {
-              extend: "pdfHtml5",
-              text:'<span class="icon-picture_as_pdf"></span>',
-              className: "btn btn-danger btn-lg",
-              title: "Reporte de Direcciones de Clientes",
-              exportOptions: {
-                columns: [0, 1, 2, 3]
-              },
-              titleAttr: "PDF"
-            }
+            // {
+            //   extend: "excelHtml5",
+            //   text:'<span class="icon-microsoftexcel"></span>',
+            //   className: "btn btn-success btn-lg",
+            //   title: "Reporte de Direcciones de Clientes",
+            //   exportOptions: {
+            //     columns: [0, 1, 2, 3]
+            //   },
+            //   titleAttr: "Excel"
+            // },
+            // {
+            //   extend: "pdfHtml5",
+            //   text:'<span class="icon-picture_as_pdf"></span>',
+            //   className: "btn btn-danger btn-lg",
+            //   title: "Reporte de Direcciones de Clientes",
+            //   exportOptions: {
+            //     columns: [0, 1, 2, 3]
+            //   },
+            //   titleAttr: "PDF"
+            // }
           ],
           language: {
             url:
