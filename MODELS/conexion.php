@@ -41,14 +41,11 @@
 
 		}
 
-
-
 		public function consultaSimple($sql){
 
 			$this->con->query($sql);
 
 		}
-
 
 
 		public function consultaRetorno($sql){

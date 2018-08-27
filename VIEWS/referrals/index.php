@@ -244,7 +244,7 @@
 															<th class="s12">$ 0.00</th>
 															<th class="s12 text-center">
 																<a href="<?= $id;?>" onclick="eraseP(this);" class="tool">
-																	<i class="btn btn-danger btn-xs s16 btn_padd"><span class="icon-trash"></span></i>
+																	<i class="btn btn-danger btn-xs fas fa-trash btn_padd"></i>
 																	<span class="tooltext">Eliminar</span>
 																</a>
 															</th>
@@ -354,9 +354,9 @@
 													<select name="truck" id="truck" class="block form-control form-control-sm selectpicker" data-live-search="true" onchange="setUrl(this);">
 														<option value=""><?= $truck['brand'];?></option>
 														<?php while ($row = mysqli_fetch_array($trucks)) {?>
-															<option value="<?= $row['id'];?>"><?= $row['brand']. '-' .$row['model'].'-'.$row['color'];?> </option>
+															<option value="<?= $row['id'];?>"><?= $row['brand']?></option>
 														<?php } ?>
-														</select>
+													</select>
 												</div>
 											</div>	
 										</div>
@@ -406,7 +406,8 @@
 												<label for="sel" class="control-label col-md-4">Selecciona: </label>
 												<div class="col-md-8">
 													<select name="box" id="box" class="block form-control form-control-sm selectpicker" data-live-search="true" onchange="setUrl(this);">
-														<option value="<?= $box['id']?>"><?= $box['type']." - ".$box['num_econ'];?></option>
+														<option value="<?= $box['id']?>">
+															<?= $box['type']." - ".$box['num_econ'];?></option>
 														<?php while ($row = mysqli_fetch_array($boxes)) {?>
 															<option value="<?= $row['id']?>"><?= $row['type']. "-".$row['num_econ']?></option>
 														<?php } ?>
@@ -628,8 +629,8 @@
 				<tr>
 					<td>Id</td>
 					<td>Nombre</td>
+					<td>Disponible</td>
 					<td>Marca</td>
-					<td>Cantidad</td>
 					<td>Acciones</td>
 
 				</tr>

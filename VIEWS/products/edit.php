@@ -56,6 +56,8 @@
 							<option value="J"> J</option>
 						</optgroup>
 					</select>
+
+				
 		        </div>
 		        <div class="form-group">
 		          <label for="pack">Empaque:</label>
@@ -72,6 +74,7 @@
 							<option value="ARPILLA MEXICAN">ARPILLA MEXICAN </option>
 						</optgroup>
 					</select>
+					
 		        </div>
 		        <div class="form-group">
 		        	<label for="brand">Marca:</label>
@@ -85,6 +88,7 @@
 						<option value="CHILOSO">CHILOSO </option>
 						<option value="CASCO"> CASCO</option>
 					</select>
+					
 		        </div>	
 		        <div class="form-group">
 		        	<div class="row">
@@ -93,6 +97,7 @@
 							<label for="weight">Peso:</label>
 							<input type="number" id="weight" name="weight" class="form-control" required="" value="<?= $row['weight']?>">
 						</div>
+						
 						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
 							<label for=""> <br></label>
 							<select name="unit_measure" id="unit_measure" class="form-control" required="">

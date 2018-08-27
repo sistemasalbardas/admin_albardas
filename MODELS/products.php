@@ -40,7 +40,7 @@
 
 		public function save()
 		{
-			$sql = "INSERT INTO products (id, name, quality, size, pack, brand, weight, unit_measure) VALUES (null, '{$this->name}', '{$this->quality}','{$this->size}','{$this->pack}','{$this->brand}','{$this->weight}', '$this->unit_measure')";
+			$sql = "INSERT INTO products (id, name, quality, size, pack, brand, weight, unit_measure) VALUES (null, '{$this->name}', '{$this->quality}','{$this->size}','{$this->pack}','{$this->brand}','{$this->weight}', '{$this->unit_measure}')";
 			$this->con->consultaSimple($sql);
 		}
 
@@ -55,8 +55,16 @@
 		public function update()
 		{
 			///error_log(print_r($_POST,true));
-			$sql = "UPDATE products SET name = '{$this->name}', type_pack = '{$this->type_pack}' WHERE id = '{$this->id}'";
+			$sql = "UPDATE products SET 
+				name = '{$this->name}', 
+				quality = '{$this->quality}', 
+				size = '{$this->size}', 
+				pack = '{$this->pack}',
+				brand = '{$this->brand}',
+				weight = '{$this->weight}',
+				unit_measure = '{$this->unit_measure}' WHERE id = '{$this->id}'";
 			$this->con->consultaSimple($sql);
+
 		
 		}
 

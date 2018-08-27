@@ -28,7 +28,7 @@
 			<?php } ?>
 			<div class="clear"></div>
 
-			<table id="tableReferrals" class="table bgWhite">
+			<table id="tableCostumers" class="table bgWhite">
 				<thead>
 					<tr>
 						<th scope="col">ID</th>
@@ -50,21 +50,21 @@
 					      	<th><?= $row['f_charge']; ?></th>
 					      	<th>
 					      		<a href="<?=URL?>VIEWS/pdf_files/referrals/<?= $row['file_remision']; ?>" target="_blank" class="tool" download>
-							      	<i class="btn btn-primary btn-xs btn_padd s16"><span class="icon-clipboard"></span></i>
+							      	<i class="btn btn-primary btn-xs fas fa-file-invoice btn_padd s16"></i>
 					      			<span class="tooltext">Remisión</span>
 								</a>
 								<a href="<?=URL?>VIEWS/pdf_files/responsives/<?= $row['file_responsive']; ?>" target="_blank" class="tool" download>
-							      	<i class="btn btn-primary btn-xs btn_padd s16"><span class="icon-assignment"></span></i>
+							      	<i class="btn btn-primary btn-xs fas fa-file-alt  btn_padd s16"></i>
 					      			<span class="tooltext">Responsiva</span>
 								</a>
 								<?php 
 								if (!empty($row['file_edited'])) {?>
 									<a href="<?=URL?>VIEWS/pdf_files/referrals/EDIT_REM_<?= $row['file_edited']; ?>.pdf" target="_blank" class="tool" download>
-											<i class="btn btn-success btn-xs  btn_padd s16"><span class="icon-clipboard"></span></i>
+											<i class="btn btn-success btn-xs fas fa-file-invoice btn_padd s16"></i>
 						      			<span class="tooltext">Remision modificada</span>
 									</a>
 									<a href="<?=URL?>VIEWS/pdf_files/responsives/EDIT_RES_<?= $row['file_edited']; ?>.pdf" target="_blank" class="tool" download>
-								      	<i class="btn btn-success btn-xs btn_padd s16"><span class="icon-assignment"></span></i>
+								      	<i class="btn btn-success btn-xs far fa-file-alt btn_padd s16"></i>
 						      			<span class="tooltext">Responsiva modificada</span>
 									</a>
 								<?php } ?>
@@ -72,21 +72,21 @@
 					      	<th>
 					      		<?php if ($delete == 1) { ?>
 						      		<a href="deleteWork/<?= $row['id'];?>" onclick="deleteWork(this);" class="tool">
-						      			<i class="btn btn-danger btn-xs btn_padd s16 "><span class="icon-trash"></span></i>
+						      			<i class="btn btn-danger btn-xs fas fa-trash btn_padd "></i>
 								      	<span class="tooltext">Eliminar</span>
 						      		</a>
 					      		<?php } ?>
 
 					      		<?php if ($edit == 1) { ?>
 						      		<a href="<?= URL?>referrals/edit/?id_ref=<?= $row['id'];?>&employe=<?= $row['id_employe'];?>&costumer=<?= $row['id_costumer'];?>&transport=<?= $row['id_trasport'];?>&driver=<?= $row['id_driver'];?>&box=<?= $row['id_box'];?>&truck=<?= $row['id_truck'];?>&add=<?= $row['id_add'];?>"  class="tool">
-						      			<i class="btn btn-warning btn-xs btn_padd s16"> <span class="icon-pencil"></span></i>
+						      			<i class="btn btn-warning btn-xs fas fa-edit btn_padd"></i>
 						      			<span class="tooltext">Editar</span>
 						      			 
 						      		</a>
 
 
 						      		<a href="<?= URL?>referrals/refarralsReport/?id=<?= $row['id'];?>" class="tool">
-						      			<i class="btn btn-success btn-xs s16 btn_padd"> <span class="icon-attach_money"></span></i>
+						      			<i class="btn btn-success btn-xs fas fa-dollar-sign btn_padd"></i>
 										<span class="tooltext">Rep. Remisión</span>			 
 									</a>
 								<?php } ?>

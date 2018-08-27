@@ -71,6 +71,7 @@
 			$data = $this->transporters->listDrivers();
 			return $data;
 		}
+		
 		public function addDriver(){
 			if($_POST){
 				$this->transporters->set("id", $_POST['id']);
@@ -81,8 +82,6 @@
 				$this->transporters->set("num_lic", $_POST['num_lic']);
 				$this->transporters->add_driver();
 				header("Location: ".URL."transporters/drivers/?id=".$_POST['id']."&name=".$_POST['nameTransport']);
-
-
 			}
 
 		}
@@ -94,19 +93,25 @@
 		}
 
 		public function editDriver(){
-			if ($_POST) {
+			if ($_GET['id_driver']){
+
+				$this->transporters->set("id", $_GET['id_driver']);
+				$row = $this->transporters->select_driver();
+				return $row;
+
+			} else if ($_POST) {
+
 				$this->transporters->set("id", $_POST['id']);
+				$this->transporters->set("id_trasporter", $_POST['id_trasporter']);
 				$this->transporters->set("name", $_POST['name']);
 				$this->transporters->set("last_name", $_POST['last_name']);
 				$this->transporters->set("phone", $_POST['phone']);
 				$this->transporters->set("address", $_POST['address']);
 				$this->transporters->set("num_lic", $_POST['num_lic']);
 				$this->transporters->update_driver();
-				header("Location: ".URL."transporters/drivers/?id=".$_POST['id']."&name=".$_POST['nameTransport']);
-			}else{
-				$this->transporters->set("id", $_GET['id_driver']);
-				$row = $this->transporters->select_driver();
-				return $row;
+		
+				header("Location: ".URL."transporters/drivers/?id=".$_POST['id_trasporter']."&name=".$_POST['nameTransport']);
+
 			}
 		}
 
@@ -128,8 +133,6 @@
 				$this->transporters->set("num_econ", $_POST['num_econ']);
 				$this->transporters->add_box();
 				header("Location: ".URL."transporters/box/?id=".$_POST['id']."&name=".$_POST['nameTransport']);
-
-
 			}
 
 		}
@@ -141,6 +144,7 @@
 		}
 		public function editBox(){
 			if ($_POST) {
+
 				$this->transporters->set("id", $_POST['id_box']);
 				$this->transporters->set("type", $_POST['type']);
 				$this->transporters->set("grades", $_POST['degrees']);
@@ -148,6 +152,7 @@
 				$this->transporters->set("degrees", $_POST['degrees']);
 				$this->transporters->set("placa", $_POST['placa']);
 				$this->transporters->set("num_econ", $_POST['num_econ']);
+
 				
 				$this->transporters->update_box();
 				header("Location: ".URL."transporters/box/?id=".$_POST['id']."&name=".$_POST['nameTransport']);

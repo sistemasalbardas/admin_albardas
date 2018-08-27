@@ -9,6 +9,8 @@
 		public $pass; 
 		public $array = array(); 
 		public $name; 
+		public $last_name; 
+		public $num_lic; 
 		public $address; 
 		public $rfc; 
 		public $phone; 
@@ -23,7 +25,7 @@
 		public $placa_2; 
 		public $model; 
 		public $num_econ; 
-
+		public $degrees; 
 
 		public function __construct(){
 			$this->con = new conexion();
@@ -97,14 +99,17 @@
 			$row = mysqli_fetch_assoc($data);
 			return $row;
 		}
-		public function update_driver(){
-			$sql = "UPDATE drivers SET name ='{$this->name}',
-							last_name ='{$this->last_name}',
-							num_lic ='{$this->num_lic}',
-							address ='{$this->address}',
-							phone='{$this->phone}' WHERE id={$this->id}";
-							
+
+		public function update_driver(){ 
+			$sql = "UPDATE drivers SET name = '{$this->name}',
+							last_name = '{$this->last_name}',
+							num_lic = '{$this->num_lic}',
+							address = '{$this->address}',
+							phone = '{$this->phone}' WHERE id = '{$this->id}'";
 			$this->con->consultaSimple($sql);
+
+				
+
 		}
 
 		//FUNCIONES DE cajas
@@ -133,10 +138,10 @@
 
 		public function update_box(){
 			$sql = "UPDATE boxes SET type ='{$this->type}',
-							temperature ='{$this->temperature}',
-							grades ='{$this->grades}',
-							placa ='{$this->placa}',
-							num_econ ='{$this->num_econ}' WHERE id ={$this->id}";			
+					temperature ='{$this->temperature}',
+					grades ='{$this->degrees}',
+					placa ='{$this->placa}',
+					num_econ ='{$this->num_econ}' WHERE id = {$this->id}";			
 			$this->con->consultaSimple($sql);
 		}
 

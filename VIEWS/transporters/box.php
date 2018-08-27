@@ -24,7 +24,7 @@
 				</div>
 				<div class="clear"></div>
 				<div class="containerTable table-responsive"> 
-							<table id="tableTransportersBox">
+							<table id="tableTransporters">
 								<thead>
 									<tr>
 										<td>ID</td>
