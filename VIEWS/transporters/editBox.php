@@ -15,19 +15,13 @@
 		</div>
 		<div class="box-body padd10 bgWhite table-responsive">
 			<form action="<?=URL?>transporters/editBox/" method="post"  >
-				<div class="col-lg-12">
-					<div class="col-md-3">
-						<input type="text" class="form-control " name="id" value="<?= $_GET['id']?>">
-					</div>
-					<div class="col-md-3">
-						<input type="text" class="form-control " name="id_box" value="<?= $row['id']?>">
-					</div>
-					<div class="col-md-3">
-						<input type="text" class="form-control " name="nameTransport" value="<?= $_GET['nameTransport']?>">
-					</div>
-				</div>
+				<input type="hidden" class="form-control " name="id" value="<?= $_GET['id']?>">
+
+				<input type="hidden" class="form-control " name="id_box" value="<?= $row['id']?>">
+
+				<input type="hidden" class="form-control " name="nameTransport" value="<?= $_GET['nameTransport']?>">
 				<div class="mainContent mW600">
-					<br>
+					
 					<div class="row">
 						<div class="col-lg-7">
 							<br>

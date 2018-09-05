@@ -32,7 +32,8 @@ $("input#flete").change(function () {
 ///LOCAL-> 
 
 //const URL = "http://localhost/admin_albardas/";    
-const URL = "http://lasalbardas.com/TESTS/";  
+//const URL = "http://lasalbardas.com/ADMIN/";  
+const URL = "http://192.168.50.110/admin_albardas/";  
 
 
  function getGET()
@@ -126,7 +127,7 @@ function validateEntry(obj) {
 function nCharge(obj){
         
     var tab = $(obj).val();
-    location.href= URL+"referrals/?nCharge="+tab+"&tab=1&employe=3&costumer=0&transport=0&driver=0&box=0&box_2=0&truck=0&add=0";
+    location.href= URL+"referrals/?nCharge="+tab+"&tab=1&employe=4&costumer=0&transport=0&driver=0&box=0&box_2=0&truck=0&add=0";
 
 }
 
@@ -495,6 +496,7 @@ function deleteCostumer(obj){
  
 function addP(obj){
     event.preventDefault();
+    
     var id = $(obj).attr('href');
     var quantity = $(obj).parent('th').siblings('th.quant').find("input").val();
    // alert(quantity);

@@ -342,7 +342,7 @@ $(document).ready(function() {
       break;
          
       case 'drivers':
-        $("table#tableTransportersDrivers") 
+        $("table#tableTransporters") 
           .dataTable({
             aProcessing: true, //Activamos el procesamiento del datatables
             aServerSide: true, //Paginacion y filtrado realizados por el servidor

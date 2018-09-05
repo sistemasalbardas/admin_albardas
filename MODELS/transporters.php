@@ -137,11 +137,11 @@
 		}
 
 		public function update_box(){
-			$sql = "UPDATE boxes SET type ='{$this->type}',
-					temperature ='{$this->temperature}',
-					grades ='{$this->degrees}',
-					placa ='{$this->placa}',
-					num_econ ='{$this->num_econ}' WHERE id = {$this->id}";			
+					$sql = "UPDATE boxes SET type ='{$this->type}',
+							temperature ='{$this->temperature}',
+							grades ='{$this->degrees}',
+							placa ='{$this->placa}',
+							num_econ ='{$this->num_econ}' WHERE id = {$this->id}";			
 			$this->con->consultaSimple($sql);
 		}
 

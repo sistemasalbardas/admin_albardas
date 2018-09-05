@@ -86,14 +86,9 @@
 					<input type="hidden" name="add" id="add" value="<?= $_GET['add']?>">
 					<input type="hidden" name="truck2" id="truck2" value="<?= $_GET['truck']?>">
 				
-				
-				
-				
-				
 					<input type="hidden" name="f_embark" value="f_embark">
 					<input type="hidden" name="f_charge" value="f_charge">
 				
-					
 					<?php if ($_GET['tab'] == $_GET['nCharge']) {?>
 						<input type="hidden" name="f_freight" value="f_freight">
 					<?php } ?>
@@ -108,6 +103,7 @@
 						<div class="bxs col-lg-offset-5 col-xs-12 col-sm-6 col-lg-3">
 							<div class="clear"></div>
 								<div class="form-group">
+								
 									<label for="datepicker" class="control-label">Fecha: </label>
 									<div class="input-group date" >	
 										<input type="date" name="date" id="date" class="form-control" required="">				
@@ -123,7 +119,7 @@
 								<div class="form-group">
 									<label for="datetime" class="control-label">Hora: </label>
 									<div class="input-group date" >
-										<input type="time" class="form-control" id="datetimepicker3" />
+										<input type="time" class="form-control" name="time" id="time" />
 										<span class="input-group-addon">
 											<span class="glyphicon glyphicon-time"></span>
 										</span>
@@ -296,9 +292,9 @@
 												<label for="driver" class="control-label col-md-4">Chofer: </label>
 												<div class="col-md-8">
 													<select name="name_driver" id="driver" class="block select form-control form-control-sm selectpicker" data-live-search="true"  onchange="setUrl(this)">
-														<option value="<?= $driver['name']?>"><?= $driver['name'];?></option>
+														<option value="<?= $driver['name'].' '.$driver['last_name'];?>"><?= $driver['name'].' '.$driver['last_name'];?></option>
 														<?php while ($row  = mysqli_fetch_array($drivers)) { ?>
-														<option value="<?= $row['id']?>"><?= $row['name']?></option>
+														<option value="<?= $row['id']?>"><?= $row['name'].' '.$row['last_name'];?></option>
 														<?php } ?>
 													</select>
 												</div>
@@ -312,7 +308,7 @@
 												<label for="origin" class="control-label col-md-4">Origen: </label>
 												<div class="col-md-8">
 													<select name="origin" id="origin" class="block form-control form-control-sm selectpicker" data-live-search="true" required="">
-														<!-- <option value="">SELECCIONA UNA OPCION </option> -->
+														<option value="">SELECCIONA UNA OPCION </option>
 														<option value="Parras de la fuente, ejido el calabacillal, Agricola las albardas.">ALBARDAS</option>
 														<option value="Carretara Saltillo - matamoros, ejido el Mimbre Coah, Rancho magdalenas.">MAGDALENAS</option>
 													</select>
@@ -326,8 +322,8 @@
 												<label for="add" class="control-label col-md-4">Destino: </label>
 												<div class="col-md-8">
 													<select name="destination" id="add" class="block form-control form-control-sm selectpicker" data-live-search="true" required onchange="setUrl(this);">
-														<option value="<?= $add['address'].' - '.$add['city'].' - '.$add['phone']?>">
-															<?= $add['address'].' - '.$add['city'].' - '.$add['phone']?>	
+														<option value="<?= $add['address'].' '.$add['city'].'  '.$add['phone']?>">
+															<?= $add['address'].' '.$add['city'].' '.$add['phone']?>	
 														</option>
 														<?php while ($row = mysqli_fetch_array($addreses)) {?>
 															<option value="<?= $row['id']?>"><?= $row['name']?>	</option>
@@ -352,9 +348,9 @@
 												<label for="truck" class="control-label col-md-4">Selecciona: </label>
 												<div class="col-md-8">
 													<select name="truck" id="truck" class="block form-control form-control-sm selectpicker" data-live-search="true" onchange="setUrl(this);">
-														<option value=""><?= $truck['brand'];?></option>
+														<option value=""><?= $truck['brand'].' '.$truck['model'] ?></option>
 														<?php while ($row = mysqli_fetch_array($trucks)) {?>
-															<option value="<?= $row['id'];?>"><?= $row['brand']?></option>
+															<option value="<?= $row['id'];?>"><?= $row['brand'].' '.$row['color'].' '.$row['model'] ?></option>
 														<?php } ?>
 													</select>
 												</div>
@@ -389,7 +385,7 @@
 											<div class="form-group">
 												<label for="placas" class="control-label col-md-4">Placas: </label>
 												<div class="col-md-8">
-													<input type="text" name="plates_t" id="placas" class="block form-control input-sm" required="" value="<?= $truck['placa']." - ".$truck['placa_2']?>">
+													<input type="text" name="plates_t" id="placas" class="block form-control input-sm" required="" value="<?= $truck['placa'];?>">
 												</div>
 											</div>			
 										</div>
@@ -650,7 +646,7 @@
 						<th>
 							<a href="<?= $row['id'];?>" onclick="addP(this);" class="little-btn blue adjust s12 mW30 text-600"><i class="material-icons s12">add</i>
 							</a>
-
+	
 							
 						</th>
 					</tr>	

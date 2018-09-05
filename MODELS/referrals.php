@@ -92,14 +92,15 @@ namespace MODELS;
 
 		
 		public function productsRemision(){
+
 			$sql = "SELECT * FROM products WHERE id = '{$this->id}'";
 			$datos = $this->con->consultaRetorno($sql);
 			$row = mysqli_fetch_assoc($datos);
 			
 			$products = array();
  			$prod = $row['name'].' '.$row['quality'].' '.$row['size'].' '.$row['pack'].' '.$row['brand'].' '.$row['weight'].' '.$row['unit_measure'];
+			
 			array_push($products, $row['id'], $prod, $this->quantity);
-
 
 			$_SESSION['products'][] = $products;
 			$data = $_SESSION['products'];
@@ -263,8 +264,7 @@ namespace MODELS;
 
 		public function edit_remision()
 		{	
-			error_log("---------------");
-			error_log($this->f_charge);
+
 			$sql = "UPDATE remisions SET 
 				date = '{$this->date}',
 				time = '{$this->time}',
@@ -278,9 +278,6 @@ namespace MODELS;
 				file_edited = '{$this->f_charge}' WHERE  id = '{$this->id}'";
 			$this->con->consultaSimple($sql);	
 			
-			
-
-		
 		}
 	
 		public function saveProducts(){
@@ -314,8 +311,6 @@ namespace MODELS;
 			}
 			
 		}
-
-
 
 		public function view(){	
 			$sql = "SELECT * FROM remisions";
