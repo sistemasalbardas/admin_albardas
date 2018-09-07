@@ -203,6 +203,7 @@
               </a>
             </li>
           <?php } ?>
+          
 
           <?php if ($p_freights[7] == 1) {?>
       			<li >
@@ -234,8 +235,16 @@
                 <i class="far fa-circle icon"></i> <span>Transportistas</span>
               </a>
             </li>
+            <li>
+              <a href="<?=URL?>providers/">
+                <i class="far fa-circle icon"></i> <span>Proveedores</span>
+              </a>
+            </li>
+            
           <?php } ?>
+            
 
+               
     			<li>
             <a href="<?=URL?>login/logout/">
               <i class="far fa-circle icon"></i> <span>Salir</span>
