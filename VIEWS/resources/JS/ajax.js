@@ -1,3 +1,8 @@
+///CONTANTES URLS->
+//LOCAL 
+const URL = "http://192.168.50.110/admin_albardas/";  
+//PRODUCCION
+//const URL = "http://lasalbardas.com/ADMIN/";  
 $(document).ready(function(){
  
     $("div.spinner").addClass("hidden");
@@ -29,11 +34,8 @@ $("input#flete").change(function () {
     $("select.price_flete").toggleClass('hidden').attr("required", true);
 });
 
-///LOCAL-> 
 
-//const URL = "http://localhost/admin_albardas/";    
-//const URL = "http://lasalbardas.com/ADMIN/";  
-const URL = "http://192.168.50.110/admin_albardas/";  
+
 
 
  function getGET()
@@ -1025,4 +1027,129 @@ function deletePay(obj){
     });
 
     
+}
+
+//FUNCIONES AJAX PARA EL MODULO DE COMPRAS
+
+//proveedores agregar proveedor
+function addProvider(obj) {
+    event.preventDefault();
+    var formData = new FormData($(obj)[0]);
+    $.ajax({
+        url: URL+"purchasing/addsupplier/",
+        type: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        beforeSend: function(){
+            //alert("generando remision");
+        },
+        error: function(jqXHR, exception){
+            var msg = '';
+            if (jqXHR.status === 0) {
+                msg = 'Not connect.\n Verify Network.';
+            } else if (jqXHR.status == 404) {
+                msg = 'Requested page not found. [404]';
+            } else if (jqXHR.status == 500) {
+                msg = 'Internal Server Error [500].';
+            } else if (exception === 'parsererror') {
+                msg = 'Requested JSON parse failed.';
+            } else if (exception === 'timeout') {
+                msg = 'Time out error.';
+            } else if (exception === 'abort') {
+                msg = 'Ajax request aborted.';
+            } else {
+                msg = 'Uncaught Error.\n' + jqXHR.responseText;
+            }
+            alert(msg);
+        },
+        success: function(status){
+            swal("Ok!", "Proveedor guardado", "success");   
+            $(obj)[0].reset();
+            location.reload(); 
+             
+            //window.location= URL+"referrals/";
+        }
+
+    });
+}
+
+//eliminar proveedor
+function deleteProvider(obj){
+    event.preventDefault();
+    var id = $(obj).attr('href');
+
+    swal({
+      text: "eliminar registro",
+      title: "Estas seguro?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        $.ajax({
+            url: URL+'purchasing/deletesupplier/?id='+id,
+            type: "GET",
+            data: "",
+            contentType: false,
+            processData: false,
+            success: function(datos)
+            {
+                swal("Registro eliminado!", {
+                  icon: "success",
+                });
+                $(obj).parent("th").parent("tr").remove();
+                //location.reload();
+            }
+        }); 
+      } else {
+        swal("Operacion cancelada");
+      }
+    });
+    
+}
+
+function editProvider(obj) {
+     event.preventDefault();
+    var formData = new FormData($(obj)[0]);
+    $.ajax({
+        url: URL+"purchasing/editsupplier/",
+        type: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        beforeSend: function(){
+           swal({
+              text: "Cargando...",
+              buttons: false,
+              dangerMode: false,
+            });
+        },
+        error: function(jqXHR, exception){
+            var msg = '';
+            if (jqXHR.status === 0) {
+                msg = 'Not connect.\n Verify Network.';
+            } else if (jqXHR.status == 404) {
+                msg = 'Requested page not found. [404]';
+            } else if (jqXHR.status == 500) {
+                msg = 'Internal Server Error [500].';
+            } else if (exception === 'parsererror') {
+                msg = 'Requested JSON parse failed.';
+            } else if (exception === 'timeout') {
+                msg = 'Time out error.';
+            } else if (exception === 'abort') {
+                msg = 'Ajax request aborted.';
+            } else {
+                msg = 'Uncaught Error.\n' + jqXHR.responseText;
+            }
+            alert(msg);
+        },
+        success: function(status){
+            swal("Ok!", "Proveedor Actualizado", "success");   
+            $(obj)[0].reset();
+            window.location= URL+"purchasing/suppliers/";
+        }
+
+    });
 }

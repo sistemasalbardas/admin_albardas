@@ -37,7 +37,8 @@
 
 				$this->datos['pass'],
 
-				$this->datos['db']);
+				$this->datos['db']
+			);
 
 		}
 
@@ -51,7 +52,6 @@
 		public function consultaRetorno($sql){
 
 			$datos = $this->con->query($sql);
-
 			return $datos;
 
 		}

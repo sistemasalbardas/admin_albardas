@@ -128,73 +128,94 @@
        
           <?php if ($p_remisions[7] == 1) {?>
   	        <li class="treeview">
-    	          <a href="#">
-                  <i class="fas fa-copy icon"></i> <span>Remisiones</span>
-    	            <span class="pull-right-container">
-    	                <i class="fas fa-angle-left pull-right"></i>
-    	            </span>
-    	          </a>
-    	          <ul class="treeview-menu">
-    	            <li>
-                    <a href="<?=URL?>referrals/" class="hidden">
-                      <i class="far fa-circle"></i> Nueva remision
-                    </a>
-                  </li>
-    				      <li>
-                    <a href="<?=URL?>referrals/control/">
-                      <i class="far fa-circle"></i> Control de remisiones
-                    </a>
-                  </li>
-    	          </ul>
+	          	<a href="#">
+              		<i class="fas fa-copy icon"></i> <span>Remisiones</span>
+		            <span class="pull-right-container">
+		                <i class="fas fa-angle-left pull-right"></i>
+		            </span>
+	          	</a>
+	          	<ul class="treeview-menu">
+		            <li>
+		                <a href="<?=URL?>referrals/" class="hidden">
+		                  <i class="far fa-circle"></i> Nueva remision
+		                </a>
+	              	</li>
+				    <li>
+		                <a href="<?=URL?>referrals/control/">
+		                  <i class="far fa-circle"></i> Control de remisiones
+		                </a>
+		            </li>
+	          	</ul>
   	        </li>
           <?php } ?>
+
 
           <?php if ($p_employes[7] == 1) {?>
   	        <li class="treeview">
-    	          <a href="#">
-                  <i class="fas fa-users icon"></i> <span>Personal</span>
+    	        <a href="#">
+                  	<i class="fas fa-users icon"></i> <span>Personal</span>
     	            <span class="pull-right-container">
     	                <i class="fas fa-angle-left pull-right"></i>
     	            </span>
-    	          </a>
-    	          <ul class="treeview-menu">
-    		          <li>
-                    <a href="<?=URL?>personal/?tab=1">
-                      <i class="far fa-circle"></i> Personal
-                    </a>
-                  </li>
-    	          </ul>
+    	        </a>
+		        <ul class="treeview-menu">
+			        <li>
+		                <a href="<?=URL?>personal/?tab=1">
+		                  <i class="far fa-circle"></i> Personal
+		                </a>
+	              	</li>
+		        </ul>
   	        </li>
           <?php } ?>
 
-				  <?php if ($p_requisitions[7] == 1) {?>
+		 <?php if ($p_requisitions[7] == 1) {?>
   	        <li class="treeview hidden">
 
-  	          <a href="#">
-                <i class="fas fa-file icon"></i> <span>Requisiciones</span>
-  	            <span class="pull-right-container">
-  	                <i class="fas fa-angle-left pull-right"></i>
-  	            </span>
-  	          </a>
-  	          <ul class="treeview-menu">
-  		          <li>
-                  <a href="<?=URL?>requisitions/">
-                    <i class="far fa-circle"></i> nueva requisicion
-                  </a>
-                </li>
-  				      <li>
-                  <a href="<?=URL?>requisitions/control/">
-                    <i class="far fa-circle"></i> Control 
-                  </a>
-                </li>
-  				      <li>
-                  <a href="<?=URL?>requisitions/config/">
-                    <i class="far fa-circle"></i> Configuracion 
-                  </a>
-                </li>
-  	          </ul>
+	  	        <a href="#">
+	                <i class="fas fa-file icon"></i> <span>Requisiciones</span>
+	  	            <span class="pull-right-container">
+	  	                <i class="fas fa-angle-left pull-right"></i>
+	  	            </span>
+	  	        </a>
+	  	        <ul class="treeview-menu">
+	  		        <li>
+		                <a href="<?=URL?>requisitions/">
+		                    <i class="far fa-circle"></i> nueva requisicion
+		                </a>
+	                </li>
+	  				<li>
+		                <a href="<?=URL?>requisitions/control/">
+		                    <i class="far fa-circle"></i> Control 
+		                </a>
+	                </li>
+	  				<li>
+		                <a href="<?=URL?>requisitions/config/">
+		                    <i class="far fa-circle"></i> Configuracion 
+		                </a>
+	                </li>
+	  	        </ul>
   	        </li>
          <?php } ?>
+    	<li class="treeview">
+          	<a href="#">
+         	 	<i class="fas fa-copy icon"></i> <span>Compras</span>
+	            <span class="pull-right-container">
+	                <i class="fas fa-angle-left pull-right"></i>
+	            </span>
+          	</a>
+          	<ul class="treeview-menu">
+	            <li>
+		            <a href="<?=URL?>purchasing/suppliers/">
+		              <i class="far fa-circle"></i> Proovedores
+		            </a>
+	          	</li>
+			    <li>
+		            <a href="<?=URL?>referrals/products/">
+		              <i class="far fa-circle"></i> Productos
+		            </a>
+		        </li>
+          	</ul>
+	    </li>
 
           <?php if ($p_products[7] == 1) {?>
   	        <li>
@@ -206,7 +227,7 @@
           
 
           <?php if ($p_freights[7] == 1) {?>
-      			<li >
+      		<li>
               <a href="<?=URL?>freights/">
                 <i class="far fa-circle icon"></i> <span>Fletes</span>
               </a>
