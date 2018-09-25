@@ -1,6 +1,6 @@
 ///CONTANTES URLS->
 //LOCAL 
-const URL = "http://192.168.50.110/admin_albardas/";  
+const URL = "http://192.168.50.115/admin_albardas/";  
 //PRODUCCION
 //const URL = "http://lasalbardas.com/ADMIN/";  
 $(document).ready(function(){
