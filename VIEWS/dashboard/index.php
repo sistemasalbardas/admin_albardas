@@ -48,13 +48,13 @@
 	// var_dump($clientes);
 ?>
 <div class="col-md-12">
-<h3 class="box-title text-600">DASHOBOARD</h3>
+<h3 class="box-title text-600">DASHBOARD</h3>
 <div class="row">
 				<div class="col-lg-3 col-xs-6">
 					<!-- small box -->
 					<div class="small-box bg-aqua">
 						<div class="inner">
-							<h4><?= $t->suma_embarques; ?></h4>
+							<h3><?= $t->suma_embarques; ?></h3>
 
 							<p>Embarques</p>
 						</div>
@@ -68,7 +68,7 @@
 					<!-- small box -->
 					<div class="small-box bg-green">
 						<div class="inner">
-							<h4>$<?=number_format($t->monto_total,0,',',',') ?></h4>
+							<h3>$<?=number_format($t->monto_total,0,',',',') ?></h3>
 
 							<p>Egresos de Fletes</p>
 						</div>
@@ -82,7 +82,7 @@
 					<!-- small box -->
 					<div class="small-box bg-yellow">
 						<div class="inner">
-							<h4><?=$num_clientes?></h4>
+							<h3><?=$num_clientes?></h3>
 
 							<p>Clientes</p>
 						</div>
@@ -96,7 +96,7 @@
 					<!-- small box -->
 					<div class="small-box bg-red">
 						<div class="inner">
-							<h4><?=$num_productos?></h4>
+							<h3><?=$num_productos?></h3>
 
 							<p>Productos</p>
 						</div>

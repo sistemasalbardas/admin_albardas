@@ -37,7 +37,7 @@ $("input#flete").change(function () {
 
 //const URL = "http://localhost/admin_albardas/";    
 //const URL = "http://lasalbardas.com/ADMIN/";  
-const URL = "http://localhost/admin_albardas/";  
+const URL = "http://192.168.50.114/admin_albardas/";  
 
 
  function getGET()
