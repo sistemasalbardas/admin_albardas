@@ -93,6 +93,7 @@
 	<script src="<?= URL?>/VIEWS/resources/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 	<script src="<?= URL?>/VIEWS/resources/bower_components/bootstrap-datepicker/dist/js/datepicker-es.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="<?= URL?>/VIEWS/resources/bower_components/chart.js/Chart.min.js"></script>
 	<!-- <script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> -->
 	<!-- <script src="http://cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"></script> -->
 
@@ -114,6 +115,7 @@
 	//  $('#datetimepicker3').datetimepicker({ format: 'LT'});
     //  $('#datetimepicker3').datetimepicker({ pickDate: false});
 	</script>
+	
 </body>
 </html>
 

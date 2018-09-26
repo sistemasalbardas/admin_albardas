@@ -60,14 +60,14 @@
 									'permits' => $list_permits
 								);
 	  				$_SESSION['user'][] = $array;
-	  				header("Location: ".URL."profile/?id=".$row['id']);
+	  				header("Location: ".URL."dashboard/");
 				}else{
 					header("Location: ".URL."login/?error=Las credenciales no coinciden con nuestros registros");
 				}
 			}else{
 				header("Location: ".URL."login/?error=Las credenciales no coinciden con nuestros registros");
 			}
-
+8
 		}
 	}
 
