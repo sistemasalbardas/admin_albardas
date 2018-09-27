@@ -67,7 +67,7 @@
 			}else{
 				header("Location: ".URL."login/?error=Las credenciales no coinciden con nuestros registros");
 			}
-8
+
 		}
 	}
 
