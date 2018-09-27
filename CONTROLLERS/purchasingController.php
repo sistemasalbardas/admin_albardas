@@ -15,6 +15,7 @@
 		{
 			return false;
 		}
+		
 		public function suppliers()
 		{
 			$data = $this->purchasing->listar_suppliers();
@@ -76,7 +77,53 @@
 			$data = $this->purchasing->listar_suppliers();
 			return $data;
 		}
-			
+
+
+		///functions for categories - Controller (CRUD)
+
+		public function categories()
+		{
+			$data = $this->purchasing->listar_categories();
+			return $data;
+		}
+
+		public function addcategory()
+		{
+			if ($_POST) {
+
+				$this->purchasing->set('name', $_POST['name']);
+				$this->purchasing->set('description', $_POST['description']);
+				$this->purchasing->save_category();
+				//header("Location:".URL."purchasing/suppliers/");
+			}else{
+				header("Location:".URL."purchasing/suppliers/");
+			}
+		}
+
+		public function editcategory()
+		{
+			if ($_GET['id']) {
+				$this->purchasing->set('id', $_GET['id']);
+				$row = $this->purchasing->cetegory_id();
+				return $row;
+			}else{
+				//error_log(print_r($_POST,true));
+				$this->purchasing->set('id', $_POST['id']);
+				$this->purchasing->set('name', $_POST['name']);
+				$this->purchasing->set('description', $_POST['description']);
+				$this->purchasing->update_cetegory();
+			}
+		}
+
+		public function deletecategory()
+		{
+			if ($_GET['id']) {
+				$this->purchasing->set('id', $_GET['id']);
+				$this->purchasing->delete_category();
+			}
+		}
+
+
 	}
 	
 	$purchasing = new purchasingController();

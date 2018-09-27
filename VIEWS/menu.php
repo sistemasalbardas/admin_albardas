@@ -256,12 +256,6 @@
                 <i class="far fa-circle icon"></i> <span>Transportistas</span>
               </a>
             </li>
-            <li>
-              <a href="<?=URL?>providers/">
-                <i class="far fa-circle icon"></i> <span>Proveedores</span>
-              </a>
-            </li>
-            
           <?php } ?>
             
 

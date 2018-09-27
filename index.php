@@ -4,7 +4,9 @@
 	define('ROOT', realpath(dirname(__FILE__)) . DS);
 
 	//LOCAL->
-	define('URL', "http://192.168.50.114/admin_albardas/");
+  	
+	define('URL', "http://localhost/admin_albardas/");
+
 	//PRODUCCION (NO BORRAR)->
 	//define('URL', "http://lasalbardas.com/ADMIN/");
 

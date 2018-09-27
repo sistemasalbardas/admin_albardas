@@ -17,6 +17,7 @@
 		public $name_contact; 
 		public $contact_phone; 
 		public $comments; 
+		public $description; 
 
 		public function __construct(){
 			$this->con = new conexion();
@@ -29,6 +30,7 @@
 		public function get($atributo){
 			return $this->$atributo;
 		}
+
 		public function listar_suppliers()
 		{
 			$sql = "SELECT * FROM providers";
@@ -84,6 +86,45 @@
 		
 		}
 
+		///functions for categories - Model (CRUD)
+		public function listar_categories()
+		{
+			$sql = "SELECT * FROM categories";
+			$data = $this->con->consultaRetorno($sql);
+			return $data;
+		}
+		public function cetegory_id()
+		{
+			$sql = "SELECT * FROM categories WHERE id = '{$this->id}'";
+			$data = $this->con->consultaRetorno($sql);
+			$row = mysqli_fetch_assoc($data);
+			return $row; 
+		}
+
+		public function save_category()
+		{
+			$sql = "INSERT INTO categories (id, name, description) VALUES 
+				(
+					null, 
+					'{$this->name}',
+					'{$this->description}'
+				);";
+			$this->con->consultaSimple($sql);
+		}
+
+		public function delete_category()
+		{
+			$sql = "DELETE FROM categories WHERE id = '{$this->id}'";
+			$this->con->consultaSimple($sql);
+		}
+
+		public function update_cetegory()
+		{
+			$sql = "UPDATE categories SET 
+				name = '{$this->name}', 
+				description = '{$this->description}' WHERE id = '{$this->id}'";
+			$this->con->consultaSimple($sql);
+		}
 
 	}
 

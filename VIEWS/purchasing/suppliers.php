@@ -1,89 +1,165 @@
 <?php 
    $data = $purchasing->suppliers();
+   $categories = $purchasing->categories();
  ?>
 
 <div class="col-md-12">
   <div class="box box-success">
-      <div class="box-header with-border">
-        <h3 class="box-title text-600">Control de proveedores</h3>
-        <div class="box-tools pull-right">
-                          
-                <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-            
-           </div>
-      </div>
+    <div class="box-header with-border">
+      <h3 class="box-title text-600">Control</h3>
+      <div class="box-tools pull-right">
+                        
+              <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+              </button>
+          
+         </div>
+    </div>
     <div class="box-body padd10 bgWhite table-responsive">
       <div class="row">
-        <div class="col-lg-4">
-          <button type="button" class="btn btn-primary sblue" data-toggle="modal" data-target="#modal-supplier">
-            Nuevo proveedor
-          </button>
-        </div>
-      </div>
-      <div class="clear"></div>
-      <div class="containerTable table-responsive">
-        <table id="tableProducts" class="table bgWhite">
-          <thead>
-            <tr>
-              <th scope="col" >ID</th>
-              <th scope="col" >RAZON SOCIAL</th>
-              <th scope="col" >RFC</th>
-              <th scope="col" >CORREO</th>
-              <th scope="col" >DIRECCION</th>
-              <th scope="col" >CONTACTO</th>
-              <th scope="col" >TELEFONOS</th>
-              <th scope="col" >ACCIONES</th>
-            </tr>
-          </thead>  
-          <tbody>
-            <?php while($row = mysqli_fetch_array($data)){?>
-              <tr>
-                <th><?= $row['id']; ?></th>
+        <div class="col-md-12">
+          <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#suppliers" data-toggle="tab" aria-expanded="true">Proveedores</a></li>
+              <li class=""><a href="#categories" data-toggle="tab" aria-expanded="false"> Categorias</a></li>
+          
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="suppliers">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <button type="button" class="btn btn-primary sblue" data-toggle="modal" data-target="#modal-supplier">
+                      Nuevo proveedor
+                    </button>
+                  </div>
+                </div>
+                <div class="clear"></div>
+                <div class="containerTable table-responsive">
+                  <table id="tableProviders" class="table bgWhite">
+                    <thead>
+                      <tr>
+                        <th scope="col" >ID</th>
+                        <th scope="col" >RAZON SOCIAL</th>
+                        <th scope="col" >RFC</th>
+                        <th scope="col" >CORREO</th>
+                        <th scope="col" >DIRECCION</th>
+                        <th scope="col" >CONTACTO</th>
+                        <th scope="col" >TELEFONOS</th>
+                        <th scope="col" >ACCIONES</th>
+                      </tr>
+                    </thead>  
+                    <tbody>
+                      <?php while($row = mysqli_fetch_array($data)){?>
+                        <tr>
+                          <th><?= $row['id']; ?></th>
+                                  <th>
+                                    <?= $row['name']; ?>
+                                  </th>
+                                  <th><?= $row['rfc']; ?></th>
+                                  <th>
+                                     <?= $row['email']; ?>
+                                  </th>
+                                  <th><?= $row['address']; ?></th>
+                                  <th>
+                                    <?= $row['name_contact']; ?>
+                                  </th>
+                                  <th>
+                                     <b>F</b> <?= $row['fixed_phone']; ?> <br> 
+                                     <b>M</b> <?= $row['mobile_phone']; ?>
+                                  </th>
+                                  
+                                
+                                 
+                                  
+                                  <th>
+           
+           
+                                    <a href="<?= $row['id'];?>" onclick="deleteProvider(this);" class="tool">
+                                       <i class="btn btn-danger btn-xs s16 btn_padd"><span class="icon-trash"></span></i>
+                                      <span class="tooltext">Eliminar</span>
+                                       
+                                    </a>
+                         
+
+                    
+
+                                    <a href="<?=URL?>purchasing/editsupplier/?id=<?= $row['id'];?>" class="tool">
+                                      <i class="btn btn-warning btn-xs s16 btn_padd"><span class="icon-pencil"></span></i>
+                                      <span class="tooltext">Editar</span>   
+                                    </a>
+                           
+
+                                  </th>
+                  
+                        </tr>
+                      <?php } ?>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /.tab-proveedores -->
+
+              <div class="tab-pane" id="categories">
+                <!-- /.tab-categorias -->
+                <div class="row">
+                  <div class="col-lg-4">
+                    <button type="button" class="btn btn-primary sblue" data-toggle="modal" data-target="#modal-categories">
+                      Nueva categoria
+                    </button>
+                  </div>
+                </div>
+                <div class="clear"></div>
+                <div class="containerTable table-responsive">
+                  <table id="tableCategory" class="table bgWhite">
+                    <thead>
+                      <tr>
+                        <th scope="col" >ID</th>
+                        <th scope="col" >CATEGORIA</th>
+                        <th scope="col" >COMENTARIOS</th>
+                        <th scope="col" >ACCIONES</th>
+                      </tr>
+                    </thead>  
+                    <tbody>
+                      <?php while($row = mysqli_fetch_array($categories)){?>
+                        <tr>
+                          <th><?= $row['id']; ?></th>
                         <th>
                           <?= $row['name']; ?>
                         </th>
-                        <th><?= $row['rfc']; ?></th>
                         <th>
-                           <?= $row['email']; ?>
+                          <?= $row['description'];?>
                         </th>
-                        <th><?= $row['address']; ?></th>
-                        <th>
-                          <?= $row['name_contact']; ?>
-                        </th>
-                        <th>
-                           <b>F</b> <?= $row['fixed_phone']; ?> <br> 
-                           <b>M</b> <?= $row['mobile_phone']; ?>
-                        </th>
-                        
-                      
                        
                         
                         <th>
  
- 
-                          <a href="<?= $row['id'];?>" onclick="deleteProvider(this);" class="tool">
+                          <a href="<?= $row['id'];?>" onclick="deleteCategory(this);" class="tool">
                              <i class="btn btn-danger btn-xs s16 btn_padd"><span class="icon-trash"></span></i>
                             <span class="tooltext">Eliminar</span>
                              
                           </a>
-               
 
-          
-
-                          <a href="<?=URL?>purchasing/editsupplier/?id=<?= $row['id'];?>" class="tool">
+                          <a href="<?=URL?>purchasing/editcategory/?id=<?= $row['id'];?>" class="tool">
                             <i class="btn btn-warning btn-xs s16 btn_padd"><span class="icon-pencil"></span></i>
                             <span class="tooltext">Editar</span>   
                           </a>
                  
 
                         </th>
-        
-              </tr>
-            <?php } ?>
-          </tbody>
-        </table>
+                  
+                        </tr>
+                      <?php } ?>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /.tab-categorias -->
+          
+            </div>
+            <!-- /.tab-content -->
+          </div>
+          <!-- /.nav-tabs-custom -->
+        </div>
       </div>
     </div>
     <div class="box-footer">
@@ -183,4 +259,50 @@
       </div>
           <!-- /.modal-dialog -->
     </div>
-  </div>
+</div>
+
+<!--MODAL PARA DAR DE ALTA NUEVAS CATEGORIAS-->
+<div class="modal fade" id="modal-categories" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span></button>
+          <h4 class="modal-title">NUEVO CATEGORIA</h4>
+         
+        </div>
+        <form role="form" onsubmit="addCategory(this);" method="post">
+          <div class="modal-body">
+            <div class="box-body">
+                <div class="row">
+                  <div class="col-md-10">
+                    <div class="form-group">
+                      <label for="name">Nombre: </label>
+                      <input type="name" class="form-control" id="name" placeholder="" name="name" required="">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                   <div class="col-md-10">
+                     <div class="form-group">
+                     <label for="description">Comentarios: </label>
+                     <textarea name="description" id="description" class="form-control" required=""></textarea>
+                   </div>
+                   </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </div>
+        </form>
+        <!-- /.modal-content -->
+      </div>
+          <!-- /.modal-dialog -->
+    </div>
+</div>
+
+  <!--TABS CONTENTS-->
+
+  
