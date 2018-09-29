@@ -5,7 +5,12 @@
 	<!-- general form elements -->
 	<div class="box box-success">
 	    <div class="box-header with-border">
-	      <h3 class="box-title">Editar proveedor</h3>
+				<h3 class="box-title">Editar proveedor</h3>
+				<div class="box-tools pull-right">
+			          <!-- <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a> -->
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+          </div>
 	    </div>
 	    <!-- /.box-header -->
 	    <!-- form start -->
@@ -34,7 +39,6 @@
 	            </div>
 
 	            <div class="modal-footer">
-	              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
 	              <button type="submit" class="btn btn-primary">Guardar</button>
 	            </div>
 

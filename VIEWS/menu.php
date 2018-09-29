@@ -1,3 +1,4 @@
+
 <?php 
     ///REMISIONES
     $p_remisions = $_SESSION['user'][0]['permits'][0];
@@ -216,6 +217,13 @@
 		        </li>
           	</ul>
 	    </li>
+      <?php if ($p_products[7] == 1) {?>
+            <li>
+              <a href="<?=URL?>inventories/">
+                <i class="far fa-circle icon"></i> <span>Inventarios</span>
+              </a>
+            </li>
+          <?php } ?>
 
           <?php if ($p_products[7] == 1) {?>
   	        <li>
@@ -256,12 +264,6 @@
                 <i class="far fa-circle icon"></i> <span>Transportistas</span>
               </a>
             </li>
-            <li>
-              <a href="<?=URL?>providers/">
-                <i class="far fa-circle icon"></i> <span>Proveedores</span>
-              </a>
-            </li>
-            
           <?php } ?>
             
 

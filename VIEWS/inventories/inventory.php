@@ -31,7 +31,7 @@
 							<tr>
 								<td>ID</td>
 								<td>Nombre</td>
-								<td>Cantidad</td>
+								<td>Disponible</td>
 								
 								<td>ACCIONES</td>
 							</tr>

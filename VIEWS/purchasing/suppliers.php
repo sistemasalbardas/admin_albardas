@@ -35,7 +35,7 @@
                 </div>
                 <div class="clear"></div>
                 <div class="containerTable table-responsive">
-                  <table id="tableProducts" class="table bgWhite">
+                  <table id="tableProviders" class="table bgWhite">
                     <thead>
                       <tr>
                         <th scope="col" >ID</th>
@@ -110,7 +110,7 @@
                 </div>
                 <div class="clear"></div>
                 <div class="containerTable table-responsive">
-                  <table id="tableProducts" class="table bgWhite">
+                  <table id="tableCategory" class="table bgWhite">
                     <thead>
                       <tr>
                         <th scope="col" >ID</th>

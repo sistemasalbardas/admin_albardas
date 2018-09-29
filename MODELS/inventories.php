@@ -24,7 +24,6 @@
 		public $entry;
 		public $prod;
 
-
 		public function __construct(){
 			$this->con = new conexion();
 		}
@@ -39,17 +38,20 @@
 
 		public function add()
 		{
-			$sql = "INSERT INTO inventories (id, name, description, responsable, utility) VALUES (null, '{$this->name}','{$this->description}','{$this->responsable},'{$this->utility}')";
+
+			$sql = "INSERT INTO inventories (id, name, description, responsable, utility) VALUES (null, '{$this->name}','{$this->description}','{$this->responsable}','{$this->utility}')";
 			$this->con->consultaSimple($sql);
 
 		}
+
+		public function delete(){
+			$sql = "DELETE FROM inventories WHERE id = {$this->id}";
+			$this->con->consultaSimple($sql);
+		}
+
 		public function list_inventory_ranch()
 		{
-			if ($this->ranch == 3) {
-				$sql = "SELECT * FROM inventories";
-			}else{
-				$sql = "SELECT * FROM inventories WHERE id = '{$this->ranch}'";
-			}
+			$sql = "SELECT * FROM inventories";
 			$data = $this->con->consultaRetorno($sql);
 			return $data;
 		}
@@ -59,7 +61,6 @@
 			$sql = "SELECT * FROM inventories";
 			$data = $this->con->consultaRetorno($sql);
 			return $data;
-
 		}
 		
 		public function list_products()
@@ -71,9 +72,7 @@
 
 		public function list_inventory()
 		{
-			//$sql = "SELECT * FROM inventory WHERE id_inventory = {$this->id_inventory}";
-			//	$sql = "SELECT inventory.id_product, products.name FROM inventory INNER JOIN products ON products.id = 3";
-			
+		
 			$sql = "SELECT * from inventory where id_inventory = '{$this->id_inventory}'";
 			$data = $this->con->consultaRetorno($sql);
 			return $data;

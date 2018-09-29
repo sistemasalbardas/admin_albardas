@@ -16,6 +16,12 @@
 			return $data;
 		}
 
+		/*public function record($id, $id_product, $concept, $quantity, $ww ,$ww)
+		{
+			$this->inventories->set("name", $_POST['name']);
+			$this->inventories->save_record();
+		}*/
+
 		public function listInventories()
 		{
 			$data = $this->inventories->list_inventories();
@@ -24,16 +30,24 @@
 
 		public function add(){
 			if($_POST){
+
 				$this->inventories->set("name", $_POST['name']);
 				$this->inventories->set("utility", $_POST['utility']);
 				$this->inventories->set("description", $_POST['description']);
 				$this->inventories->set("responsable", $_POST['responsable']);
 				$this->inventories->add();
 				header("Location: ".URL."inventories/");
+
 			}else{
 				return false;
 			}
 		
+		}
+		//FUNCIONES
+		public function delete()
+		{
+			$this->products->set('id', $_GET['id']);
+			$this->products->delete();
 		}
 
 		public function listUsers()
