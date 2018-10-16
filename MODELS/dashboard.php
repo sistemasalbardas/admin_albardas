@@ -1,7 +1,6 @@
 <?php 
 	namespace MODELS;
-
-
+	
 	class dashboard 
 	{
 		public $dashboard; 

@@ -37,7 +37,9 @@
 							</tr>
 						</thead>	
 						<tbody>
-							<?php while($row = mysqli_fetch_array($inventories)){ ?>
+							<?php while($row = mysqli_fetch_array($inventories)){ 
+									//print_r($row);
+								?>
 								<tr>
 									<th><?= $row['id']; ?></th>
 									<th>

@@ -1,6 +1,6 @@
 <?php 
 	$users = $inventories->listUsers();
- ?>
+?>
 <div class="col-md-12">
 	<div class="box box-success">
 		<div class="box-header with-border">
@@ -27,7 +27,11 @@
 						<div class="col-lg-10">
 							<label for="utility">Uso :</label>
 							<select name="utility" id="utility" class="form-control selectpicker" data-live-search="true">
+								<option value="#">SELECCIONA UNA OPCION</option>
 								<option value="1">Producto Terminado</option>
+								<option value="2">Insumos</option>
+								<option value="3">Cosecha</option>
+								<option value="4">Unidad de servicio</option>
 							</select>
 						</div>
 					</div>
@@ -53,9 +57,6 @@
 							<textarea name="description" id="description" class="h70 form-control"></textarea>
 						</div>
 					</div>
-					
-				
-
 				</div>
 				<div class="col-lg-4 ">
 					<input type="submit" value="Guardar" class="btn btn-success sgreen">
