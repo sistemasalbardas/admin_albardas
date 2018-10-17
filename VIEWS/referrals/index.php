@@ -247,7 +247,9 @@
 															
 				
 														</tr>
-												<?php } }
+												<?php 
+												$totalunit += $key[2];
+												} }
 														
 													?>
 													
@@ -255,9 +257,22 @@
 											
 				
 											</tbody>
+											<tfoot>	
+												<tr>	
+													<th>
+														<input type="number" name="total_unit" value="<?= $totalunit;?>">
+														<b>	<?= $totalunit; ?>	</b>
+													</th>
+													<tr></tr>
+													<tr></tr>
+													<tr></tr>
+												</tr>
+											</tfoot>
 										</table>
 				
 										</div>
+									
+										
 									<div class="block text-center  ">	
 										<div class="clear">	</div>
 										<button onclick="openModal(this,'searchP');" class="btn btn-primary sblue" type="button">

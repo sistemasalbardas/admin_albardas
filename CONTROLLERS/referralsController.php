@@ -261,7 +261,7 @@
 
 		public function generateRemision()
 		{
-			error_log(print_r($_POST,true));
+			//error_log(print_r($_POST,true));
 
 			if (isset($_POST['f_embark'] , $_POST['f_charge'])) {
 				//ACTUALIACION DE FOLIO DE CARGA
@@ -351,6 +351,9 @@
 				$this->referrals->set("id_client", $_POST['costumer']);
 				$this->referrals->set("id_add", $_POST['add']);
 				$this->referrals->set("status", 1);
+
+				//TOTAL DE UNIDADES (BULTOS)
+				$this->referrals->set("total_unit", $_POST['total_unit']);
 				
 				$this->referrals->save_freight();
 				$this->referrals->saveProducts();
