@@ -18,7 +18,10 @@
 	$costumer = $data['costumer'];
 	$list = $data['list'];
 	
-	//print_r($data['list']);
+	//print_r($data['costumer']);
+	//$400
+	//$350
+	
  ?>
  <div class="col-md-12">
 	<div class="box box-success">
@@ -260,7 +263,7 @@
 											<tfoot>	
 												<tr>	
 													<th>
-														<input type="number" name="total_unit" value="<?= $totalunit;?>">
+														<input type="hidden" name="total_unit" value="<?= $totalunit;?>">
 														<b>	<?= $totalunit; ?>	</b>
 													</th>
 													<tr></tr>

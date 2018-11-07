@@ -1,6 +1,7 @@
 <?php 
 	$data = $costumers->index();
 
+
 	$permits = $costumers->permits();
 
 	$read = $permits[3];
@@ -36,11 +37,14 @@
 							<th scope="col" >RFC	</th>
 							<th scope="col" >TELEFONO</th>
 							<th scope="col" >EMBARQUES</th>
+							<th scope="col" >CODIGO</th>
 							<th scope="col" >ACCIONES</th>
 						</tr>
 					</thead>	
 					<tbody>
-						<?php while($row = mysqli_fetch_array($data)){?>
+						<?php while($row = mysqli_fetch_array($data)){
+							///error_log(print_r($row, true));
+							?>
 							<tr>
 								  <th ><?= $row['id']; ?></th>
 								  <th >	
@@ -48,6 +52,7 @@
 								  <th ><?= $row['rfc']; ?></th>
 								  <th ><?= $row['phone']; ?></th>
 								  <th ><?= $row['embark']; ?></th>
+								  <th ><?= $row['code']; ?></th>
 								  <th >
 								  	<?php if ($delete == 1) { ?>
 									  <a href="delete/?id=<?= $row['id'];?>" onclick="deleteCostumer(this);" class="tool">

@@ -5,7 +5,8 @@
 
 	class costumersController{
 		private $costumers;
-
+		public $list_keys = array(); 
+		
 		public function __construct(){
 			$this->costumers = new costumers();
 
@@ -25,12 +26,83 @@
 
 		}
 
+		public function name($name, $position)
+		{
+
+			$n_words = str_word_count($name, 0);
+			if ($n_words >= 2){
+
+				$nWord = list($palabra1, $palabra2) = explode(' ', $name);
+				$resultado1 = substr($palabra1, 0 , 1);
+				$resultado2 = substr($palabra2, $position, 1);
+				
+				$key = strtoupper($resultado1 . $resultado2);
+
+			}else{
+
+				$nWord = list($palabra1) = explode(' ', $name);
+				$resultado3 = substr($palabra1, 0 , 2);
+				$key = strtoupper($resultado3);
+			}
+			
+			if (in_array($key, $this->list_keys, true)) {
+			   
+			    $new_position = $position + 1;
+			   	$key =  $this->name($name, $new_position);
+
+			}
+			
+			return $key;
+		}
+
+		public function generate_code($name)
+		{
+			//QUE EL CICLO SE EJECUTE
+			$n_words = str_word_count($name, 0);
+
+			if ($n_words >= 2){
+
+				$nWord = list($palabra1, $palabra2) = explode(' ', $name);
+				$resultado1 = substr($palabra1, 0 , 1);
+				$resultado2 = substr($palabra2, 0, 1);
+
+				$code = strtoupper($resultado1 . $resultado2);
+
+			}else{
+
+				$nWord = list($palabra1) = explode(' ', $name);
+				$resultado3 = substr($palabra1, 0 , 2);
+				$code = strtoupper($resultado3);
+			
+			}
+			
+			return $code;
+		}
+
+		public function verify_code($costumers)
+		{
+
+			while($row = mysqli_fetch_array($costumers)){
+				array_push($this->list_keys, $row['code']);
+			}
+		
+		}
+
+
 		public function add(){
 			if($_POST){
+
+				$this->verify_code($this->index());
+
+
+				$code = $this->name($_POST['name'], null);
+				error_log(print_r($this->list_keys, true));
+				error_log($code);
 				$this->costumers->set("name", $_POST['name']);
 				$this->costumers->set("address", $_POST['address']);
 				$this->costumers->set("rfc", $_POST['rfc']);
 				$this->costumers->set("phone", $_POST['phone']);
+				$this->costumers->set("code", $code);
 				$this->costumers->add();
 				header("Location: ".URL."costumers/");
 
@@ -83,14 +155,12 @@
 			} else {
 				return false;
 			}
-
 		}
 
 		public function deleteAddres(){
 			$this->costumers->set("id",$_GET['id']);
 			$this->costumers->delete_addres();
 			header("Location: ".URL."costumers/address/");
-
 
 		}
 

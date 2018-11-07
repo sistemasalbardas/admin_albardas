@@ -58,7 +58,7 @@ namespace MODELS;
 			return $row;
 		}
 
-
+	
 
 		public function getCostumer(){
 			$sql = "SELECT * FROM costumers WHERE id = '{$this->id_costumer}'";
@@ -105,7 +105,7 @@ namespace MODELS;
 			$_SESSION['products'][] = $products;
 			$data = $_SESSION['products'];
 			return $data;
-			error_log(print_r($_SESSION['products'][0],true));
+			//error_log(print_r($_SESSION['products'][0],true));
 		}
 
 		public function deleteP(){
@@ -281,7 +281,7 @@ namespace MODELS;
 			
 		}
 	
-		public function saveProducts(){
+		/*public function saveProducts(){
 			session_start();
 			$data = $_SESSION['products'][0];
 			$nRows = count($data);	
@@ -291,7 +291,7 @@ namespace MODELS;
 				(null, '{$this->f_embark}', '".$_SESSION['products'][$i][2]."','".$_SESSION['products'][$i][1]."')";
 				$this->con->consultaSimple($sql);	
 			}
-		}
+		}*/
 
 		public function save_freight()
 		{
