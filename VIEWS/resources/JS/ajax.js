@@ -2,7 +2,6 @@
 //LOCAL 
 
 const URL = "http://192.168.50.115/admin_albardas/";
-  
 
 //PRODUCCION
 //const URL = "http://lasalbardas.com/ADMIN/";  

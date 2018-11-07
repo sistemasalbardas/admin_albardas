@@ -36,6 +36,9 @@
 						<th scope="col">FLETE</th>
 						<th scope="col">EMBARQUE</th>
 						<th scope="col">CARGA</th>
+						<th scope="col">EMPRESA</th>
+						<th scope="col">CLIENTE</th>
+						<th scope="col">BULTOS</th>
 						<th scope="col">ARCHIVOS</th>
 						<th scope="col">ACCIONES</th>
 					</tr>
@@ -48,6 +51,9 @@
 					      	<th><?= $row['f_freight']; ?></th>
 					      	<th><?= $row['f_embark']; ?></th>
 					      	<th><?= $row['f_charge']; ?></th>
+						    <th><?= $row['employe']; ?></th>
+							<th><?= $row['customer']; ?></th>
+							<th><?= $row['total_unit']; ?></th>
 					      	<th>
 					      		<a href="<?=URL?>VIEWS/pdf_files/referrals/<?= $row['file_remision']; ?>" target="_blank" class="tool" download>
 							      	<i class="btn btn-primary btn-xs far fa-file-alt btn_padd s16"></i>

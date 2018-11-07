@@ -141,6 +141,7 @@
 				<img src="<?= URL_IMG ?>/logo.jpg" width="100%">
 			</div>
 		</div>
+	     
 		<div class="formPanel">	
 			<form action="<?= URL ?>login/validateLogin" class="formLogin" method="POST" onsubmit="login()" autocomplete="off">
 					<h5 class="text-center"><strong>Iniciar Sesión</strong></h5>

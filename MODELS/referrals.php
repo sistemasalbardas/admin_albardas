@@ -314,7 +314,10 @@ namespace MODELS;
 		}
 
 		public function view(){	
-			$sql = "SELECT * FROM remisions";
+			$sql = "SELECT r.id, r.date, r.f_freight, r.f_embark, r.f_charge, r.id_employe,
+			r.file_remision, r.file_responsive,
+			r.file_edited, r.total_unit, e.name as employe, c.name as customer FROM `remisions` AS r INNER JOIN
+			 employes AS e ON r.id_employe=e.id INNER JOIN costumers AS c ON r.id_costumer=c.id";
 			$data = $this->con->consultaRetorno($sql);
 			return $data;
 		}

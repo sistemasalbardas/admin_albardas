@@ -327,8 +327,8 @@
 												<div class="col-md-8">
 													<select name="origin" id="origin" class="block form-control form-control-sm selectpicker" data-live-search="true" required="">
 														<option value="">SELECCIONA UNA OPCION </option>
-														<option value="Parras de la fuente, ejido el calabacillal, Agricola las albardas.">ALBARDAS</option>
-														<option value="Carretara Saltillo - matamoros, ejido el Mimbre Coah, Rancho magdalenas.">MAGDALENAS</option>
+														<option value="Parras de la Fuente, Ejido El Calabacillal, Agricola las Albardas.">ALBARDAS</option>
+														<option value="Carretara Saltillo - Matamoros, Ejido El Mimbre Coah, Rancho Magdalenas.">MAGDALENAS</option>
 													</select>
 												</div>
 											</div>
