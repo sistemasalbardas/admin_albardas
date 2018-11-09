@@ -98,7 +98,6 @@
 			<div class="small-box bg-red">
 				<div class="inner">
 					<h3><?=$num_productos?></h3>
-
 					<p>Productos</p>
 				</div>
 				<div class="icon">
@@ -107,6 +106,7 @@
 			</div>
 		</div>
 		<!-- ./col -->
+
 	</div>
 	<div class="box box-success">
 	    <div class="box-header with-border">
@@ -116,7 +116,7 @@
 	            <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
 	            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
 	            </button>
-	        
+
 	       </div>
 	    </div>
 		<div class="box-body padd10 bgWhite table-responsive">
