@@ -1,7 +1,11 @@
 ///CONTANTES URLS->
 //LOCAL 
 
+<<<<<<< HEAD
 const URL = "http://192.168.50.124/admin_albardas/";  
+=======
+const URL = "http://192.168.50.115/admin_albardas/";
+>>>>>>> f3a34ea1c6efca2b6f30d93e4d876bde765e89c3
 
 //PRODUCCION
 //const URL = "http://lasalbardas.com/ADMIN/";  

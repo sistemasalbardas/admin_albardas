@@ -144,10 +144,14 @@ a.more-link {
 <h1>404 Error Page not found</h1>
 
 <section class="error-container">
-  <span><span>4</span></span>
+  <span>
+    <span>4</span>
+  </span>
   <span>0</span>
-  <span><span>4</span></span>
+  <span>
+    <span>4</span>
+  </span>
 </section>
 <div class="link-container">
-  <a  href="<?=URL?>" class="more-link">Go at home</a>
+  <a  href="<?=URL?>" class="more-link">IR A INICIO</a>
 </div>

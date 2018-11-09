@@ -210,11 +210,16 @@
 		              <i class="far fa-circle"></i> Proovedores
 		            </a>
 	          	</li>
-			    <li>
+			        <li>
 		            <a href="<?=URL?>referrals/products/">
 		              <i class="far fa-circle"></i> Productos
 		            </a>
-		        </li>
+		          </li>
+              <li>
+                <a href="<?=URL?>referrals/requisition/">
+                  <i class="far fa-circle"></i> Requisiciones
+                </a>
+              </li>
           	</ul>
 	    </li>
       <?php if ($p_products[7] == 1) {?>

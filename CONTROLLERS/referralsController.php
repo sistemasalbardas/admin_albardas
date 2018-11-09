@@ -1,6 +1,4 @@
-<?php 
-
-	namespace CONTROLLERS;
+<?php 	namespace CONTROLLERS;
 	
 	use MODELS\referrals as referrals;
 	
@@ -19,9 +17,11 @@
 		public $file;
 		public $id_employe;
 		public $id_costumer;
+
 		//private $id;	
 
 		public function __construct()
+
 		{
 			$this->referrals = new referrals();
 		}
@@ -106,6 +106,9 @@
 
 		public function folio_carga()
 		{
+			
+			$costumer = $this->referrals->getCostumer();
+
 			$nWord = list($palabra1, $palabra2) = explode(' ', $_POST['name_costumer']);
 			
 			$this->referrals->set("id_costumer", $_POST['id_costumer']);
@@ -114,10 +117,7 @@
 			$row = $this->referrals->selectCharge();
 
 			$newEmbark = $row['embark'];
-			
-			$resultado1 = substr($palabra1, 0 , 1);
-			$resultado2 = substr($palabra2, 0 , 1);
-			$resultado3 = substr($palabra1, 0 , 2);
+
 
 			$nString = strlen($newEmbark); 
 
@@ -125,22 +125,22 @@
 				
 				switch ($nString) {
 					case 0:
-						return $year."-".strtoupper($resultado1.$resultado2)."-000".$newEmbark;
+						return $year."-".strtoupper($costumer['code'])."-000".$newEmbark;
 						break;
 
 					case 1:
-						return $year."-".strtoupper($resultado1.$resultado2)."-000".$newEmbark;
+						return $year."-".strtoupper($costumer['code'])."-000".$newEmbark;
 						break;
 
 					case 2:
-						return $year."-".strtoupper($resultado1.$resultado2)."-00".$newEmbark;
+						return $year."-".strtoupper($costumer['code'])."-00".$newEmbark;
 						break;
 					
 					case 3:
-						return $year."-".strtoupper($resultado1.$resultado2)."-0".$newEmbark;
+						return $year."-".strtoupper($costumer['code'])."-0".$newEmbark;
 						break;
 					case 4:
-						return $year."-".strtoupper($resultado1.$resultado2)."-".$newEmbark;
+						return $year."-".strtoupper($costumer['code'])."-".$newEmbark;
 						break;
 				}
 
@@ -148,23 +148,23 @@
 
 				switch ($nString) {
 					case 0:
-						return $year."-".strtoupper($resultado3)."-000".$newEmbark;
+						return $year."-".strtoupper($costumer['code'])."-000".$newEmbark;
 						break;
 
 					case 1:
-						return $year."-".strtoupper($resultado3)."-000".$newEmbark;
+						return $year."-".strtoupper($costumer['code'])."-000".$newEmbark;
 						break;
 
 					case 2:
-						return $year."-".strtoupper($resultado3)."-00".$newEmbark;
+						return $year."-".strtoupper($costumer['code'])."-00".$newEmbark;
 						break;
 					
 					case 3:
-						return $year."-".strtoupper($resultado3)."-0".$newEmbark;
+						return $year."-".strtoupper($costumer['code'])."-0".$newEmbark;
 						break;
 
 					case 4:
-						return $year."-".strtoupper($resultado3)."-".$newEmbark;
+						return $year."-".strtoupper($costumer['code'])."-".$newEmbark;
 						break;
 			
 				}
@@ -285,8 +285,7 @@
 						'CAAT' => $_POST['CAAT'],
 						'ALPHA' => $_POST['ALPHA'],
 						'ICCMX' => $_POST['ICCMX'],
-						'US_DOT' => $_POST['US_DOT']
-						);
+						'US_DOT' => $_POST['US_DOT']);
 
 					$_SESSION['remision'] = $infoExtra;
 				}else if(isset($_POST['box'])){
@@ -356,7 +355,7 @@
 				$this->referrals->set("total_unit", $_POST['total_unit']);
 				
 				$this->referrals->save_freight();
-				$this->referrals->saveProducts();
+				//$this->referrals->saveProducts();
 				$this->referrals->save_remision();
 					
 			}else{

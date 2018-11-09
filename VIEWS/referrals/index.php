@@ -18,7 +18,10 @@
 	$costumer = $data['costumer'];
 	$list = $data['list'];
 	
-	//print_r($data['list']);
+	//print_r($data['costumer']);
+	//$400
+	//$350
+	
  ?>
  <div class="col-md-12">
 	<div class="box box-success">

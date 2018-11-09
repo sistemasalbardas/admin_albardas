@@ -7,10 +7,11 @@
 	define('URL', "http://192.168.50.124/admin_albardas/");
 
 	//PRODUCCION (NO BORRAR)->
+	//PRODUCCION (NO BORRAR)->
 	//define('URL', "http://lasalbardas.com/ADMIN/");
 
 	define('URL_IMG', URL."VIEWS/resources/IMG/");
-	define('URL_RES', URL."resources/");
+	define('URL_RES', URL."resources/"	);
 
 	require_once "CONFIG/autoload.php";
 	require_once "RESOURCES/MPDF/mpdf.php";
