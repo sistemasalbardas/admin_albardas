@@ -18,7 +18,10 @@
 	$costumer = $data['costumer'];
 	$list = $data['list'];
 	
-	//print_r($data['list']);
+	//print_r($data['costumer']);
+	//$400
+	//$350
+	
  ?>
  <div class="col-md-12">
 	<div class="box box-success">
@@ -247,7 +250,9 @@
 															
 				
 														</tr>
-												<?php } }
+												<?php 
+												$totalunit += $key[2];
+												} }
 														
 													?>
 													
@@ -255,9 +260,22 @@
 											
 				
 											</tbody>
+											<tfoot>	
+												<tr>	
+													<th>
+														<input type="hidden" name="total_unit" value="<?= $totalunit;?>">
+														<b>	<?= $totalunit; ?>	</b>
+													</th>
+													<tr></tr>
+													<tr></tr>
+													<tr></tr>
+												</tr>
+											</tfoot>
 										</table>
 				
 										</div>
+									
+										
 									<div class="block text-center  ">	
 										<div class="clear">	</div>
 										<button onclick="openModal(this,'searchP');" class="btn btn-primary sblue" type="button">
@@ -309,8 +327,8 @@
 												<div class="col-md-8">
 													<select name="origin" id="origin" class="block form-control form-control-sm selectpicker" data-live-search="true" required="">
 														<option value="">SELECCIONA UNA OPCION </option>
-														<option value="Parras de la fuente, ejido el calabacillal, Agricola las albardas.">ALBARDAS</option>
-														<option value="Carretara Saltillo - matamoros, ejido el Mimbre Coah, Rancho magdalenas.">MAGDALENAS</option>
+														<option value="Parras de la Fuente, Ejido El Calabacillal, Agricola las Albardas.">ALBARDAS</option>
+														<option value="Carretara Saltillo - Matamoros, Ejido El Mimbre Coah, Rancho Magdalenas.">MAGDALENAS</option>
 													</select>
 												</div>
 											</div>

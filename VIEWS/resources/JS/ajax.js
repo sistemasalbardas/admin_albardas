@@ -5,6 +5,7 @@ const URL = "http://localhost/admin_albardas/";
 
 //PRODUCCION
 //const URL = "http://lasalbardas.com/ADMIN/";  
+//const URL = "http://lasalbardas.com/TESTS/";  
 $(document).ready(function(){
  
     $("div.spinner").addClass("hidden");
@@ -299,22 +300,15 @@ function saveFreight(obj) {
 
                     swal("Ok!", "Informacion correcta", "success");   
                     closeModal2();
-
                 }
-
             });
-        }
-
-  
-
-    
+        }    
 }
 /*
 function saveWork(obj){
     event.preventDefault();
      var formData = new FormData($(obj)[0]);
    
-     
     $.ajax({
         url: "saveWork/",
         type: 'POST',
@@ -355,7 +349,6 @@ function saveWork(obj){
 function saveAs(obj){
     event.preventDefault();
     alert();
-   
 }
 
 function discount_work2(obj){
@@ -375,7 +368,6 @@ function discount_work2(obj){
           $('form#discount_work')[0].reset();
           swal("Ok!", "Usuario registrado", "success");
           closeModal();
-
         }
     }); 
 }
@@ -412,8 +404,6 @@ function deleteWork(obj){
         swal("Operacion cancelada");
       }
     });
-
-    
 }
 
 function updateWork(obj){

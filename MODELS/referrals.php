@@ -58,7 +58,7 @@ namespace MODELS;
 			return $row;
 		}
 
-
+	
 
 		public function getCostumer(){
 			$sql = "SELECT * FROM costumers WHERE id = '{$this->id_costumer}'";
@@ -105,7 +105,7 @@ namespace MODELS;
 			$_SESSION['products'][] = $products;
 			$data = $_SESSION['products'];
 			return $data;
-			error_log(print_r($_SESSION['products'][0],true));
+			//error_log(print_r($_SESSION['products'][0],true));
 		}
 
 		public function deleteP(){
@@ -239,7 +239,7 @@ namespace MODELS;
 		
 		public function save_remision(){
 
-			$sql = "INSERT INTO remisions (id, date, time, f_freight, f_embark, f_charge, id_employe, id_costumer, id_trasport, id_truck, id_box, id_driver, id_user, file_remision, file_report, file_edited, file_responsive, id_add) VALUES(
+			$sql = "INSERT INTO remisions (id, date, time, f_freight, f_embark, f_charge, id_employe, id_costumer, id_trasport, id_truck, id_box, id_driver, id_user, file_remision, file_report, file_edited, file_responsive, id_add, total_unit) VALUES(
 				'',
 				'{$this->date}',
 				'{$this->time}',
@@ -257,7 +257,8 @@ namespace MODELS;
 				'',
 				'',
 				'{$this->file_responsive}',
-				'{$this->id_add}')";
+				'{$this->id_add}',
+				'{$this->total_unit}')";
 
 				$this->con->consultaSimple($sql);
 		}
@@ -280,7 +281,7 @@ namespace MODELS;
 			
 		}
 	
-		public function saveProducts(){
+		/*public function saveProducts(){
 			session_start();
 			$data = $_SESSION['products'][0];
 			$nRows = count($data);	
@@ -290,7 +291,7 @@ namespace MODELS;
 				(null, '{$this->f_embark}', '".$_SESSION['products'][$i][2]."','".$_SESSION['products'][$i][1]."')";
 				$this->con->consultaSimple($sql);	
 			}
-		}
+		}*/
 
 		public function save_freight()
 		{
@@ -313,7 +314,10 @@ namespace MODELS;
 		}
 
 		public function view(){	
-			$sql = "SELECT * FROM remisions";
+			$sql = "SELECT r.id, r.date, r.f_freight, r.f_embark, r.f_charge, r.id_employe,
+			r.file_remision, r.file_responsive,
+			r.file_edited, r.total_unit, e.name as employe, c.name as customer FROM `remisions` AS r INNER JOIN
+			 employes AS e ON r.id_employe=e.id INNER JOIN costumers AS c ON r.id_costumer=c.id";
 			$data = $this->con->consultaRetorno($sql);
 			return $data;
 		}
@@ -336,8 +340,6 @@ namespace MODELS;
 							'employe' => $datEmploye, 
 							'data' => $row,
 							'products' => $getProducts);
-
-
 			return $data;
 		}
 

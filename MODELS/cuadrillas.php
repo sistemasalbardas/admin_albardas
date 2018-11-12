@@ -1,5 +1,7 @@
 <?php 
+
 	namespace MODELS;
+
 	class cuadrillas 
 	{
 		//CUADRILLAS

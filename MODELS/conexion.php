@@ -50,7 +50,7 @@
 
 
 		public function consultaRetorno($sql){
-
+			
 			$datos = $this->con->query($sql);
 			return $datos;
 

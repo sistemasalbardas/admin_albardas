@@ -14,6 +14,7 @@
   $today = $_POST['date'];
   $tomorrow = strtotime ( '+1 day' , strtotime ( $today ) ) ;
   $tomorrow = date ( 'j-m-Y' , $tomorrow );
+  session_start();|
 
 
   $html = '<table class="table" style="font-size: 13px ; font-family: Calibri; border:2px solid #000;  background: url('.URL_IMG.'/logo2.png); background-position: center; padding: 10px; width: 100%; height:3308px; text-transform: uppercase;">
@@ -631,6 +632,8 @@
         </tfooter>
       </table>';
 
+
+//RESPONSIVE TEMPLATE
 $html2='';
 $html2 .= '<table class="table" style="font-size: 13px ; font-family: Calibri; border:2px solid #000;  background: url('.URL_IMG.'/logo2.png); background-position: center; padding: 10px; width: 100%; height:3308px; ">
     <thead>
@@ -797,7 +800,7 @@ $html2 .= '<table class="table" style="font-size: 13px ; font-family: Calibri; b
                   NOMBRE Y FIRMA DEL CHOFER.
                 </span>
               </th>
-              <th width="25%" >
+              <th width="25%">
               </th>
             </tr>
           </table>

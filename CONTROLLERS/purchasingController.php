@@ -130,6 +130,10 @@
 			}
 		}
 
+		public function requisition()
+		{
+			return false;
+		}
 
 	}
 	

@@ -6,7 +6,7 @@
 <div class="col-md-12">
   <div class="box box-success">
     <div class="box-header with-border">
-      <h3 class="box-title text-600">Control</h3>
+      <h3 class="box-title text-600">Control de porveedores y categorias</h3>
       <div class="box-tools pull-right">
                         
               <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
@@ -115,7 +115,6 @@
                       <tr>
                         <th scope="col" >ID</th>
                         <th scope="col" >CATEGORIA</th>
-                        <th scope="col" >COMENTARIOS</th>
                         <th scope="col" >ACCIONES</th>
                       </tr>
                     </thead>  
@@ -126,9 +125,7 @@
                         <th>
                           <?= $row['name']; ?>
                         </th>
-                        <th>
-                          <?= $row['description'];?>
-                        </th>
+                        
                        
                         
                         <th>

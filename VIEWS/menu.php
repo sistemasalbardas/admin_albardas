@@ -1,3 +1,4 @@
+
 <?php 
     ///REMISIONES
     $p_remisions = $_SESSION['user'][0]['permits'][0];
@@ -218,7 +219,12 @@
 		            <a href="<?=URL?>referrals/products/">
 		              <i class="far fa-circle"></i> Productos
 		            </a>
-		        </li>
+		          </li>
+              <li>
+                <a href="<?=URL?>referrals/requisition/">
+                  <i class="far fa-circle"></i> Requisiciones
+                </a>
+              </li>
           	</ul>
 	    </li>
             <li>

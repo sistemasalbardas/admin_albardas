@@ -11,6 +11,7 @@
 		public $address; 
 		public $rfc; 
 		public $phone; 
+		public $code; 
 
 		public function __construct(){
 			$this->con = new conexion();
@@ -44,8 +45,9 @@
 		
 
 		public function add(){
+	
 
-			$sql = "INSERT INTO costumers (id, name, address, phone, rfc, embark) VALUES (null, '{$this->name}', '{$this->address}', '{$this->phone}', '{$this->rfc}', '0')";
+			$sql = "INSERT INTO costumers (id, name, address, phone, rfc, embark, code) VALUES (null, '{$this->name}', '{$this->address}', '{$this->phone}', '{$this->rfc}', '0', '{$this->code}')";
 			$this->con->consultaSimple($sql);
 
 		}

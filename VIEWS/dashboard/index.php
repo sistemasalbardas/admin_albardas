@@ -14,7 +14,7 @@
 </style>
 <?php 
 
-	$cone = new PDO('mysql:host=localhost; dbname=albardas; charset=UTF8', 'root', '');
+	$cone = new PDO('mysql:host=localhost; dbname=albardas; ', 'root', '');
 
 	$sql = "SELECT *, (SELECT SUM(embark) FROM costumers WHERE embark>0) as suma_embarques FROM costumers WHERE embark>0";
 	$result = $cone->prepare($sql);
@@ -48,75 +48,76 @@
 	// var_dump($clientes);
 ?>
 <div class="col-md-12">
-<h3 class="box-title text-600">DASHBOARD</h3>
-<div class="row">
-				<div class="col-lg-3 col-xs-6">
-					<!-- small box -->
-					<div class="small-box bg-aqua">
-						<div class="inner">
-							<h3><?= $t->suma_embarques; ?></h3>
+	<h3 class="box-title text-600">DASHBOARD</h3>
+	<div class="row">
+		<div class="col-lg-3 col-xs-6">
+		
+			<!-- small box -->
+			<div class="small-box bg-aqua">
+				<div class="inner">
+					<h3><?= $t->suma_embarques; ?></h3>
 
-							<p>Embarques</p>
-						</div>
-						<div class="icon">
-							<span class="icon-truck"></span>
-						</div>					
-					</div>
+					<p>Embarques</p>
 				</div>
-				<!-- ./col -->
-				<div class="col-lg-3 col-xs-6">
-					<!-- small box -->
-					<div class="small-box bg-green">
-						<div class="inner">
-							<h3>$<?=number_format($t->monto_total,0,',',',') ?></h3>
-
-							<p>Egresos de Fletes</p>
-						</div>
-						<div class="icon">
-							<span class="icon-banknote"></span>		
-						</div>					
-					</div>
-				</div>
-				<!-- ./col -->
-				<div class="col-lg-3 col-xs-6">
-					<!-- small box -->
-					<div class="small-box bg-yellow">
-						<div class="inner">
-							<h3><?=$num_clientes?></h3>
-
-							<p>Clientes</p>
-						</div>
-						<div class="icon">
-							<i class="ion ion-person-add"></i>
-						</div>					
-					</div>
-				</div>
-				<!-- ./col -->
-				<div class="col-lg-3 col-xs-6">
-					<!-- small box -->
-					<div class="small-box bg-red">
-						<div class="inner">
-							<h3><?=$num_productos?></h3>
-
-							<p>Productos</p>
-						</div>
-						<div class="icon">
-						<span  class="icon-price-tag"></span>
-						</div>					
-					</div>
-				</div>
-				<!-- ./col -->
+				<div class="icon">
+					<span class="icon-truck"></span>
+				</div>					
 			</div>
+		</div>
+		<!-- ./col -->
+		<div class="col-lg-3 col-xs-6">
+			<!-- small box -->
+			<div class="small-box bg-green">
+				<div class="inner">
+					<h3>$<?=number_format($t->monto_total,0,',',',') ?></h3>
+
+					<p>Egresos de Fletes</p>
+				</div>
+				<div class="icon">
+					<span class="icon-banknote"></span>		
+				</div>					
+			</div>
+		</div>
+		<!-- ./col -->
+		<div class="col-lg-3 col-xs-6">
+			<!-- small box -->
+			<div class="small-box bg-yellow">
+				<div class="inner">
+					<h3><?=$num_clientes?></h3>
+
+					<p>Clientes</p>
+				</div>
+				<div class="icon">
+					<i class="ion ion-person-add"></i>
+				</div>					
+			</div>
+		</div>
+		<!-- ./col -->
+		<div class="col-lg-3 col-xs-6">
+			<!-- small box -->
+			<div class="small-box bg-red">
+				<div class="inner">
+					<h3><?=$num_productos?></h3>
+					<p>Productos</p>
+				</div>
+				<div class="icon">
+				<span  class="icon-price-tag"></span>
+				</div>					
+			</div>
+		</div>
+		<!-- ./col -->
+
+	</div>
 	<div class="box box-success">
 	    <div class="box-header with-border">
 	      <h3 class="box-title text-600">EMBARQUES POR CLIENTE</h3>
 	      <div class="box-tools pull-right">
 	      	                
-                <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-            
-           </div>
+	            <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
+	            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+	            </button>
+
+	       </div>
 	    </div>
 		<div class="box-body padd10 bgWhite table-responsive">
 			<div id="graph_costumers" style="min-width: 100%; height: auto;" >

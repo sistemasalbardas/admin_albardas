@@ -70,6 +70,5 @@
 		}
 	}
 
-
 	$login = new login();
  ?>

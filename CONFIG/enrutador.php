@@ -48,7 +48,7 @@
 	 		
 	 			
 	 		}else{
-	 			print "no se arma";
+	 			require ROOT."VIEWS/404/404.php";
 	 		}
 
 
