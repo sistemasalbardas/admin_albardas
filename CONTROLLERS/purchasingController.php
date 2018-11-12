@@ -22,6 +22,13 @@
 			return $data;
 		}
 
+		// metodo para la vista de insumos
+		public function supplies()
+		{
+			return false;
+		}
+
+
 		public function addsupplier()
 		{
 			if ($_POST) {

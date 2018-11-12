@@ -35,7 +35,7 @@
 
 	 		//CARGAR VISTA
 	 		$ruta = ROOT . "VIEWS" . DS . $request->getControlador() . DS . $request->getMetodo() . ".php";
-	 		//print $ruta;
+	 		// print $ruta;
 	 		if (is_readable($ruta)) {
 	 			
 	 			if ($request->getControlador() == "login") {
