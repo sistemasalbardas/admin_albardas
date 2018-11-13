@@ -210,7 +210,12 @@
 		              <i class="far fa-circle"></i> Proovedores
 		            </a>
 	          	</li>
-			        <li>
+              <li>
+		            <a href="<?=URL?>purchasing/supplies/">
+		              <i class="far fa-circle"></i> Insumos
+		            </a>
+	          	</li>
+			    <li>
 		            <a href="<?=URL?>referrals/products/">
 		              <i class="far fa-circle"></i> Productos
 		            </a>
@@ -222,14 +227,11 @@
               </li>
           	</ul>
 	    </li>
-      <?php if ($p_products[7] == 1) {?>
             <li>
-              <a href="<?=URL?>inventories/">
+              <a href="<?=URL?>wharehouse/">
                 <i class="far fa-circle icon"></i> <span>Inventarios</span>
               </a>
             </li>
-          <?php } ?>
-
           <?php if ($p_products[7] == 1) {?>
   	        <li>
               <a href="<?=URL?>products/">

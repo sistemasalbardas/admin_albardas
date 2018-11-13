@@ -4,7 +4,7 @@
 	define('ROOT', realpath(dirname(__FILE__)) . DS);
 
 	//LOCAL->
-	define('URL', "http://192.168.1.82/admin_albardas/");
+	define('URL', "http://localhost/admin_albardas/");
 
 	//PRODUCCION (NO BORRAR)->
 	//PRODUCCION (NO BORRAR)->
@@ -19,6 +19,8 @@
 
 	CONFIG\autoload::run();
 	CONFIG\enrutador::run(new CONFIG\request());
+
+
 
 ?>
 

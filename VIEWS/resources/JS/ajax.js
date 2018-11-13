@@ -1,7 +1,7 @@
 ///CONTANTES URLS->
 //LOCAL 
 
-const URL = "http://192.168.1.82/admin_albardas/";  
+const URL = "http://localhost/admin_albardas/";  
 
 //PRODUCCION
 //const URL = "http://lasalbardas.com/ADMIN/";  
