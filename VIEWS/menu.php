@@ -205,9 +205,9 @@
 	            </span>
           	</a>
           	<ul class="treeview-menu">
-	            <li>
-		            <a href="<?=URL?>purchasing/suppliers/">
-		              <i class="far fa-circle"></i> Proovedores
+              <li>
+		            <a href="<?=URL?>purchasing/purchase/">
+		              <i class="far fa-circle"></i> Compras
 		            </a>
 	          	</li>
               <li>
@@ -215,16 +215,11 @@
 		              <i class="far fa-circle"></i> Insumos
 		            </a>
 	          	</li>
-			    <li>
-		            <a href="<?=URL?>referrals/products/">
-		              <i class="far fa-circle"></i> Productos
-		            </a>
-		          </li>
               <li>
-                <a href="<?=URL?>referrals/requisition/">
-                  <i class="far fa-circle"></i> Requisiciones
-                </a>
-              </li>
+		            <a href="<?=URL?>purchasing/providers/">
+		              <i class="far fa-circle"></i> Provedores
+		            </a>
+	          	</li>
           	</ul>
 	    </li>
             <li>

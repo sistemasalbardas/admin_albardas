@@ -25,11 +25,11 @@
             <br>
             <div class="col-lg-6 col-md-6 col-sm-12">
               <button type="button" data-toggle="modal" data-target="#entrada" class="btn btn-info">Entrada</button>
-              <button type="button" class="btn btn-info">Salida</button>
-              <button type="button" class="btn btn-info">Transferencia</button>
+              <button type="button" data-toggle="modal" data-target="#salida" class="btn btn-info">Salida</button>
+              <button type="button" data-toggle="modal" data-target="#transferencia" class="btn btn-info">Transferencia</button>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
-              <button type="button" class="pull-right btn btn-info">Nuevo Almacen</button>
+              <button type="button" data-toggle="modal" data-target="#nuevoAlmacen"  class="pull-right btn btn-info">Nuevo Almacen</button>
             </div>
             <div class="clearfix"></div>
             <hr>
@@ -44,8 +44,27 @@
               </thead>
             </table>
           </div>
-          <div role="tabpanel" class="tab-pane" id="almacenes">
-
+          <div role="tabpanel" class="tab-pane active" id="almacenes">
+            <br>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <button type="button" data-toggle="modal" data-target="#entrada" class="btn btn-info">Entrada</button>
+              <button type="button" data-toggle="modal" data-target="#salida" class="btn btn-info">Salida</button>
+              <button type="button" data-toggle="modal" data-target="#transferencia" class="btn btn-info">Transferencia</button>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <button type="button" data-toggle="modal" data-target="#nuevoAlmacen"  class="pull-right btn btn-info">Nuevo Almacen</button>
+            </div>
+            <div class="clearfix"></div>
+            <hr>
+            <table id="tbl_wharehouse" class="table-table-striped">
+              <thead>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Superficie</th>
+                <th>Uso</th>
+                <th>Acciones</th>
+              </thead>
+            </table>
           </div>
         </div>
           <!-- /.nav-tabs-custom -->
@@ -126,7 +145,6 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Guardar y Nuevo</button>
             <button type="submit" class="btn btn-primary">Recibir compra</button>
           </div>
         </form>
@@ -136,7 +154,211 @@
     </div>
 </div>
 
+<div class="modal fade" id="salida" style="display: none;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"></span></button>
+          <h4 class="modal-title">SALIDAS</h4>
+         
+        </div>
+        <div class="col-lg-10 col-md-12 col-sm-12">
+          <table id="tbl_wharehouse_salidas" class="table-table-striped">
+                <thead>
+                  <th>Folio</th>
+                  <th>Fecha/Hora</th>
+                  <th>Descripcion de salida</th>
+                  <th>Recibio</th>
+                  <th>Estatus</th>
+                  <th>Acciones</th>
+                </thead>
+          </table>
+        </div>
+        
 
+         <div class="clearfix"></div>
+        <!-- /.modal-content -->
+      </div>
+          <!-- /.modal-dialog -->
+    </div>
+</div>
+
+<div class="modal fade" id="transferencia" style="display: none;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span></button>
+          <h4 class="modal-title">TRANSFERENCIA</h4>
+         
+        </div>
+        <form role="form" onsubmit="addProvider(this);" method="post">
+          <div class="modal-body">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group">
+                  <label for="alm_sal">Almacen de Salida</label>
+                  <select name="alm_sal" id="alm_sal" class="form-control selectpicker" data-live-search="true">
+                    <option value="">Seleccione el almacen</option>
+                    <option value="">Almacen De Casco Bodega</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="alm_ent">Almacen de Entrada</label>
+                  <select name="alm_ent" id="alm_ent" class="form-control selectpicker" data-live-search="true">
+                    <option value="">Seleccione el Almacen</option>
+                    <option value="">Almacen de Fertirriegos</option>
+                  </select>
+                </div> 
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="form-group">
+                  <label for="fecha">Fecha</label>
+                  <div class="form-group has-feedback">
+                    <input type="date" name="fecha" class="form-control inputStyle2" placeholder="Fecha">
+                    <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="resp">Responsable</label>
+                  <select name="resp" id="resp" class="form-control selectpicker" data-live-search="true">
+                    <option value="">Seleccione al Responsable</option>
+                    <option value="">Fredy</option>
+                    <option value="">Macario</option>
+                  </select>
+              </div> 
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label for="obs">Observaciones</label>
+                    <textarea name="obs" class="form-control" id="obs">
+                    </textarea>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="form-group">
+                    <label for="prod">Producto herramienta o insumo</label>
+                    <select name="prod" id="prod" class="form-control selectpicker" data-live-search="true">
+                      <option value="">Seleccione Producto</option>
+                      <option value="">Combustible Disel</option>
+                      <option value="">Combustible Magna</option>
+                    </select>
+                    <label for="disp">Disponible: </label>
+              </div> 
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="form-group">
+                  <label for="cant">Cantidad</label>
+                  <div class="form-group has-feedback">
+                    <input type="number" name="cant" class="form-control inputStyle2" placeholder="Cantidad">
+                    <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+                  </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="form-group">
+                  <label for="btn"></label>
+                  <div class="form-group has-feedback">
+                   <button type="button" class="btn btn-info btn-sm">Agregar + </button>
+                  </div>
+              </div>
+            </div>
+
+
+         
+
+             <div class="clearfix"></div>
+             <div class="col-lg-10 col-md-12 col-sm-12">
+                <table id="tbl_wharehouse_transfers" class="table-table-striped">
+                  <thead>
+                    <th>Codigo</th>
+                    <th>Producto o Insumo</th>
+                    <th>Cantidad</th>
+                    <th>Unidad de medida</th>
+                    <th>Acciones</th>
+                  </thead>
+                </table>
+             </div>
+             <div class="clearfix"></div>
+            
+             
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+        </form>
+        <!-- /.modal-content -->
+      </div>
+          <!-- /.modal-dialog -->
+    </div>
+</div>
+
+<div class="modal fade" id="nuevoAlmacen" style="display: none;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span></button>
+          <h4 class="modal-title">NUEVA ALMACEN</h4>
+         
+        </div>
+        <form role="form" onsubmit="addProvider(this);" method="post">
+          <div class="modal-body">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group">
+                  <label for="nom_alm">Nombre</label>
+                  <input type="text" name="nom_alm" class="form-control inputStyle2" placeholder="Nombre">
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion">Descripcion</label>
+                    <textarea name="descripcion" class="form-control" id="descripcion">
+                    </textarea>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="form-group">
+                  <label for="sup">Superficie</label>
+                  <input type="number" name="sup" class="form-control inputStyle2" placeholder="Superficie">
+              </div>
+              <div class="form-group">
+                  <label for="uso">Uso</label>
+                  <select name="uso" id="uso" class="form-control selectpicker" data-live-search="true">
+                    <option value="">Uso</option>
+                    <option value="">Insumos</option>
+                    <option value="">Cosecha</option>
+                    <option value="">Producto Terminado</option>
+                    <option value="">Unidad de Servicio</option>
+
+                  </select>
+                </div>
+            </div>
+
+            
+
+         
+
+             <div class="clearfix"></div>
+             
+             
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+        </form>
+        <!-- /.modal-content -->
+      </div>
+          <!-- /.modal-dialog -->
+    </div>
+</div>
   <!--TABS CONTENTS-->
 
   

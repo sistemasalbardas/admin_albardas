@@ -16,14 +16,21 @@
 			return false;
 		}
 		
-		public function suppliers()
-		{
-			$data = $this->purchasing->listar_suppliers();
-			return $data;
-		}
+		
 
 		// metodo para la vista de insumos
 		public function supplies()
+		{
+			return false;
+		}
+		
+		// metodo para la vista de provedores
+		public function providers()
+		{
+			return false;
+		}
+
+		public function purchase()
 		{
 			return false;
 		}
