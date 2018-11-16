@@ -35,6 +35,16 @@
 			return false;
 		}
 
+		public function requisitions()
+		{
+			return false;
+		}
+
+		public function programming()
+		{
+			return false;
+		}
+
 
 		public function addsupplier()
 		{

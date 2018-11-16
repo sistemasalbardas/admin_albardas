@@ -152,7 +152,7 @@
 
 
           <?php if ($p_employes[7] == 1) {?>
-  	        <li class="treeview">
+  	        <li class="treeview hidden">
     	        <a href="#">
                   	<i class="fas fa-users icon"></i> <span>Personal</span>
     	            <span class="pull-right-container">
@@ -183,43 +183,53 @@
 		                <a href="<?=URL?>requisitions/">
 		                    <i class="far fa-circle"></i> nueva requisicion
 		                </a>
-	                </li>
-	  				<li>
+	              </li>
+	  				    <li>
 		                <a href="<?=URL?>requisitions/control/">
 		                    <i class="far fa-circle"></i> Control 
 		                </a>
-	                </li>
-	  				<li>
+	              </li>
+	  				    <li>
 		                <a href="<?=URL?>requisitions/config/">
 		                    <i class="far fa-circle"></i> Configuracion 
 		                </a>
-	                </li>
+	              </li>
 	  	        </ul>
   	        </li>
          <?php } ?>
     	<li class="treeview">
           	<a href="#">
-         	 	<i class="fas fa-copy icon"></i> <span>Compras</span>
+              <i class="fas fa-copy icon"></i> <span>Compras</span>
 	            <span class="pull-right-container">
 	                <i class="fas fa-angle-left pull-right"></i>
 	            </span>
           	</a>
           	<ul class="treeview-menu">
-              <li>
-		            <a href="<?=URL?>purchasing/purchase/">
-		              <i class="far fa-circle"></i> Compras
-		            </a>
-	          	</li>
-              <li>
-		            <a href="<?=URL?>purchasing/supplies/">
-		              <i class="far fa-circle"></i> Insumos
-		            </a>
-	          	</li>
-              <li>
-		            <a href="<?=URL?>purchasing/providers/">
-		              <i class="far fa-circle"></i> Provedores
-		            </a>
-	          	</li>
+                <li>
+                  <a href="<?=URL?>purchasing/purchase/">
+                    <i class="far fa-circle"></i> Compras
+                  </a>
+                </li>
+                <li>
+                  <a href="<?=URL?>purchasing/supplies/">
+                    <i class="far fa-circle"></i> Insumos
+                  </a>
+                </li>
+                <li>
+                  <a href="<?=URL?>purchasing/providers/">
+                    <i class="far fa-circle"></i> Provedores
+                  </a>
+                </li>
+                <li>
+                  <a href="<?=URL?>purchasing/requisitions/">
+                    <i class="far fa-circle icon"></i> <span>Requisiciones</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="<?=URL?>purchasing/programming/">
+                    <i class="far fa-circle icon"></i> <span>Programaciones</span>
+                  </a>
+                </li>
           	</ul>
 	    </li>
             <li>
@@ -227,6 +237,8 @@
                 <i class="far fa-circle icon"></i> <span>Inventarios</span>
               </a>
             </li>
+           
+           
           <?php if ($p_products[7] == 1) {?>
   	        <li>
               <a href="<?=URL?>products/">

@@ -1,7 +1,7 @@
 <div class="col-md-12">
   <div class="box box-success">
     <div class="box-header with-border">
-      <h3 class="box-title text-600">Proveedores</h3>
+      <h3 class="box-title text-600">Ordenes de Requisisiones</h3>
       <div class="box-tools pull-right">
                         
               <a href="../" class="btn btn-box-tool tool"><i class="fas fa-arrow-left"></i><span class="tooltext">Volver</span></a>
@@ -14,12 +14,14 @@
         <a href="#" data-toggle="modal" data-target="#new_provider" class="pull-right btn btn-success btn-sm">Nuevo +</a>
         <table id="tbl_supplies" class="table-table-striped">
           <thead>
-            <th>Proveedor</th>
-            <th>Contado Principal</th>
-            <th>RFC</th>
-            <th>Telefono</th>
-            <th>Correo</th>
-            <th>Estatus</th>
+            <th>Codigo</th>
+            <th>Productos</th>
+            <th>Marca</th>
+            <th>Cantidad</th>
+            <th>Fecha</th>
+            <th>Fecha de entrega</th>
+            <th>Responsable</th>
+            <th>Status</th>
             <th>Acciones</th>
           </thead>
         </table>
@@ -38,7 +40,7 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span></button>
-          <h4 class="modal-title">NUEVO PROVEEDOR</h4>
+          <h4 class="modal-title">NUEVO ORDEN DE REQUISICION</h4>
          
         </div>
         <form role="form" onsubmit="addProvider(this);" method="post">
