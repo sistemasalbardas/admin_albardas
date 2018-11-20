@@ -33,7 +33,7 @@
             </div>
             <div class="clearfix"></div>
             <hr>
-            <table id="tbl_wharehouse" class="table-table-striped">
+            <table id="tbl_wharehouse" class="table-table-striped active">
               <thead>
                 <th>Codigo</th>
                 <th>Nombre</th>
@@ -44,7 +44,7 @@
               </thead>
             </table>
           </div>
-          <div role="tabpanel" class="tab-pane active" id="almacenes">
+          <div role="tabpanel" class="tab-pane" id="almacenes">
             <br>
             <div class="col-lg-6 col-md-6 col-sm-12">
               <button type="button" data-toggle="modal" data-target="#entrada" class="btn btn-info">Entrada</button>
