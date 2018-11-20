@@ -14,16 +14,16 @@
         <a href="#" data-toggle="modal" data-target="#new_supplie" class="pull-right btn btn-success btn-sm">Nuevo +</a>
         <table id="tbl_supplies" class="display responsive nowrap table table-striped" style="width:100%">
           <thead>
-            <th>Clave</th>
-            <th>Nombre</th>
+            <th data-priority="1">Clave</th>
+            <th data-priority="2">Nombre</th>
             <th>Grupo</th>
             <th>Ingrediente Activo</th>
-            <th>Precio</th>
-            <th>Unidad de Compra</th>
-            <th>Unidad de uso</th>
+            <th data-priority="4">Precio</th>
+            <th data-priority="5">Unidad de Compra</th>
+            <th data-priority="6">Unidad de Uso</th>
             <th>Marca</th>
             <th>D/H</th>
-            <th>Acciones</th>
+            <th data-priority="3">Acciones</th>
           </thead>
         </table>
     </div>

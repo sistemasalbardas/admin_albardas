@@ -1048,8 +1048,8 @@ function validatePay(obj) {
 
 // -------------------------------- Seccion de Insumos -------------------------------------
 // datatble de insumos
-function showInsumos(){
-  tablaInsumos=$('#tbl_supplies').dataTable({
+function showInsumos(){ 
+  tablaInsumos=$('table#tbl_supplies').dataTable({
     "aProcessing": true,//Activamos el procesamiento del datatables
     "aServerSide": true,//Paginacion y filtrado realizados por el servidor
     dom: "<'row'<'text-center ' <''B>>>"+
@@ -1059,23 +1059,23 @@ function showInsumos(){
          "<'row'<'col-sm-5'i><'col-sm-7'p>>",
     buttons: [
           {
-            extend: 'excelHtml5',
-            text: '<strong><i class="fas fa-file-excel"></i> Excel</strong>',
-            className: 'btn btn-success',
-            title: "Reporte de Plantillas",
-            // exportOptions: {
-            // columns: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
-            // },
+            extend: "excelHtml5",
+            text: '<span class="icon-microsoftexcel"></span>',
+            className: "btn btn-success btn-lg",
+            title: "Reporte de Insumos",
+            exportOptions: {
+            columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+            },
             titleAttr: 'Excel'
           },
           {
-            extend: 'pdfHtml5',
-            text: '<strong><i class="fas fa-file-pdf"></i> PDF</strong>',
-            className: 'btn btn-danger',
-            title: "Reporte de Plantillas",
-            // exportOptions: {
-            //   columns: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
-            // },
+            extend: "pdfHtml5",
+            text: '<span class="icon-picture_as_pdf"></span>',
+            className: "btn btn-danger btn-lg",
+            title: "Reporte de Insumo",
+            exportOptions: {
+              columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+            },
             titleAttr: 'PDF'
           }
         ],

@@ -50,7 +50,7 @@
     </div>
     <div class="clearfix"></div>
     <div class="box-body padd10 bgWhite table-responsive">
-        <table id="tbl_supplies" class="table-table-striped">
+        <table id="tbl_purchase" class="table-table-striped">
           <thead>
             <th>Folio</th>
             <th>Fecha</th>

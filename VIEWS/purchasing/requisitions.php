@@ -12,7 +12,7 @@
     </div>
     <div class="box-body padd10 bgWhite table-responsive">
         <a href="#" data-toggle="modal" data-target="#new_provider" class="pull-right btn btn-success btn-sm">Nuevo +</a>
-        <table id="tbl_supplies" class="table-table-striped">
+        <table id="tbl_requisitions" class="table-table-striped">
           <thead>
             <th>Codigo</th>
             <th>Productos</th>
