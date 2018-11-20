@@ -1046,6 +1046,266 @@ function validatePay(obj) {
   }
 }
 
+// -------------------------------- Seccion de Insumos -------------------------------------
+// datatble de insumos
+function showInsumos(){
+  tablaInsumos=$('#tbl_supplies').dataTable({
+    "aProcessing": true,//Activamos el procesamiento del datatables
+    "aServerSide": true,//Paginacion y filtrado realizados por el servidor
+    dom: "<'row'<'text-center ' <''B>>>"+
+        "<'row'<'col-sm-5'><'col-sm-7'p>>"+
+         "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+         "<'row'<'col-lg-12'tr>>" +
+         "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+    buttons: [
+          {
+            extend: 'excelHtml5',
+            text: '<strong><i class="fas fa-file-excel"></i> Excel</strong>',
+            className: 'btn btn-success',
+            title: "Reporte de Plantillas",
+            // exportOptions: {
+            // columns: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+            // },
+            titleAttr: 'Excel'
+          },
+          {
+            extend: 'pdfHtml5',
+            text: '<strong><i class="fas fa-file-pdf"></i> PDF</strong>',
+            className: 'btn btn-danger',
+            title: "Reporte de Plantillas",
+            // exportOptions: {
+            //   columns: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+            // },
+            titleAttr: 'PDF'
+          }
+        ],
 
+        "ajax":
+        {
+          url:'/admin_albardas/controls/InsumoController.php?op=index',
+          type: "get",
+          dataType: "json",
+          error: function(e){
+            console.log(e.responseText);
+          }
+        },
+      // "columns":[
+      // 	{"data":"0"},
+      // 	{"data":"1"},
+      // 	{"data":"2"},
+      // 	{"data":"3"},
+      // 	{"data":"4"},
+      // 	{"data":"5"},
+      //   {"data":"6"}
+      // ],
+      "language": {
+                  "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                },
+    "bDestroy": true,
+    "iDisplayLength": 25,//Paginacion
+    "order": [[ 0, "asc" ]]//Ordenar (columna,orden)
+  }).DataTable();
+}
+showInsumos();
 
+// nuevo insumo
+function newInsumo(form, e){
+  e.preventDefault();
+  datos = new FormData(form);
+  $.ajax({
+    type: "post",
+    url: "/admin_albardas/controls/InsumoController.php?op=new",
+    data: datos,
+    dataType: "json",
+    encode:true,
+    contentType:false,
+    processData:false,
+    success: function (response) {
+      if (response.exito) {
+        swal({
+          position: 'top-end',
+          type: 'success',
+          title: response.msg,
+          showConfirmButton: false,
+          timer: 1500
+        })
+        tablaInsumos.ajax.reload();
+        form[0].reset();
+      }else{
+        swal({
+          position: 'top-end',
+          type: 'error',
+          title: response.msg,
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+    }
+  });
+}
+// Editar insumo
+function  abrirModal(id) {
+  $.get("/admin_albardas/controls/InsumoController.php?op=edit", {id:id}, function (data) {
+      data = JSON.parse(data);
+      if (data.exito) {
+        $("#id_insumo").val(id);
+        $("#edit_clave").val("n-"+id);
+        $("#edit_insumo").val(data.insumo);
+        $("#edit_medida_id").val(data.unidad_compra);
+        $('#edit_medida_id').selectpicker('refresh');        
+        // $('#edit_medida_id').selectpicker('val', data.);
+        $("#edit_precio").val(data.precio);
+        $("#edit_divisa").val(data.divisa);
+        $('#edit_divisa').selectpicker('refresh');
 
+        $("#edit_grupo_id").val(data.unidad_compra);
+        $('#edit_grupo_id').selectpicker('refresh');
+
+        $("#edit_descripcion").val(data.descripcion);
+        if (data.num_activos>1) {
+          $("#edit_ingrediente").selectpicker('val', [data.ingredientes]);
+          $('#edit_ingrediente').selectpicker('refresh');
+        }else{
+          console.log(data.ingredientes);
+          
+          $("#edit_ingrediente").selectpicker('val', data.ingredientes);
+          $('#edit_ingrediente').selectpicker('refresh');
+        }
+
+        $("#edit_marca").val(data.marca);
+        $("#edit_dh").val(data.dh);
+        $("#edit_proveedor_id").val();
+        $("#edit_factor").val(data.factor);
+        $("#edit_medida_uso").val(data.medida_uso);
+        $('#edit_medida_uso').selectpicker('refresh');
+
+        $("#edit_supplie").modal("show");
+      }else{
+        swal({
+          position: 'top-end',
+          type: 'error',
+          title: data.msg,
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+    }
+  );
+}
+
+// Actualizar Insumo
+function editInsumo(form, e){
+  e.preventDefault();
+  datos = new FormData(form);
+  $.ajax({
+    type: "post",
+    url: "/admin_albardas/controls/InsumoController.php?op=update",
+    data: datos,
+    dataType: "json",
+    encode:true,
+    contentType:false,
+    processData:false,
+    success: function (response) {
+      // console.log(response);
+      if (response.exito) {
+        swal({
+          position: 'top-end',
+          type: 'success',
+          title: response.msg,
+          showConfirmButton: false,
+          timer: 1500
+        })
+        tablaInsumos.ajax.reload();
+        // form[0].reset();
+      }else{
+        swal({
+          position: 'top-end',
+          type: 'error',
+          title: response.msg,
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+    }
+  });
+}
+
+// Son los datos que se cargan al inicio de la pagina de insumos
+function datosDefault(){
+  $.get("/admin_albardas/controls/InsumoController.php?op=sl_measurements",
+    function (data) {
+      $("#medida_id").html(data);
+      $("#medida_id").selectpicker('refresh');
+      $("#medida_uso").html(data);
+      $("#medida_uso").selectpicker('refresh');
+
+      $("#edit_medida_id").html(data);
+      $("#edit_medida_id").selectpicker('refresh');
+      $("#edit_medida_uso").html(data);
+      $("#edit_medida_uso").selectpicker('refresh');
+    }
+  );
+
+  $.get("/admin_albardas/controls/InsumoController.php?op=sl_categorias",
+    function (data) {
+      $("#grupo_id").html(data);
+      $("#grupo_id").selectpicker('refresh');
+      $("#edit_grupo_id").html(data);
+      $("#edit_grupo_id").selectpicker('refresh');
+    }
+  );
+
+  $.get("/admin_albardas/controls/InsumoController.php?op=sl_ingredientes",
+    function (data) {
+      $("#ingrediente").html(data);
+      $("#ingrediente").selectpicker('refresh');
+      $("#edit_ingrediente").html(data);
+      $("#edit_ingrediente").selectpicker('refresh');
+    }
+  );
+  $.get("/admin_albardas/controls/InsumoController.php?op=clave",
+    function (data) {
+      data = JSON.parse(data);
+      if (data.exito) {
+        $("#clave").attr('readonly','true');
+        $("#clave").val(data.clave);
+      }else{
+        $("#clave").attr('readonly','true');
+        $("#clave").val(data.clave);
+      }
+    }
+  );
+  
+}
+datosDefault();
+
+$("#clave").on("blur", function(e){
+  e.preventDefault();
+  datosDefault();
+})
+
+function delInsumo(id){
+  $.post("/admin_albardas/controls/InsumoController.php?op=delete", {id:id},
+    function (data) {
+      data = JSON.parse(data);
+      if (data.exito) {
+        swal({
+          position: 'top-end',
+          type: 'success',
+          title: data.msg,
+          showConfirmButton: false,
+          timer: 1500
+        })
+        tablaInsumos.ajax.reload();
+      }else{
+        swal({
+          position: 'top-end',
+          type: 'error',
+          title: data.msg,
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+    }
+  );
+}

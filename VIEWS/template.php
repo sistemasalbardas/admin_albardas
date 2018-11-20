@@ -53,7 +53,7 @@
 
 	  <link rel="stylesheet" type="text/css" href="<?= URL?>/VIEWS/resources/datatables/dataTables.bootstrap.min.css"/>
 	  <link rel="stylesheet" type="text/css" href="<?= URL?>/VIEWS/resources/datatables/buttons.bootstrap.min.css"/>
-	
+	  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
 
 
 </head>
@@ -105,6 +105,8 @@
 	<script type="text/javascript" src="<?= URL?>/VIEWS/resources/datatables/dataTables.buttons.min.js"></script>
 	<script type="text/javascript" src="<?= URL?>/VIEWS/resources/datatables/buttons.bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?= URL?>/VIEWS/resources/datatables/buttons.html5.min.js"></script>
+
+	<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 
 	<script src="<?= URL?>/VIEWS/resources/JS/scripts.js"></script>
 	<!-- nuevos scripts -->
