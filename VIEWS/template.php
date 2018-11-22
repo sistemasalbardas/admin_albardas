@@ -87,6 +87,7 @@
 	
 	<script src="<?= URL?>/VIEWS/resources/JS/bootstrap-select.js"></script>
 	<script src="<?= URL?>/VIEWS/resources/JS/ajax.js"></script>
+	<script src="<?= URL?>/VIEWS/resources/JS/ajax_controllers.js"></script>
 	<script src="<?= URL?>/VIEWS/resources/JS/jquery-ui/jquery-ui.min.js"></script>
 	<script src="<?= URL?>/VIEWS/resources/bower_components/bootstrap-select/js/bootstrap-select.min.js"></script>
 	<script src="<?= URL?>/VIEWS/resources/bower_components/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>

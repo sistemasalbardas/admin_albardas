@@ -1,7 +1,8 @@
 ///CONTANTES URLS->
 //LOCAL 
 
-const URL = "http://localhost/admin_albardas/";  
+//const URL = "http://localhost/admin_albardas/";  
+const URL = "http://192.168.50.122/admin_albardas/";  
 
 //PRODUCCION
 //const URL = "http://lasalbardas.com/ADMIN/";  
@@ -1102,7 +1103,7 @@ function deleteProvider(obj){
 }
 
 function editProvider(obj) {
-     event.preventDefault();
+event.preventDefault();
     var formData = new FormData($(obj)[0]);
     $.ajax({
         url: URL+"purchasing/editsupplier/",
