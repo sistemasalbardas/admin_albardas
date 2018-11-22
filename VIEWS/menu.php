@@ -237,6 +237,16 @@
                 <i class="far fa-circle icon"></i> <span>Inventarios</span>
               </a>
             </li>
+            <li>
+              <a href="<?=URL?>cycles/">
+                <i class="far fa-circle icon"></i> <span>Ciclos</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?=URL?>predios/">
+                <i class="far fa-circle icon"></i> <span>Predios</span>
+              </a>
+            </li>
            
            
           <?php if ($p_products[7] == 1) {?>

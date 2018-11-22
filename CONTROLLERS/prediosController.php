@@ -18,9 +18,6 @@
 			return false;
 			
 		}
-	
-
 	}
-	
 	$predios = new prediosController();
 ?>	
