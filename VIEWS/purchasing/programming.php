@@ -12,7 +12,7 @@
     </div>
     <div class="box-body padd10 bgWhite table-responsive">
         <a href="#" data-toggle="modal" data-target="#new_programming" class="pull-right btn btn-success btn-sm">Nueva Programacion +</a>
-        <table id="tbl_supplies" class="table-table-striped">
+        <table id="tbl_programming" class="table-table-striped">
           <thead>
             <th>Codigo</th>
             <th>Valvula</th>
