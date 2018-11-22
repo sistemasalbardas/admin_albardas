@@ -28,7 +28,7 @@ switch ($_GET['op']) {
                 "5"=>$reg->unidad_compra,
                 "6"=>$reg->medida_uso,
                 "7"=>$reg->marca,
-                "8"=> $reg->dh,
+                "8"=> $reg->dh, 
                 "9"=>'<buton type="button" class="btn btn-xs btn-warning" onclick="abrirModal('.$reg->id_insumo.')"><i class="fas fa-edit"></i></buton>
                     <buton type="button" class="btn btn-xs btn-danger" onclick="delInsumo('.$reg->id_insumo.')"><i class="fas fa-trash"></i></buton>
                 '
@@ -216,10 +216,6 @@ switch ($_GET['op']) {
         while ($f = $result->fetch(PDO::FETCH_OBJ)) {
             echo "<option data-content=\"<span class='badge badge-danger'>".$f->nombre."</span>\">".$f->nombre."</option>";
         }
-    break;
-    
+    break;  
 }
-
-
-
 ?>

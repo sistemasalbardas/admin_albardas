@@ -1130,7 +1130,7 @@ function newInsumo(form, e){
           timer: 1500
         })
         tablaInsumos.ajax.reload();
-        form[0].reset();
+        $(form)[0].reset();
       }else{
         swal({
           position: 'top-end',
