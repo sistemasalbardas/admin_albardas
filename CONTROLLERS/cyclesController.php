@@ -9,14 +9,11 @@
 		
 		public function __construct(){
 			$this->cycles = new cycles();
-
 		}
 		
 		public function index()
 		{
-		
 			return false;
-			
 		}
 	}
 	$cycles = new cyclesController();
